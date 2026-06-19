@@ -1,0 +1,89 @@
+# URLs sources des PDF d'annales (AlloSchool) — filière Sciences Physiques
+# Format : <fichier-local>  <tab>  <url-source>
+# Localement servis par le backend sur : http://localhost:8081/annales/<fichier-local>.pdf
+
+# ===== MATHÉMATIQUES (course-438) =====
+maths-2025-normale-sujet	https://www.alloschool.com/assets/documents/course-438/examen-national-maths-sciences-et-technologies-2025-normale-sujet.pdf
+maths-2025-rattrapage-sujet	https://www.alloschool.com/assets/documents/course-438/examen-national-maths-sciences-et-technologies-2025-rattrapage-sujet.pdf
+maths-2024-normale-sujet	https://www.alloschool.com/assets/documents/course-438/examen-national-maths-sciences-et-technologies-2024-normale-sujet-3.pdf
+maths-2024-normale-corrige	https://www.alloschool.com/assets/documents/course-438/examen-national-maths-sciences-et-technologies-2024-normale-corrige.pdf
+maths-2024-rattrapage-sujet	https://www.alloschool.com/assets/documents/course-438/examen-national-maths-sciences-et-technologies-2024-rattrapage-sujet.pdf
+maths-2024-rattrapage-corrige	https://www.alloschool.com/assets/documents/course-438/examen-national-maths-sciences-et-technologies-2024-rattrapage-corrige.pdf
+maths-2023-normale-sujet	https://www.alloschool.com/assets/documents/course-438/examen-national-maths-sciences-et-technologies-2023-normale-sujet.pdf
+maths-2023-normale-corrige	https://www.alloschool.com/assets/documents/course-438/examen-national-maths-sciences-et-technologies-2023-normale-corrige.pdf
+maths-2023-rattrapage-sujet	https://www.alloschool.com/assets/documents/course-438/examen-national-maths-sciences-et-technologies-2023-rattrapage-sujet.pdf
+maths-2023-rattrapage-corrige	https://www.alloschool.com/assets/documents/course-438/examen-national-maths-sciences-et-technologies-2023-rattrapage-corrige.pdf
+maths-2022-normale-sujet	https://www.alloschool.com/assets/documents/course-438/examen-national-maths-sciences-et-technologies-2022-normale-sujet.pdf
+maths-2022-normale-corrige	https://www.alloschool.com/assets/documents/course-438/examen-national-maths-sciences-et-technologies-2022-normale-corrige.pdf
+maths-2022-rattrapage-sujet	https://www.alloschool.com/assets/documents/course-438/examen-national-maths-sciences-et-technologies-2022-rattrapage-sujet.pdf
+maths-2022-rattrapage-corrige	https://www.alloschool.com/assets/documents/course-438/examen-national-maths-sciences-et-technologies-2022-rattrapage-corrige.pdf
+maths-2021-normale-sujet	https://www.alloschool.com/assets/documents/course-438/examen-national-maths-sciences-et-technologies-2021-normale-sujet.pdf
+maths-2021-normale-corrige	https://www.alloschool.com/assets/documents/course-438/examen-national-maths-sciences-et-technologies-2021-normale-corrige.pdf
+maths-2021-rattrapage-sujet	https://www.alloschool.com/assets/documents/course-438/examen-national-maths-sciences-et-technologies-2021-rattrapage-sujet.pdf
+maths-2021-rattrapage-corrige	https://www.alloschool.com/assets/documents/course-438/examen-national-maths-sciences-et-technologies-2021-rattrapage-corrige.pdf
+maths-2020-normale-sujet	https://www.alloschool.com/assets/documents/course-438/examen-national-maths-sciences-et-technologies-2020-normale-sujet.pdf
+maths-2020-normale-corrige	https://www.alloschool.com/assets/documents/course-438/examen-national-maths-sciences-et-technologies-2020-normale-corrige.pdf
+maths-2020-rattrapage-sujet	https://www.alloschool.com/assets/documents/course-438/examen-national-maths-sciences-et-technologies-2020-rattrapage-sujet.pdf
+maths-2020-rattrapage-corrige	https://www.alloschool.com/assets/documents/course-438/examen-national-maths-sciences-et-technologies-2020-rattrapage-corrige.pdf
+maths-2019-normale-sujet	https://www.alloschool.com/assets/documents/course-438/examen-national-maths-sciences-et-technologies-2019-normale-sujet-3.pdf
+maths-2019-normale-corrige	https://www.alloschool.com/assets/documents/course-438/examen-national-maths-sciences-et-technologies-2019-normale-corrige.pdf
+maths-2019-rattrapage-sujet	https://www.alloschool.com/assets/documents/course-438/examen-national-maths-sciences-et-technologies-2019-rattrapage-sujet.pdf
+maths-2019-rattrapage-corrige	https://www.alloschool.com/assets/documents/course-438/examen-national-maths-sciences-et-technologies-2019-rattrapage-corrige.pdf
+
+# ===== PHYSIQUE-CHIMIE (course-422) =====
+pc-2025-normale-sujet	https://www.alloschool.com/assets/documents/course-422/examen-national-physique-chimie-spc-2025-normale-sujet.pdf
+pc-2025-rattrapage-sujet	https://www.alloschool.com/assets/documents/course-422/examen-national-physique-chimie-spc-2025-rattrapage-sujet.pdf
+pc-2024-normale-sujet	https://www.alloschool.com/assets/documents/course-422/examen-national-physique-chimie-spc-2024-normale-sujet.pdf
+pc-2024-normale-corrige	https://www.alloschool.com/assets/documents/course-422/examen-national-physique-chimie-spc-2024-normale-corrige.pdf
+pc-2024-rattrapage-sujet	https://www.alloschool.com/assets/documents/course-422/examen-national-physique-chimie-spc-2024-rattrapage-sujet.pdf
+pc-2024-rattrapage-corrige	https://www.alloschool.com/assets/documents/course-422/examen-national-physique-chimie-spc-2024-rattrapage-corrige.pdf
+pc-2023-normale-sujet	https://www.alloschool.com/assets/documents/course-422/examen-national-physique-chimie-spc-2023-normale-sujet.pdf
+pc-2023-normale-corrige	https://www.alloschool.com/assets/documents/course-422/examen-national-physique-chimie-spc-2023-normale-corrige-3.pdf
+pc-2023-rattrapage-sujet	https://www.alloschool.com/assets/documents/course-422/examen-national-physique-chimie-spc-2023-rattrapage-sujet.pdf
+pc-2023-rattrapage-corrige	https://www.alloschool.com/assets/documents/course-422/examen-national-physique-chimie-spc-2023-rattrapage-corrige.pdf
+pc-2022-normale-sujet	https://www.alloschool.com/assets/documents/course-422/examen-national-physique-chimie-spc-2022-normale-sujet.pdf
+pc-2022-normale-corrige	https://www.alloschool.com/assets/documents/course-422/examen-national-physique-chimie-spc-2022-normale-corrige-3.pdf
+pc-2022-rattrapage-sujet	https://www.alloschool.com/assets/documents/course-422/examen-national-physique-chimie-spc-2022-rattrapage-sujet.pdf
+pc-2022-rattrapage-corrige	https://www.alloschool.com/assets/documents/course-422/examen-national-physique-chimie-spc-2022-rattrapage-corrige-3.pdf
+pc-2021-normale-sujet	https://www.alloschool.com/assets/documents/course-422/examen-national-physique-chimie-spc-2021-normale-sujet.pdf
+pc-2021-normale-corrige	https://www.alloschool.com/assets/documents/course-422/examen-national-physique-chimie-spc-2021-normale-corrige-3.pdf
+pc-2021-rattrapage-sujet	https://www.alloschool.com/assets/documents/course-422/examen-national-physique-chimie-spc-2021-rattrapage-sujet.pdf
+pc-2021-rattrapage-corrige	https://www.alloschool.com/assets/documents/course-422/examen-national-physique-chimie-spc-2021-rattrapage-corrige-3.pdf
+pc-2020-normale-sujet	https://www.alloschool.com/assets/documents/course-422/examen-national-physique-chimie-spc-2020-normale-sujet.pdf
+pc-2020-normale-corrige	https://www.alloschool.com/assets/documents/course-422/examen-national-physique-chimie-spc-2020-normale-corrige-3.pdf
+pc-2020-rattrapage-sujet	https://www.alloschool.com/assets/documents/course-422/examen-national-physique-chimie-spc-2020-rattrapage-sujet.pdf
+pc-2020-rattrapage-corrige	https://www.alloschool.com/assets/documents/course-422/examen-national-physique-chimie-spc-2020-rattrapage-corrige-3.pdf
+pc-2019-normale-sujet	https://www.alloschool.com/assets/documents/course-422/examen-national-physique-chimie-spc-2019-normale-sujet.pdf
+pc-2019-normale-corrige	https://www.alloschool.com/assets/documents/course-422/examen-national-physique-chimie-spc-2019-normale-corrige.pdf
+pc-2019-rattrapage-sujet	https://www.alloschool.com/assets/documents/course-422/examen-national-physique-chimie-spc-2019-rattrapage-sujet.pdf
+pc-2019-rattrapage-corrige	https://www.alloschool.com/assets/documents/course-422/examen-national-physique-chimie-spc-2019-rattrapage-corrige.pdf
+
+# ===== SVT (course-399) =====
+svt-2025-normale-sujet	https://www.alloschool.com/assets/documents/course-399/examen-national-svt-sciences-physiques-2025-normale-sujet.pdf
+svt-2025-normale-corrige	https://www.alloschool.com/assets/documents/course-399/examen-national-svt-sciences-physiques-2025-normale-corrige.pdf
+svt-2025-rattrapage-sujet	https://www.alloschool.com/assets/documents/course-399/examen-national-svt-sciences-physiques-2025-rattrapage-sujet.pdf
+svt-2025-rattrapage-corrige	https://www.alloschool.com/assets/documents/course-399/examen-national-svt-sciences-physiques-2025-rattrapage-corrige.pdf
+svt-2024-normale-sujet	https://www.alloschool.com/assets/documents/course-399/examen-national-svt-sciences-physiques-2024-normale-sujet.pdf
+svt-2024-normale-corrige	https://www.alloschool.com/assets/documents/course-399/examen-national-svt-sciences-physiques-2024-normale-corrige.pdf
+svt-2024-rattrapage-sujet	https://www.alloschool.com/assets/documents/course-399/examen-national-svt-sciences-physiques-2024-rattrapage-sujet.pdf
+svt-2024-rattrapage-corrige	https://www.alloschool.com/assets/documents/course-399/examen-national-svt-sciences-physiques-2024-rattrapage-corrige.pdf
+svt-2023-normale-sujet	https://www.alloschool.com/assets/documents/course-399/examen-national-svt-sciences-physiques-2023-normale-sujet.pdf
+svt-2023-normale-corrige	https://www.alloschool.com/assets/documents/course-399/examen-national-svt-sciences-physiques-2023-normale-corrige.pdf
+svt-2023-rattrapage-sujet	https://www.alloschool.com/assets/documents/course-399/examen-national-svt-sciences-physiques-2023-rattrapage-sujet.pdf
+svt-2023-rattrapage-corrige	https://www.alloschool.com/assets/documents/course-399/examen-national-svt-sciences-physiques-2023-rattrapage-corrige.pdf
+svt-2022-normale-sujet	https://www.alloschool.com/assets/documents/course-399/examen-national-svt-sciences-physiques-2022-normale-sujet.pdf
+svt-2022-normale-corrige	https://www.alloschool.com/assets/documents/course-399/examen-national-svt-sciences-physiques-2022-normale-corrige.pdf
+svt-2022-rattrapage-sujet	https://www.alloschool.com/assets/documents/course-399/examen-national-svt-sciences-physiques-2022-rattrapage-sujet.pdf
+svt-2022-rattrapage-corrige	https://www.alloschool.com/assets/documents/course-399/examen-national-svt-sciences-physiques-2022-rattrapage-corrige.pdf
+svt-2021-normale-sujet	https://www.alloschool.com/assets/documents/course-399/examen-national-svt-sciences-physiques-2021-normale-sujet.pdf
+svt-2021-normale-corrige	https://www.alloschool.com/assets/documents/course-399/examen-national-svt-sciences-physiques-2021-normale-corrige.pdf
+svt-2021-rattrapage-sujet	https://www.alloschool.com/assets/documents/course-399/examen-national-svt-sciences-physiques-2021-rattrapage-sujet.pdf
+svt-2021-rattrapage-corrige	https://www.alloschool.com/assets/documents/course-399/examen-national-svt-sciences-physiques-2021-rattrapage-corrige.pdf
+svt-2020-normale-sujet	https://www.alloschool.com/assets/documents/course-399/examen-national-svt-sciences-physiques-2020-normale-sujet.pdf
+svt-2020-normale-corrige	https://www.alloschool.com/assets/documents/course-399/examen-national-svt-sciences-physiques-2020-normale-corrige.pdf
+svt-2020-rattrapage-sujet	https://www.alloschool.com/assets/documents/course-399/examen-national-svt-sciences-physiques-2020-rattrapage-sujet.pdf
+svt-2020-rattrapage-corrige	https://www.alloschool.com/assets/documents/course-399/examen-national-svt-sciences-physiques-2020-rattrapage-corrige.pdf
+svt-2019-normale-sujet	https://www.alloschool.com/assets/documents/course-399/examen-national-svt-sciences-physiques-2019-normale-sujet.pdf
+svt-2019-normale-corrige	https://www.alloschool.com/assets/documents/course-399/examen-national-svt-sciences-physiques-2019-normale-corrige.pdf
+svt-2019-rattrapage-sujet	https://www.alloschool.com/assets/documents/course-399/examen-national-svt-sciences-physiques-2019-rattrapage-sujet.pdf
+svt-2019-rattrapage-corrige	https://www.alloschool.com/assets/documents/course-399/examen-national-svt-sciences-physiques-2019-rattrapage-corrige.pdf

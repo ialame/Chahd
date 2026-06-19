@@ -1,0 +1,442 @@
+L'introduction de l'ensemble des nombres complexes répond au besoin de résoudre des équations algébriques insolubles dans $\R$, comme $x^2 + 1 = 0$. Cet ensemble offre un cadre puissant pour l'analyse mathématique, la trigonométrie et la géométrie plane.
+
+## L'Ensemble $\Cnum$ et Forme Algébrique
+
+### Définition et écriture algébrique
+
+\begin{theoreme}[Existence de l'ensemble $\Cnum$]
+Il existe un ensemble de nombres, noté $\Cnum$, appelé l'ensemble des \textbf{nombres complexes}, tel que :
+\begin{itemize}
+    \item L'ensemble $\R$ est inclus dans $\Cnum$.
+    \item Les opérations d'addition et de multiplication de $\R$ se prolongent à $\Cnum$ et conservent leurs propriétés usuelles (commutativité, associativité, distributivité).
+    \item Il existe dans $\Cnum$ un nombre noté $\iud$ tel que :
+    \[
+    \iud^2 = -1
+    \]
+    \item Tout élément $z \in \Cnum$ s'écrit de manière unique sous la forme :
+    \[
+    z = x + \iud y \quad (\text{avec } x \in \R \text{ et } y \in \R)
+    \]
+    Cette écriture est appelée la \textbf{forme algébrique} du nombre complexe $z$.
+\end{itemize}
+\end{theoreme}
+
+\begin{definition}[Vocabulaire]
+Soit $z = x + \iud y$ la forme algébrique d'un nombre complexe.
+\begin{itemize}
+    \item Le réel $x$ est appelé la \textbf{partie réelle} de $z$, notée $\mathrm{Re}(z)$.
+    \item Le réel $y$ est appelé la \textbf{partie imaginaire} de $z$, notée $\mathrm{Im}(z)$.
+    \item Si $y = 0$, $z$ est un nombre réel.
+    \item Si $x = 0$ et $y \ne 0$, $z$ est appelé un \textbf{imaginaire pur}. L'ensemble des imaginaires purs est noté $\iud\R$.
+\end{itemize}
+\end{definition}
+
+\begin{propriete}[Égalité de deux nombres complexes]
+Deux nombres complexes sont égaux si et seulement si leurs parties réelles sont égales et leurs parties imaginaires sont égales :
+\[
+x + \iud y = x' + \iud y' \iff x = x' \ \text{et} \ y = y'
+\]
+En particulier :
+\[
+z = 0 \iff \mathrm{Re}(z) = 0 \ \text{et} \ \mathrm{Im}(z) = 0
+\]
+\end{propriete}
+
+### Opérations sous forme algébrique
+Pour effectuer les calculs dans $\Cnum$, on applique les mêmes règles de développement et de factorisation que dans $\R$, en remplaçant chaque occurrence de $\iud^2$ par $-1$.
+\begin{itemize}
+    \item \textbf{Addition} : $(x + \iud y) + (x' + \iud y') = (x+x') + \iud (y+y')$.
+    \item \textbf{Multiplication} : $(x + \iud y)(x' + \iud y') = (xx' - yy') + \iud (xy' + yx')$.
+\end{itemize}
+
+### Conjugué d'un nombre complexe
+
+\begin{definition}[Conjugué]
+Soit $z = x + \iud y$ un nombre complexe écrit sous sa forme algébrique.
+On appelle \textbf{conjugué} de $z$, noté $\bar{z}$, le nombre complexe défini par :
+\[
+\bar{z} = x - \iud y
+\]
+\end{definition}
+
+\begin{propriete}[Propriétés du conjugué]
+Soient $z$ et $z'$ deux nombres complexes, et $n \in \Z$.
+\begin{itemize}
+    \item $\overline{(\bar{z})} = z$.
+    \item $\overline{z + z'} = \bar{z} + \overline{z'}$.
+    \item $\overline{z \times z'} = \bar{z} \times \overline{z'}$.
+    \item $\overline{\left(\frac{z}{z'}\right)} = \frac{\bar{z}}{\overline{z'}}$ \quad (pour $z' \ne 0$).
+    \item $\overline{z^n} = (\bar{z})^n$.
+    \item $z + \bar{z} = 2\mathrm{Re}(z)$ \quad et \quad $z - \bar{z} = 2\iud\mathrm{Im}(z)$.
+    \item $z$ est réel $\iff z = \bar{z}$.
+    \item $z$ est imaginaire pur $\iff z = -\bar{z}$.
+    \item Le produit d'un nombre complexe par son conjugué est un nombre réel positif :
+    \[
+    z \bar{z} = (x + \iud y)(x - \iud y) = x^2 + y^2
+    \]
+\end{itemize}
+\end{propriete}
+
+\begin{methode}[Calculer le quotient de deux complexes]
+Pour exprimer le quotient $\frac{z_1}{z_2}$ ($z_2 \ne 0$) sous forme algébrique, on multiplie le numérateur et le dénominateur par le conjugué du dénominateur $\overline{z_2}$.
+\end{methode}
+
+\begin{exemple}[Quotient]
+Mettons sous forme algébrique le complexe $z = \frac{1+2\iud}{3-\iud}$ :
+\[
+z = \frac{(1+2\iud)(3+\iud)}{(3-\iud)(3+\iud)} = \frac{3 + \iud + 6\iud + 2\iud^2}{3^2 + (-1)^2} = \frac{3 - 2 + 7\iud}{9 + 1} = \frac{1+7\iud}{10} = \frac{1}{10} + \frac{7}{10}\iud
+\]
+\end{exemple}
+
+## Représentation Géométrique, Module et Argument
+
+### Le plan complexe
+
+Le plan est muni d'un repère orthonormé direct $(O, \vec{u}, \vec{v})$.
+\begin{itemize}
+    \item À tout nombre complexe $z = x + \iud y$ ($x, y \in \R$), on associe l'unique point $M(x, y)$ du plan.
+    On dit que $M$ est l'image de $z$ et que $z$ est l'**affixe** du point $M$, noté $M(z)$.
+    \item Le vecteur $\vec{OM}$ est représenté par le complexe $z$.
+    \item L'axe des abscisses est appelé l'\textbf{axe des réels} (car il contient les images des nombres réels).
+    \item L'axe des ordonnées est appelé l'\textbf{axe des imaginaires} (car il contient les images des imaginaires purs).
+\end{itemize}
+
+### Module d'un nombre complexe
+
+\begin{definition}[Module]
+Le \textbf{module} du nombre complexe $z = x + \iud y$, noté $|z|$, est le nombre réel positif défini par :
+\[
+|z| = \sqrt{z\bar{z}} = \sqrt{x^2 + y^2}
+\]
+Géométriquement, si $M$ est l'image de $z$ dans le plan complexe, alors :
+\[
+|z| = OM
+\]
+\end{definition}
+
+\begin{propriete}[Propriétés du module]
+Soient $z$ et $z'$ deux nombres complexes.
+\begin{itemize}
+    \item $|z| = 0 \iff z = 0$.
+    \item $|\bar{z}| = |-z| = |z|$.
+    \item $|z \times z'| = |z| \times |z'|$.
+    \item $\left|\frac{z}{z'}\right| = \frac{|z|}{|z'|}$ \quad (pour $z' \ne 0$).
+    \item $|z^n| = |z|^n$ \quad (pour $n \in \Z$).
+    \item \textbf{Inégalité triangulaire} : $|z + z'| \le |z| + |z'|$.
+\end{itemize}
+\end{propriete}
+
+### Argument d'un nombre complexe non nul
+
+\begin{definition}[Argument]
+Soit $z$ un nombre complexe non nul d'image $M$.
+On appelle \textbf{argument} de $z$, noté $\arg(z)$, toute mesure en radians de l'angle orienté $(\vec{u}, \vec{OM})$ :
+\[
+\arg(z) \equiv (\vec{u}, \vec{OM}) \pmod{2\pi}
+\]
+\end{definition}
+
+\begin{propriete}[Forme trigonométrique]
+Tout nombre complexe non nul $z$ peut s'écrire sous la forme :
+\[
+z = r(\cos(\theta) + \iud \sin(\theta))
+\]
+où $r = |z| > 0$ et $\theta \equiv \arg(z) \pmod{2\pi}$.
+On a alors :
+\[
+\cos(\theta) = \frac{x}{|z|} \quad \text{et} \quad \sin(\theta) = \frac{y}{|z|}
+\]
+\end{propriete}
+
+\begin{propriete}[Propriétés des arguments]
+Soient $z$ et $z'$ deux complexes non nuls, et $n \in \Z$.
+\begin{itemize}
+    \item $\arg(\bar{z}) \equiv -\arg(z) \pmod{2\pi}$.
+    \item $\arg(-z) \equiv \arg(z) + \pi \pmod{2\pi}$.
+    \item $\arg(z \times z') \equiv \arg(z) + \arg(z') \pmod{2\pi}$.
+    \item $\arg\left(\frac{z}{z'}\right) \equiv \arg(z) - \arg(z') \pmod{2\pi}$.
+    \item $\arg(z^n) \equiv n\arg(z) \pmod{2\pi}$.
+\end{itemize}
+\end{propriete}
+
+## Forme Exponentielle et Trigonométrie
+
+### Écriture exponentielle
+
+\begin{definition}[Écriture exponentielle]
+Pour tout réel $\theta$, on note $e^{\iud\theta}$ le nombre complexe défini par :
+\[
+e^{\iud\theta} = \cos(\theta) + \iud \sin(\theta)
+\]
+Ainsi, tout nombre complexe non nul $z$ de module $r$ et d'argument $\theta$ admet la \textbf{forme exponentielle} suivante :
+\[
+z = r e^{\iud\theta}
+\]
+\end{definition}
+
+Les propriétés algébriques de la fonction exponentielle réelle s'appliquent également à l'exponentielle complexe :
+\[
+e^{\iud\theta} \times e^{\iud\theta'} = e^{\iud(\theta+\theta')}, \quad \frac{1}{e^{\iud\theta}} = e^{-\iud\theta}, \quad \frac{e^{\iud\theta}}{e^{\iud\theta'}} = e^{\iud(\theta-\theta')}, \quad \left(e^{\iud\theta}\right)^n = e^{\iud n\theta}
+\quad (n \in \Z)
+\]
+
+### Formules fondamentales
+
+\begin{propriete}[Formule de Moivre]
+Pour tout réel $\theta$ et tout entier relatif $n$ :
+\[
+(\cos(\theta) + \iud \sin(\theta))^n = \cos(n\theta) + \iud \sin(n\theta)
+\]
+\end{propriete}
+
+\begin{propriete}[Formules d'Euler]
+Pour tout réel $\theta$ :
+\[
+\cos(\theta) = \frac{e^{\iud\theta} + e^{-\iud\theta}}{2} \quad \text{et} \quad \sin(\theta) = \frac{e^{\iud\theta} - e^{-\iud\theta}}{2\iud}
+\]
+\end{propriete}
+
+## Résolution d'Équations dans $\Cnum$
+
+### Racines carrées d'un nombre complexe
+Soit un nombre complexe donné $Z = a + \iud b$. On cherche les solutions complexes $z = x + \iud y$ de l'équation $z^2 = Z$.
+Pour résoudre ce système sous forme algébrique :
+\[
+z^2 = Z \iff 
+\begin{cases}
+x^2 - y^2 = a & (\text{parties réelles}) \\
+2xy = b & (\text{parties imaginaires}) \\
+x^2 + y^2 = \sqrt{a^2+b^2} & (\text{égalités des modules})
+\end{cases}
+\]
+Ce système permet de déterminer $x^2$ et $y^2$, puis $2xy$ permet d'identifier si $x$ et $y$ sont de même signe ou de signes contraires.
+
+### Équations du second degré à coefficients réels
+
+\begin{theoreme}[Résolution dans $\Cnum$]
+Considérons l'équation $az^2 + bz + c = 0$ où $a, b, c$ sont des réels et $a \ne 0$.
+Soit le discriminant $\Delta = b^2 - 4ac$.
+\begin{itemize}
+    \item Si $\Delta > 0$, l'équation admet deux solutions réelles :
+    \[
+    z_1 = \frac{-b-\sqrt{\Delta}}{2a} \quad \text{et} \quad z_2 = \frac{-b+\sqrt{\Delta}}{2a}
+    \]
+    \item Si $\Delta = 0$, l'équation admet une unique solution réelle double :
+    \[
+    z_0 = \frac{-b}{2a}
+    \]
+    \item Si $\Delta < 0$, l'équation admet deux solutions complexes conjuguées :
+    \[
+    z_1 = \frac{-b-\iud\sqrt{-\Delta}}{2a} \quad \text{et} \quad z_2 = \frac{-b+\iud\sqrt{-\Delta}}{2a}
+    \]
+\end{itemize}
+\end{theoreme}
+
+## Applications Géométriques des Nombres Complexes
+
+Les nombres complexes constituent un outil de calcul vectoriel plan d'une grande efficacité grâce aux résultats suivants :
+
+\begin{propriete}[Distances et Angles]
+Soient $A$, $B$, $C$, $D$ quatre points distincts du plan d'affixes respectives $z_A$, $z_B$, $z_C$, $z_D$.
+\begin{itemize}
+    \item L'affixe du vecteur $\vec{AB}$ est $z_B - z_A$.
+    \item La distance $AB$ est égale à $|z_B - z_A|$.
+    \item Une mesure de l'angle orienté $(\vec{u}, \vec{AB})$ est donnée par $\arg(z_B - z_A) \pmod{2\pi}$.
+    \item Une mesure de l'angle orienté $(\vec{AB}, \vec{CD})$ est donnée par :
+    \[
+    (\vec{AB}, \vec{CD}) \equiv \arg\left( \frac{z_D - z_C}{z_B - z_A} \right) \pmod{2\pi}
+    \]
+\end{itemize}
+\end{propriete}
+
+\begin{propriete}[Caractérisation géométrique]
+Soient $A$, $B$, $C$ trois points distincts d'affixes $z_A$, $z_B$, $z_C$.
+\begin{itemize}
+    \item Les points $A$, $B$ et $C$ sont \textbf{alignés} si et seulement si :
+    \[
+    \frac{z_C - z_A}{z_B - z_A} \in \R
+    \]
+    \item Les droites $(AB)$ et $(AC)$ sont \textbf{perpendiculaires} si et seulement si :
+    \[
+    \frac{z_C - z_A}{z_B - z_A} \in \iud\R \quad (\text{imaginaire pur non nul})
+    \]
+    \item Le triangle $ABC$ est rectangle en $A$ et isocèle en $A$ si et seulement si :
+    \[
+    \frac{z_C - z_A}{z_B - z_A} = \iud \quad \text{ou} \quad \frac{z_C - z_A}{z_B - z_A} = -\iud
+    \]
+\end{itemize}
+\end{propriete}
+
+## Représentation Complexe des Transformations Géométriques
+
+Le tableau suivant rassemble les écritures complexes des transformations géométriques classiques dans le plan complexe.
+
+\begin{theoreme}[Transformations géométriques]
+Soit $M(z)$ un point quelconque du plan et $M'(z')$ son image par la transformation considérée.
+\begin{itemize}
+    \item \textbf{Translation} de vecteur $\vec{w}$ d'affixe $b$ :
+    \[
+    z' = z + b
+    \]
+    \item \textbf{Homothétie} de centre $\Omega(\omega)$ et de rapport réel $k \ne 0$ :
+    \[
+    z' - \omega = k(z - \omega)
+    \]
+    \item \textbf{Rotation} de centre $\Omega(\omega)$ et d'angle réel $\theta$ :
+    \[
+    z' - \omega = e^{\iud\theta}(z - \omega)
+    \]
+\end{itemize}
+\end{theoreme}
+
+## Exercices d'Entraînement Résolus
+
+### Exercice 1 : Écriture sous forme algébrique
+Écrire sous forme algébrique le nombre complexe :
+\[
+Z = \frac{3-\iud}{1+2\iud}
+\]
+
+\textbf{Solution :}
+On multiplie le numérateur et le dénominateur par le conjugué du dénominateur, soit $1-2\iud$ :
+\[
+Z = \frac{(3-\iud)(1-2\iud)}{(1+2\iud)(1-2\iud)} = \frac{3 - 6\iud - \iud + 2\iud^2}{1^2 + 2^2} = \frac{3 - 2 - 7\iud}{5} = \frac{1-7\iud}{5} = \frac{1}{5} - \frac{7}{5}\iud
+\]
+
+### Exercice 2 : Forme exponentielle
+Déterminer la forme exponentielle de :
+\[
+z = -\sqrt{3} + \iud
+\]
+
+\textbf{Solution :}
+1. Calculons le module de $z$ :
+   \[
+   |z| = \sqrt{(-\sqrt{3})^2 + 1^2} = \sqrt{3+1} = \sqrt{4} = 2
+   \]
+2. Déterminons un argument $\theta$ de $z$ :
+   \[
+   \cos(\theta) = -\frac{\sqrt{3}}{2} \quad \text{et} \quad \sin(\theta) = \frac{1}{2}
+   \]
+   L'angle de l'intervalle $]-\pi, \pi]$ qui convient est $\theta = \frac{5\pi}{6}$.
+La forme exponentielle de $z$ est donc :
+\[
+z = 2 e^{\iud\frac{5\pi}{6}}
+\]
+
+### Exercice 3 : Résolution d'une équation du second degré
+Résoudre dans $\Cnum$ l'équation suivante :
+\[
+z^2 - 2z + 5 = 0
+\]
+
+\textbf{Solution :}
+C'est une équation du second degré à coefficients réels. Calculons le discriminant :
+\[
+\Delta = (-2)^2 - 4(1)(5) = 4 - 20 = -16
+\]
+Puisque $\Delta < 0$, l'équation admet deux racines complexes conjuguées :
+\[
+z_1 = \frac{-(-2) - \iud\sqrt{16}}{2} = \frac{2 - 4\iud}{2} = 1 - 2\iud
+\]
+\[
+z_2 = \overline{z_1} = 1 + 2\iud
+\]
+L'ensemble des solutions est $S = \{1-2\iud, 1+2\iud\}$.
+
+### Exercice 4 : Détermination d'ensemble de points
+Déterminer l'ensemble des points $M$ d'affixe $z$ tels que :
+\[
+|z - 2 + \iud| = 3
+\]
+
+\textbf{Solution :}
+Soit $A$ le point d'affixe $z_A = 2 - \iud$.
+L'équation s'écrit :
+\[
+|z - (2 - \iud)| = 3 \iff |z - z_A| = 3 \iff AM = 3
+\]
+L'ensemble des points $M$ est donc le cercle de centre $A(2, -1)$ et de rayon 3.
+
+### Exercice 5 : Formules d'Euler et linéarisation
+Linéariser l'expression $\sin^3(x)$ à l'aide des formules d'Euler.
+
+\textbf{Solution :}
+En utilisant la formule d'Euler pour le sinus :
+\[
+\sin(x) = \frac{e^{\iud x} - e^{-\iud x}}{2\iud}
+\]
+Élevons au cube :
+\[
+\sin^3(x) = \left(\frac{e^{\iud x} - e^{-\iud x}}{2\iud}\right)^3 = \frac{(e^{\iud x} - e^{-\iud x})^3}{(2\iud)^3}
+\]
+Puisque $(2\iud)^3 = 8\iud^3 = -8\iud$. Développons le numérateur à l'aide de l'identité $(a-b)^3 = a^3 - 3a^2b + 3ab^2 - b^3$ :
+\[
+(e^{\iud x} - e^{-\iud x})^3 = e^{\iud 3x} - 3e^{\iud 2x}e^{-\iud x} + 3e^{\iud x}e^{-\iud 2x} - e^{-\iud 3x} = e^{\iud 3x} - 3e^{\iud x} + 3e^{-\iud x} - e^{-\iud 3x}
+\]
+Regroupons les termes de même fréquence :
+\[
+\sin^3(x) = \frac{(e^{\iud 3x} - e^{-\iud 3x}) - 3(e^{\iud x} - e^{-\iud x})}{-8\iud} = -\frac{1}{4} \left( \frac{e^{\iud 3x} - e^{-\iud 3x}}{2\iud} \right) + \frac{3}{4} \left( \frac{e^{\iud x} - e^{-\iud x}}{2\iud} \right)
+\]
+En réutilisant Euler pour repasser en sinus :
+\[
+\sin^3(x) = -\frac{1}{4}\sin(3x) + \frac{3}{4}\sin(x)
+\]
+
+## Problèmes Résolus
+
+### Problème 1 : Étude géométrique et rotations
+Dans le plan complexe rapporté à un repère orthonormé direct $(O, \vec{u}, \vec{v})$, on considère les points $A, B$ et $C$ d'affixes respectives :
+\[
+z_A = \iud, \quad z_B = \sqrt{3}, \quad z_C = \sqrt{3} + \iud
+\]
+\begin{enumerate}
+    \item Placer les points dans le plan complexe.
+    \item Montrer que le triangle $OBC$ est rectangle en $B$.
+    \item Soit $R$ la rotation de centre $O$ et d'angle $\frac{\pi}{3}$. Déterminer l'affixe du point $A'$ image de $A$ par $R$.
+\end{enumerate}
+
+\textbf{Solution :}
+\begin{enumerate}
+    \item Les coordonnées cartésiennes des points sont $A(0, 1)$, $B(\sqrt{3}, 0)$ et $C(\sqrt{3}, 1)$.
+    \item Pour montrer que le triangle $OBC$ est rectangle en $B$, calculons le rapport :
+    \[
+    \frac{z_C - z_B}{z_O - z_B} = \frac{\sqrt{3} + \iud - \sqrt{3}}{0 - \sqrt{3}} = \frac{\iud}{-\sqrt{3}} = -\frac{1}{\sqrt{3}}\iud
+    \]
+    Le quotient est un imaginaire pur. Les vecteurs $\vec{BC}$ et $\vec{BO}$ sont donc orthogonaux. Le triangle $OBC$ est ainsi rectangle en $B$.
+    \item La rotation $R$ a pour centre $O(0)$ et pour angle $\frac{\pi}{3}$. Son écriture complexe est :
+    \[
+    z' = e^{\iud\frac{\pi}{3}} z
+    \]
+    Calculons l'affixe de $A'$ :
+    \[
+    z_{A'} = e^{\iud\frac{\pi}{3}} z_A = \left(\frac{1}{2} + \iud\frac{\sqrt{3}}{2}\right)\iud = \frac{1}{2}\iud - \frac{\sqrt{3}}{2} = -\frac{\sqrt{3}}{2} + \frac{1}{2}\iud
+    \]
+\end{enumerate}
+
+### Problème 2 : Cocyclicité et alignement
+Soient quatre points distincts $A, B, C, D$ d'affixes respectives :
+\[
+z_A = -2, \quad z_B = 2\iud, \quad z_C = 2, \quad z_D = -2\iud
+\]
+\begin{enumerate}
+    \item Démontrer que les quatre points appartiennent à un même cercle dont on précisera le centre et le rayon.
+    \item Calculer le rapport complexe $\frac{z_C - z_A}{z_B - z_D}$. En déduire une propriété géométrique des segments $[AC]$ et $[BD]$.
+\end{enumerate}
+
+\textbf{Solution :}
+\begin{enumerate}
+    \item Calculons le module de chaque affixe :
+    - $|z_A| = |-2| = 2$
+    - $|z_B| = |2\iud| = 2$
+    - $|z_C| = |2| = 2$
+    - $|z_D| = |-2\iud| = 2$
+    Puisque $OA = OB = OC = OD = 2$, les points $A, B, C, D$ appartiennent au cercle de centre $O$ et de rayon 2.
+    \item Calculons le quotient :
+    \[
+    \frac{z_C - z_A}{z_B - z_D} = \frac{2 - (-2)}{2\iud - (-2\iud)} = \frac{4}{4\iud} = \frac{1}{\iud} = -\iud
+    \]
+    - Puisque le module du quotient vaut $|-\iud| = 1$, on a $AC = BD$.
+    - Puisque l'argument de $-\iud$ vaut $-\frac{\pi}{2} \pmod{2\pi}$, les segments $[AC]$ et $[BD]$ sont orthogonaux.
+    Le quadrilatère $ABCD$ est en fait un carré inscrit dans le cercle de rayon 2.
+\end{enumerate}

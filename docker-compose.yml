@@ -1,0 +1,22 @@
+services:
+  mariadb:
+    image: mariadb:11.7
+    container_name: chahd-mariadb
+    restart: unless-stopped
+    environment:
+      MARIADB_DATABASE: chahd
+      MARIADB_USER: chahd
+      MARIADB_PASSWORD: chahd
+      MARIADB_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+    volumes:
+      - chahd-db-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  chahd-db-data:

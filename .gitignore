@@ -1,0 +1,39 @@
+# Backend (Maven / Java)
+backend/target/
+*.class
+*.jar
+!.mvn/wrapper/maven-wrapper.jar
+
+# Frontend (Nuxt / Node)
+frontend/node_modules/
+frontend/.nuxt/
+frontend/.output/
+frontend/dist/
+frontend/.data/
+
+# Annales : PDF téléchargés (régénérables via backend/scripts/download-annales.sh)
+backend/data/annales/
+
+# Collection personnelle de PDF d'annales (volumineuse — retirez cette ligne pour la committer)
+Annales_maths/
+
+# Livre LaTeX : artefacts de compilation (les sources .tex sont versionnées)
+Livre_Maths_Terminale/*.aux
+Livre_Maths_Terminale/*.log
+Livre_Maths_Terminale/*.toc
+Livre_Maths_Terminale/*.out
+Livre_Maths_Terminale/main.pdf
+
+# Env / secrets
+*.env
+.env
+.env.local
+
+# IDE / agent local
+.idea/
+.vscode/
+*.iml
+.claude/
+
+# OS
+.DS_Store

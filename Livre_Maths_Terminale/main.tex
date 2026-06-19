@@ -1,0 +1,41 @@
+\documentclass[11pt, a4paper, twoside, openright]{book}
+
+% Importation du preambule de conception graphique
+\input{preamble}
+
+\begin{document}
+
+% --- PAGES DE GARDE ET INTRODUCTIVES ---
+\frontmatter
+
+\begin{titlepage}
+  \centering
+  \vspace*{2cm}
+  {\Huge\bfseries\sffamily\color{defcolor} Mathématiques}\\[0.5cm]
+  {\Large\bfseries\sffamily\color{thcolor} Cours Complet \& Exercices d'Entraînement}\\[1.5cm]
+  {\large\bfseries\sffamily Classe de Terminale (Baccalauréat Scientifique)}\\[3cm]
+  
+  \vfill
+  {\large\bfseries\sffamily Conforme au Programme Officiel Marocain}\\[0.5cm]
+  {\large\sffamily Édition 2026}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+% --- CORPS PRINCIPAL DU LIVRE ---
+\mainmatter
+
+% inclusion des chapitres du programme
+\include{chapters/chap1_recurrence_suites}
+\include{chapters/chap2_limites_continuation}
+\include{chapters/chap3_derivation_convexite}
+\include{chapters/chap4_logarithme}
+\include{chapters/chap5_exponentielle}
+\include{chapters/chap10_nombres_complexes}
+\include{chapters/chap6_primitives_integration}
+\include{chapters/chap7_denombrement}
+\include{chapters/chap8_geometrie_espace}
+\include{chapters/chap9_probabilites}
+
+\end{document}
