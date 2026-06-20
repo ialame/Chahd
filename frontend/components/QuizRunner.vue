@@ -2,7 +2,7 @@
 import type { QuizDto, QuizResultDto, QuestionResultDto } from '~/types/api'
 import { inlineMath } from '~/utils/inlineMath'
 
-const props = defineProps<{ quizId: number; matiereSlug?: string }>()
+const props = defineProps<{ quizId: number; matiereSlug?: string; chapitre?: string }>()
 
 const { get, post } = useApi()
 const { enregistrerQuiz } = useProgression()
@@ -85,7 +85,7 @@ async function soumettre() {
     const res = await post<QuizResultDto>(`/quiz/${props.quizId}/correction`, { reponses })
     result.value = res
     enregistrerQuiz(res, { titre: quiz.value.titre, matiereSlug: props.matiereSlug ?? '' })
-    track({ type: 'quiz', matiere: props.matiereSlug, item: 'quiz', label: quiz.value.titre, note: res.noteSur20 })
+    track({ type: 'quiz', matiere: props.matiereSlug, chapitre: props.chapitre, item: 'quiz', label: quiz.value.titre, note: res.noteSur20 })
   } finally {
     submitting.value = false
   }

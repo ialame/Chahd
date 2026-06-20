@@ -38,7 +38,7 @@ const anneeOuverte = reactive<Record<number, boolean>>({})
 type Sel =
   | { kind: 'cours' | 'exercices' | 'problemes' | 'fiches'; lecon: LeconDto }
   | { kind: 'annale'; annale: AnnaleDtoLite }
-  | { kind: 'quiz'; quizId: number; titre: string }
+  | { kind: 'quiz'; quizId: number; titre: string; chapitre?: string }
 const selection = ref<Sel | null>(null)
 const loading = ref(false)
 const cache = reactive<Record<string, string>>({})
@@ -56,7 +56,7 @@ async function selectionner(s: Sel) {
   selection.value = s
   // Suivi : enregistrer l'ouverture
   if (s.kind === 'annale') track({ matiere: slug, item: 'annale', label: s.annale.titre })
-  else if (s.kind === 'quiz') track({ matiere: slug, item: 'quiz', label: s.titre })
+  else if (s.kind === 'quiz') track({ matiere: slug, chapitre: s.chapitre, item: 'quiz', label: s.titre })
   else track({ matiere: slug, chapitre: s.lecon.slug, item: s.kind, label: s.lecon.titre })
   if (s.kind === 'quiz') return // QuizRunner se charge lui-même
   loading.value = true
@@ -152,8 +152,8 @@ const itemClass = (on: boolean) =>
                 </button>
                 <button
                   v-if="l.quizId"
-                  :class="itemClass(estSelectionne({ kind: 'quiz', quizId: l.quizId, titre: 'QCM' }))"
-                  @click="selectionner({ kind: 'quiz', quizId: l.quizId, titre: 'QCM' })"
+                  :class="itemClass(estSelectionne({ kind: 'quiz', quizId: l.quizId, titre: 'QCM', chapitre: l.slug }))"
+                  @click="selectionner({ kind: 'quiz', quizId: l.quizId, titre: 'QCM', chapitre: l.slug })"
                 >
                   <i class="fa-solid fa-list-check text-teal-500 w-4 text-center" /> QCM
                 </button>
@@ -207,7 +207,7 @@ const itemClass = (on: boolean) =>
 
         <!-- QCM interactif dans la colonne de droite -->
         <div v-else-if="selection.kind === 'quiz'" class="card">
-          <QuizRunner :key="selection.quizId" :quiz-id="selection.quizId" :matiere-slug="slug" />
+          <QuizRunner :key="selection.quizId" :quiz-id="selection.quizId" :matiere-slug="slug" :chapitre="selection.chapitre" />
         </div>
 
         <article v-else class="card space-y-4">

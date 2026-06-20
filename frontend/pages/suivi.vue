@@ -74,6 +74,34 @@ const taux = computed(() =>
 )
 const quizScores = computed(() => evFiltres.value.filter((e) => e.type === 'quiz' && e.note != null))
 
+// Détail chapitre par chapitre (Maths).
+const faitsSet = computed(() => {
+  const s = new Set<string>()
+  for (const e of evFiltres.value) if (e.matiere === 'maths' && e.chapitre && e.item) s.add(e.chapitre + '|' + e.item)
+  return s
+})
+const noteParChapitre = computed(() => {
+  const m: Record<string, number> = {}
+  for (const e of evFiltres.value)
+    if (e.matiere === 'maths' && e.type === 'quiz' && e.chapitre && e.note != null)
+      m[e.chapitre] = Math.max(m[e.chapitre] ?? 0, e.note)
+  return m
+})
+const chapitres = computed(() =>
+  (lecons.value ?? []).map((l) => {
+    const items: { label: string; done: boolean; note?: number }[] = []
+    if (l.aContenu) items.push({ label: '📘 Cours', done: faitsSet.value.has(l.slug + '|cours') })
+    if (l.aExercices) items.push({ label: '✅ Exos', done: faitsSet.value.has(l.slug + '|exercices') })
+    if (l.aProblemes) items.push({ label: '🧩 Pb', done: faitsSet.value.has(l.slug + '|problemes') })
+    if (l.aFiches) items.push({ label: '🗂 Fiches', done: faitsSet.value.has(l.slug + '|fiches') })
+    if (l.quizId) {
+      const note = noteParChapitre.value[l.slug]
+      items.push({ label: '📋 QCM', done: note != null, note })
+    }
+    return { slug: l.slug, titre: l.titre, items, fait: items.filter((i) => i.done).length, total: items.length }
+  })
+)
+
 const ITEM_LABEL: Record<string, string> = {
   cours: '📘 Cours', exercices: '✅ Exercices', problemes: '🧩 Problèmes', fiches: '🗂 Fiches',
   quiz: '📋 QCM', annale: '📄 Annale', page: '🔖 Page'
@@ -135,6 +163,31 @@ function heure(iso: string): string {
           {{ itemsConsultes + quizDone }} / {{ totalItemsMaths }} éléments abordés
           ({{ itemsConsultes }} consultés · {{ quizDone }} QCM faits)
         </p>
+      </div>
+
+      <!-- Détail chapitre par chapitre -->
+      <div class="card">
+        <h2 class="mb-3 font-semibold text-slate-800">Détail par chapitre — Maths</h2>
+        <ul class="space-y-3">
+          <li v-for="c in chapitres" :key="c.slug">
+            <div class="mb-1 flex items-center justify-between">
+              <span class="text-sm font-medium text-slate-700">{{ c.titre }}</span>
+              <span class="text-xs font-mono" :class="c.fait === c.total ? 'text-emerald-600' : 'text-slate-400'">{{ c.fait }}/{{ c.total }}</span>
+            </div>
+            <div class="flex flex-wrap gap-1.5">
+              <span
+                v-for="(it, i) in c.items"
+                :key="i"
+                class="inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-[11px] font-medium"
+                :class="it.done ? 'border-emerald-200 bg-emerald-50 text-emerald-700' : 'border-slate-200 bg-slate-50 text-slate-400'"
+              >
+                {{ it.label }}
+                <template v-if="it.note != null"> · {{ it.note }}/20</template>
+                <i v-else-if="it.done" class="fa-solid fa-check text-[9px]" />
+              </span>
+            </div>
+          </li>
+        </ul>
       </div>
 
       <!-- Scores QCM -->
