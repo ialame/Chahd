@@ -27,19 +27,49 @@ BANNER = re.compile(
     r'<div class="my-5 rounded-lg px-4 py-2\.5 text-white font-bold" '
     r'style="background:#1F4E79">(.*?)</div>', re.DOTALL)
 
-# (mots-clés, slug de chapitre)
-KW = [
-    (["géométrie", "espace", "vecteur", "sphère", "plan "], "geometrie-espace"),
-    (["complexe"], "nombres-complexes"),
-    (["probabilit"], "probabilites"),
-    (["dénombrement", "arrangement", "combinaison"], "denombrement"),
-    (["suite"], "recurrence-suites"),
-    (["intégrale", "intégral", "aire", "équation différentielle", "primitive"], "primitives-integration"),
-    (["exponentiel"], "exponentielle"),
-    (["logarithme"], "logarithme"),
-    (["inflexion", "dérivé", "variation", "minimum", "maximum", "optimisation", "tangente", "convexit"], "derivation-convexite"),
-    (["limite", "t.v.i", "tvi", "continuité", "croissances comparées"], "limites-continuite"),
-]
+def primaire(titre, contenu, est_probleme):
+    """Chapitre PRINCIPAL (unique).
+    Thèmes nets par le titre (géométrie/complexes/probas/suites). Un PROBLÈME va à
+    la fonction étudiée (exp/log). Un EXERCICE va au thème explicite de son titre
+    (intégrale, limites, dérivation), sinon à exp/log selon le contenu."""
+    t = titre.lower()
+    if any(w in t for w in ["géométrie", "espace"]):
+        return "geometrie-espace"
+    if "complexe" in t:
+        return "nombres-complexes"
+    if "probabilit" in t:
+        return "probabilites"
+    if "dénombrement" in t:
+        return "denombrement"
+    if "suite" in t and not any(w in t for w in ["fonction", "étude", "exponen", "logar", "intégr", "aire"]):
+        return "recurrence-suites"
+
+    c = contenu
+    n_ln = c.count("\\ln")
+    n_exp = c.count("e^{") + c.count("\\exp") + c.count("e^x")
+
+    # Problème : chapitre principal = la fonction étudiée.
+    if est_probleme:
+        if n_exp >= 1 and n_exp >= n_ln:
+            return "exponentielle"
+        if n_ln >= 1:
+            return "logarithme"
+        return "derivation-convexite"
+
+    # Exercice : on privilégie le thème explicite du titre.
+    if any(w in t for w in ["intégr", "équation différentielle", "primitive", "aire"]):
+        return "primitives-integration"
+    if any(w in t for w in ["croissances comparées", "t.v.i", "tvi", "limite", "continuité"]):
+        return "limites-continuite"
+    if any(w in t for w in ["inflexion", "minimum", "maximum", "tangente", "convexit", "variation", "optimis"]):
+        return "derivation-convexite"
+    if n_exp >= 1 and n_exp >= n_ln:
+        return "exponentielle"
+    if n_ln >= 1:
+        return "logarithme"
+    if "suite" in t:
+        return "recurrence-suites"
+    return "derivation-convexite"
 
 
 def cle(titre):
@@ -67,20 +97,6 @@ def decouper(md):
     return out
 
 
-def chapitres_de(titre):
-    t = titre.lower()
-    slugs = []
-    for mots, slug in KW:
-        if any(w in t for w in mots) and slug not in slugs:
-            slugs.append(slug)
-    # « étude de fonction » / « réciproque » sans autre marqueur d'analyse
-    if any(w in t for w in ["fonction", "étude", "réciproque", "morceaux"]):
-        for s in ("derivation-convexite", "limites-continuite"):
-            if s not in slugs:
-                slugs.append(s)
-    return slugs
-
-
 def main():
     entries = []
     for aid, (annee, session) in META.items():
@@ -92,11 +108,13 @@ def main():
         for k, titre, corrige in decouper(open(fc, encoding="utf-8").read()):
             numero = titre.split("—")[0].strip()
             theme = titre.split("—", 1)[1].strip() if "—" in titre else titre
-            chs = chapitres_de(titre)
+            enonce = sujet.get(k, "")
+            est_probleme = "robl" in numero.lower()
+            chs = [primaire(titre, enonce + " " + corrige, est_probleme)]
             entries.append({
                 "annaleId": aid, "annee": annee, "session": session,
                 "numero": numero, "titre": theme, "chapitres": chs,
-                "enonce": sujet.get(k, ""), "corrige": corrige,
+                "enonce": enonce, "corrige": corrige,
             })
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     with open(OUT, "w", encoding="utf-8") as f:
