@@ -75,7 +75,8 @@ const taux = computed(() =>
 const quizScores = computed(() => evFiltres.value.filter((e) => e.type === 'quiz' && e.note != null))
 
 const ITEM_LABEL: Record<string, string> = {
-  cours: '📘 Cours', exercices: '✅ Exercices', problemes: '🧩 Problèmes', fiches: '🗂 Fiches', quiz: '📋 QCM', annale: '📄 Annale'
+  cours: '📘 Cours', exercices: '✅ Exercices', problemes: '🧩 Problèmes', fiches: '🗂 Fiches',
+  quiz: '📋 QCM', annale: '📄 Annale', page: '🔖 Page'
 }
 
 function relatif(iso: string): string {
