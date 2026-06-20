@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { AnnaleDto } from '~/types/api'
 
-const { get, fileUrl } = useApi()
+const { get } = useApi()
 const { data: annales } = await useAsyncData('annales', () => get<AnnaleDto[]>('/annales'))
 
 const matiereFiltre = ref<string>('')
@@ -58,12 +58,7 @@ const sessionLabel = (s: string) => (s === 'RATTRAPAGE' ? 'Rattrapage' : 'Normal
         </div>
         <div class="flex flex-wrap items-center gap-2 text-sm">
           <NuxtLink v-if="a.aContenu" :to="`/annales/${a.id}`" class="btn-primary">📄 Lire</NuxtLink>
-          <template v-if="a.corrigeUrl">
-            <a :href="fileUrl(a.sujetUrl)" target="_blank" rel="noopener" class="btn-ghost">Sujet</a>
-            <a :href="fileUrl(a.corrigeUrl)" target="_blank" rel="noopener" class="btn-primary">Corrigé</a>
-          </template>
-          <a v-else-if="a.sujetUrl" :href="fileUrl(a.sujetUrl)" target="_blank" rel="noopener" class="btn-primary">Sujet &amp; corrigé</a>
-          <span v-else class="self-center text-xs text-slate-400">PDF à venir</span>
+          <span v-else class="self-center text-xs text-slate-400">Bientôt</span>
         </div>
       </li>
       <li v-if="filtrees.length === 0" class="px-4 py-8 text-center text-sm text-slate-500">

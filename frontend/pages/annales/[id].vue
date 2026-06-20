@@ -4,7 +4,7 @@ import { parseMarkdown } from '~/utils/parseMarkdown'
 
 const route = useRoute()
 const id = Number(route.params.id)
-const { get, fileUrl } = useApi()
+const { get } = useApi()
 
 const { data, error } = await useAsyncData(
   `annale-contenu-${id}`,
@@ -32,12 +32,8 @@ const rendu = computed(() => {
       <span class="text-slate-700">{{ data.titre }}</span>
     </nav>
 
-    <header class="flex flex-wrap items-center justify-between gap-3">
+    <header>
       <h1 class="text-xl font-bold text-slate-900">{{ data.titre }}</h1>
-      <div class="flex gap-2 text-sm">
-        <a v-if="data.sujetUrl" :href="fileUrl(data.sujetUrl)" target="_blank" rel="noopener" class="btn-ghost">PDF sujet</a>
-        <a v-if="data.corrigeUrl" :href="fileUrl(data.corrigeUrl)" target="_blank" rel="noopener" class="btn-ghost">PDF corrigé</a>
-      </div>
     </header>
 
     <!-- Onglets Sujet / Corrigé -->
