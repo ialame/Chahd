@@ -1,5 +1,6 @@
 package ma.chahd.bac.web.dto;
 
-/** Contenu transcrit d'une annale (Markdown contenant du LaTeX délimité par $...$ et $$...$$). */
-public record AnnaleContenuDto(Long id, String titre, String format, String sujetUrl, String contenu) {
+/** Contenu transcrit d'une annale : sujet et/ou corrigé en Markdown (avec LaTeX et boîtes). */
+public record AnnaleContenuDto(Long id, String titre, String sujetUrl, String corrigeUrl,
+                               String sujet, String corrige) {
 }

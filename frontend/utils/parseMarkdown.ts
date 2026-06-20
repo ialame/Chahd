@@ -13,6 +13,7 @@ const MACROS: Record<string, string> = {
   '\\de': '\\mathrm{d}', '\\dd': '\\mathrm{d}', '\\iud': '\\mathrm{i}',
   '\\ud': '\\,\\mathrm{d}', '\\e': '\\mathrm{e}',
   '\\vec': '\\overrightarrow{#1}', '\\vc': '\\overrightarrow{#1}',
+  '\\dx': '\\,\\mathrm{d}x', '\\ii': '\\vec{\\imath}', '\\jj': '\\vec{\\jmath}', '\\kk': '\\vec{k}',
   // Notation marocaine des combinaisons : \binom{n}{p} = C_n^p (entre accolades
   // pour qu'un exposant suivant s'applique au groupe : \binom{4}{1}^3)
   '\\binom': '{C_{#1}^{#2}}',
@@ -89,6 +90,11 @@ export function parseMarkdown(text: string, hardBreaks = false): string {
     p = p.replace(/\\begin\{methode\}/gis,
       '<div style="border-left:3px solid #B8860B;background:#FFFBF0" class="pl-[18px] py-2.5 my-5 rounded-r-[10px]"><div class="flex items-center gap-2.5 mb-2"><i class="fa-solid fa-screwdriver-wrench" style="color:#B8860B"></i><span style="color:#B8860B" class="font-extrabold uppercase tracking-wide text-[13px]">Méthode</span></div>' + CONTENT)
     p = p.replace(/\\end\{methode\}/gis, '</div></div>')
+
+    // Rappel — carte ambre (formule de cours)
+    p = p.replace(/\\begin\{rappel\}/gis,
+      '<div style="border-left:3px solid #B5730A;background:#FBF2DE" class="pl-[18px] py-2.5 my-5 rounded-r-[10px]"><div class="flex items-center gap-2.5 mb-2"><i class="fa-solid fa-bookmark" style="color:#B5730A"></i><span style="color:#B5730A" class="font-extrabold uppercase tracking-wide text-[13px]">Rappel</span></div>' + CONTENT)
+    p = p.replace(/\\end\{rappel\}/gis, '</div></div>')
 
     // Lemme / Corollaire / Remarque
     p = p.replace(/\\begin\{(lemme|lemma)\}\[(.*?)\]/gis,
@@ -172,7 +178,8 @@ export function parseMarkdown(text: string, hardBreaks = false): string {
       mathInline.push(r); return `__MATHI_${mathInline.length - 1}__`
     })
     html = html.replace(/\\qquad/g, '  ').replace(/\\quad/g, ' ').replace(/\\[;,:]/g, ' ')
-    // Escapes texte (hors maths, désormais extraites) : \_ \& \% \# ~
+    // Escapes texte (hors maths, désormais extraites) : \\ (saut de ligne) puis \_ \& \% \# ~
+    html = html.replace(/\\\\/g, ' ')
     html = html.replace(/\\_/g, '_').replace(/\\&/g, '&').replace(/\\%/g, '%').replace(/\\#/g, '#').replace(/~/g, ' ')
 
     // 11. Code (escape simple, pas de Prism)

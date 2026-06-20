@@ -37,9 +37,10 @@ export interface AnnaleDto {
 export interface AnnaleContenuDto {
   id: number
   titre: string
-  format: string
   sujetUrl: string | null
-  contenu: string
+  corrigeUrl: string | null
+  sujet: string | null
+  corrige: string | null
 }
 
 export interface LeconDto {

@@ -62,8 +62,11 @@ public class ContentService {
     public AnnaleContenuDto getAnnaleContenu(Long id) {
         Annale a = annaleRepository.findById(id)
                 .orElseThrow(() -> new NotFoundException("Annale introuvable : " + id));
-        String contenu = annaleContenuService.getContenu(id)
-                .orElseThrow(() -> new NotFoundException("Aucune transcription disponible pour l'annale : " + id));
-        return new AnnaleContenuDto(id, a.getTitre(), "markdown+latex", a.getSujetUrl(), contenu);
+        String sujet = annaleContenuService.getSujet(id).orElse(null);
+        String corrige = annaleContenuService.getCorrige(id).orElse(null);
+        if (sujet == null && corrige == null) {
+            throw new NotFoundException("Aucune transcription disponible pour l'annale : " + id);
+        }
+        return new AnnaleContenuDto(id, a.getTitre(), a.getSujetUrl(), a.getCorrigeUrl(), sujet, corrige);
     }
 }

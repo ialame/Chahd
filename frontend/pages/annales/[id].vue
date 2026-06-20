@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { AnnaleContenuDto } from '~/types/api'
+import { parseMarkdown } from '~/utils/parseMarkdown'
 
 const route = useRoute()
 const id = Number(route.params.id)
@@ -9,11 +10,18 @@ const { data, error } = await useAsyncData(
   `annale-contenu-${id}`,
   () => get<AnnaleContenuDto>(`/annales/${id}/contenu`)
 )
+
+const onglet = ref<'sujet' | 'corrige'>('sujet')
+const rendu = computed(() => {
+  if (!data.value) return ''
+  const src = onglet.value === 'corrige' ? data.value.corrige : data.value.sujet
+  return src ? parseMarkdown(src) : ''
+})
 </script>
 
 <template>
   <div v-if="error" class="card text-center text-slate-500">
-    Aucune transcription disponible pour cette annale.
+    Annale indisponible.
     <NuxtLink to="/annales" class="text-brand-dark underline">Retour aux annales</NuxtLink>
   </div>
 
@@ -24,21 +32,29 @@ const { data, error } = await useAsyncData(
       <span class="text-slate-700">{{ data.titre }}</span>
     </nav>
 
-    <div class="flex flex-wrap items-center justify-between gap-2">
-      <span class="rounded-full bg-brand/10 px-3 py-1 text-xs font-semibold text-brand-dark">
-        📄 Énoncé transcrit (LaTeX)
-      </span>
-      <a
-        v-if="data.sujetUrl"
-        :href="fileUrl(data.sujetUrl)"
-        target="_blank"
-        rel="noopener"
-        class="text-sm text-slate-500 hover:text-brand-dark hover:underline"
-      >Voir le PDF original →</a>
+    <header class="flex flex-wrap items-center justify-between gap-3">
+      <h1 class="text-xl font-bold text-slate-900">{{ data.titre }}</h1>
+      <div class="flex gap-2 text-sm">
+        <a v-if="data.sujetUrl" :href="fileUrl(data.sujetUrl)" target="_blank" rel="noopener" class="btn-ghost">PDF sujet</a>
+        <a v-if="data.corrigeUrl" :href="fileUrl(data.corrigeUrl)" target="_blank" rel="noopener" class="btn-ghost">PDF corrigé</a>
+      </div>
+    </header>
+
+    <!-- Onglets Sujet / Corrigé -->
+    <div class="flex gap-1 rounded-lg bg-slate-100 p-1 text-sm font-medium">
+      <button
+        class="flex-1 rounded-md px-3 py-1.5 transition"
+        :class="onglet === 'sujet' ? 'bg-white text-brand-dark shadow-sm' : 'text-slate-500 hover:text-slate-700'"
+        @click="onglet = 'sujet'"
+      >📄 Sujet</button>
+      <button
+        v-if="data.corrige"
+        class="flex-1 rounded-md px-3 py-1.5 transition"
+        :class="onglet === 'corrige' ? 'bg-white text-brand-dark shadow-sm' : 'text-slate-500 hover:text-slate-700'"
+        @click="onglet = 'corrige'"
+      >✅ Corrigé détaillé</button>
     </div>
 
-    <div class="card">
-      <MathContent :source="data.contenu" />
-    </div>
+    <div class="card leading-relaxed text-slate-700" v-html="rendu" />
   </article>
 </template>
