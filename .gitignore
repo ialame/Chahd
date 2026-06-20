@@ -37,3 +37,7 @@ Livre_Maths_Terminale/main.pdf
 
 # OS
 .DS_Store
+
+# Sauvegardes DB (générées sur le VPS)
+backups/
+*.sql.gz
