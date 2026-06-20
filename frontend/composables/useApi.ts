@@ -1,7 +1,10 @@
 // Petit client HTTP centralisé pointant vers l'API Spring Boot.
 export const useApi = () => {
   const config = useRuntimeConfig()
-  const baseURL = config.public.apiBase
+  // Côté serveur (SSR) : URL interne si fournie (évite de repasser par le domaine
+  // public). Côté navigateur : toujours la base publique.
+  const baseURL =
+    import.meta.server && config.apiBaseSsr ? (config.apiBaseSsr as string) : config.public.apiBase
 
   const get = <T>(path: string) => $fetch<T>(path, { baseURL })
 

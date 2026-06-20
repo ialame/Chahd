@@ -1,0 +1,14 @@
+# Reverse proxy + HTTPS automatique (Let's Encrypt) pour bacpp.net.
+# /api/* -> API Spring Boot ; tout le reste -> Nuxt SSR.
+bacpp.net, www.bacpp.net {
+	encode gzip
+
+	# L'API garde son préfixe /api (les contrôleurs sont sous @RequestMapping("/api")).
+	handle /api/* {
+		reverse_proxy api:8081
+	}
+
+	handle {
+		reverse_proxy web:3000
+	}
+}
