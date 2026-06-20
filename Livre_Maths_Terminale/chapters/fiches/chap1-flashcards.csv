@@ -1,0 +1,55 @@
+Quel est l'objectif principal du raisonnement par récurrence ?,Démontrer qu'une propriété $P(n)$ est vraie pour tout entier $n \ge n_0$.
+Nommez les trois étapes rigoureuses de la rédaction d'une récurrence.,"Initialisation, Hérédité, et Conclusion."
+En quoi consiste l'étape d'initialisation dans un raisonnement par récurrence ?,Vérifier que la propriété est vraie au premier rang $n_0$.
+Quelle est l'hypothèse de récurrence posée lors de l'étape d'hérédité ?,On suppose que la propriété $P(k)$ est vraie pour un certain entier $k \ge n_0$.
+Quel est le but de l'étape d'hérédité ?,"Prouver que si $P(k)$ est vraie, alors la propriété est vraie au rang suivant $P(k+1)$."
+Que doit-on affirmer dans la conclusion d'une démonstration par récurrence ?,"La propriété est initialisée et héréditaire, donc elle est vraie pour tout $n \ge n_0$."
+Complétez la formule de la somme des $n$ premiers entiers : $1 + 2 + \dots + n = \dots$,$\frac{n(n+1)}{2}$
+"Pour la suite $S_n = \sum_{i=1}^{n} i$, quelle est la valeur de $S_1$ lors de l'initialisation ?",1
+"Dans l'hérédité de la somme des entiers, comment exprime-t-on $S_{k+1}$ en fonction de $S_k$ ?",$S_{k+1} = S_k + (k+1)$
+Définition : Limite $+\infty$ d'une suite $(u_n)$,"Tout intervalle $]A, +\infty[$ contient tous les termes de la suite à partir d'un certain rang."
+Définition : Limite $-\infty$ d'une suite $(u_n)$,"Tout intervalle $]-\infty, B[$ contient tous les termes de la suite à partir d'un certain rang."
+Quand dit-on qu'une suite $(u_n)$ est convergente vers un réel $L$ ?,Si tout intervalle ouvert contenant $L$ contient tous les termes de la suite à partir d'un certain rang.
+Comment appelle-t-on une suite qui ne possède pas de limite finie ?,Une suite divergente.
+Quelle est la limite de la suite géométrique $(q^n)$ si $q > 1$ ?,$+\infty$
+Vers quelle valeur converge la suite $(q^n)$ si $-1 < q < 1$ ?,0
+Quelle est la limite de la suite géométrique $(q^n)$ si $q = 1$ ?,1
+Sous quelle condition de $q$ la suite géométrique $(q^n)$ n'admet-elle pas de limite ?,$q \le -1$
+Énoncez les conditions d'encadrement du Théorème des Gendarmes à partir d'un certain rang.,$u_n \le v_n \le w_n$
+"Si $u_n \le v_n \le w_n$ et $\lim_{n \to +\infty} u_n = \lim_{n \to +\infty} w_n = L$, quelle est la limite de $(v_n)$ ?",$L$
+"Théorème de comparaison : Si $u_n \le v_n$ et $\lim_{n \to +\infty} u_n = +\infty$, que peut-on dire de $(v_n)$ ?",$\lim_{n \to +\infty} v_n = +\infty$
+"Théorème de comparaison : Si $u_n \le v_n$ et $\lim_{n \to +\infty} v_n = -\infty$, que peut-on dire de $(u_n)$ ?",$\lim_{n \to +\infty} u_n = -\infty$
+Définition : Suite majorée,"Il existe un réel $M$ tel que pour tout $n \in \mathbb{N}$, $u_n \le M$."
+Définition : Suite minorée,"Il existe un réel $m$ tel que pour tout $n \in \mathbb{N}$, $u_n \ge m$."
+Qu'est-ce qu'une suite bornée ?,Une suite qui est à la fois majorée et minorée.
+Que stipule le théorème de convergence monotone pour une suite croissante ?,Toute suite croissante et majorée est convergente.
+Que stipule le théorème de convergence monotone pour une suite décroissante ?,Toute suite décroissante et minorée est convergente.
+Quelle méthode graphique permet d'étudier la convergence d'une suite $u_{n+1} = f(u_n)$ ?,La méthode de la toile d'araignée (cobweb plot).
+"Pour une suite $u_{n+1} = f(u_n)$, si la limite $l$ existe, quelle équation doit-elle vérifier ?",$f(l) = l$
+Comment appelle-t-on un réel $l$ tel que $f(l) = l$ ?,Un point fixe de la fonction $f$.
+Quelle condition sur l'intervalle $I$ est nécessaire pour étudier $u_{n+1} = f(u_n)$ (stabilité) ?,$f(I) \subset I$ (l'intervalle $I$ est stable par $f$).
+"Outre la stabilité et $u_0 \in I$, quelle propriété de la fonction $f$ est requise pour affirmer que $f(l)=l$ ?",La continuité de $f$ sur l'intervalle $I$.
+"Pour appliquer $f(l)=l$, que doit-on avoir établi au préalable concernant la suite $(u_n)$ ?",Qu'elle est convergente.
+Comment déterminer le sens de variation d'une suite par l'étude de la fonction associée $f(x)$ ?,En étudiant le signe de $f(x) - x$ sur l'intervalle $I$.
+"Si $f(x) - x \ge 0$ sur $I$, quel est le sens de variation de la suite $u_{n+1} = f(u_n)$ ?",La suite est croissante.
+"Si $f(x) - x \le 0$ sur $I$, quel est le sens de variation de la suite $u_{n+1} = f(u_n)$ ?",La suite est décroissante.
+Quelle est la première étape de la méthode pour étudier analytiquement $u_{n+1} = f(u_n)$ ?,Vérifier la stabilité de l'intervalle $I$ ($f(I) \subset I$).
+"Dans l'étude de $u_{n+1} = f(u_n)$, comment prouve-t-on généralement que $u_n \in I$ pour tout $n$ ?",Par un raisonnement par récurrence.
+"Pour établir la convergence d'une suite croissante dans la méthode analytique, que faut-il montrer ?",Qu'elle est majorée.
+"Pour établir la convergence d'une suite décroissante dans la méthode analytique, que faut-il montrer ?",Qu'elle est minorée.
+"Pour la suite $u_{n+1} = \sqrt{u_n + 2}$ avec $u_0=0$, vers quel point fixe unique converge-t-elle sur $[0, +\infty[$ ?",2
+La suite $u_{n+1} = \sqrt{u_n + 2}$ avec $u_0=0$ est-elle croissante ou décroissante ?,Croissante.
+Vrai ou Faux : Toute suite majorée est convergente.,Faux (elle doit aussi être croissante).
+Vrai ou Faux : Une suite qui tend vers $+\infty$ est divergente.,Vrai.
+Cloze : Une suite est _____ si elle est à la fois majorée et minorée.,bornée
+"Cloze : Dans l'hérédité, on cherche à prouver la propriété au rang _____.",$k+1$
+"Cloze : Si $-1 < q < 1$, la limite de $q^n$ est _____.",0
+Pourquoi est-il nécessaire que $f$ soit continue pour affirmer $f(l)=l$ ?,Pour assurer que le passage à la limite dans l'égalité $u_{n+1} = f(u_n)$ est valide.
+Que signifie la notation $\sum_{i=1}^{n} i$ ?,La somme des entiers de 1 à $n$ ($1 + 2 + \dots + n$).
+Concept : Hypothèse de récurrence,Supposition que la propriété est vraie à un rang $k$ donné pour démontrer qu'elle l'est au rang $k+1$.
+Quelle est la limite de $u_n$ si $u_n = 1^n$ pour tout $n$ ?,1
+"Si une suite est croissante et n'est pas majorée, quelle est sa limite ?",$+\infty$
+"Si une suite est décroissante et n'est pas minorée, quelle est sa limite ?",$-\infty$
+Quel type de raisonnement utilise-t-on pour démontrer des propriétés dépendant d'un entier naturel $n$ ?,Le raisonnement par récurrence.
+"Dans le théorème des Gendarmes, pourquoi les limites de $u_n$ et $w_n$ doivent-elles être identiques ?",Pour 'pincer' la suite $v_n$ et la forcer à converger vers cette même limite unique.
+Terme : Point fixe,Valeur $x$ telle que $f(x) = x$.

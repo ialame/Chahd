@@ -51,6 +51,12 @@ export interface LeconDto {
   aContenu: boolean
   aExercices: boolean
   aProblemes: boolean
+  aFiches: boolean
+}
+
+export interface FlashcardDto {
+  question: string
+  reponse: string
 }
 
 export interface LeconContenuDto {

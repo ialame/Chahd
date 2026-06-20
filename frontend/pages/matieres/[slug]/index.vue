@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { MatiereDetailDto, LeconDto, AnnaleContenuDto, ChapitreDetailDto, FicheDto } from '~/types/api'
+import type { MatiereDetailDto, LeconDto, AnnaleContenuDto, ChapitreDetailDto, FlashcardDto } from '~/types/api'
 import { parseMarkdown } from '~/utils/parseMarkdown'
 
 const route = useRoute()
@@ -23,14 +23,6 @@ const { data: qcms } = await useAsyncData(`qcm-${slug}`, async () => {
   )
   return details.flatMap((d) => d.quizzes.map((q) => ({ quizId: q.id, titre: q.titre })))
 })
-
-// Chapitre (porteur des fiches) indexé par slug, pour rattacher les fiches aux leçons.
-const chapitreBySlug = computed(() => {
-  const m = new Map<string, { slug: string; nbFiches: number }>()
-  for (const c of matiere.value?.chapitres ?? []) m.set(c.slug, { slug: c.slug, nbFiches: c.nbFiches })
-  return m
-})
-const fichesChapitre = (leconSlug: string) => chapitreBySlug.value.get(leconSlug)
 
 // Annales groupées par année (décroissant).
 const annalesParAnnee = computed(() => {
@@ -58,7 +50,7 @@ type Sel =
 const selection = ref<Sel | null>(null)
 const loading = ref(false)
 const cache = reactive<Record<string, string>>({})
-const fiches = ref<FicheDto[]>([])
+const fiches = ref<FlashcardDto[]>([])
 const annale = ref<AnnaleContenuDto | null>(null)
 
 const cleSel = (s: Sel) => {
@@ -76,9 +68,7 @@ async function selectionner(s: Sel) {
     if (s.kind === 'annale') {
       annale.value = await get<AnnaleContenuDto>(`/annales/${s.annale.id}/contenu`)
     } else if (s.kind === 'fiches') {
-      const ch = fichesChapitre(s.lecon.slug)
-      const detail = ch ? await get<ChapitreDetailDto>(`/matieres/${slug}/chapitres/${ch.slug}`) : null
-      fiches.value = detail?.fiches ?? []
+      fiches.value = await get<FlashcardDto[]>(`/cours/${s.lecon.id}/fiches`)
     } else {
       const k = cleSel(s)
       if (!cache[k]) {
@@ -161,7 +151,7 @@ const itemClass = (on: boolean) =>
                 <button v-if="l.aProblemes" :class="itemClass(estSelectionne({ kind: 'problemes', lecon: l }))" @click="selectionner({ kind: 'problemes', lecon: l })">
                   <i class="fa-solid fa-puzzle-piece text-indigo-500 w-4 text-center" /> Problèmes résolus
                 </button>
-                <button v-if="(fichesChapitre(l.slug)?.nbFiches ?? 0) > 0" :class="itemClass(estSelectionne({ kind: 'fiches', lecon: l }))" @click="selectionner({ kind: 'fiches', lecon: l })">
+                <button v-if="l.aFiches" :class="itemClass(estSelectionne({ kind: 'fiches', lecon: l }))" @click="selectionner({ kind: 'fiches', lecon: l })">
                   <i class="fa-solid fa-clone text-rose-500 w-4 text-center" /> Fiches de révision
                 </button>
               </div>
@@ -247,17 +237,9 @@ const itemClass = (on: boolean) =>
             <AnnaleReader :key="annale.id" :sujet="annale.sujet" :corrige="annale.corrige" />
           </template>
 
-          <!-- Fiches de révision -->
+          <!-- Fiches de révision (flashcards) -->
           <template v-else-if="selection.kind === 'fiches'">
-            <p v-if="fiches.length === 0" class="text-sm text-slate-400 italic">Aucune fiche pour ce chapitre.</p>
-            <div
-              v-for="f in fiches"
-              :key="f.id"
-              class="rounded-xl border border-slate-200 p-4"
-            >
-              <h3 class="font-bold text-slate-800 mb-2">{{ f.titre }}</h3>
-              <div class="leading-relaxed text-slate-700" v-html="parseMarkdown(f.contenu)" />
-            </div>
+            <FlashcardViewer :key="selection.lecon.id" :cards="fiches" />
           </template>
 
           <!-- Cours / Exercices / Problèmes -->

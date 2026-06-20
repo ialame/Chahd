@@ -1,0 +1,55 @@
+"Comment définit-on la probabilité conditionnelle de $B$ sachant $A$, notée $P_A(B)$ ?",$P_A(B) = \frac{P(A \cap B)}{P(A)}$
+Quelle est la condition nécessaire sur $P(A)$ pour définir la probabilité conditionnelle $P_A(B)$ ?,$P(A) \neq 0$
+Quelle relation permet de calculer $P(A \cap B)$ à partir de $P_A(B)$ ?,$P(A \cap B) = P(A) \times P_A(B)$
+"Dans un arbre pondéré, à quoi est égale la somme des probabilités des branches issues d'un même nœud ?",Elle est égale à $1$.
+"Dans un arbre pondéré, si on connaît $P(A)$, comment calcule-t-on $P(\bar{A})$ ?",$P(\bar{A}) = 1 - P(A)$
+"Dans un arbre pondéré, quelle est la somme de $P_A(B)$ et $P_A(\bar{B})$ ?",$1$
+Comment calcule-t-on la probabilité d'un chemin complet dans un arbre pondéré ?,En faisant le produit des probabilités des branches qui le composent.
+Quel outil de modélisation est privilégié pour une expérience aléatoire à plusieurs étapes ?,L'arbre pondéré.
+Définition : Partition de l'univers $\Omega$,Ensemble d'événements disjoints deux à deux dont la réunion est $\Omega$.
+"Énoncez la formule des probabilités totales pour un événement $B$ et une partition $A_1, A_2, \dots, A_n$.",$P(B) = P(A_1 \cap B) + P(A_2 \cap B) + \dots + P(A_n \cap B)$
+Formule des probabilités totales : $P(B) = \sum_{i=1}^{n} \dots$,$P(A_i) \times P_{A_i}(B)$
+Quelle est la condition d'indépendance de deux événements $A$ et $B$ basée sur l'intersection ?,$P(A \cap B) = P(A) \times P(B)$
+"Si $P(A) \neq 0$, quelle égalité impliquant $P_A(B)$ caractérise l'indépendance de $A$ et $B$ ?",$P_A(B) = P(B)$
+Qu'est-ce qu'une épreuve de Bernoulli ?,Une expérience aléatoire n'admettant que deux issues : le succès et l'échec.
+"Dans une épreuve de Bernoulli, comment note-t-on traditionnellement la probabilité du succès ?",$p$
+"Dans une épreuve de Bernoulli de paramètre $p$, quelle est la probabilité de l'échec $q$ ?",$q = 1 - p$
+Quelle valeur associe-t-on au succès dans une variable aléatoire suivant une loi de Bernoulli ?,$1$
+Quelle valeur associe-t-on à l'échec dans une variable aléatoire suivant une loi de Bernoulli ?,$0$
+Qu'est-ce qu'un schéma de Bernoulli ?,La répétition de $n$ épreuves de Bernoulli identiques et indépendantes.
+Quelles sont les deux conditions impératives sur les épreuves pour former un schéma de Bernoulli ?,Elles doivent être identiques et indépendantes.
+Que compte la variable aléatoire $X$ dans un schéma de Bernoulli pour suivre une loi binomiale ?,Le nombre de succès obtenus.
+"Notation : $X \sim \mathcal{B}(n, p)$. Que représentent $n$ et $p$ ?",$n$ est le nombre d'épreuves et $p$ la probabilité de succès.
+"Quel est l'ensemble des valeurs prises par une variable $X$ suivant la loi $\mathcal{B}(n, p)$ ?","L'ensemble des entiers de $0$ à $n$, noté $[[0, n]]$."
+"Formule : Dans une loi $\mathcal{B}(n, p)$, quelle est la probabilité $P(X=k)$ ?",$P(X=k) = C_n^k p^k (1-p)^{n-k}$
+Loi binomiale : Quelle est la formule de l'espérance $E(X)$ ?,$E(X) = np$
+Loi binomiale : Quelle est la formule de la variance $V(X)$ ?,$V(X) = np(1-p)$
+Loi binomiale : Quelle est la formule de l'écart-type $\sigma(X)$ ?,$\sigma(X) = \sqrt{np(1-p)}$
+Comment calcule-t-on la probabilité d'avoir au moins un succès ($P(X \ge 1)$) ?,En utilisant l'événement contraire : $1 - P(X=0)$.
+"Dans une loi $\mathcal{B}(n, p)$, à quoi est égal $P(X=0)$ ?",$(1-p)^n$
+"Soit $X \sim \mathcal{B}(n, p)$. Exprimez $P(X \ge 1)$ uniquement en fonction de $n$ et $p$.",$1 - (1-p)^n$
+Exemple : On lance 5 fois un dé équilibré. On cherche à obtenir un « 6 ». Quelle est la valeur de $p$ ?,$p = \frac{1}{6}$
+"Exemple : Si on lance 5 fois un dé, quelle loi suit la variable $X$ comptant le nombre de « 6 » ?","La loi binomiale $\mathcal{B}(5, \frac{1}{6})$."
+Vrai ou Faux : Deux épreuves de Bernoulli successives sont toujours indépendantes.,Faux (elles doivent être spécifiées comme indépendantes pour former un schéma de Bernoulli).
+"Dans la formule $P(X=k) = C_n^k p^k q^{n-k}$, que représente le terme $C_n^k$ ?",Le nombre de combinaisons de $k$ succès parmi $n$ épreuves (le nombre de chemins avec $k$ succès).
+"Si $A$ et $B$ sont indépendants, que peut-on dire de $P_B(A)$ ?",$P_B(A) = P(A)$
+"Si la probabilité d'un succès est $0,3$ et qu'on répète l'épreuve $10$ fois, quelle est l'espérance ?",$3$
+Le chapitre mentionne les « théorèmes limites fondamentaux ». Lesquels ?,Les inégalités de concentration et la loi des grands nombres.
+Un joueur lance une pièce $10$ fois. Succès : « Pile ». Pourquoi est-ce un schéma de Bernoulli ?,Car c'est la répétition d'épreuves de Bernoulli identiques et indépendantes.
+"Dans un arbre, que représente le produit des probabilités le long d'une branche menant de la racine à $A$ puis de $A$ à $B$ ?",$P(A \cap B)$
+Quelle est la relation entre la variance $V(X)$ et l'écart-type $\sigma(X)$ ?,$\sigma(X) = \sqrt{V(X)}$
+"Si $p=0,5$ et $n=100$, quelle est la variance de la loi binomiale ?","$25$ (calcul : $100 \times 0,5 \times 0,5$)"
+Pourquoi utilise-t-on l'événement contraire pour calculer $P(X \ge 1)$ ?,Car il est plus simple de calculer $1 - P(X=0)$ que de sommer $P(X=1) + \dots + P(X=n)$.
+L'expression $1 - p$ est souvent notée par la lettre _____.,$q$
+L'indépendance de deux événements $A$ et $B$ signifie que la réalisation de l'un n'influence pas la _____ de l'autre.,Probabilité
+Une épreuve de Bernoulli suit la loi de Bernoulli de paramètre _____.,$p$
+"Pour que la formule des probabilités totales s'applique, les événements $A_i$ doivent être _____ deux à deux.",Disjoints
+"Dans le calcul $P(X=2)$ avec $n=5$ et $p=1/6$, le coefficient binomial utilisé est _____.",$C_5^2$
+Concept : Variable aléatoire binomiale,Définition : Variable qui compte le nombre de succès dans un schéma de Bernoulli.
+"Si $P(A) = 0,4$ et $P(A \cap B) = 0,1$, que vaut $P_A(B)$ ?","$0,25$ (ou $1/4$)"
+Comment appelle-t-on le fait que la réunion des événements d'une partition est égale à $\Omega$ ?,L'exhaustivité.
+"Dans la loi binomiale, si $n=1$, la loi correspond à une loi de _____.",Bernoulli
+"Si $A$ et $B$ sont indépendants, alors $P(A \cap B) = P(A) \times \dots$.",$P(B)$
+La formule $P(B) = P(A \cap B) + P(\bar{A} \cap B)$ est un cas particulier de _____.,La formule des probabilités totales.
+Quel est le paramètre d'une loi de Bernoulli si le succès et l'échec sont équiprobables ?,"$p = 0,5$"
+"Dans l'exemple du dé, la probabilité d'obtenir exactement deux « 6 » en cinq lancers est environ _____.","$0,161$"

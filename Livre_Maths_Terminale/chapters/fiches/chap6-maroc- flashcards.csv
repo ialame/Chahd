@@ -1,0 +1,52 @@
+Quelle est l'unique fonction dérivable sur $\mathbb{R}$ telle que $f' = f$ et $f(0) = 1$ ?,La fonction exponentielle
+Comment note-t-on la fonction exponentielle à l'aide du nombre $e$ ?,$x \mapsto e^x$
+Quelle est la notation de la fonction exponentielle utilisant trois lettres ?,$\exp$
+Sur quel ensemble la fonction exponentielle est-elle définie et dérivable ?,$\mathbb{R}$
+Quelle est la relation entre la fonction exponentielle et sa dérivée ?,Elle est égale à sa propre dérivée ($f' = f$).
+Quelle est la valeur de la fonction exponentielle en $0$ ?,$1$
+Quel est le signe de $e^x$ pour tout réel $x$ ?,Strictement positif ($e^x > 0$).
+Décrivez le sens de variation de la fonction $x \mapsto e^x$ sur $\mathbb{R}$.,Strictement croissante
+La fonction exponentielle est-elle continue sur $\mathbb{R}$ ?,Oui
+Quelle est la limite de $e^x$ quand $x$ tend vers $-\infty$ ?,$0$
+Quelle est la limite de $e^x$ quand $x$ tend vers $+\infty$ ?,+\infty
+Quelle est l'équation de l'asymptote horizontale à la courbe de la fonction exponentielle ?,$y = 0$
+En quel voisinage ($+\infty$ ou $-\infty$) la courbe de l'exponentielle admet-elle une asymptote horizontale ?,En $-\infty$
+"À l'infini, quelle fonction croît le plus vite entre l'exponentielle et une fonction puissance ?",La fonction exponentielle
+Quelle est la valeur de $\lim_{x \to +\infty} \frac{e^x}{x^n}$ pour $n \ge 1$ ?,+\infty
+Quelle est la valeur de $\lim_{x \to -\infty} x^n e^x$ pour $n \ge 1$ ?,$0$
+Quelle condition doit remplir l'entier $n$ pour appliquer les théorèmes de croissances comparées ?,$n \ge 1$
+La fonction exponentielle est l'unique fonction égale à sa propre _____ et valant $1$ en $0$.,Dérivée
+Vrai ou Faux : La fonction exponentielle s'annule pour certaines valeurs de $x$.,Faux (elle est toujours strictement supérieure à $0$).
+La droite d'équation $y = 0$ est une asymptote _____ à la courbe en $-\infty$.,Horizontale
+Cloze : $\lim_{x \to -\infty} e^x = \dots$,$0$
+Cloze : $\lim_{x \to +\infty} e^x = \dots$,+\infty
+Quel outil mathématique est fondamental pour l'étude globale des fonctions et de leurs asymptotes selon le texte ?,Les limites de croissances comparées
+La fonction $x \mapsto e^x$ est strictement _____ et continue sur $\mathbb{R}$.,Croissante
+"Complétez la propriété fondamentale : Pour tout réel $x$, $e^x$ est _____.",Strictement supérieur à $0$
+Que peut-on dire de la vitesse de croissance de l'exponentielle par rapport aux fonctions puissances à l'infini ?,Elle croît beaucoup plus vite.
+L'unique fonction $f$ telle que $f' = f$ et $f(0) = 1$ est la fonction _____.,Exponentielle
+Définition : $y=0$ pour la courbe de l'exponentielle en $-\infty$.,Asymptote horizontale
+Pour quel type de nombre $n$ les limites de croissances comparées sont-elles définies ?,Entier naturel
+Terme : Propriété de la fonction exponentielle ne changeant pas son sens de variation.,Strictement croissante
+Valeur de $\exp(0)$,$1$
+La fonction exponentielle est dérivable sur quel domaine ?,$\mathbb{R}$
+Quelle propriété de $e^x$ justifie l'absence de valeurs négatives ou nulles ?,Elle est strictement positive ($e^x > 0$).
+La limite de $e^x$ en $-\infty$ entraîne l'existence de quelle caractéristique graphique ?,Une asymptote horizontale ($y=0$).
+"Si $n=2$, que vaut $\lim_{x \to +\infty} \frac{e^x}{x^2}$ ?",+\infty
+"Si $n=3$, que vaut $\lim_{x \to -\infty} x^3 e^x$ ?",$0$
+La fonction exponentielle est l'unique solution de l'équation différentielle _____ avec la condition $f(0)=1$.,$f' = f$
+Comment appelle-t-on les limites de type $\lim_{x \to +\infty} \frac{e^x}{x^n}$ ?,Limites de croissances comparées
+Quel est le comportement de la fonction $x \mapsto e^x$ aux bornes de son ensemble de définition ?,Elle tend vers $0$ en $-\infty$ et vers $+\infty$ en $+\infty$.
+Vrai ou Faux : La fonction exponentielle est continue seulement sur $\mathbb{R}^+$.,Faux (elle est continue sur $\mathbb{R}$).
+Que signifie graphiquement $\lim_{x \to -\infty} e^x = 0$ ?,La courbe s'approche de l'axe des abscisses sans jamais le toucher.
+La notation $e^x$ est associée à quelle fonction ?,La fonction exponentielle
+L'étude de l'exponentielle est consolidée dans quel but pédagogique ?,L'étude globale des fonctions et de leurs asymptotes.
+Complétez la limite : $\lim_{x \to -\infty} x^n e^x = \dots$ (pour $n \ge 1$),$0$
+Complétez la limite : $\lim_{x \to +\infty} \frac{e^x}{x^n} = \dots$ (pour $n \ge 1$),+\infty
+L'exponentielle est-elle la seule fonction à valoir sa propre dérivée sur $\mathbb{R}$ ?,Seulement si l'on ajoute la condition $f(0)=1$ pour garantir l'unicité.
+Quelle fonction sert de référence pour comparer la croissance de l'exponentielle ?,La fonction puissance ($x \mapsto x^n$).
+La fonction exponentielle est notée _____ ou $x \mapsto e^x$.,$\exp$
+Quelle est la position relative de la courbe de l'exponentielle par rapport à l'axe des abscisses ?,Elle est toujours strictement au-dessus ($e^x > 0$).
+Pourquoi dit-on que l'exponentielle l'emporte sur les puissances à l'infini ?,"Parce qu'elle croît beaucoup plus vite, comme le montrent les croissances comparées."
+La propriété $e^0 = 1$ fait partie de quelle définition ?,La définition par unicité de la fonction exponentielle.
+Que vaut la dérivée de $e^x$ ?,$e^x$

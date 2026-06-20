@@ -40,4 +40,10 @@ public class CoursController {
     public LeconContenuDto problemes(@PathVariable Long id) {
         return coursService.getProblemes(id);
     }
+
+    /** Fiches de révision (flashcards) d'une leçon (livre). */
+    @GetMapping("/cours/{id}/fiches")
+    public java.util.List<ma.chahd.bac.web.dto.FlashcardDto> fiches(@PathVariable Long id) {
+        return coursService.getFiches(id);
+    }
 }

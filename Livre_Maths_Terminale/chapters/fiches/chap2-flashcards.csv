@@ -1,0 +1,60 @@
+Quelle est la définition d'une asymptote horizontale à la courbe $C_f$ en $+\infty$ ?,C'est la droite d'équation $y = L$ lorsque $\lim_{x \to +\infty} f(x) = L$ (avec $L \in \mathbb{R}$).
+"Géométriquement, que représente la droite d'équation $x = a$ si $\lim_{x \to a} f(x) = \pm\infty$ ?",Une asymptote verticale à la courbe $C_f$.
+Comment définit-on formellement $\lim_{x \to +\infty} f(x) = L$ à l'aide d'intervalles ?,Tout intervalle ouvert contenant $L$ contient toutes les valeurs $f(x)$ pour $x$ assez grand.
+Traduisez formellement $\lim_{x \to +\infty} f(x) = +\infty$ à l'aide d'un réel $M > 0$.,$f(x) > M$ pour $x$ assez grand.
+Citez les quatre formes indéterminées (F.I.) classiques pour les limites.,"« $\infty - \infty$ », « $0 \times \infty$ », « $\frac{0}{0}$ » et « $\frac{\infty}{\infty}$ »."
+Énoncez la règle de la limite d'une fonction composée $v \circ u$ en $a$ si $\lim_{x \to a} u(x) = b$ et $\lim_{y \to b} v(y) = c$.,$\lim_{x \to a} v(u(x)) = c$.
+Quelles sont les deux conditions sur les fonctions $g$ et $h$ pour appliquer le Théorème des Gendarmes à $f$ ?,$g(x) \le f(x) \le h(x)$ et $\lim_{x \to a} g(x) = \lim_{x \to a} h(x) = L$.
+Quelle est la condition de limite pour qu'une fonction $f$ soit continue en un point $a$ ?,$\lim_{x \to a} f(x) = f(a)$.
+Interprétez graphiquement la notion de continuité d'une fonction sur un intervalle.,On peut tracer sa courbe représentative sans lever le crayon.
+Citez trois exemples de fonctions de référence continues sur tout intervalle de leur ensemble de définition.,"Les fonctions polynômes, la fonction exponentielle et les fonctions trigonométriques (sin, cos)."
+"Énoncez le Théorème des Valeurs Intermédiaires (TVI) pour une fonction $f$ sur $[a, b]$.","Si $f$ est continue sur $[a, b]$, pour tout $k$ entre $f(a)$ et $f(b)$, il existe au moins un $c \in [a, b]$ tel que $f(c) = k$."
+Quelle condition supplémentaire au TVI assure l'unicité de la solution de l'équation $f(x) = k$ ?,La stricte monotonie de la fonction $f$ sur l'intervalle.
+Comment appelle-t-on le corollaire du TVI qui traite des fonctions continues et strictement monotones ?,Le théorème de la bijection.
+"Si $f$ réalise une bijection de $I$ vers $J$, que signifie l'équation $f(x) = y$ pour tout $y \in J$ ?",Elle admet une unique solution $x \in I$.
+Quelle est la notation usuelle de la fonction réciproque de $f$ ?,$f^{-1}$.
+"Si $f$ est une bijection continue et strictement croissante sur $I$, quel est le sens de variation de $f^{-1}$ ?",$f^{-1}$ est également strictement croissante sur $f(I)$.
+Par rapport à quelle droite les courbes $C_f$ et $C_{f^{-1}}$ sont-elles symétriques dans un repère orthonormé ?,"La première bissectrice, d'équation $y = x$."
+Définition : Fonction racine $n$-ième,"C'est la fonction réciproque de $f: x \mapsto x^n$ sur l'intervalle $[0, +\infty[$."
+Quelle est la limite de la fonction racine $n$-ième lorsque $x$ tend vers $+\infty$ ?,$\lim_{x \to +\infty} \sqrt[n]{x} = +\infty$.
+Simplifiez l'expression $(\sqrt[n]{x})^n$ pour $x \ge 0$.,$x$.
+Propriété : $\sqrt[n]{xy}$ est égal à _____.,$\sqrt[n]{x} \times \sqrt[n]{y}$.
+Quelle est la relation entre $\sqrt[n]{\sqrt[m]{x}}$ et une racine unique ?,$\sqrt[n]{\sqrt[m]{x}} = \sqrt[nm]{x}$.
+Sur quel intervalle restreint-on la fonction tangente pour définir la fonction Arctangente ?,"$]-\frac{\pi}{2}, \frac{\pi}{2}[$."
+Quel est l'ensemble de définition de la fonction $\arctan$ ?,$\mathbb{R}$.
+Quelle propriété de symétrie possède la fonction $\arctan$ ?,Elle est impaire ($\arctan(-x) = -\arctan(x)$).
+Donnez la valeur de $\lim_{x \to +\infty} \arctan(x)$.,$\frac{\pi}{2}$.
+Donnez la valeur de $\lim_{x \to -\infty} \arctan(x)$.,$-\frac{\pi}{2}$.
+Quelle est la valeur de $\arctan(1)$ ?,$\frac{\pi}{4}$.
+Quelle est la valeur de $\arctan(\sqrt{3})$ ?,$\frac{\pi}{3}$.
+Quelle est la valeur de $\arctan(\frac{\sqrt{3}}{3})$ ?,$\frac{\pi}{6}$.
+"Relation fondamentale : Pour tout $x \in \mathbb{R}$, $\tan(\arctan(x)) = $ _____.",$x$.
+Sous quelle condition sur $x$ a-t-on $\arctan(\tan(x)) = x$ ?,"$x \in ]-\frac{\pi}{2}, \frac{\pi}{2}[$."
+"Identité : Pour tout $x > 0$, $\arctan(x) + \arctan(\frac{1}{x}) = $ _____.",$\frac{\pi}{2}$.
+Quelle est la méthode standard pour lever une indétermination du type « $\frac{\infty}{\infty}$ » pour une fonction rationnelle en $+\infty$ ?,Mettre en facteur le terme de plus haut degré au numérateur et au dénominateur.
+Quel est le principe de base de la méthode de dichotomie ?,Diviser successivement en deux un intervalle contenant la solution $\alpha$ d'une équation $f(x)=k$.
+"Dans la méthode de dichotomie sur $[a, b]$, quelle est la première valeur calculée à chaque étape ?","Le milieu de l'intervalle, $m = \frac{a+b}{2}$."
+"Si $f$ est strictement croissante et $f(m) < k$, dans quel intervalle se trouve la solution $\alpha$ de $f(x)=k$ ?","$]m, b[$."
+"Si $f$ est strictement croissante et $f(m) > k$, dans quel intervalle se trouve la solution $\alpha$ de $f(x)=k$ ?","$]a, m[$."
+Quand s'arrête-t-on dans un algorithme de dichotomie de précision $\epsilon$ ?,Lorsque la largeur de l'intervalle d'étude est inférieure ou égale à $\epsilon$ ($b - a \le \epsilon$).
+"Considérant $f(x) = x^3 + x - 3$ sur $[1, 2]$, quel est le premier milieu $m_1$ testé par dichotomie ?","$1,5$."
+Concept : Fonction continue,Définition : Fonction dont la limite en tout point $a$ de son domaine est égale à son image $f(a)$.
+"Vrai ou Faux : La fonction racine carrée est continue sur $[0, +\infty[$.",Vrai (c'est une fonction de référence continue sur son ensemble de définition).
+"Que devient l'intervalle $[1, 2]$ après une étape de dichotomie si $f(1) < 0$, $f(2) > 0$ et $f(1,5) > 0$ ?","$[1; 1,5]$."
+"Pourquoi la fonction racine $n$-ième est-elle continue sur $[0, +\infty[$ ?",Car elle est la réciproque d'une fonction ($x \mapsto x^n$) continue et strictement monotone sur cet intervalle.
+Quelle est l'asymptote horizontale à la courbe de $\arctan$ en $-\infty$ ?,La droite d'équation $y = -\frac{\pi}{2}$.
+Formule : $\sqrt[n]{x^m}$ peut aussi s'écrire sous la forme d'une puissance entière de racine $n$-ième comme _____.,$(\sqrt[n]{x})^m$.
+"Dans le théorème de la bijection, que représente l'ensemble $J$ ?","$J$ est l'intervalle image de $I$ par $f$, noté $f(I)$."
+$\lim_{x \to 0} \arctan(x) = $ _____.,$0$.
+La fonction racine $n$-ième est la réciproque de la fonction $x \mapsto x^n$ définie sur quel intervalle spécifique ?,"$[0, +\infty[$."
+Quel est le résultat de $\lim_{x \to +\infty} \frac{2x^2 - x + 1}{x^2 + 3}$ ?,$2$.
+"Pour une fonction $f$ continue sur $[a, b]$, que garantit le TVI si $f(a)$ et $f(b)$ sont de signes contraires ?","L'existence d'au moins une solution à l'équation $f(x) = 0$ sur $[a, b]$."
+Quelle est l'allure de la courbe d'une fonction qui tend vers $+\infty$ en $a$ par rapport à son asymptote ?,Elle se rapproche indéfiniment de la droite verticale $x = a$.
+"Si $\lim_{x \to a} u(x) = b$ et $\lim_{x \to a} v(u(x)) = c$, comment appelle-t-on ce théorème ?",Théorème de limite d'une fonction composée.
+Complétez : La fonction réciproque $f^{-1}$ a le _____ sens de variation que $f$.,même.
+"La fonction $\arctan$ est la bijection de $]-\frac{\pi}{2}, \frac{\pi}{2}[$ sur quel ensemble ?","$\mathbb{R}$ (ou $]-\infty, +\infty[$)."
+Quelle opération sur les limites permet de conclure que $\lim_{x \to +\infty} (2 - \frac{1}{x} + \frac{1}{x^2}) = 2$ ?,La somme de limites.
+"Dans l'exemple de dichotomie pour $x^3+x-3=0$ sur $[1, 2]$, quelle est la longueur du deuxième intervalle $[1; 1,25]$ ?","$0,25$."
+Pourquoi dit-on que $\arctan(\tan(\pi)) \neq \pi$ ?,"Car $\pi$ n'appartient pas à l'intervalle de définition de la bijection $]-\frac{\pi}{2}, \frac{\pi}{2}[$."
+Quel type d'intervalle est utilisé dans la définition formelle d'une limite finie $L$ à l'infini ?,Un intervalle ouvert contenant $L$.
+Quelle propriété des fonctions rationnelles permet de dire qu'elles sont continues sur leur ensemble de définition ?,Leur statut de fonctions de référence continues.

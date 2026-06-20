@@ -1,8 +1,11 @@
 package ma.chahd.bac.service;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import ma.chahd.bac.domain.Lecon;
 import ma.chahd.bac.repository.LeconRepository;
 import ma.chahd.bac.web.NotFoundException;
+import ma.chahd.bac.web.dto.FlashcardDto;
 import ma.chahd.bac.web.dto.LeconContenuDto;
 import ma.chahd.bac.web.dto.LeconDto;
 import org.springframework.beans.factory.annotation.Value;
@@ -24,15 +27,19 @@ public class CoursService {
     private final Path dir;
     private final Path exoDir;
     private final Path probDir;
+    private final Path fichesDir;
+    private final ObjectMapper mapper = new ObjectMapper();
 
     public CoursService(LeconRepository leconRepository,
                         @Value("${app.cours.dir:./data/cours/}") String dir,
                         @Value("${app.exercices.dir:./data/exercices/}") String exoDir,
-                        @Value("${app.problemes.dir:./data/problemes/}") String probDir) {
+                        @Value("${app.problemes.dir:./data/problemes/}") String probDir,
+                        @Value("${app.fiches.dir:./data/fiches/}") String fichesDir) {
         this.leconRepository = leconRepository;
         this.dir = Paths.get(dir);
         this.exoDir = Paths.get(exoDir);
         this.probDir = Paths.get(probDir);
+        this.fichesDir = Paths.get(fichesDir);
     }
 
     public List<LeconDto> listCours(String matiereSlug) {
@@ -40,8 +47,28 @@ public class CoursService {
                 .map(l -> new LeconDto(l.getId(), l.getSlug(), l.getTitre(), l.getOrdre(),
                         Files.isReadable(file(dir, matiereSlug, l.getSlug())),
                         Files.isReadable(file(exoDir, matiereSlug, l.getSlug())),
-                        Files.isReadable(file(probDir, matiereSlug, l.getSlug()))))
+                        Files.isReadable(file(probDir, matiereSlug, l.getSlug())),
+                        Files.isReadable(fichesFile(matiereSlug, l.getSlug()))))
                 .toList();
+    }
+
+    /** Fiches de révision (flashcards Q/R) d'une leçon. */
+    public List<FlashcardDto> getFiches(Long id) {
+        Lecon lecon = leconRepository.findById(id)
+                .orElseThrow(() -> new NotFoundException("Leçon introuvable : " + id));
+        Path f = fichesFile(lecon.getMatiere().getSlug(), lecon.getSlug());
+        if (!Files.isReadable(f)) {
+            throw new NotFoundException("Fiches non disponibles pour la leçon : " + id);
+        }
+        try {
+            return mapper.readValue(Files.readAllBytes(f), new TypeReference<List<FlashcardDto>>() {});
+        } catch (IOException e) {
+            throw new NotFoundException("Lecture impossible des fiches : " + id);
+        }
+    }
+
+    private Path fichesFile(String matiereSlug, String leconSlug) {
+        return fichesDir.resolve(matiereSlug).resolve(leconSlug + ".json");
     }
 
     public LeconContenuDto getContenu(Long id) {

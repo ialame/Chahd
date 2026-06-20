@@ -1,0 +1,55 @@
+Qu'est-ce que le dénombrement ?,L'art de compter le nombre d'éléments d'un ensemble fini sans les énumérer tous.
+Pour quel domaine mathématique les outils de dénombrement sont-ils fondamentaux ?,Le calcul des probabilités.
+Que signifie la notation $Card(E)$ pour un ensemble fini $E$ ?,Le nombre d'éléments de l'ensemble $E$.
+Quelle notation alternative à $Card(E)$ est utilisée pour désigner le cardinal d'un ensemble ?,$\#E$
+Sous quelle condition a-t-on $Card(A \cup B) = Card(A) + Card(B)$ ?,Si les ensembles $A$ et $B$ sont disjoints ($A \cap B = \emptyset$).
+Quelle est la formule générale pour $Card(A \cup B)$ lorsque $A$ et $B$ sont quelconques ?,$Card(A) + Card(B) - Card(A \cap B)$
+Dans quel contexte applique-t-on le principe multiplicatif ?,Lorsqu'on réalise une succession de choix indépendants.
+"Si une succession de $k$ choix offre respectivement $n_1, n_2, \dots, n_k$ possibilités, quel est le nombre total de configurations $N$ ?",$N = n_1 \times n_2 \times \dots \times n_k$
+Définition : $p$-uplet (ou liste),Une suite ordonnée de $p$ éléments d'un ensemble $E$.
+Quel est le nombre de $p$-uplets possibles dans un ensemble à $n$ éléments ?,$n^p$
+"Dans un $p$-uplet, l'ordre des éléments a-t-il une importance ?",Oui.
+Définition : Arrangement,Un $p$-uplet d'éléments distincts d'un ensemble $E$ à $n$ éléments.
+Quelle est la contrainte sur $p$ par rapport à $n$ pour former un arrangement ?,$0 \le p \le n$
+Quelle est la notation pour le nombre d'arrangements de $p$ éléments parmi $n$ ?,$A_n^p$
+Quelle est la formule de $A_n^p$ utilisant des factorielles ?,$A_n^p = \frac{n!}{(n-p)!}$
+Définition : Permutation,Un arrangement de $n$ éléments d'un ensemble à $n$ éléments (un ordre sur tous les éléments).
+Comment se note le nombre de permutations d'un ensemble à $n$ éléments ?,$n!$ (factorielle $n$).
+Quelle est la formule de calcul de $n!$ pour $n \ge 1$ ?,$n \times (n-1) \times \dots \times 2 \times 1$
+"Par convention, quelle est la valeur de $0!$ ?",1
+Définition : Combinaison,Un sous-ensemble de $p$ éléments d'un ensemble $E$ (sans ordre et sans répétition).
+Dans quel outil de dénombrement l'ordre n'a-t-il aucune importance ?,La combinaison ($C_n^p$).
+Quelle est la relation entre $C_n^p$ et $A_n^p$ ?,$C_n^p = \frac{A_n^p}{p!}$
+Quelle est la formule de $C_n^p$ exprimée avec des factorielles ?,$C_n^p = \frac{n!}{p!(n-p)!}$
+Quelle propriété de symétrie relie $C_n^p$ et $C_n^{n-p}$ ?,$C_n^p = C_n^{n-p}$
+Que vaut $C_n^0$ ?,1
+Que vaut $C_n^1$ ?,$n$
+Que vaut $C_n^n$ ?,1
+Énoncez la formule de Pascal pour les coefficients binomiaux.,$C_n^p + C_n^{p+1} = C_{n+1}^{p+1}$
+Quel outil permet de calculer visuellement les coefficients binomiaux de proche en proche ?,Le Triangle de Pascal.
+"Si l'ordre ne compte pas dans un tirage, quel outil de dénombrement faut-il utiliser ?",Les combinaisons ($C_n^p$).
+"Si l'ordre compte et que les répétitions sont possibles, quel outil utilise-t-on ?","Les $p$-uplets (ou listes), soit $n^p$."
+"Si l'ordre compte mais que les éléments doivent être distincts ($p < n$), quel outil utilise-t-on ?",L'arrangement ($A_n^p$).
+"Un code est composé d'une lettre (A, B ou C) suivie de 4 chiffres. Combien y a-t-il de choix pour la lettre ?",3 possibilités.
+"Pour un code à 4 chiffres (de 0 à 9) avec répétition possible, quel est le nombre de configurations ?","$10^4 = 10\,000$"
+Comment calcule-t-on le nombre total de codes (1 lettre parmi 3 et 4 chiffres parmi 10) ?,"$3 \times 10^4 = 30\,000$ (par le principe multiplicatif)."
+Un arrangement de $n$ éléments parmi $n$ correspond mathématiquement à une _____.,Permutation.
+Le principe additif concerne la réunion d'ensembles _____.,Disjoints.
+"Dans une combinaison, les répétitions d'un même élément sont-elles autorisées ?",Non.
+Pourquoi soustrait-on $Card(A \cap B)$ dans le principe additif général ?,Pour ne pas compter deux fois les éléments appartenant aux deux ensembles.
+Le nombre de listes de longueur $p$ dans un ensemble à $n$ éléments est _____.,$n^p$
+Quelle est la valeur de $C_n^{n-1}$ en utilisant la propriété de symétrie ?,$n$ (car $C_n^{n-1} = C_n^1$).
+"Dans le calcul de $A_n^p$, quel est le dernier terme du produit $n \times (n-1) \times \dots$ ?",$(n - p + 1)$
+Quelle est la condition sur $p$ pour utiliser la formule de Pascal $C_n^p + C_n^{p+1} = C_{n+1}^{p+1}$ ?,$0 \le p \le n-1$
+Comment appelle-t-on une suite ordonnée de $p$ éléments d'un ensemble ?,Un $p$-uplet (ou une liste).
+"Si l'on cherche à ordonner tous les éléments d'un ensemble de taille $n$, on effectue une _____.",Permutation.
+Vrai ou Faux : L'ordre est important pour une main de cartes (combinaison).,Faux.
+Le cardinal d'un ensemble $E$ est noté _____ ou $Card(E)$.,$\#E$
+Quel principe de dénombrement utilise-t-on pour des choix successifs ?,Le principe multiplicatif.
+Une combinaison est un _____ d'un ensemble $E$.,Sous-ensemble.
+"Le nombre $n!$ se lit ""_____ $n$"".",Factorielle
+"Si $A \cap B = \emptyset$, alors $Card(A \cap B) = $ _____.",0
+Quelle est la différence fondamentale entre un $p$-uplet et un arrangement ?,"Le $p$-uplet autorise les répétitions, l'arrangement exige des éléments distincts."
+Combien de permutations existe-t-il pour un ensemble à 3 éléments ?,$3! = 3 \times 2 \times 1 = 6$
+Que vaut $C_5^2$ en utilisant la formule des factorielles ?,$\frac{5!}{2!3!} = 10$
+"Dans le Triangle de Pascal, quelle valeur se trouve toujours sur les bords de chaque ligne ?",1

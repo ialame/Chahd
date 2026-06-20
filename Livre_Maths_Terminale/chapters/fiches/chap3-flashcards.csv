@@ -1,0 +1,52 @@
+Quelle est la formule de la dérivée de la fonction composée $v \circ u$ ?,$f'(x) = v'(u(x)) \times u'(x)$
+Sous quelle condition de dérivabilité la fonction $v \circ u$ est-elle dérivable sur un intervalle $I$ ?,"$u$ est dérivable sur $I$ à valeurs dans $J$, et $v$ est dérivable sur $J$."
+Formule : Dérivée de $u^n$ ($n \in \mathbb{N}^*$),$(u^n)' = n u^{n-1} u'$
+Quelle est la condition sur $u(x)$ pour que la fonction $\sqrt{u}$ soit dérivable ?,$u(x) > 0$ pour tout $x$ de l'intervalle.
+Quelle est la dérivée de la fonction $\sqrt{u}$ ?,$(\sqrt{u})' = \frac{u'}{2\sqrt{u}}$
+Formule : Dérivée de $e^u$,$(e^u)' = u' e^u$
+Concept : Dérivée seconde,"Définition : Il s'agit de la fonction obtenue en dérivant la fonction dérivée $f'$, notée $f''$."
+"Si $f$ est continue et strictement monotone sur $I$, comment nomme-t-on l'intervalle $J = f(I)$ ?",L'intervalle image.
+Quelle condition sur $f'(x_0)$ est nécessaire pour que la fonction réciproque $f^{-1}$ soit dérivable en $y_0 = f(x_0)$ ?,$f'(x_0) \neq 0$
+Formule : Dérivée de la fonction réciproque $(f^{-1})'(y_0)$ en un point,$(f^{-1})'(y_0) = \frac{1}{f'(x_0)}$
+Exprimez $(f^{-1})'(y)$ uniquement en fonction de $f'$ et $f^{-1}$ :,$(f^{-1})'(y) = \frac{1}{f'(f^{-1}(y))}$
+Quelle est la dérivée de la fonction racine $n$-ième $x \mapsto x^{\frac{1}{n}}$ ?,$\frac{1}{n} x^{\frac{1}{n}-1}$
+Pourquoi la fonction racine $n$-ième n'est-elle pas dérivable à droite en $0$ ?,Sa courbe admet une demi-tangente verticale à l'origine.
+Quelle est la dérivée de la fonction Arctangente ?,$(\arctan(x))' = \frac{1}{1+x^2}$
+"Énoncez les trois hypothèses du théorème de Rolle pour une fonction $f$ sur $[a, b]$.","$f$ est continue sur $[a, b]$, dérivable sur $]a, b[$, et $f(a) = f(b)$."
+Quelle est la conclusion du théorème de Rolle ?,"Il existe au moins un réel $c \in ]a, b[$ tel que $f'(c) = 0$."
+Interprétation géométrique : Que signifie l'existence de $c$ tel que $f'(c) = 0$ dans le théorème de Rolle ?,Il existe au moins un point de la courbe où la tangente est horizontale.
+Énoncez les deux hypothèses de régularité du Théorème des Accroissements Finis (TAF).,"$f$ est continue sur $[a, b]$ et dérivable sur $]a, b[$."
+Quelle égalité définit le Théorème des Accroissements Finis ?,"$f(b) - f(a) = f'(c)(b - a)$ pour un certain $c \in ]a, b[$."
+"Géométriquement, que représente le rapport $\frac{f(b)-f(a)}{b-a}$ dans le cadre du TAF ?","Le coefficient directeur de la sécante reliant les points $(a, f(a))$ et $(b, f(b))$."
+"L'Inégalité des Accroissements Finis (IAF) : Si $m \le f'(x) \le M$ sur l'intérieur de $I$, quelle inégalité relie $f(a)$ et $f(b)$ ?",$m(b - a) \le f(b) - f(a) \le M(b - a)$ (pour $a \le b$).
+"Si $|f'(x)| \le k$, quelle est la forme contractante de l'Inégalité des Accroissements Finis ?",$|f(b) - f(a)| \le k |b - a|$
+Comment appelle-t-on la droite d'équation $x = a$ si $\lim_{x \to a} f(x) = \pm \infty$ ?,Une asymptote verticale.
+Quelle est l'équation de l'asymptote horizontale si $\lim_{x \to \pm \infty} f(x) = L$ ?,$y = L$
+Condition : Pour que la droite $y = ax + b$ soit une asymptote oblique à $C_f$ en $\pm \infty$.,$\lim_{x \to \pm \infty} [f(x) - (ax + b)] = 0$
+"Lors de l'étude des branches infinies, quel rapport étudie-t-on si $\lim_{x \to \pm \infty} f(x) = \pm \infty$ ?",Le rapport $\frac{f(x)}{x}$.
+"Si $\lim_{x \to \pm \infty} \frac{f(x)}{x} = \pm \infty$, quelle est la direction de la branche parabolique ?",La direction de l'axe des ordonnées $(Oy)$.
+"Si $\lim_{x \to \pm \infty} \frac{f(x)}{x} = 0$, quelle est la direction de la branche parabolique ?",La direction de l'axe des abscisses $(Ox)$.
+"Si $\lim_{x \to \pm \infty} \frac{f(x)}{x} = a$ ($a \neq 0$) et $\lim_{x \to \pm \infty} [f(x) - ax] = \pm \infty$, quel est le type de branche infinie ?",Une branche parabolique de direction la droite $y = ax$.
+La courbe $C_f$ est dite _____ sur $I$ si elle est située entièrement au-dessus de toutes ses tangentes.,convexe
+La courbe $C_f$ est dite _____ sur $I$ si elle est située entièrement au-dessous de toutes ses tangentes.,concave
+Quelle condition sur $f''(x)$ caractérise la convexité d'une fonction sur un intervalle $I$ ?,$f''(x) \ge 0$
+Quelle condition sur $f''(x)$ caractérise la concavité d'une fonction sur un intervalle $I$ ?,$f''(x) \le 0$
+Concept : Point d'inflexion,Définition : Un point où la courbe $C_f$ change de concavité et traverse sa tangente.
+"Quelle est la condition analytique nécessaire et suffisante pour que $A(a, f(a))$ soit un point d'inflexion ?",$f''(a) = 0$ et $f''$ change de signe en $a$.
+Processus : Quelles sont les deux premières étapes pour étudier la concavité d'une fonction $f$ ?,Calculer la dérivée première $f'(x)$ puis la dérivée seconde $f''(x)$.
+"Dans l'exemple $f(x) = (x^2 - 2x)e^x$, quelle est l'expression de la dérivée seconde $f''(x)$ ?",$f''(x) = (x^2 + 2x - 2)e^x$
+"Dans l'étude de $f(x) = (x^2 - 2x)e^x$, pourquoi le signe de $f''(x)$ dépend-il uniquement du polynôme $x^2 + 2x - 2$ ?",Car la fonction exponentielle $e^x$ est toujours strictement positive.
+"Si $f''(x)$ s'annule en $x_1$ et $x_2$ en changeant de signe, combien de points d'inflexion la courbe admet-elle ?",Deux points d'inflexion.
+Que se passe-t-il pour la concavité de la courbe sur les intervalles où $f''(x) \le 0$ ?,La courbe est concave (courbée vers le bas).
+"Si $\lim_{x \to \pm \infty} \frac{f(x)}{x} = a$ et $\lim_{x \to \pm \infty} [f(x) - ax] = b$, quelle est la nature de la droite $y = ax + b$ ?",Une asymptote oblique.
+La fonction Arctangente est dérivable sur quel ensemble ?,L'ensemble des réels $\mathbb{R}$.
+La fonction racine $n$-ième est dérivable sur quel intervalle ?,"$]0, +\infty[$"
+Comment appelle-t-on le théorème qui assure l'existence d'un point où la tangente est parallèle à une sécante ?,Le Théorème des Accroissements Finis (TAF).
+"Dans le théorème de Rolle, que se passe-t-il si $f(a) \neq f(b)$ ?",Le théorème ne s'applique pas (on utilise généralement le TAF).
+Quelle est la dérivée de $f(x) = x^3 - 3x^2 + 2$ ?,$f'(x) = 3x^2 - 6x$
+"Pour $f(x) = x^3 - 3x^2 + 2$, quelle est la dérivée seconde $f''(x)$ ?",$f''(x) = 6x - 6$
+À quelle abscisse la fonction $f(x) = x^3 - 3x^2 + 2$ possède-t-elle un point d'inflexion ?,$x = 1$ (car $6x-6$ s'annule et change de signe).
+"Si $f$ est une fonction deux fois dérivable, la convexité se détermine par l'étude du _____ de $f''(x)$.",signe
+Vrai ou Faux : Un point d'inflexion est un point où la dérivée première $f'$ s'annule obligatoirement.,Faux (c'est la dérivée seconde $f''$ qui doit s'annuler en changeant de signe).
+"Vrai ou Faux : Si une courbe est convexe, elle est située au-dessus de ses tangentes.",Vrai
+Quelle est la limite de $f(x) - ax$ pour une branche parabolique de direction $y = ax$ ?,$\pm \infty$

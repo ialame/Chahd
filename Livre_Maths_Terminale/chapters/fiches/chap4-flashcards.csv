@@ -1,0 +1,80 @@
+"Historiquement, dans quels domaines la fonction logarithme népérien était-elle utilisée pour simplifier les calculs ?",L'astronomie et la navigation.
+Quelle est la notation standard de la fonction logarithme népérien ?,$\ln$
+La fonction logarithme népérien transforme les produits en _____.,Sommes
+Selon quel théorème peut-on affirmer que l'équation $e^y = x$ admet une unique solution pour tout $x > 0$ ?,Le corollaire du théorème des valeurs intermédiaires.
+Définissez la fonction logarithme népérien par rapport à la fonction exponentielle.,"C'est la fonction qui, à tout réel $x \in ]0, +\infty[$, associe l'unique solution $y$ de l'équation $e^y = x$."
+"Pour tout $x \in ]0, +\infty[$ et tout $y \in \mathbb{R}$, donnez l'équivalence de $y = \ln(x)$.",$e^y = x$
+Quel est l'ensemble de définition de la fonction logarithme népérien ?,"$]0, +\infty[$"
+Quelle est la valeur de $\ln(1)$ ?,$0$
+Quelle est la valeur de $\ln(e)$ ?,$1$
+Donnez une valeur approchée du nombre $e$.,"Environ $2,718$."
+"Simplifiez l'expression $e^{\ln(x)}$ pour tout $x \in ]0, +\infty[$.",$x$
+Simplifiez l'expression $\ln(e^y)$ pour tout $y \in \mathbb{R}$.,$y$
+Énoncez la relation fonctionnelle fondamentale de la fonction $\ln$ pour $a > 0$ et $b > 0$.,$\ln(a \times b) = \ln(a) + \ln(b)$
+Quelle est la propriété de l'inverse pour $\ln(\frac{1}{a})$ ?,$-\ln(a)$
+Quelle est la propriété du quotient pour $\ln(\frac{a}{b})$ ?,$\ln(a) - \ln(b)$
+Quelle est la propriété de la puissance pour $\ln(a^n)$ avec $n \in \mathbb{Z}$ ?,$n \ln(a)$
+Quelle est la propriété de la racine carrée pour $\ln(\sqrt{a})$ ?,$\frac{1}{2} \ln(a)$
+Sur quel intervalle la fonction $\ln$ est-elle continue et dérivable ?,"$]0, +\infty[$"
+Quelle est la dérivée de la fonction logarithme népérien sur son ensemble de définition ?,$\ln'(x) = \frac{1}{x}$
+"Quel est le sens de variation de la fonction $\ln$ sur $]0, +\infty[$ ?",Strictement croissante.
+Pourquoi la fonction $\ln$ est-elle strictement croissante ?,"Car sa dérivée $\frac{1}{x}$ est strictement positive sur $]0, +\infty[$."
+Quel est le signe de $\ln(x)$ si $0 < x < 1$ ?,Négatif ($\ln(x) < 0$).
+Quel est le signe de $\ln(x)$ si $x > 1$ ?,Positif ($\ln(x) > 0$).
+Quelle est la limite de $\ln(x)$ quand $x$ tend vers $+\infty$ ?,$+\infty$
+Quelle est la limite de $\ln(x)$ quand $x$ tend vers $0$ par valeurs supérieures ?,$-\infty$
+Quelle est la conséquence géométrique de la limite de $\ln(x)$ en $0^+$ ?,L'axe des ordonnées (d'équation $x = 0$) est une asymptote verticale.
+Pourquoi les courbes de $\ln$ et $\exp$ sont-elles symétriques par rapport à la droite $y = x$ ?,Parce qu'elles sont des fonctions réciproques l'une de l'autre.
+"À l'infini, quelle fonction l'emporte entre l'exponentielle, les puissances de $x$ et le logarithme ?","L'exponentielle l'emporte sur les puissances de $x$, qui l'emportent sur le logarithme."
+Quelle est la limite de $\frac{\ln(x)}{x^n}$ quand $x$ tend vers $+\infty$ ($n \ge 1$) ?,$0$
+Quelle est la limite de $x^n \ln(x)$ quand $x$ tend vers $0^+$ ($n \ge 1$) ?,$0$
+Quelle est la première étape indispensable pour résoudre une équation ou inéquation avec $\ln$ ?,Déterminer le domaine d'étude (les expressions dans le logarithme doivent être strictement positives).
+Quelle propriété de $\ln$ permet de passer de $\ln(A) = \ln(B)$ à $A = B$ ?,La stricte croissance de la fonction $\ln$.
+Comment simplifier $\ln(A) + \ln(B)$ lors de la résolution d'une équation ?,En utilisant la formule $\ln(A \times B)$.
+"Dans l'exemple $\ln(x - 1) + \ln(x) \le \ln(2)$, quel est le domaine d'étude ?","$D = ]1, +\infty[$"
+"Dans l'exemple $\ln(x - 1) + \ln(x) \le \ln(2)$, quelle expression algébrique obtient-on après simplification des $\ln$ ?",$x^2 - x \le 2$
+Quel est le discriminant $\Delta$ du trinôme $x^2 - x - 2$ ?,$9$
+Quelles sont les racines du trinôme $x^2 - x - 2$ ?,$-1$ et $2$.
+"Quelle est la solution finale de l'inéquation $\ln(x - 1) + \ln(x) \le \ln(2)$ après intersection avec le domaine $]1, +\infty[$ ?","$S = ]1, 2]$"
+Terme : Fonction réciproque de l'exponentielle.,Le logarithme népérien ($\ln$).
+"Complétez : Pour tout entier $n \ge 1$, $\lim_{x \to +\infty} \frac{\ln(x)}{x^n} = \dots$",$0$
+"Complétez : Pour tout entier $n \ge 1$, $\lim_{x \to 0^+} x^n \ln(x) = \dots$",$0$
+La fonction $\ln$ est-elle définie pour $x = 0$ ?,"Non, elle est définie sur $]0, +\infty[$."
+Quelle est la dérivée de $f(x) = \ln(x)$ au point d'abscisse $1$ ?,$1$ (car $\frac{1}{1} = 1$).
+Vrai ou Faux : $\ln(a+b) = \ln(a) + \ln(b)$.,Faux (c'est $\ln(a \times b) = \ln(a) + \ln(b)$).
+Que vaut $\ln(e^2)$ ?,$2$
+Que vaut $\ln(\frac{1}{e})$ ?,$-1$
+Simplifiez $\ln(x^3)$ pour $x > 0$.,$3 \ln(x)$
+Comment s'appelle la croissance comparée traitant de $\lim_{x \to +\infty} \frac{\ln(x)}{x}$ ?,Croissance comparée à l'infini.
+"Si $\ln(x) = 5$, alors $x = \dots$",$e^5$
+Pourquoi vérifie-t-on que les solutions trouvées appartiennent au domaine d'étude ?,Car $\ln$ n'est pas définie pour des valeurs négatives ou nulles.
+Quelle est l'asymptote à la courbe de la fonction exponentielle qui correspond par symétrie à l'asymptote $x=0$ de la fonction $\ln$ ?,L'axe des abscisses ($y = 0$).
+La fonction $\ln$ est-elle continue sur son domaine de définition ?,"Oui, elle est continue sur $]0, +\infty[$."
+Donnez la relation entre $\ln(\sqrt{e})$ et $1$.,$\ln(\sqrt{e}) = \frac{1}{2}$
+Sous quelle forme simplifiée doit-on essayer de regrouper les logarithmes pour résoudre une équation ?,$\ln(A) = \ln(B)$
+Quel est l'argument de $\ln(x^2 - x)$ dans l'exemple du cours ?,$x^2 - x$
+"Si $a > 0$ et $b > 0$, alors $\ln(a) = \ln(b)$ si et seulement si ____.",$a = b$
+"Si $a > 0$ et $b > 0$, alors $\ln(a) < \ln(b)$ si et seulement si ____.",$a < b$
+Quelle est la valeur de $\ln(e^0)$ ?,$0$
+Que peut-on dire de la courbe de $\ln$ par rapport à l'axe des ordonnées ?,Elle s'en approche indéfiniment sans le toucher (asymptote verticale).
+"La fonction $\ln$ admet-elle un maximum sur $]0, +\infty[$ ?","Non, car sa limite en $+\infty$ est $+\infty$."
+"La fonction $\ln$ admet-elle un minimum sur $]0, +\infty[$ ?","Non, car sa limite en $0^+$ est $-\infty$."
+Quel est le domaine de définition de $f(x) = \ln(-x)$ ?,"$]-\infty, 0[$ (car $-x$ doit être $>0$)."
+Complétez la propriété : $\ln(a^n) = \dots$,$n \ln(a)$
+Que vaut $\ln(1) + \ln(e)$ ?,$1$
+La fonction $\ln$ est-elle la fonction réciproque de la fonction carrée ?,"Non, c'est la réciproque de la fonction exponentielle."
+"Dans le plan muni d'un repère orthonormé, la symétrie entre $\ln$ et $\exp$ est une symétrie _____.",Axiale (par rapport à la droite $y = x$).
+Quelle est la limite de $x \ln(x)$ en $0^+$ ?,$0$
+Quelle est la limite de $\frac{\ln(x)}{x}$ en $+\infty$ ?,$0$
+"Pour résoudre $\ln(x) < 2$, quelle transformation utilise-t-on ?",$x < e^2$ (en utilisant la réciproque ou la croissance).
+Le logarithme d'un nombre négatif existe-t-il dans $\mathbb{R}$ ?,Non.
+L'expression $\ln(a) - \ln(b)$ est égale à _____.,$\ln(\frac{a}{b})$
+L'expression $n \ln(a)$ est égale à _____.,$\ln(a^n)$
+Comment note-t-on la dérivée de la fonction logarithme ?,$\ln'$ ou $\frac{1}{x}$.
+Vrai ou Faux : La fonction $\ln$ croît très vite vers $+\infty$.,"Faux (elle croît très lentement, d'où les croissances comparées)."
+Quelle est la valeur de $\ln(e^{-1})$ ?,$-1$
+"Si $x \in ]0, 1[$, comparez $\ln(x)$ et $0$.",$\ln(x) < 0$
+"Si $x > 1$, comparez $\ln(x)$ et $0$.",$\ln(x) > 0$
+Quel est le signe de $\ln(e)$ ?,Positif (égal à $1$).
+Quelle propriété permet d'écrire $\ln(2x) = \ln(2) + \ln(x)$ ?,La relation fonctionnelle (produit en somme).
+"Dans l'inéquation $x^2 - x - 2 \le 0$, pourquoi l'intervalle est-il fermé en $2$ ?",Parce que l'inéquation est au sens large ($\le$).

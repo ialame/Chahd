@@ -1,0 +1,60 @@
+Quel besoin mathématique a mené à l'introduction de l'ensemble des nombres complexes ?,"Le besoin de résoudre des équations algébriques insolubles dans $\mathbb{R}$, comme $x^2 + 1 = 0$."
+Comment note-t-on l'ensemble des nombres complexes ?,$\mathbb{C}$
+Quel nombre imaginaire particulier définit l'ensemble $\mathbb{C}$ par la propriété de son carré ?,"Le nombre $i$, tel que $i^2 = -1$."
+Quelle est la forme algébrique unique d'un nombre complexe $z$ ?,$z = x + iy$ (avec $x \in \mathbb{R}$ et $y \in \mathbb{R}$).
+"Dans l'écriture $z = x + iy$, comment appelle-t-on le réel $x$ ?","La partie réelle de $z$, notée $Re(z)$."
+"Dans l'écriture $z = x + iy$, comment appelle-t-on le réel $y$ ?","La partie imaginaire de $z$, notée $Im(z)$."
+À quelle condition un nombre complexe $z$ est-il un nombre réel ?,Si sa partie imaginaire est nulle ($y = 0$).
+Qu'est-ce qu'un imaginaire pur ?,Un nombre complexe dont la partie réelle est nulle ($x = 0$) et la partie imaginaire est non nulle ($y \neq 0$).
+Quelle condition doit être remplie pour que deux nombres complexes soient égaux ?,Leurs parties réelles doivent être égales et leurs parties imaginaires doivent être égales.
+Un nombre complexe $z$ est nul si et seulement si _____.,$Re(z) = 0$ et $Im(z) = 0$
+Comment effectue-t-i-on une multiplication sous forme algébrique dans $\mathbb{C}$ ?,On applique les règles de développement usuelles en remplaçant $i^2$ par $-1$.
+Définition : Conjugué d'un nombre complexe $z = x + iy$,C'est le nombre complexe $\bar{z} = x - iy$.
+Quelle est la valeur de $\overline{(\bar{z})}$ ?,$z$
+Propriété : $\overline{z + z'} = $ _____,$\bar{z} + \bar{z}'$
+Propriété : $\overline{z \times z'} = $ _____,$\bar{z} \times \bar{z}'$
+Quelle est la propriété du conjugué d'une puissance $\overline{z^n}$ ?,$\overline{z^n} = (\bar{z})^n$
+Comment exprime-t-on $Re(z)$ en fonction de $z$ et de son conjugué ?,$Re(z) = \frac{z + \bar{z}}{2}$
+Comment exprime-t-on $Im(z)$ en fonction de $z$ et de son conjugué ?,$Im(z) = \frac{z - \bar{z}}{2i}$
+Un nombre complexe $z$ est réel si et seulement si il est égal à _____.,Son conjugué ($\bar{z}$)
+Un nombre complexe $z$ est un imaginaire pur si et seulement si $z = $ _____.,$-\bar{z}$
+Quel est le résultat du produit d'un nombre complexe $z = x + iy$ par son conjugué ?,$x^2 + y^2$ (un nombre réel positif).
+Méthode : Comment exprimer le quotient $\frac{z_1}{z_2}$ sous forme algébrique ?,En multipliant le numérateur et le dénominateur par le conjugué du dénominateur $\bar{z}_2$.
+"Dans le plan complexe, comment appelle-t-on le nombre $z$ associé au point $M(x, y)$ ?",L'affixe du point $M$.
+Sur quel axe du plan complexe se trouvent les images des imaginaires purs ?,L'axe des ordonnées.
+Définition : Module d'un nombre complexe $z = x + iy$,$|z| = \sqrt{z\bar{z}} = \sqrt{x^2 + y^2}$
+Quelle est l'interprétation géométrique du module $|z|$ ?,C'est la distance $OM$ entre l'origine et l'image de $z$.
+"Quelle est la relation entre $|z|$, $|\bar{z}|$ et $|-z|$ ?",Ils sont tous égaux : $|z| = |\bar{z}| = |-z|$.
+Propriété : Le module d'un produit $|z \times z'|$ est égal à _____,$|z| \times |z'|$
+Propriété : $|z^n| = $ _____,$|z|^n$
+Énoncez l'inégalité triangulaire pour deux nombres complexes $z$ et $z'$.,$|z + z'| \leq |z| + |z'|$
+Définition : Argument d'un nombre complexe non nul $z$,"Toute mesure en radians de l'angle orienté $(\vec{u}, \vec{OM})$."
+Quelle est la forme trigonométrique d'un nombre complexe non nul ?,$z = r(\cos(\theta) + i\sin(\theta))$ avec $r = |z|$ et $\theta \equiv arg(z) [2\pi]$.
+Comment calcule-t-on $\cos(\theta)$ à partir de la forme algébrique $x + iy$ ?,$\cos(\theta) = \frac{x}{|z|}$
+Comment calcule-t-on $\sin(\theta)$ à partir de la forme algébrique $x + iy$ ?,$\sin(\theta) = \frac{y}{|z|}$
+Propriété : $arg(\bar{z}) \equiv$ _____ $[2\pi]$ ?,$-arg(z)$
+Propriété : $arg(-z) \equiv$ _____ $[2\pi]$ ?,$arg(z) + \pi$
+Propriété : $arg(z \times z') \equiv$ _____ $[2\pi]$ ?,$arg(z) + arg(z')$
+Propriété : $arg(\frac{z}{z'}) \equiv$ _____ $[2\pi]$ ?,$arg(z) - arg(z')$
+Propriété : $arg(z^n) \equiv$ _____ $[2\pi]$ ?,$n \times arg(z)$
+Quelle notation utilise-t-on pour définir $e^{i\theta}$ ?,$e^{i\theta} = \cos(\theta) + i\sin(\theta)$
+Quelle est l'écriture exponentielle d'un nombre complexe de module $r$ et d'argument $\theta$ ?,$z = re^{i\theta}$
+Simplifiez l'expression $\frac{1}{e^{i\theta}}$ sous forme exponentielle.,$e^{-i\theta}$
+Simplifiez l'expression $(e^{i\theta})^n$.,$e^{in\theta}$
+Énoncez la formule de Moivre pour un réel $\theta$ et un entier $n$.,$(\cos(\theta) + i\sin(\theta))^n = \cos(n\theta) + i\sin(n\theta)$
+Quelle est la formule d'Euler pour $\cos(\theta)$ ?,$\cos(\theta) = \frac{e^{i\theta} + e^{-i\theta}}{2}$
+Quelle est la formule d'Euler pour $\sin(\theta)$ ?,$\sin(\theta) = \frac{e^{i\theta} - e^{-i\theta}}{2i}$
+Quelles sont les trois équations du système permettant de trouver les racines carrées $z = x + iy$ de $Z = a + ib$ ?,"$x^2 - y^2 = a$, $2xy = b$, et $x^2 + y^2 = \sqrt{a^2 + b^2}$."
+"Pour une équation $az^2 + bz + c = 0$ à coefficients réels, quelles sont les solutions si le discriminant $\Delta$ est strictement négatif ?",Deux solutions complexes conjuguées : $z_1 = \frac{-b - i\sqrt{-\Delta}}{2a}$ et $z_2 = \frac{-b + i\sqrt{-\Delta}}{2a}$.
+Quelle est l'affixe du vecteur $\vec{AB}$ en fonction des affixes $z_A$ et $z_B$ ?,$z_B - z_A$
+Comment exprime-t-on la distance $AB$ avec les nombres complexes ?,$AB = |z_B - z_A|$
+"Quelle est la mesure de l'angle orienté $(\vec{AB}, \vec{CD})$ en termes d'argument ?",$arg\left(\frac{z_D - z_C}{z_B - z_A}\right) [2\pi]$
+"Caractérisation : Trois points $A, B, C$ sont alignés si et seulement si $\frac{z_C - z_A}{z_B - z_A}$ appartient à _____.",$\mathbb{R}$ (l'ensemble des réels).
+Condition géométrique : Les droites $(AB)$ et $(AC)$ sont perpendiculaires si et seulement si $\frac{z_C - z_A}{z_B - z_A}$ appartient à _____.,$i\mathbb{R}^*$ (l'ensemble des imaginaires purs non nuls).
+À quelle condition le triangle $ABC$ est-il rectangle et isocèle en $A$ ?,Si $\frac{z_C - z_A}{z_B - z_A} = i$ ou $\frac{z_C - z_A}{z_B - z_A} = -i$.
+Quelle est l'écriture complexe d'une translation de vecteur $\vec{w}$ d'affixe $b$ ?,$z' = z + b$
+Quelle est l'écriture complexe d'une homothétie de centre $\Omega(\omega)$ et de rapport $k$ ?,$z' - \omega = k(z - \omega)$
+Quelle est l'écriture complexe d'une rotation de centre $\Omega(\omega)$ et d'angle $\theta$ ?,$z' - \omega = e^{i\theta}(z - \omega)$
+Vrai ou Faux : L'ensemble $\mathbb{R}$ est inclus dans $\mathbb{C}$.,Vrai.
+Que vaut le module du produit d'un nombre complexe par son conjugué $|z\bar{z}|$ ?,$|z|^2$ (ou $x^2 + y^2$).
+Quelle est la valeur de $|e^{i\theta}|$ pour tout réel $\theta$ ?,1

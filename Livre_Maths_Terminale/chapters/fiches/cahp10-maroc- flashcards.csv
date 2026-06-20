@@ -1,0 +1,50 @@
+Quels sont les deux éléments nécessaires pour déterminer entièrement une droite dans l'espace ?,Un point et un vecteur directeur.
+"Soit la droite $D$ passant par $A(x_0, y_0, z_0)$ et de vecteur directeur $\vec{u}(a, b, c)$. Quelle est l'équation paramétrique pour $x$ ?","$x = x_0 + at$, avec $t \in \mathbb{R}$."
+"Dans la représentation paramétrique d'une droite, que représente la variable réelle $t$ ?",Le paramètre réel.
+Quelle est la condition nécessaire pour que trois vecteurs soient dits 'coplanaires' ?,Leurs représentants d'origine commune ont leurs extrémités dans un même plan.
+Quels éléments définissent un plan $P$ dans l'espace ?,Un point $A$ et deux vecteurs directeurs $\vec{u}$ et $\vec{v}$ non colinéaires.
+"Un point $M$ appartient au plan $P(A, \vec{u}, \vec{v})$ s'il existe deux réels $t$ et $s$ tels que $\vec{AM} = $ _____.",$t\vec{u} + s\vec{v}$
+"Donner l'expression analytique du produit scalaire $\vec{u} \cdot \vec{v}$ avec $\vec{u}(x, y, z)$ et $\vec{v}(x', y', z')$.",$\vec{u} \cdot \vec{v} = xx' + yy' + zz'$
+"Quelle est la formule de la norme d'un vecteur $\vec{u}(x, y, z)$ dans un repère orthonormé ?",$\|\vec{u}\| = \sqrt{x^2 + y^2 + z^2}$
+"Donner la formule de la distance entre deux points $A(x_A, y_A, z_A)$ et $B(x_B, y_B, z_B)$.",$AB = \sqrt{(x_B - x_A)^2 + (y_B - y_A)^2 + (z_B - z_A)^2}$
+À quelle condition une droite $D$ est-elle dite orthogonale à un plan $P$ ?,Elle doit être orthogonale à deux droites sécantes du plan $P$.
+"Si une droite est orthogonale à un plan $P$, quelle est sa relation avec les autres droites de ce plan ?",Elle est orthogonale à toutes les droites du plan $P$.
+Définition : Vecteur normal à un plan,Un vecteur non nul $\vec{n}$ tel que la droite dirigée par $\vec{n}$ est orthogonale au plan.
+"Quelle est la forme générale d'une équation cartésienne d'un plan ayant pour vecteur normal $\vec{n}(a, b, c)$ ?",$ax + by + cz + d = 0$
+"Dans l'équation $ax + by + cz + d = 0$, que représentent les coefficients $a$, $b$ et $c$ ?",Les coordonnées d'un vecteur normal au plan.
+Comment détermine-t-on la constante $d$ dans l'équation cartésienne d'un plan ?,"En remplaçant $x, y, z$ par les coordonnées d'un point connu appartenant au plan."
+Le produit _____ est une opération qui associe à deux vecteurs un troisième vecteur orthogonal aux deux premiers.,vectoriel
+"Soient $\vec{u}(x, y, z)$ et $\vec{v}(x', y', z')$. Quelle est la première coordonnée de $\vec{u} \wedge \vec{v}$ ?",$yz' - zy'$
+"Soient $\vec{u}(x, y, z)$ et $\vec{v}(x', y', z')$. Quelle est la deuxième coordonnée de $\vec{u} \wedge \vec{v}$ ?",$zx' - xz'$
+"Soient $\vec{u}(x, y, z)$ et $\vec{v}(x', y', z')$. Quelle est la troisième coordonnée de $\vec{u} \wedge \vec{v}$ ?",$xy' - yx'$
+Quelle est la direction du vecteur $\vec{w} = \vec{u} \wedge \vec{v}$ par rapport au plan dirigé par $\vec{u}$ et $\vec{v}$ ?,Il est normal au plan (orthogonal à la fois à $\vec{u}$ et à $\vec{v}$).
+Quelle règle permet de déterminer le sens du vecteur produit vectoriel $\vec{u} \wedge \vec{v}$ ?,La règle des trois doigts de la main droite (trièdre direct).
+Donner la formule de la norme du produit vectoriel $\|\vec{u} \wedge \vec{v}\|$ en fonction de l'angle $\theta$.,$\|\vec{u}\| \times \|\vec{v}\| \times \sin(\theta)$
+Propriété d'anti-symétrie : $\vec{u} \wedge \vec{v} = $ _____.,$-(\vec{v} \wedge \vec{u})$
+Quelle est la condition sur le produit vectoriel pour que deux vecteurs $\vec{u}$ et $\vec{v}$ soient colinéaires ?,$\vec{u} \wedge \vec{v} = \vec{0}$
+Donner la formule de l'aire d'un triangle $ABC$ utilisant le produit vectoriel.,$A(ABC) = \frac{1}{2} \|\vec{AB} \wedge \vec{AC}\|$
+Donner la formule de l'aire du parallélogramme $ABCD$ de vecteurs directeurs $\vec{AB}$ et $\vec{AD}$.,$A(ABCD) = \|\vec{AB} \wedge \vec{AD}\|$
+"Quelle est la formule de la distance $d(M, D)$ d'un point $M$ à une droite $D(A, \vec{u})$ ?","$d(M, D) = \frac{\|\vec{AM} \wedge \vec{u}\|}{\|\vec{u}\|}$"
+"Quelle est l'équation cartésienne d'une sphère de centre $\Omega(x_0, y_0, z_0)$ et de rayon $R$ ?",$(x - x_0)^2 + (y - y_0)^2 + (z - z_0)^2 = R^2$
+Caractériser par un produit scalaire l'ensemble des points $M$ d'une sphère de diamètre $[AB]$.,$\vec{MA} \cdot \vec{MB} = 0$
+"Si une sphère est définie par son diamètre $[AB]$, où se situe son centre $\Omega$ ?",Au milieu du segment $[AB]$.
+Soit l'équation $x^2 + y^2 + z^2 - 2ax - 2by - 2cz + d = 0$. Quelle est la forme canonique associée utilisant $H = a^2 + b^2 + c^2 - d$ ?,$(x - a)^2 + (y - b)^2 + (z - c)^2 = H$
+"Si $H < 0$ dans l'équation canonique d'une sphère, quel est l'ensemble des points $M$ ?",L'ensemble vide ($\emptyset$).
+"Si $H = 0$ dans l'équation canonique d'une sphère, à quoi se réduit l'ensemble des points ?","Au seul point centre $\Omega(a, b, c)$."
+"Si $H > 0$, l'équation $(x-a)^2 + (y-b)^2 + (z-c)^2 = H$ définit une sphère de rayon $R = $ _____.",$\sqrt{H}$
+"Quelle est la position relative d'une sphère et d'un plan si $d(\Omega, P) > R$ ?",Ils n'ont aucun point commun ($S \cap P = \emptyset$).
+Que se passe-t-il lorsque la distance $d$ du centre d'une sphère à un plan est égale au rayon $R$ ?,Le plan est tangent à la sphère en un point unique $H$.
+"Si $d(\Omega, P) < R$, quelle est la nature de l'intersection entre la sphère et le plan ?",Un cercle.
+"Dans l'intersection sphère-plan ($d < R$), comment définit-on le centre $H$ du cercle obtenu ?",C'est le projeté orthogonal du centre $\Omega$ sur le plan $P$.
+Donner la formule du rayon $r$ du cercle issu de l'intersection d'une sphère (rayon $R$) et d'un plan (distance $d$).,$r = \sqrt{R^2 - d^2}$
+Quelle méthode analytique utilise-t-on pour déterminer l'intersection entre une sphère et une droite ?,"On injecte les expressions de $x(t), y(t), z(t)$ de la droite dans l'équation de la sphère."
+"Lors de l'étude de l'intersection sphère-droite, quel type d'équation obtient-on après substitution ?",Une équation du second degré d'inconnue $t$ (le paramètre).
+Intersection sphère-droite : que signifie un discriminant $\Delta > 0$ ?,La droite est sécante à la sphère en deux points distincts.
+Intersection sphère-droite : que signifie un discriminant $\Delta = 0$ ?,La droite est tangente à la sphère en un point unique.
+Intersection sphère-droite : que signifie un discriminant $\Delta < 0$ ?,La droite et la sphère n'ont aucun point d'intersection.
+"Si $\vec{n}(2, 1, -1)$ est normal à un plan $P$, quelle est la forme de son équation cartésienne ?",$2x + y - z + d = 0$
+Concept : Bilinéarité du produit vectoriel,$\vec{u} \wedge (\vec{v} + \vec{w}) = \vec{u} \wedge \vec{v} + \vec{u} \wedge \vec{w}$ et $(\lambda\vec{u}) \wedge \vec{v} = \lambda(\vec{u} \wedge \vec{v})$.
+"Comment appelle-t-on le repère $(O; \vec{i}, \vec{j}, \vec{k})$ nécessaire pour définir analytiquement le produit vectoriel ?",Un repère orthonormé direct.
+Vrai ou Faux : Un plan peut être dirigé par deux vecteurs colinéaires.,Faux (ils doivent être non colinéaires).
+"Dans l'espace, une droite orthogonale à un plan est-elle orthogonale à toute droite de l'espace ?","Non, seulement à toutes les droites contenues dans ce plan."
+"Quelle est la condition sur les réels $a, b, c$ pour que $ax+by+cz+d=0$ soit l'équation d'un plan ?","$a, b, c$ ne doivent pas être tous nuls simultanément."
