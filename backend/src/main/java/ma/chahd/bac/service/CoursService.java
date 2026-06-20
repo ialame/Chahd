@@ -22,36 +22,58 @@ public class CoursService {
 
     private final LeconRepository leconRepository;
     private final Path dir;
+    private final Path exoDir;
+    private final Path probDir;
 
     public CoursService(LeconRepository leconRepository,
-                        @Value("${app.cours.dir:./data/cours/}") String dir) {
+                        @Value("${app.cours.dir:./data/cours/}") String dir,
+                        @Value("${app.exercices.dir:./data/exercices/}") String exoDir,
+                        @Value("${app.problemes.dir:./data/problemes/}") String probDir) {
         this.leconRepository = leconRepository;
         this.dir = Paths.get(dir);
+        this.exoDir = Paths.get(exoDir);
+        this.probDir = Paths.get(probDir);
     }
 
     public List<LeconDto> listCours(String matiereSlug) {
         return leconRepository.findByMatiereSlugOrderByOrdreAsc(matiereSlug).stream()
                 .map(l -> new LeconDto(l.getId(), l.getSlug(), l.getTitre(), l.getOrdre(),
-                        Files.isReadable(file(matiereSlug, l.getSlug()))))
+                        Files.isReadable(file(dir, matiereSlug, l.getSlug())),
+                        Files.isReadable(file(exoDir, matiereSlug, l.getSlug())),
+                        Files.isReadable(file(probDir, matiereSlug, l.getSlug()))))
                 .toList();
     }
 
     public LeconContenuDto getContenu(Long id) {
+        return read(id, dir, "Contenu de cours");
+    }
+
+    /** Exercices résolus d'une leçon (livre). */
+    public LeconContenuDto getExercices(Long id) {
+        return read(id, exoDir, "Exercices");
+    }
+
+    /** Problèmes résolus d'une leçon (livre). */
+    public LeconContenuDto getProblemes(Long id) {
+        return read(id, probDir, "Problèmes");
+    }
+
+    private LeconContenuDto read(Long id, Path baseDir, String label) {
         Lecon lecon = leconRepository.findById(id)
                 .orElseThrow(() -> new NotFoundException("Leçon introuvable : " + id));
         String matiereSlug = lecon.getMatiere().getSlug();
-        Path f = file(matiereSlug, lecon.getSlug());
+        Path f = file(baseDir, matiereSlug, lecon.getSlug());
         if (!Files.isReadable(f)) {
-            throw new NotFoundException("Contenu de cours non disponible pour la leçon : " + id);
+            throw new NotFoundException(label + " non disponible pour la leçon : " + id);
         }
         try {
             return new LeconContenuDto(lecon.getId(), lecon.getTitre(), matiereSlug, Files.readString(f));
         } catch (IOException e) {
-            throw new NotFoundException("Lecture impossible du cours : " + id);
+            throw new NotFoundException("Lecture impossible : " + id);
         }
     }
 
-    private Path file(String matiereSlug, String leconSlug) {
-        return dir.resolve(matiereSlug).resolve(leconSlug + ".md");
+    private Path file(Path baseDir, String matiereSlug, String leconSlug) {
+        return baseDir.resolve(matiereSlug).resolve(leconSlug + ".md");
     }
 }

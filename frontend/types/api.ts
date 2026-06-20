@@ -49,6 +49,8 @@ export interface LeconDto {
   titre: string
   ordre: number
   aContenu: boolean
+  aExercices: boolean
+  aProblemes: boolean
 }
 
 export interface LeconContenuDto {

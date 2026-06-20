@@ -28,4 +28,16 @@ public class CoursController {
     public LeconContenuDto contenu(@PathVariable Long id) {
         return coursService.getContenu(id);
     }
+
+    /** Exercices résolus d'une leçon (livre). */
+    @GetMapping("/cours/{id}/exercices")
+    public LeconContenuDto exercices(@PathVariable Long id) {
+        return coursService.getExercices(id);
+    }
+
+    /** Problèmes résolus d'une leçon (livre). */
+    @GetMapping("/cours/{id}/problemes")
+    public LeconContenuDto problemes(@PathVariable Long id) {
+        return coursService.getProblemes(id);
+    }
 }

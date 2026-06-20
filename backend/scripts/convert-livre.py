@@ -42,11 +42,36 @@ def inline_figures(text: str, fig_dir: str, slug: str) -> str:
     return TIKZ_RE.sub(repl, text)
 
 
-def convert(text: str, fig_dir: str = "", slug: str = "") -> str:
-    # Figures TikZ -> SVG inliné (avant tout le reste)
-    if slug:
-        text = inline_figures(text, fig_dir, slug)
+EXOS_RE = re.compile(r"\\section\*?\{[^}]*[Ee]xercices[^}]*[Rr]ésolus[^}]*\}")
+PROB_RE = re.compile(r"\\section\*?\{[^}]*[Pp]robl[^}]*[Rr]ésolus[^}]*\}")
+SUBSEC_RE = re.compile(r"\\subsection\*?" + BRACE)
+SOLUTION_RE = re.compile(r"\\textbf\s*\{\s*Solution[^}]*\}")
 
+
+def wrap_enonces(text: str) -> str:
+    """Dans une section d'exercices/problèmes, enveloppe l'énoncé de chaque item
+    (du titre \\subsection*{Exercice/Problème ...} jusqu'à \\textbf{Solution})
+    dans un environnement `enonce` (carte dédiée côté parseMarkdown)."""
+    heads = list(SUBSEC_RE.finditer(text))
+    if not heads:
+        return text
+    out = text[: heads[0].start()]
+    for i, h in enumerate(heads):
+        seg_end = heads[i + 1].start() if i + 1 < len(heads) else len(text)
+        header = text[h.start(): h.end()]
+        body = text[h.end(): seg_end]
+        m = SOLUTION_RE.search(body)
+        if m:
+            enonce = body[: m.start()].strip()
+            rest = body[m.start():]
+            out += header + "\n\\begin{enonce}\n" + enonce + "\n\\end{enonce}\n\n" + rest
+        else:
+            out += header + body
+    return out
+
+
+def convert(text: str) -> str:
+    # (les figures sont déjà inlinées en amont, avant le découpage cours / exercices)
     # Chapitre (le titre de la leçon vient de la base) + commentaires
     text = re.sub(r"\\chapter\*?" + BRACE, "", text)
     text = re.sub(r"(?m)^\s*%.*$", "", text)
@@ -66,18 +91,48 @@ def convert(text: str, fig_dir: str = "", slug: str = "") -> str:
 
 def main():
     if len(sys.argv) != 3:
-        print("Usage: convert-livre.py <chapitre.tex> <sortie.md>", file=sys.stderr)
+        print("Usage: convert-livre.py <chapitre.tex> <sortie-cours.md>", file=sys.stderr)
         sys.exit(1)
     src, out = sys.argv[1], sys.argv[2]
     slug = os.path.splitext(os.path.basename(out))[0]
     fig_dir = os.path.join(os.path.dirname(out), "figures")
     with open(src, encoding="utf-8") as f:
-        md = convert(f.read(), fig_dir, slug)
+        raw = f.read()
+
+    # Figures inlinées sur le chapitre ENTIER (numérotation correcte) AVANT découpage.
+    inlined = inline_figures(raw, fig_dir, slug)
+
+    # Découpe en 3 : cours / exercices résolus / problèmes résolus
+    # (ordre dans le livre : cours, puis « Exercices … Résolus », puis « Problèmes Résolus »).
+    mE = EXOS_RE.search(inlined)
+    mP = PROB_RE.search(inlined)
+    end = len(inlined)
+    cours_src = inlined[: (mE.start() if mE else (mP.start() if mP else end))]
+    exos_src = inlined[mE.end(): (mP.start() if mP else end)] if mE else ""
+    prob_src = inlined[mP.end():] if mP else ""
+
+    # --- Cours (sans exercices ni problèmes) ---
+    md = convert(cours_src)
     os.makedirs(os.path.dirname(out), exist_ok=True)
     with open(out, "w", encoding="utf-8") as f:
         f.write(md)
     envs = len(re.findall(r"\\begin\{(definition|theoreme|propriete|methode|exemple)\}", md))
-    print(f"✓ {out}  ({md.count(chr(10))} lignes, {envs} environnements conservés)")
+    print(f"✓ cours      {out}  ({md.count(chr(10))} lignes, {envs} environnements)")
+
+    # --- Exercices / Problèmes résolus -> data/<kind>/<matiere>/<slug>.md ---
+    def write_section(section_src, kind, mot):
+        if not section_src.strip():
+            return
+        dest = out.replace(os.sep + "cours" + os.sep, os.sep + kind + os.sep)
+        md_s = convert(wrap_enonces(section_src))
+        os.makedirs(os.path.dirname(dest), exist_ok=True)
+        with open(dest, "w", encoding="utf-8") as f:
+            f.write(md_s)
+        n = md_s.count("\\begin{enonce}") or md_s.count("### ")
+        print(f"✓ {kind:<10} {dest}  ({md_s.count(chr(10))} lignes, ~{n} {mot})")
+
+    write_section(exos_src, "exercices", "exercices")
+    write_section(prob_src, "problemes", "problèmes")
 
 
 if __name__ == "__main__":

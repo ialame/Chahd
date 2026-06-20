@@ -134,6 +134,11 @@ export function parseMarkdown(text: string, hardBreaks = false): string {
       '<div style="background:#F1F7F1" class="rounded-[10px] px-[18px] py-3.5 my-4"><div class="flex items-center mb-2"><i class="fa-solid fa-lightbulb mr-2" style="color:#15803D"></i><span style="color:#15803D" class="font-extrabold uppercase tracking-wide text-[13px]">Exemple</span></div>' + CONTENT)
     p = p.replace(/\\end\{(exemple|example)\}/gis, '</div></div>')
 
+    // Énoncé d'exercice — bloc bleu clair (analogue à Exemple) pour distinguer énoncé / solution
+    p = p.replace(/\\begin\{enonce\}/gis,
+      '<div style="background:#EEF4FB" class="rounded-[10px] px-[18px] py-3.5 my-4"><div class="flex items-center mb-2"><i class="fa-solid fa-list-ol mr-2" style="color:#1F4E79"></i><span style="color:#1F4E79" class="font-extrabold uppercase tracking-wide text-[13px]">Énoncé</span></div>' + CONTENT)
+    p = p.replace(/\\end\{enonce\}/gis, '</div></div>')
+
     // 5. Sous-paragraphes
     p = p.replace(/\\paragraph\{([^{}]+)\}/g, '<strong class="block text-xs font-bold text-gray-800 mt-4 mb-1 font-sans">$1</strong>')
 
