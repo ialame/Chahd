@@ -8,4 +8,6 @@ import java.util.List;
 public interface LeconRepository extends JpaRepository<Lecon, Long> {
 
     List<Lecon> findByMatiereSlugOrderByOrdreAsc(String matiereSlug);
+
+    long countByMatiere_Id(Long matiereId);
 }

@@ -22,6 +22,11 @@ public class Quiz {
     @JoinColumn(name = "chapitre_id", nullable = false)
     private Chapitre chapitre;
 
+    /** Leçon (livre) à laquelle le QCM est rattaché — modèle unifié des chapitres. */
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "lecon_id")
+    private Lecon lecon;
+
     @Column(nullable = false, length = 200)
     private String titre;
 

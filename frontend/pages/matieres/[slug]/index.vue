@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { MatiereDetailDto, LeconDto, AnnaleContenuDto, ChapitreDetailDto, FlashcardDto } from '~/types/api'
+import type { MatiereDetailDto, LeconDto, AnnaleContenuDto, FlashcardDto } from '~/types/api'
 import { parseMarkdown } from '~/utils/parseMarkdown'
 
 const route = useRoute()
@@ -14,38 +14,6 @@ const { data: lecons } = await useAsyncData(
   `cours-${slug}`,
   () => get<LeconDto[]>(`/matieres/${slug}/cours`)
 )
-
-// QCM par chapitre : on récupère les quiz (id) des chapitres (programme) qui en ont.
-const { data: qcms } = await useAsyncData(`qcm-${slug}`, async () => {
-  const chs = (matiere.value?.chapitres ?? []).filter((c) => c.nbQuiz > 0)
-  const details = await Promise.all(
-    chs.map((c) => get<ChapitreDetailDto>(`/matieres/${slug}/chapitres/${c.slug}`))
-  )
-  return details.flatMap((d) => d.quizzes.map((q) => ({ chapitre: d.slug, quizId: q.id, titre: q.titre })))
-})
-
-// 1er QCM de chaque chapitre (programme), indexé par slug de chapitre.
-const qcmParChapitre = computed(() => {
-  const m = new Map<string, { quizId: number; titre: string }>()
-  for (const q of qcms.value ?? []) if (!m.has(q.chapitre)) m.set(q.chapitre, { quizId: q.quizId, titre: q.titre })
-  return m
-})
-
-// Les leçons (livre) et les chapitres (programme, porteurs des QCM) n'ont pas les
-// mêmes slugs : table de correspondance leçon -> chapitre (Maths).
-const ALIAS_QCM: Record<string, string> = {
-  'recurrence-suites': 'suites-numeriques',
-  'limites-continuite': 'limites-continuite',
-  'derivation-convexite': 'derivation-etude-fonctions',
-  'logarithme': 'logarithme-exponentielle',
-  'exponentielle': 'logarithme-exponentielle',
-  'primitives-integration': 'calcul-integral',
-  'denombrement': 'probabilites',
-  'nombres-complexes': 'nombres-complexes',
-  'probabilites': 'probabilites'
-}
-const qcmPourLecon = (leconSlug: string) =>
-  qcmParChapitre.value.get(ALIAS_QCM[leconSlug] ?? leconSlug) ?? null
 
 // Annales groupées par année (décroissant).
 const annalesParAnnee = computed(() => {
@@ -178,9 +146,9 @@ const itemClass = (on: boolean) =>
                   <i class="fa-solid fa-clone text-rose-500 w-4 text-center" /> Fiches de révision
                 </button>
                 <button
-                  v-if="qcmPourLecon(l.slug)"
-                  :class="itemClass(estSelectionne({ kind: 'quiz', quizId: qcmPourLecon(l.slug)!.quizId, titre: qcmPourLecon(l.slug)!.titre }))"
-                  @click="selectionner({ kind: 'quiz', quizId: qcmPourLecon(l.slug)!.quizId, titre: qcmPourLecon(l.slug)!.titre })"
+                  v-if="l.quizId"
+                  :class="itemClass(estSelectionne({ kind: 'quiz', quizId: l.quizId, titre: 'QCM' }))"
+                  @click="selectionner({ kind: 'quiz', quizId: l.quizId, titre: 'QCM' })"
                 >
                   <i class="fa-solid fa-list-check text-teal-500 w-4 text-center" /> QCM
                 </button>

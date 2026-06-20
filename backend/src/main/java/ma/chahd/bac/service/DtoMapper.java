@@ -1,6 +1,7 @@
 package ma.chahd.bac.service;
 
 import ma.chahd.bac.domain.*;
+import ma.chahd.bac.repository.LeconRepository;
 import ma.chahd.bac.web.dto.*;
 import org.springframework.stereotype.Component;
 
@@ -11,15 +12,20 @@ import java.util.List;
 public class DtoMapper {
 
     private final AnnaleContenuService annaleContenuService;
+    private final LeconRepository leconRepository;
 
-    public DtoMapper(AnnaleContenuService annaleContenuService) {
+    public DtoMapper(AnnaleContenuService annaleContenuService, LeconRepository leconRepository) {
         this.annaleContenuService = annaleContenuService;
+        this.leconRepository = leconRepository;
     }
 
     public MatiereDto toMatiereDto(Matiere m) {
+        // Modèle unifié : on compte les leçons (chapitres du livre) ; repli sur les
+        // chapitres programme pour les matières sans leçons.
+        long nbLecons = leconRepository.countByMatiere_Id(m.getId());
+        int nbChapitres = nbLecons > 0 ? (int) nbLecons : m.getChapitres().size();
         return new MatiereDto(m.getId(), m.getSlug(), m.getNom(), m.getCoefficient(),
-                m.getDescription(), m.getCouleur(), m.getIcone(), m.getOrdre(),
-                m.getChapitres().size());
+                m.getDescription(), m.getCouleur(), m.getIcone(), m.getOrdre(), nbChapitres);
     }
 
     public MatiereDetailDto toMatiereDetailDto(Matiere m) {
