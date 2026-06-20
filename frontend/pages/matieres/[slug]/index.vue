@@ -15,14 +15,37 @@ const { data: lecons } = await useAsyncData(
   () => get<LeconDto[]>(`/matieres/${slug}/cours`)
 )
 
-// QCM par chapitre : on récupère les quiz (id) des chapitres qui en ont.
+// QCM par chapitre : on récupère les quiz (id) des chapitres (programme) qui en ont.
 const { data: qcms } = await useAsyncData(`qcm-${slug}`, async () => {
   const chs = (matiere.value?.chapitres ?? []).filter((c) => c.nbQuiz > 0)
   const details = await Promise.all(
     chs.map((c) => get<ChapitreDetailDto>(`/matieres/${slug}/chapitres/${c.slug}`))
   )
-  return details.flatMap((d) => d.quizzes.map((q) => ({ quizId: q.id, titre: q.titre })))
+  return details.flatMap((d) => d.quizzes.map((q) => ({ chapitre: d.slug, quizId: q.id, titre: q.titre })))
 })
+
+// 1er QCM de chaque chapitre (programme), indexé par slug de chapitre.
+const qcmParChapitre = computed(() => {
+  const m = new Map<string, { quizId: number; titre: string }>()
+  for (const q of qcms.value ?? []) if (!m.has(q.chapitre)) m.set(q.chapitre, { quizId: q.quizId, titre: q.titre })
+  return m
+})
+
+// Les leçons (livre) et les chapitres (programme, porteurs des QCM) n'ont pas les
+// mêmes slugs : table de correspondance leçon -> chapitre (Maths).
+const ALIAS_QCM: Record<string, string> = {
+  'recurrence-suites': 'suites-numeriques',
+  'limites-continuite': 'limites-continuite',
+  'derivation-convexite': 'derivation-etude-fonctions',
+  'logarithme': 'logarithme-exponentielle',
+  'exponentielle': 'logarithme-exponentielle',
+  'primitives-integration': 'calcul-integral',
+  'denombrement': 'probabilites',
+  'nombres-complexes': 'nombres-complexes',
+  'probabilites': 'probabilites'
+}
+const qcmPourLecon = (leconSlug: string) =>
+  qcmParChapitre.value.get(ALIAS_QCM[leconSlug] ?? leconSlug) ?? null
 
 // Annales groupées par année (décroissant).
 const annalesParAnnee = computed(() => {
@@ -38,7 +61,7 @@ const annalesParAnnee = computed(() => {
 type AnnaleDtoLite = { id: number; titre: string; annee: number; session: string; aContenu: boolean }
 
 // --- État de l'explorateur ---
-const groupes = reactive({ chapitres: true, annales: false, qcm: false })
+const groupes = reactive({ chapitres: true, annales: false })
 const leconOuverte = reactive<Record<number, boolean>>({})
 const anneeOuverte = reactive<Record<number, boolean>>({})
 
@@ -154,6 +177,13 @@ const itemClass = (on: boolean) =>
                 <button v-if="l.aFiches" :class="itemClass(estSelectionne({ kind: 'fiches', lecon: l }))" @click="selectionner({ kind: 'fiches', lecon: l })">
                   <i class="fa-solid fa-clone text-rose-500 w-4 text-center" /> Fiches de révision
                 </button>
+                <button
+                  v-if="qcmPourLecon(l.slug)"
+                  :class="itemClass(estSelectionne({ kind: 'quiz', quizId: qcmPourLecon(l.slug)!.quizId, titre: qcmPourLecon(l.slug)!.titre }))"
+                  @click="selectionner({ kind: 'quiz', quizId: qcmPourLecon(l.slug)!.quizId, titre: qcmPourLecon(l.slug)!.titre })"
+                >
+                  <i class="fa-solid fa-list-check text-teal-500 w-4 text-center" /> QCM
+                </button>
               </div>
             </div>
           </div>
@@ -190,26 +220,6 @@ const itemClass = (on: boolean) =>
             </div>
           </div>
 
-          <!-- Groupe QCM -->
-          <button
-            class="w-full flex items-center gap-2 px-4 py-3 text-left text-xs font-bold uppercase tracking-wide text-slate-500 border-t border-slate-100 hover:bg-slate-50"
-            @click="groupes.qcm = !groupes.qcm"
-          >
-            <i :class="['fa-solid text-[10px]', groupes.qcm ? 'fa-chevron-down' : 'fa-chevron-right']" />
-            <i class="fa-solid fa-list-check text-brand-dark" /> QCM
-          </button>
-          <div v-show="groupes.qcm" class="px-2 pb-2 space-y-0.5">
-            <button
-              v-for="q in qcms ?? []"
-              :key="q.quizId"
-              :class="itemClass(estSelectionne({ kind: 'quiz', quizId: q.quizId, titre: q.titre }))"
-              @click="selectionner({ kind: 'quiz', quizId: q.quizId, titre: q.titre })"
-            >
-              <i class="fa-solid fa-list-check text-teal-500 w-4 text-center" />
-              <span class="truncate">{{ q.titre }}</span>
-            </button>
-            <p v-if="(qcms ?? []).length === 0" class="px-3 py-2 text-xs italic text-slate-400">Aucun QCM.</p>
-          </div>
         </div>
       </aside>
 
