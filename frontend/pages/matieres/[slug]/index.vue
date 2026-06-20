@@ -5,6 +5,7 @@ import { parseMarkdown } from '~/utils/parseMarkdown'
 const route = useRoute()
 const slug = route.params.slug as string
 const { get } = useApi()
+const { track } = useActivite()
 
 const { data: matiere, error } = await useAsyncData(
   `matiere-${slug}`,
@@ -53,6 +54,10 @@ const estSelectionne = (s: Sel) => selection.value != null && cleSel(selection.v
 
 async function selectionner(s: Sel) {
   selection.value = s
+  // Suivi : enregistrer l'ouverture
+  if (s.kind === 'annale') track({ matiere: slug, item: 'annale', label: s.annale.titre })
+  else if (s.kind === 'quiz') track({ matiere: slug, item: 'quiz', label: s.titre })
+  else track({ matiere: slug, chapitre: s.lecon.slug, item: s.kind, label: s.lecon.titre })
   if (s.kind === 'quiz') return // QuizRunner se charge lui-même
   loading.value = true
   try {

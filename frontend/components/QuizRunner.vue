@@ -6,6 +6,7 @@ const props = defineProps<{ quizId: number; matiereSlug?: string }>()
 
 const { get, post } = useApi()
 const { enregistrerQuiz } = useProgression()
+const { track } = useActivite()
 
 const selections = reactive<Record<number, Set<number>>>({})
 const result = ref<QuizResultDto | null>(null)
@@ -84,6 +85,7 @@ async function soumettre() {
     const res = await post<QuizResultDto>(`/quiz/${props.quizId}/correction`, { reponses })
     result.value = res
     enregistrerQuiz(res, { titre: quiz.value.titre, matiereSlug: props.matiereSlug ?? '' })
+    track({ type: 'quiz', matiere: props.matiereSlug, item: 'quiz', label: quiz.value.titre, note: res.noteSur20 })
   } finally {
     submitting.value = false
   }

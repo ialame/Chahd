@@ -24,6 +24,9 @@ server:
 app:
   cors:
     allowed-origins: ${CORS_ORIGINS:http://localhost:3000,http://localhost:3001}
+  admin:
+    # Clé d'accès au suivi (/api/admin/suivi et page /suivi). À surcharger en prod via ADMIN_KEY.
+    key: ${ADMIN_KEY:chahd-suivi-dev}
 
 logging:
   level:
