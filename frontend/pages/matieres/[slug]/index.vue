@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { MatiereDetailDto, LeconDto, AnnaleContenuDto, FlashcardDto } from '~/types/api'
+import type { MatiereDetailDto, LeconDto, AnnaleContenuDto, FlashcardDto, ExoBacDto } from '~/types/api'
 import { parseMarkdown } from '~/utils/parseMarkdown'
 
 const route = useRoute()
@@ -36,13 +36,14 @@ const anneeOuverte = reactive<Record<number, boolean>>({})
 
 // --- Sélection + contenu ---
 type Sel =
-  | { kind: 'cours' | 'exercices' | 'problemes' | 'fiches'; lecon: LeconDto }
+  | { kind: 'cours' | 'exercices' | 'problemes' | 'fiches' | 'bac'; lecon: LeconDto }
   | { kind: 'annale'; annale: AnnaleDtoLite }
   | { kind: 'quiz'; quizId: number; titre: string; chapitre?: string }
 const selection = ref<Sel | null>(null)
 const loading = ref(false)
 const cache = reactive<Record<string, string>>({})
 const fiches = ref<FlashcardDto[]>([])
+const bacExos = ref<ExoBacDto[]>([])
 const annale = ref<AnnaleContenuDto | null>(null)
 
 const cleSel = (s: Sel) => {
@@ -65,6 +66,8 @@ async function selectionner(s: Sel) {
       annale.value = await get<AnnaleContenuDto>(`/annales/${s.annale.id}/contenu`)
     } else if (s.kind === 'fiches') {
       fiches.value = await get<FlashcardDto[]>(`/cours/${s.lecon.id}/fiches`)
+    } else if (s.kind === 'bac') {
+      bacExos.value = await get<ExoBacDto[]>(`/cours/${s.lecon.id}/bac`)
     } else {
       const k = cleSel(s)
       if (!cache[k]) {
@@ -83,7 +86,7 @@ const titreSelection = computed(() => {
   if (!s) return ''
   if (s.kind === 'annale') return s.annale.titre
   if (s.kind === 'quiz') return s.titre
-  const suffixe = { cours: 'Cours', exercices: 'Exercices résolus', problemes: 'Problèmes résolus', fiches: 'Fiches de révision' }[s.kind]
+  const suffixe = { cours: 'Cours', exercices: 'Exercices résolus', problemes: 'Problèmes résolus', fiches: 'Fiches de révision', bac: 'Exercices du bac' }[s.kind]
   return `${s.lecon.titre} — ${suffixe}`
 })
 const renduTexte = computed(() => {
@@ -157,6 +160,9 @@ const itemClass = (on: boolean) =>
                 >
                   <i class="fa-solid fa-list-check text-teal-500 w-4 text-center" /> QCM
                 </button>
+                <button v-if="l.aBac" :class="itemClass(estSelectionne({ kind: 'bac', lecon: l }))" @click="selectionner({ kind: 'bac', lecon: l })">
+                  <i class="fa-solid fa-graduation-cap text-amber-600 w-4 text-center" /> Exercices du bac
+                </button>
               </div>
             </div>
           </div>
@@ -223,6 +229,11 @@ const itemClass = (on: boolean) =>
           <!-- Fiches de révision (flashcards) -->
           <template v-else-if="selection.kind === 'fiches'">
             <FlashcardViewer :key="selection.lecon.id" :cards="fiches" />
+          </template>
+
+          <!-- Exercices du bac -->
+          <template v-else-if="selection.kind === 'bac'">
+            <BacExercices :key="selection.lecon.id" :exos="bacExos" />
           </template>
 
           <!-- Cours / Exercices / Problèmes -->

@@ -46,4 +46,10 @@ public class CoursController {
     public java.util.List<ma.chahd.bac.web.dto.FlashcardDto> fiches(@PathVariable Long id) {
         return coursService.getFiches(id);
     }
+
+    /** Exercices du bac rattachés à une leçon. */
+    @GetMapping("/cours/{id}/bac")
+    public java.util.List<ma.chahd.bac.web.dto.ExoBacDto> bac(@PathVariable Long id) {
+        return coursService.getBac(id);
+    }
 }

@@ -7,6 +7,7 @@ import ma.chahd.bac.domain.Quiz;
 import ma.chahd.bac.repository.LeconRepository;
 import ma.chahd.bac.repository.QuizRepository;
 import ma.chahd.bac.web.NotFoundException;
+import ma.chahd.bac.web.dto.ExoBacDto;
 import ma.chahd.bac.web.dto.FlashcardDto;
 import ma.chahd.bac.web.dto.LeconContenuDto;
 import ma.chahd.bac.web.dto.LeconDto;
@@ -18,7 +19,10 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Comparator;
 import java.util.List;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 /** Cours (livre) : liste les leçons et sert leur contenu Markdown+LaTeX depuis le disque. */
 @Service
@@ -31,20 +35,29 @@ public class CoursService {
     private final Path exoDir;
     private final Path probDir;
     private final Path fichesDir;
-    private final ObjectMapper mapper = new ObjectMapper();
+    private final Path bacDir;
+    private final ObjectMapper mapper = new ObjectMapper()
+            .configure(com.fasterxml.jackson.databind.DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+
+    /** Exercices du bac chargés depuis data/bac/<matiere>.json (en cache). */
+    private record BacEntry(int annee, String session, String numero, String titre,
+                            List<String> chapitres, String enonce, String corrige) {}
+    private final ConcurrentHashMap<String, List<BacEntry>> bacCache = new ConcurrentHashMap<>();
 
     public CoursService(LeconRepository leconRepository,
                         QuizRepository quizRepository,
                         @Value("${app.cours.dir:./data/cours/}") String dir,
                         @Value("${app.exercices.dir:./data/exercices/}") String exoDir,
                         @Value("${app.problemes.dir:./data/problemes/}") String probDir,
-                        @Value("${app.fiches.dir:./data/fiches/}") String fichesDir) {
+                        @Value("${app.fiches.dir:./data/fiches/}") String fichesDir,
+                        @Value("${app.bac.dir:./data/bac/}") String bacDir) {
         this.leconRepository = leconRepository;
         this.quizRepository = quizRepository;
         this.dir = Paths.get(dir);
         this.exoDir = Paths.get(exoDir);
         this.probDir = Paths.get(probDir);
         this.fichesDir = Paths.get(fichesDir);
+        this.bacDir = Paths.get(bacDir);
     }
 
     public List<LeconDto> listCours(String matiereSlug) {
@@ -53,14 +66,47 @@ public class CoursService {
         for (Quiz q : quizRepository.findByLecon_Matiere_SlugOrderByOrdreAsc(matiereSlug)) {
             if (q.getLecon() != null) quizParLecon.putIfAbsent(q.getLecon().getId(), q.getId());
         }
+        Set<String> bacSlugs = bacChapitres(matiereSlug);
         return leconRepository.findByMatiereSlugOrderByOrdreAsc(matiereSlug).stream()
                 .map(l -> new LeconDto(l.getId(), l.getSlug(), l.getTitre(), l.getOrdre(),
                         Files.isReadable(file(dir, matiereSlug, l.getSlug())),
                         Files.isReadable(file(exoDir, matiereSlug, l.getSlug())),
                         Files.isReadable(file(probDir, matiereSlug, l.getSlug())),
                         Files.isReadable(fichesFile(matiereSlug, l.getSlug())),
-                        quizParLecon.get(l.getId())))
+                        quizParLecon.get(l.getId()),
+                        bacSlugs.contains(l.getSlug())))
                 .toList();
+    }
+
+    /** Exercices du bac rattachés à une leçon (récents d'abord). */
+    public List<ExoBacDto> getBac(Long id) {
+        Lecon lecon = leconRepository.findById(id)
+                .orElseThrow(() -> new NotFoundException("Leçon introuvable : " + id));
+        String slug = lecon.getSlug();
+        return bacEntries(lecon.getMatiere().getSlug()).stream()
+                .filter(e -> e.chapitres().contains(slug))
+                .sorted(Comparator.comparingInt(BacEntry::annee).reversed()
+                        .thenComparing(BacEntry::session))
+                .map(e -> new ExoBacDto(e.annee(), e.session(), e.numero(), e.titre(), e.enonce(), e.corrige()))
+                .toList();
+    }
+
+    private List<BacEntry> bacEntries(String matiereSlug) {
+        return bacCache.computeIfAbsent(matiereSlug, m -> {
+            Path f = bacDir.resolve(m + ".json");
+            if (!Files.isReadable(f)) return List.of();
+            try {
+                return mapper.readValue(Files.readAllBytes(f), new TypeReference<List<BacEntry>>() {});
+            } catch (IOException e) {
+                return List.of();
+            }
+        });
+    }
+
+    private Set<String> bacChapitres(String matiereSlug) {
+        return bacEntries(matiereSlug).stream()
+                .flatMap(e -> e.chapitres().stream())
+                .collect(java.util.stream.Collectors.toSet());
     }
 
     /** Fiches de révision (flashcards Q/R) d'une leçon. */

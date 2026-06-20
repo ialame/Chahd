@@ -53,11 +53,21 @@ export interface LeconDto {
   aProblemes: boolean
   aFiches: boolean
   quizId: number | null
+  aBac: boolean
 }
 
 export interface FlashcardDto {
   question: string
   reponse: string
+}
+
+export interface ExoBacDto {
+  annee: number
+  session: string
+  numero: string
+  titre: string
+  enonce: string
+  corrige: string
 }
 
 export interface LeconContenuDto {
