@@ -18,8 +18,8 @@ public class Quiz {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "chapitre_id", nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "chapitre_id")
     private Chapitre chapitre;
 
     /** Leçon (livre) à laquelle le QCM est rattaché — modèle unifié des chapitres. */
