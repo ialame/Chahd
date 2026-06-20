@@ -15,6 +15,15 @@ const { data: lecons } = await useAsyncData(
   () => get<LeconDto[]>(`/matieres/${slug}/cours`)
 )
 
+// QCM par chapitre : on récupère les quiz (id) des chapitres qui en ont.
+const { data: qcms } = await useAsyncData(`qcm-${slug}`, async () => {
+  const chs = (matiere.value?.chapitres ?? []).filter((c) => c.nbQuiz > 0)
+  const details = await Promise.all(
+    chs.map((c) => get<ChapitreDetailDto>(`/matieres/${slug}/chapitres/${c.slug}`))
+  )
+  return details.flatMap((d) => d.quizzes.map((q) => ({ quizId: q.id, titre: q.titre })))
+})
+
 // Chapitre (porteur des fiches) indexé par slug, pour rattacher les fiches aux leçons.
 const chapitreBySlug = computed(() => {
   const m = new Map<string, { slug: string; nbFiches: number }>()
@@ -37,7 +46,7 @@ const annalesParAnnee = computed(() => {
 type AnnaleDtoLite = { id: number; titre: string; annee: number; session: string; aContenu: boolean }
 
 // --- État de l'explorateur ---
-const groupes = reactive({ chapitres: true, annales: false })
+const groupes = reactive({ chapitres: true, annales: false, qcm: false })
 const leconOuverte = reactive<Record<number, boolean>>({})
 const anneeOuverte = reactive<Record<number, boolean>>({})
 
@@ -45,17 +54,23 @@ const anneeOuverte = reactive<Record<number, boolean>>({})
 type Sel =
   | { kind: 'cours' | 'exercices' | 'problemes' | 'fiches'; lecon: LeconDto }
   | { kind: 'annale'; annale: AnnaleDtoLite }
+  | { kind: 'quiz'; quizId: number; titre: string }
 const selection = ref<Sel | null>(null)
 const loading = ref(false)
 const cache = reactive<Record<string, string>>({})
 const fiches = ref<FicheDto[]>([])
 const annale = ref<AnnaleContenuDto | null>(null)
 
-const cleSel = (s: Sel) => (s.kind === 'annale' ? `annale-${s.annale.id}` : `${s.kind}-${s.lecon.id}`)
+const cleSel = (s: Sel) => {
+  if (s.kind === 'annale') return `annale-${s.annale.id}`
+  if (s.kind === 'quiz') return `quiz-${s.quizId}`
+  return `${s.kind}-${s.lecon.id}`
+}
 const estSelectionne = (s: Sel) => selection.value != null && cleSel(selection.value) === cleSel(s)
 
 async function selectionner(s: Sel) {
   selection.value = s
+  if (s.kind === 'quiz') return // QuizRunner se charge lui-même
   loading.value = true
   try {
     if (s.kind === 'annale') {
@@ -81,6 +96,7 @@ const titreSelection = computed(() => {
   const s = selection.value
   if (!s) return ''
   if (s.kind === 'annale') return s.annale.titre
+  if (s.kind === 'quiz') return s.titre
   const suffixe = { cours: 'Cours', exercices: 'Exercices résolus', problemes: 'Problèmes résolus', fiches: 'Fiches de révision' }[s.kind]
   return `${s.lecon.titre} — ${suffixe}`
 })
@@ -183,6 +199,27 @@ const itemClass = (on: boolean) =>
               </div>
             </div>
           </div>
+
+          <!-- Groupe QCM -->
+          <button
+            class="w-full flex items-center gap-2 px-4 py-3 text-left text-xs font-bold uppercase tracking-wide text-slate-500 border-t border-slate-100 hover:bg-slate-50"
+            @click="groupes.qcm = !groupes.qcm"
+          >
+            <i :class="['fa-solid text-[10px]', groupes.qcm ? 'fa-chevron-down' : 'fa-chevron-right']" />
+            <i class="fa-solid fa-list-check text-brand-dark" /> QCM
+          </button>
+          <div v-show="groupes.qcm" class="px-2 pb-2 space-y-0.5">
+            <button
+              v-for="q in qcms ?? []"
+              :key="q.quizId"
+              :class="itemClass(estSelectionne({ kind: 'quiz', quizId: q.quizId, titre: q.titre }))"
+              @click="selectionner({ kind: 'quiz', quizId: q.quizId, titre: q.titre })"
+            >
+              <i class="fa-solid fa-list-check text-teal-500 w-4 text-center" />
+              <span class="truncate">{{ q.titre }}</span>
+            </button>
+            <p v-if="(qcms ?? []).length === 0" class="px-3 py-2 text-xs italic text-slate-400">Aucun QCM.</p>
+          </div>
         </div>
       </aside>
 
@@ -193,6 +230,11 @@ const itemClass = (on: boolean) =>
           <i class="fa-solid fa-hand-pointer text-3xl text-slate-300 mb-3" />
           <p class="font-semibold text-slate-700">Choisissez un élément à gauche</p>
           <p class="text-sm">Cours, exercices, problèmes, fiches ou annales — le contenu s'affiche ici.</p>
+        </div>
+
+        <!-- QCM interactif dans la colonne de droite -->
+        <div v-else-if="selection.kind === 'quiz'" class="card">
+          <QuizRunner :key="selection.quizId" :quiz-id="selection.quizId" :matiere-slug="slug" />
         </div>
 
         <article v-else class="card space-y-4">
