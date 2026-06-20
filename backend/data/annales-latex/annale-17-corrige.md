@@ -10,7 +10,7 @@
     \end{tcolorbox}
 
 % ============================================================
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 1 — Exponentielle, équations et T.V.I.<span class="float-right font-normal text-white/80 text-sm">2 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 1 — Exponentielle, équations et T.V.I. <span class="font-normal text-white/80 text-sm">(2 points)</span></div>
 
     
         
@@ -60,7 +60,7 @@
         <div class="my-2 font-semibold" style="color:#1F4E79">⇒ l'équation $e^{2x}+e^x+4x=0$ admet (au moins) une solution dans $[-1,0]$.</div>
 
 % ============================================================
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 2 — Suites numériques<span class="float-right font-normal text-white/80 text-sm">4 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 2 — Suites numériques <span class="font-normal text-white/80 text-sm">(4 points)</span></div>
 
     $(u_n)$ : $\;u_0=\dfrac12\;$ et $\;u_{n+1}=\dfrac{u_n}{3-2u_n}$.
 
@@ -141,7 +141,7 @@
     
 
 % ============================================================
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 3 — Nombres complexes<span class="float-right font-normal text-white/80 text-sm">5 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 3 — Nombres complexes <span class="font-normal text-white/80 text-sm">(5 points)</span></div>
 
     
         
@@ -240,7 +240,7 @@
     
 
 % ============================================================
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Problème — Étude de fonction, réciproque et fonction par morceaux<span class="float-right font-normal text-white/80 text-sm">9 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Problème — Étude de fonction, réciproque et fonction par morceaux <span class="font-normal text-white/80 text-sm">(9 points)</span></div>
 
     $f(0)=0$ et $f(x)=2x\ln x-2x$ pour $x>0$, sur $[0,+\infty[$ (unité $1$ cm).
 

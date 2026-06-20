@@ -1,4 +1,4 @@
-<div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 1<span class="float-right font-normal text-white/80 text-sm">4 points</span></div>
+<div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 1 <span class="font-normal text-white/80 text-sm">(4 points)</span></div>
 Soit $(u_n)$ la suite numérique définie par $u_0 = \frac{1}{3}$ et $u_{n+1} = \frac{u_n + 1}{3 - u_n}$ pour tout $n \in \N$.
 
     
@@ -27,7 +27,7 @@ Soit $(u_n)$ la suite numérique définie par $u_0 = \frac{1}{3}$ et $u_{n+1} = 
 
 **4)** À partir de quelle valeur de $n$ a-t-on $u_n \ge \frac{1011}{1012}$ ?
 
-<div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 2<span class="float-right font-normal text-white/80 text-sm">5 points</span></div>
+<div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 2 <span class="font-normal text-white/80 text-sm">(5 points)</span></div>
 
     
 
@@ -68,7 +68,7 @@ Soit $(u_n)$ la suite numérique définie par $u_0 = \frac{1}{3}$ et $u_{n+1} = 
 
 **5.b)** En déduire que le quadrilatère $ABED$ est un trapèze isocèle.
 
-<div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 3<span class="float-right font-normal text-white/80 text-sm">3 points</span></div>
+<div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 3 <span class="font-normal text-white/80 text-sm">(3 points)</span></div>
 On considère la fonction numérique $h$ définie sur $]0, + \infty[$ par : $h(x) = x + \ln x$.
 
     
@@ -90,7 +90,7 @@ On considère la fonction numérique $h$ définie sur $]0, + \infty[$ par : $h(x
 
 **4.b)** En déduire que $\frac{1}{e} < \alpha < 1$.
 
-<div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Problème<span class="float-right font-normal text-white/80 text-sm">8 points</span></div>
+<div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Problème <span class="font-normal text-white/80 text-sm">(8 points)</span></div>
 Soit $f$ la fonction numérique définie sur $\R$ par $f(x) = 2 - xe^{-x+1}$. \\
 Soit $(C_f)$ sa courbe représentative dans un repère orthonormé $(O,\vec{i},\vec{j})$ (unité : 1cm).
 

@@ -11,7 +11,7 @@
     \end{tcolorbox}
 
 % ============================================================
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 1 — Géométrie dans l'espace<span class="float-right font-normal text-white/80 text-sm">3 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 1 — Géométrie dans l'espace <span class="font-normal text-white/80 text-sm">(3 points)</span></div>
 
     $A(1,1,0)$, $\Omega(-1,1,-2)$ ; plan $(P):x+z-1=0$.
 
@@ -99,7 +99,7 @@
     
 
 % ============================================================
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 2 — Nombres complexes<span class="float-right font-normal text-white/80 text-sm">4 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 2 — Nombres complexes <span class="font-normal text-white/80 text-sm">(4 points)</span></div>
 
     <div class="mt-6 mb-2 text-base font-bold" style="color:#1F4E79">Partie I : équation $(E):z^2-4z+9=0$</div>
 
@@ -208,7 +208,7 @@
     
 
 % ============================================================
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 3 — Probabilités<span class="float-right font-normal text-white/80 text-sm">2 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 3 — Probabilités <span class="font-normal text-white/80 text-sm">(2 points)</span></div>
 
     Urne : $4$ blanches, $3$ noires, $1$ verte ($8$ boules). Tirage \emph{successif sans remise} de $3$ boules.
 
@@ -248,7 +248,7 @@
         \]
 
 % ============================================================
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Problème — Inégalités, suite, étude de fonction, aire<span class="float-right font-normal text-white/80 text-sm">11 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Problème — Inégalités, suite, étude de fonction, aire <span class="font-normal text-white/80 text-sm">(11 points)</span></div>
 
     <div class="mt-6 mb-2 text-base font-bold" style="color:#1F4E79">Partie I : inégalités et suite $(u_n)$</div>
 

@@ -1,4 +1,4 @@
-<div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 1<span class="float-right font-normal text-white/80 text-sm">2.5 points</span></div>
+<div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 1 <span class="font-normal text-white/80 text-sm">(2.5 points)</span></div>
         Soit $(u_n)$ la suite numérique définie par $u_0 = 2$ et $u_{n+1} = \frac{2-\sqrt{2}}{2}u_n + \frac{\sqrt{2}}{2}$ pour tout $n \in \N$.
         
              
@@ -23,7 +23,7 @@
         
     
 
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 2<span class="float-right font-normal text-white/80 text-sm">3 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 2 <span class="font-normal text-white/80 text-sm">(3 points)</span></div>
         Dans l'espace rapporté à un repère orthonormé direct $(O,\vec{i},\vec{j},\vec{k})$, on considère les points $A(1,-1,1)$ et $B(5,1,-3)$. Soit $(S)$ la sphère de centre $\Omega(3,0,-1)$ et de rayon $R = 3$, et $(\Delta)$ la droite passant par le point $A$ et de vecteur directeur $\vec{u}(2,-2,1)$.
         
              
@@ -50,7 +50,7 @@
         
     
 
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 3<span class="float-right font-normal text-white/80 text-sm">3 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 3 <span class="font-normal text-white/80 text-sm">(3 points)</span></div>
         Dans le plan complexe rapporté à un repère orthonormé direct $(O,\vec{u},\vec{v})$, on considère les points $A$, $B$ et $C$ d'affixes respectives :
         \[ z_A = 1+5i, \quad z_B = 1-5i \quad \text{et} \quad z_C = 5-3i \]
         
@@ -78,7 +78,7 @@
         
     
 
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 4<span class="float-right font-normal text-white/80 text-sm">3 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 4 <span class="font-normal text-white/80 text-sm">(3 points)</span></div>
         Une urne contient trois boules blanches, quatre boules rouges et cinq boules vertes, indiscernables au toucher. On tire au hasard et simultanément trois boules de l'urne.
         
             
@@ -108,7 +108,7 @@
         
     
 
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Problème<span class="float-right font-normal text-white/80 text-sm">8.5 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Problème <span class="font-normal text-white/80 text-sm">(8.5 points)</span></div>
         On considère la fonction numérique $f$ définie sur $]0, +\infty[$ par :
         \[ f(x) = x^2(1 - \ln x) \]
         Soit $(C_f)$ sa courbe représentative dans un repère orthonormé $(O,\vec{i},\vec{j})$ (unité : 1cm).

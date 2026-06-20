@@ -11,7 +11,7 @@
     \end{tcolorbox}
 
 % ============================================================
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 1 — Suites numériques<span class="float-right font-normal text-white/80 text-sm">3 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 1 — Suites numériques <span class="font-normal text-white/80 text-sm">(3 points)</span></div>
 
     $(u_n)$ : $\;u_0=0\;$ et $\;u_{n+1}=\dfrac{u_n-2}{2u_n+5}$.
 
@@ -72,7 +72,7 @@
     
 
 % ============================================================
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 2 — Géométrie dans l'espace<span class="float-right font-normal text-white/80 text-sm">3 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 2 — Géométrie dans l'espace <span class="font-normal text-white/80 text-sm">(3 points)</span></div>
 
     $A(2,1,2)$, $B(-2,0,5)$, $C(4,-5,7)$, $\Omega(1,-1,0)$ ; $\vec u=\vec{\Omega A}$ ; sphère $(S)$ de centre $\Omega$,
     $R=3$.
@@ -146,7 +146,7 @@
     
 
 % ============================================================
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 3 — Nombres complexes<span class="float-right font-normal text-white/80 text-sm">3 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 3 — Nombres complexes <span class="font-normal text-white/80 text-sm">(3 points)</span></div>
 
     
         
@@ -210,7 +210,7 @@
     
 
 % ============================================================
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 4 — Probabilités<span class="float-right font-normal text-white/80 text-sm">3 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 4 — Probabilités <span class="font-normal text-white/80 text-sm">(3 points)</span></div>
 
     Urne : $4$ blanches, $2$ noires ($6$ boules).
 
@@ -271,7 +271,7 @@
     
 
 % ============================================================
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Problème — Fonction définie par morceaux, aire<span class="float-right font-normal text-white/80 text-sm">8 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Problème — Fonction définie par morceaux, aire <span class="font-normal text-white/80 text-sm">(8 points)</span></div>
 
     \[
         f(x)=\begin{cases}(x-1)^2\,e^{x(2-x)} & \text{si }x\le2\\[2pt] 1+(x-2)^2\ln(x-2) & \text{si }x>2\end{cases}

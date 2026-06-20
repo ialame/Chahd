@@ -11,7 +11,7 @@
     \end{tcolorbox}
 
 % ============================================================
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 1 — Suites numériques<span class="float-right font-normal text-white/80 text-sm">4 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 1 — Suites numériques <span class="font-normal text-white/80 text-sm">(4 points)</span></div>
 
     $(u_n)$ : $\;u_0=\dfrac32\;$ et $\;u_{n+1}=\dfrac{2u_n}{2u_n+5}$.
 
@@ -88,7 +88,7 @@
     
 
 % ============================================================
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 2 — Nombres complexes<span class="float-right font-normal text-white/80 text-sm">5 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 2 — Nombres complexes <span class="font-normal text-white/80 text-sm">(5 points)</span></div>
 
     
         
@@ -194,7 +194,7 @@
     
 
 % ============================================================
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 3 — Fonction et croissances comparées<span class="float-right font-normal text-white/80 text-sm">4 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 3 — Fonction et croissances comparées <span class="font-normal text-white/80 text-sm">(4 points)</span></div>
 
     $g(x)=2\sqrt x-2-\ln x$ sur $]0,+\infty[$.
 
@@ -263,7 +263,7 @@
     
 
 % ============================================================
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Problème — Étude d'une fonction et de sa réciproque<span class="float-right font-normal text-white/80 text-sm">7 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Problème — Étude d'une fonction et de sa réciproque <span class="font-normal text-white/80 text-sm">(7 points)</span></div>
 
     $\displaystyle f(x)=-x+\frac52-\frac12 e^{x-2}\bigl(e^{x-2}-4\bigr)$ sur $\R$.
     On développe (utile pour les calculs) :

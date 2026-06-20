@@ -11,7 +11,7 @@
     \end{tcolorbox}
 
 % ============================================================
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 1 — Suites numériques<span class="float-right font-normal text-white/80 text-sm">2{,}5 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 1 — Suites numériques <span class="font-normal text-white/80 text-sm">(2{,}5 points)</span></div>
 
     $(u_n)$ : $\;u_0=2\;$ et $\;u_{n+1}=\dfrac{2-\sqrt2}{2}\,u_n+\dfrac{\sqrt2}{2}$. On pose $q=\dfrac{2-\sqrt2}{2}$ (avec $0<q<1$).
 
@@ -73,7 +73,7 @@
     
 
 % ============================================================
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 2 — Géométrie dans l'espace<span class="float-right font-normal text-white/80 text-sm">3 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 2 — Géométrie dans l'espace <span class="font-normal text-white/80 text-sm">(3 points)</span></div>
 
     $A(1,-1,1)$, $B(5,1,-3)$, sphère $(S)$ de centre $\Omega(3,0,-1)$, $R=3$ ; $(\Delta)$ : par $A$, dirigée par
     $\vec u(2,-2,1)$.
@@ -134,7 +134,7 @@
     
 
 % ============================================================
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 3 — Nombres complexes<span class="float-right font-normal text-white/80 text-sm">3 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 3 — Nombres complexes <span class="font-normal text-white/80 text-sm">(3 points)</span></div>
 
     $z_A=1+5i$, $z_B=1-5i$, $z_C=5-3i$.
 
@@ -206,7 +206,7 @@
     
 
 % ============================================================
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 4 — Probabilités<span class="float-right font-normal text-white/80 text-sm">3 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 4 — Probabilités <span class="font-normal text-white/80 text-sm">(3 points)</span></div>
 
     Urne : $3$ blanches, $4$ rouges, $5$ vertes ($12$ boules). Tirage simultané de $3$ :
     $\displaystyle\binom{12}{3}=220$.
@@ -265,7 +265,7 @@
     
 
 % ============================================================
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Problème — Étude de fonction, point d'inflexion et intégrale<span class="float-right font-normal text-white/80 text-sm">8{,}5 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Problème — Étude de fonction, point d'inflexion et intégrale <span class="font-normal text-white/80 text-sm">(8{,}5 points)</span></div>
 
     $f(x)=x^2(1-\ln x)$ sur $]0,+\infty[$ (unité $1$ cm).
 

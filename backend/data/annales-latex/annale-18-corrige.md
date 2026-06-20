@@ -10,7 +10,7 @@
     \end{tcolorbox}
 
 % ============================================================
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 1 — Suites numériques<span class="float-right font-normal text-white/80 text-sm">4 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 1 — Suites numériques <span class="font-normal text-white/80 text-sm">(4 points)</span></div>
 
     $(u_n)$ : $\;u_0=\dfrac13\;$ et $\;u_{n+1}=\dfrac{u_n+1}{3-u_n}$.
 
@@ -93,7 +93,7 @@
         <div class="my-2 font-semibold" style="color:#1F4E79">⇒ La plus petite valeur est $n=2021$.</div>
 
 % ============================================================
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 2 — Nombres complexes<span class="float-right font-normal text-white/80 text-sm">5 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 2 — Nombres complexes <span class="font-normal text-white/80 text-sm">(5 points)</span></div>
 
     
         
@@ -187,7 +187,7 @@
     
 
 % ============================================================
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 3 — Étude d'une équation<span class="float-right font-normal text-white/80 text-sm">3 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 3 — Étude d'une équation <span class="font-normal text-white/80 text-sm">(3 points)</span></div>
 
     $h(x)=x+\ln x$ sur $]0,+\infty[$.
 
@@ -239,7 +239,7 @@
     
 
 % ============================================================
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Problème — Étude de fonction et réciproque<span class="float-right font-normal text-white/80 text-sm">8 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Problème — Étude de fonction et réciproque <span class="font-normal text-white/80 text-sm">(8 points)</span></div>
 
     $f(x)=2-xe^{-x+1}$ sur $\R$ (unité $1$ cm).
 

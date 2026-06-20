@@ -10,7 +10,7 @@
     \end{tcolorbox}
 
 % ============================================================
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 1 — Géométrie dans l'espace<span class="float-right font-normal text-white/80 text-sm">3 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 1 — Géométrie dans l'espace <span class="font-normal text-white/80 text-sm">(3 points)</span></div>
 
     On travaille dans un repère orthonormé direct $(O,\ii,\jj,\kk)$ avec
     $A(1,-1,-1)$, $B(0,-2,1)$ et $C(1,-2,0)$.
@@ -111,7 +111,7 @@
     
 
 % ============================================================
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 2 — Nombres complexes<span class="float-right font-normal text-white/80 text-sm">3 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 2 — Nombres complexes <span class="font-normal text-white/80 text-sm">(3 points)</span></div>
 
     
         
@@ -217,7 +217,7 @@
     
 
 % ============================================================
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 3 — Probabilités<span class="float-right font-normal text-white/80 text-sm">3 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 3 — Probabilités <span class="font-normal text-white/80 text-sm">(3 points)</span></div>
 
     Une urne contient $10$ boules : $3$ vertes, $6$ rouges, $1$ noire. On tire \emph{simultanément} $3$ boules.
 
@@ -267,7 +267,7 @@
         \]
 
 % ============================================================
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Problème — Étude de fonction et suite<span class="float-right font-normal text-white/80 text-sm">11 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Problème — Étude de fonction et suite <span class="font-normal text-white/80 text-sm">(11 points)</span></div>
 
     On pose, sur $]0,+\infty[$ : $\displaystyle f(x)=x+\frac12-\ln x+\frac12(\ln x)^2,$
     de courbe $(C_f)$ dans un repère orthonormé (unité $1$ cm).

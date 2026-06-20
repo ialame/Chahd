@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type { AnnaleContenuDto } from '~/types/api'
-import { parseMarkdown } from '~/utils/parseMarkdown'
 
 const route = useRoute()
 const id = Number(route.params.id)
@@ -10,13 +9,6 @@ const { data, error } = await useAsyncData(
   `annale-contenu-${id}`,
   () => get<AnnaleContenuDto>(`/annales/${id}/contenu`)
 )
-
-const onglet = ref<'sujet' | 'corrige'>('sujet')
-const rendu = computed(() => {
-  if (!data.value) return ''
-  const src = onglet.value === 'corrige' ? data.value.corrige : data.value.sujet
-  return src ? parseMarkdown(src) : ''
-})
 </script>
 
 <template>
@@ -34,23 +26,13 @@ const rendu = computed(() => {
 
     <header>
       <h1 class="text-xl font-bold text-slate-900">{{ data.titre }}</h1>
+      <p class="text-sm text-slate-500">
+        Énoncé puis corrigé repliable, exercice par exercice — cliquez sur « Voir la solution ».
+      </p>
     </header>
 
-    <!-- Onglets Sujet / Corrigé -->
-    <div class="flex gap-1 rounded-lg bg-slate-100 p-1 text-sm font-medium">
-      <button
-        class="flex-1 rounded-md px-3 py-1.5 transition"
-        :class="onglet === 'sujet' ? 'bg-white text-brand-dark shadow-sm' : 'text-slate-500 hover:text-slate-700'"
-        @click="onglet = 'sujet'"
-      >📄 Sujet</button>
-      <button
-        v-if="data.corrige"
-        class="flex-1 rounded-md px-3 py-1.5 transition"
-        :class="onglet === 'corrige' ? 'bg-white text-brand-dark shadow-sm' : 'text-slate-500 hover:text-slate-700'"
-        @click="onglet = 'corrige'"
-      >✅ Corrigé détaillé</button>
+    <div class="card">
+      <AnnaleReader :sujet="data.sujet" :corrige="data.corrige" />
     </div>
-
-    <div class="card leading-relaxed text-slate-700" v-html="rendu" />
   </article>
 </template>

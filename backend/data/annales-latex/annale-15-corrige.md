@@ -10,7 +10,7 @@
     \end{tcolorbox}
 
 % ============================================================
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 1 — Géométrie dans l'espace<span class="float-right font-normal text-white/80 text-sm">3 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 1 — Géométrie dans l'espace <span class="font-normal text-white/80 text-sm">(3 points)</span></div>
 
     $A(0,1,1)$, $B(1,2,0)$, $C(-1,1,2)$.
 
@@ -83,7 +83,7 @@
     
 
 % ============================================================
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 2 — Nombres complexes<span class="float-right font-normal text-white/80 text-sm">3 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 2 — Nombres complexes <span class="font-normal text-white/80 text-sm">(3 points)</span></div>
 
     $a=-1-i\sqrt3$, $\;b=-1+i\sqrt3$, $\;t$ translation de vecteur $\vec{OA}$.
 
@@ -151,7 +151,7 @@
     
 
 % ============================================================
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 3 — Probabilités<span class="float-right font-normal text-white/80 text-sm">3 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 3 — Probabilités <span class="font-normal text-white/80 text-sm">(3 points)</span></div>
 
     Urne : $3$ blanches, $3$ vertes, $4$ rouges ($10$ boules). Tirage simultané de $3$ boules :
     $\displaystyle\binom{10}{3}=120$ tirages équiprobables.
@@ -187,7 +187,7 @@
         \]
 
 % ============================================================
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 4 — Intégrales et équation différentielle<span class="float-right font-normal text-white/80 text-sm">2{,}5 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 4 — Intégrales et équation différentielle <span class="font-normal text-white/80 text-sm">(2{,}5 points)</span></div>
 
     $h(x)=(x+1)e^x$ sur $\R$.
 
@@ -232,7 +232,7 @@
     
 
 % ============================================================
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Problème — Étude de fonction, réciproque et suite<span class="float-right font-normal text-white/80 text-sm">8{,}5 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Problème — Étude de fonction, réciproque et suite <span class="font-normal text-white/80 text-sm">(8{,}5 points)</span></div>
 
     $f(x)=x\bigl(e^{x/2}-1\bigr)^2$ sur $\R$ (unité $1$ cm).
 

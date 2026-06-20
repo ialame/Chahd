@@ -1,4 +1,4 @@
-<div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 1<span class="float-right font-normal text-white/80 text-sm">3 points</span></div>
+<div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 1 <span class="font-normal text-white/80 text-sm">(3 points)</span></div>
         Dans l'espace rapporté à un repère orthonormé direct $(O,\vec{i},\vec{j},\vec{k})$, on considère les deux points $A(1,1,0)$ et $\Omega(-1,1,-2)$, et le plan $(P)$ d'équation $x + z - 1 = 0$.
         
              
@@ -33,7 +33,7 @@
         
     
 
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 2<span class="float-right font-normal text-white/80 text-sm">4 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 2 <span class="font-normal text-white/80 text-sm">(4 points)</span></div>
         \textbf{Partie I} \\
         On considère dans l'ensemble $\C$ l'équation $(E) : z^2 - 4z + 9 = 0$.
         
@@ -81,7 +81,7 @@
         
     
 
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 3<span class="float-right font-normal text-white/80 text-sm">2 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 3 <span class="font-normal text-white/80 text-sm">(2 points)</span></div>
         Une urne contient huit boules indiscernables au toucher : quatre blanches, trois noires et une verte.
         On tire successivement et sans remise trois boules de l'urne.
         
@@ -97,12 +97,12 @@
 
     
 
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Problème<span class="float-right font-normal text-white/80 text-sm">11 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Problème <span class="font-normal text-white/80 text-sm">(11 points)</span></div>
         \textbf{Partie I} \\
         
             
 
-**1)** \begin{minipage}[t]{0.52\linewidth}
+**1)** 
                 
                 Le graphique ci-contre représente les courbes $(C_g)$ et $(C_h)$ des fonctions $g: x \mapsto \frac{x}{1+x}$ et $h: x \mapsto \ln(1+x)$ définies sur $]-1, +\infty[$, et la droite d'équation $y = x$.
 
@@ -110,13 +110,13 @@
 
 **1.a)** À partir du graphique, justifier que $\frac{x}{1+x} \le \ln(1+x) \le x$ pour tout $x \in ]-1, +\infty[$.
 
-            \end{minipage}
+            
              
-            \begin{minipage}[t]{0.44\linewidth}
+            
                 
                 
                 *[Figure — voir le PDF]*
-            \end{minipage}
+            
 
             [start=2]
                 

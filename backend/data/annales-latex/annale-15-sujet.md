@@ -1,4 +1,4 @@
-<div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 1<span class="float-right font-normal text-white/80 text-sm">2 points</span></div>
+<div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 1 <span class="font-normal text-white/80 text-sm">(2 points)</span></div>
         Soit $(u_n)$ la suite numérique définie par $u_0 = 1$ et $u_{n+1} = \frac{3u_n - 8}{2u_n - 5}$ pour tout $n \in \N$.
         
             
@@ -18,7 +18,7 @@
         
     
 
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 2<span class="float-right font-normal text-white/80 text-sm">5 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 2 <span class="font-normal text-white/80 text-sm">(5 points)</span></div>
         
             
 
@@ -63,7 +63,7 @@
         
     
 
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 3<span class="float-right font-normal text-white/80 text-sm">4 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 3 <span class="font-normal text-white/80 text-sm">(4 points)</span></div>
         
             
 
@@ -99,7 +99,7 @@
         
     
 
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Problème<span class="float-right font-normal text-white/80 text-sm">9 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Problème <span class="font-normal text-white/80 text-sm">(9 points)</span></div>
         \textbf{Partie I} \\
         Soit $g$ la fonction numérique définie sur $]0, +\infty[$ par :
         \[ g(x) = e^{1-x} + \frac{1}{x} - 2 \]

@@ -1,4 +1,4 @@
-<div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 1<span class="float-right font-normal text-white/80 text-sm">3 points</span></div>
+<div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 1 <span class="font-normal text-white/80 text-sm">(3 points)</span></div>
 On considère la suite $(u_n)$ définie par $u_0 = \frac{3}{2}$ et $u_{n+1} = \frac{3u_n + 2}{2 + u_n}$ pour tout $n \in \N$.
 
      
@@ -24,7 +24,7 @@ On considère la suite $(u_n)$ définie par $u_0 = \frac{3}{2}$ et $u_{n+1} = \f
 
 **3.c)** Déterminer la limite de la suite $(u_n)$.
 
-<div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 2<span class="float-right font-normal text-white/80 text-sm">3 points</span></div>
+<div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 2 <span class="font-normal text-white/80 text-sm">(3 points)</span></div>
 Dans l'espace rapporté à un repère orthonormé direct $(O,\vec{i},\vec{j},\vec{k})$, on considère les points $A(0,3,3)$, $B(1,2,1)$, $C(2,3,1)$, et le vecteur $\vec{n}(1,-1,1)$. Soit $(P)$ le plan d'équation $x - y + z - 6 = 0$.
 
      
@@ -52,7 +52,7 @@ Dans l'espace rapporté à un repère orthonormé direct $(O,\vec{i},\vec{j},\ve
 
 **3)** Déterminer les deux points d'intersection de la droite $(BH)$ avec la sphère $(S)$.
 
-<div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 3<span class="float-right font-normal text-white/80 text-sm">3.5 points</span></div>
+<div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 3 <span class="font-normal text-white/80 text-sm">(3.5 points)</span></div>
 Dans le plan complexe rapporté à un repère orthonormé direct $(O,\vec{u},\vec{v})$, on considère les points $A, B, C, D$ d'affixes respectives :
 \[ a = \frac{-\sqrt{3}+i}{2}, \quad b = \frac{1-i\sqrt{3}}{2}, \quad c = 1+a \quad \text{et} \quad d = c\bar{a} \]
 
@@ -80,7 +80,7 @@ Dans le plan complexe rapporté à un repère orthonormé direct $(O,\vec{u},\ve
 
 **4.c)** Montrer que $\arg(c) \equiv \frac{5\pi}{12} \pmod{2\pi}$.
 
-<div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 4<span class="float-right font-normal text-white/80 text-sm">2.5 points</span></div>
+<div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 4 <span class="font-normal text-white/80 text-sm">(2.5 points)</span></div>
 Un sac contient 4 boules blanches et 3 boules noires (les boules sont indiscernables au toucher).
 Un jeu consiste à tirer successivement et sans remise deux boules du sac. Les règles du jeu sont les suivantes :
 [label=•]
@@ -112,7 +112,7 @@ On considère les événements suivants :
 
 **2.c)** En déduire la probabilité de « noter $0$ » sachant que la deuxième boule tirée est blanche.
 
-<div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Problème<span class="float-right font-normal text-white/80 text-sm">8 points</span></div>
+<div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Problème <span class="font-normal text-white/80 text-sm">(8 points)</span></div>
 On considère la fonction $f$ définie sur $\R$ par :
 \[ f(x) = x - 1 + \frac{4}{e^x + 2} \]
 Soit $(C_f)$ sa courbe représentative dans un repère orthonormé $(O,\vec{i},\vec{j})$.

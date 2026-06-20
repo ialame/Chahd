@@ -11,7 +11,7 @@
     \end{tcolorbox}
 
 % ============================================================
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 1 — Suites numériques<span class="float-right font-normal text-white/80 text-sm">3 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 1 — Suites numériques <span class="font-normal text-white/80 text-sm">(3 points)</span></div>
 
     $(u_n)$ : $\ u_0=4\ $ et $\ u_{n+1}=\dfrac{4u_n-2}{1+u_n}$ pour tout $n\in\N$.
 
@@ -111,7 +111,7 @@
     
 
 % ============================================================
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 2 — Géométrie dans l'espace<span class="float-right font-normal text-white/80 text-sm">3 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 2 — Géométrie dans l'espace <span class="font-normal text-white/80 text-sm">(3 points)</span></div>
 
     Points $A(-1,0,-1)$ et $B(1,2,-1)$. Plan $(P)$ passant par $A$, de vecteur normal
     $\vec n(2,-2,1)$. Sphère $(S)$ de centre $\Omega(2,-1,0)$ et de rayon $R=5$.
@@ -199,7 +199,7 @@
     
 
 % ============================================================
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 3 — Nombres complexes<span class="float-right font-normal text-white/80 text-sm">4 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 3 — Nombres complexes <span class="font-normal text-white/80 text-sm">(4 points)</span></div>
 
     $a=\sqrt3(1-i)=\sqrt3-i\sqrt3$ \quad et \quad $b=2+\sqrt3+i$.
 
@@ -314,7 +314,7 @@
     
 
 % ============================================================
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 4 — Probabilités<span class="float-right font-normal text-white/80 text-sm">2 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 4 — Probabilités <span class="font-normal text-white/80 text-sm">(2 points)</span></div>
 
     Urne : quatre boules « $1$ », deux boules « $2$ », une boule « $3$ » ($7$ boules). On tire
     \emph{simultanément} $2$ boules : $\dbinom72=\dfrac{7\times6}{2}=21$ tirages équiprobables.
@@ -352,7 +352,7 @@
         <div class="my-2 font-semibold" style="color:#1F4E79">⇒ Les événements $A$ et $B$ ne sont \textbf{pas indépendants}.</div>
 
 % ============================================================
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Problème — Exponentielle, logarithme, aire, suite<span class="float-right font-normal text-white/80 text-sm">8 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Problème — Exponentielle, logarithme, aire, suite <span class="font-normal text-white/80 text-sm">(8 points)</span></div>
 
     <div class="mt-6 mb-2 text-base font-bold" style="color:#1F4E79">Partie I : encadrement $e^x>x$ et aire</div>
 

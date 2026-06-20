@@ -1,4 +1,4 @@
-<div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 1<span class="float-right font-normal text-white/80 text-sm">3 points</span></div>
+<div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 1 <span class="font-normal text-white/80 text-sm">(3 points)</span></div>
         Dans l'espace rapporté à un repère orthonormé direct $(O,\vec{i},\vec{j},\vec{k})$, on considère les points $A(0,1,4)$, $B(2,1,2)$, $C(2,5,0)$ et $\Omega(3,4,4)$.
         
              
@@ -35,7 +35,7 @@
 
     
 
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 2<span class="float-right font-normal text-white/80 text-sm">3 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 2 <span class="font-normal text-white/80 text-sm">(3 points)</span></div>
         Dans le plan complexe rapporté à un repère orthonormé direct $(O,\vec{u},\vec{v})$, on considère les points $A, B, C, D$ d'affixes respectives :
         \[ a = \sqrt{2} + i\sqrt{2}, \quad b = 1 + \sqrt{2} + i, \quad c = \bar{b} \quad \text{et} \quad d = 2i \]
         
@@ -71,7 +71,7 @@
         
     
 
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 3<span class="float-right font-normal text-white/80 text-sm">3 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 3 <span class="font-normal text-white/80 text-sm">(3 points)</span></div>
         Une urne $U_1$ contient six boules portant les nombres : $0, 0, 1, 1, 1, 2$ et une urne $U_2$ contient cinq boules portant les nombres : $1, 1, 1, 2, 2$. \\
         On tire au hasard une boule de l'urne $U_1$ et on note le nombre $a$ qu'elle porte, puis on la met dans l'urne $U_2$. Ensuite, on tire une boule de l'urne $U_2$ et on note le nombre $b$ qu'elle porte. \\
         On considère les événements suivants :
@@ -109,7 +109,7 @@
         
     
 
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Problème<span class="float-right font-normal text-white/80 text-sm">11 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Problème <span class="font-normal text-white/80 text-sm">(11 points)</span></div>
         On considère la fonction numérique $f$ définie sur $]0, +\infty[$ par :
         \[ f(x) = 2 - \frac{2}{x} + (1-\ln x)^2 \]
         Soit $(C_f)$ sa courbe représentative dans un repère orthonormé $(O,\vec{i},\vec{j})$ (unité : 1cm).
@@ -144,7 +144,7 @@
 
             
 
-**4)** \begin{minipage}[t]{0.52\linewidth}
+**4)** 
                 La courbe $(C_g)$ ci-contre est la représentation graphique de la fonction $g(x) = f(x) - x$ qui s'annule en $\alpha \approx 0.3$ et $1$. Soit $(\Delta)$ la droite d'équation $y = x$.
 
                     
@@ -153,13 +153,13 @@
 
 **4.b)** En déduire que la droite $(\Delta)$ est en dessous de $(C_f)$ sur l'intervalle $[\alpha, 1]$ et au-dessus de $(C_f)$ sur $]0, \alpha]$ et $[1, +\infty[$.
 
-            \end{minipage}
+            
              
-            \begin{minipage}[t]{0.44\linewidth}
+            
                 
                 
                 *[Figure — voir le PDF]*
-            \end{minipage}
+            
             
 
 **5)** Construire la courbe $(C_f)$ et la droite $(\Delta)$ dans le repère $(O,\vec{i},\vec{j})$ (on prendra $\alpha \approx 0.3$, $\beta \approx 4.9$ et $f(\beta) \approx 1.9$).

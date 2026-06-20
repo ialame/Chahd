@@ -11,7 +11,7 @@
     \end{tcolorbox}
 
 % ============================================================
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 1 — Géométrie dans l'espace<span class="float-right font-normal text-white/80 text-sm">3 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 1 — Géométrie dans l'espace <span class="font-normal text-white/80 text-sm">(3 points)</span></div>
 
     $A(0,1,4)$, $B(2,1,2)$, $C(2,5,0)$, $\Omega(3,4,4)$.
 
@@ -82,7 +82,7 @@
         <div class="my-2 font-semibold" style="color:#1F4E79">⇒ $(Q_1):2x+y+2z-12=0$\quad et\quad $(Q_2):2x+y+2z-24=0$.</div>
 
 % ============================================================
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 2 — Nombres complexes<span class="float-right font-normal text-white/80 text-sm">3 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 2 — Nombres complexes <span class="font-normal text-white/80 text-sm">(3 points)</span></div>
 
     $a=\sqrt2+i\sqrt2$, $\;b=1+\sqrt2+i$, $\;c=\bar b=1+\sqrt2-i$, $\;d=2i$.
 
@@ -167,7 +167,7 @@
     
 
 % ============================================================
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 3 — Probabilités<span class="float-right font-normal text-white/80 text-sm">3 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 3 — Probabilités <span class="font-normal text-white/80 text-sm">(3 points)</span></div>
 
     $U_1:\{0,0,1,1,1,2\}$ ; $U_2:\{1,1,1,2,2\}$. On tire $a$ dans $U_1$, on le place dans $U_2$ (qui compte alors
     $6$ boules), puis on tire $b$ dans $U_2$.
@@ -229,7 +229,7 @@
     
 
 % ============================================================
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Problème — Étude de fonction, aire et suite<span class="float-right font-normal text-white/80 text-sm">11 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Problème — Étude de fonction, aire et suite <span class="font-normal text-white/80 text-sm">(11 points)</span></div>
 
     $f(x)=2-\dfrac2x+(1-\ln x)^2$ sur $]0,+\infty[$ (unité $1$ cm).
 

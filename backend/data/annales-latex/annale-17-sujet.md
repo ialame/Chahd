@@ -1,4 +1,4 @@
-<div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 1<span class="float-right font-normal text-white/80 text-sm">2 points</span></div>
+<div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 1 <span class="font-normal text-white/80 text-sm">(2 points)</span></div>
 
      
         
@@ -13,7 +13,7 @@
 
 **2)** Montrer que l'équation $e^{2x} + e^x + 4x = 0$ admet une solution dans l'intervalle $[-1, 0]$.
 
-<div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 2<span class="float-right font-normal text-white/80 text-sm">4 points</span></div>
+<div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 2 <span class="font-normal text-white/80 text-sm">(4 points)</span></div>
 Soit $(u_n)$ la suite numérique définie par $u_0 = \frac{1}{2}$ et $u_{n+1} = \frac{u_n}{3 - 2u_n}$ pour tout $n \in \N$.
 
     
@@ -42,7 +42,7 @@ Soit $(u_n)$ la suite numérique définie par $u_0 = \frac{1}{2}$ et $u_{n+1} = 
 
 **5.b)** En déduire $u_n$ en fonction de $n$ pour tout $n \in \N$.
 
-<div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 3<span class="float-right font-normal text-white/80 text-sm">5 points</span></div>
+<div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 3 <span class="font-normal text-white/80 text-sm">(5 points)</span></div>
 
     
 
@@ -80,7 +80,7 @@ Soit $(u_n)$ la suite numérique définie par $u_0 = \frac{1}{2}$ et $u_{n+1} = 
 
 **5.c)** En déduire une mesure de l'angle $(\vec{BI}, \vec{BD})$.
 
-<div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Problème<span class="float-right font-normal text-white/80 text-sm">9 points</span></div>
+<div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Problème <span class="font-normal text-white/80 text-sm">(9 points)</span></div>
 Soit la fonction $f$ définie sur $[0, +\infty[$ par $f(0) = 0$ et $f(x) = 2x\ln x - 2x$ si $x > 0$. \\
 Soit $(C_f)$ sa courbe représentative dans un repère orthonormé $(O,\vec{i},\vec{j})$ (unité : 1cm).
 

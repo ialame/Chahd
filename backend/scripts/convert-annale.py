@@ -24,8 +24,8 @@ BRACE = r"\{((?:[^{}]|\{(?:[^{}]|\{[^{}]*\})*\})*)\}"
 TIKZ_RE = re.compile(r"\\begin\{tikzpicture\}.*?\\end\{tikzpicture\}", re.DOTALL)
 
 BANNER = ('<div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" '
-          'style="background:#1F4E79">{t}'
-          '<span class="float-right font-normal text-white/80 text-sm">{p}</span></div>')
+          'style="background:#1F4E79">{t} '
+          '<span class="font-normal text-white/80 text-sm">({p})</span></div>')
 
 
 def roman(n):
@@ -151,6 +151,9 @@ def convert(text, fig_dir, prefix):
     text = re.sub(r"\\vspace\*?\{[^}]*\}", "", text)
     text = re.sub(r"\\hspace\*?\{[^}]*\}", " ", text)
     text = re.sub(r"\\rule\{[^}]*\}\{[^}]*\}", "", text)
+    # minipage (mise en page côte-à-côte texte/figure) -> on déballe le contenu
+    text = re.sub(r"\\begin\{minipage\}(\[[^\]]*\])?\s*\{[^}]*\}", "", text)
+    text = re.sub(r"\\end\{minipage\}", "", text)
     # commandes de mise en page LaTeX parfois glissées dans les maths (no-op pour KaTeX)
     text = re.sub(r"\\renewcommand\{\\arraystretch\}\{[^}]*\}", "", text)
     text = re.sub(r"\\setlength\{[^}]*\}\{[^}]*\}", "", text)

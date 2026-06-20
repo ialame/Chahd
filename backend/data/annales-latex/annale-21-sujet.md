@@ -1,4 +1,4 @@
-<div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 1<span class="float-right font-normal text-white/80 text-sm">3 points</span></div>
+<div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 1 <span class="font-normal text-white/80 text-sm">(3 points)</span></div>
 Dans l'espace rapporté à un repère orthonormé direct $(O,\vec{i},\vec{j},\vec{k})$, on considère les points $A(1,-1,-1)$, $B(0,-2,1)$ et $C(1,-2,0)$.
 
      
@@ -19,7 +19,7 @@ Dans l'espace rapporté à un repère orthonormé direct $(O,\vec{i},\vec{j},\ve
 
 **3.b)** En déduire que le plan $(ABC)$ coupe la sphère $(S)$ selon un cercle $(\Gamma)$ (la détermination du centre et du rayon de $(\Gamma)$ n'est pas demandée).
 
-<div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 2<span class="float-right font-normal text-white/80 text-sm">3 points</span></div>
+<div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 2 <span class="font-normal text-white/80 text-sm">(3 points)</span></div>
 
     
 
@@ -46,7 +46,7 @@ Dans l'espace rapporté à un repère orthonormé direct $(O,\vec{i},\vec{j},\ve
 
 **4.b)** Montrer que le triangle $OHP$ est rectangle et isocèle en $O$.
 
-<div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 3<span class="float-right font-normal text-white/80 text-sm">3 points</span></div>
+<div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 3 <span class="font-normal text-white/80 text-sm">(3 points)</span></div>
 Une urne contient dix boules indiscernables au toucher : trois vertes, six rouges et une noire. \\
 On tire au hasard et simultanément trois boules de l'urne.
 
@@ -56,7 +56,7 @@ On tire au hasard et simultanément trois boules de l'urne.
 
 **2)** Calculer $p(C)$, où $C$ est l'événement « Obtenir au moins deux boules de même couleur ».
 
-<div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Problème<span class="float-right font-normal text-white/80 text-sm">11 points</span></div>
+<div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Problème <span class="font-normal text-white/80 text-sm">(11 points)</span></div>
 \textbf{Première partie} \\
 Soit $f$ la fonction numérique définie sur $]0, +\infty[$ par :
 \[ f(x) = x + \frac{1}{2} - \ln x + \frac{1}{2}(\ln x)^2 \]

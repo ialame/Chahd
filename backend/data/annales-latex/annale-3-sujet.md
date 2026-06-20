@@ -1,4 +1,4 @@
-<div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 1<span class="float-right font-normal text-white/80 text-sm">3 points</span></div>
+<div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 1 <span class="font-normal text-white/80 text-sm">(3 points)</span></div>
         On considère la suite numérique $(u_n)$ définie par $u_0 = 0$ et $u_{n+1} = \frac{u_n - 2}{2u_n + 5}$ pour tout $n \in \N$.
         
             
@@ -28,7 +28,7 @@
         
     
 
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 2<span class="float-right font-normal text-white/80 text-sm">3 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 2 <span class="font-normal text-white/80 text-sm">(3 points)</span></div>
         Dans l'espace rapporté à un repère orthonormé direct $(O,\vec{i},\vec{j},\vec{k})$, on considère les points $A(2,1,2)$, $B(-2,0,5)$, $C(4,-5,7)$ et $\Omega(1,-1,0)$. On pose $\vec{u} = \vec{\Omega A}$. \\
         Soit $(S)$ la sphère de centre $\Omega$ et de rayon $R = 3$.
         
@@ -64,7 +64,7 @@
         
     
 
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 3<span class="float-right font-normal text-white/80 text-sm">3 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 3 <span class="font-normal text-white/80 text-sm">(3 points)</span></div>
         
             
 
@@ -97,7 +97,7 @@
         
     
 
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 4<span class="float-right font-normal text-white/80 text-sm">3 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 4 <span class="font-normal text-white/80 text-sm">(3 points)</span></div>
         Une urne contient quatre boules blanches et deux boules noires, indiscernables au toucher.
         
             
@@ -127,7 +127,7 @@
         
     
 
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Problème<span class="float-right font-normal text-white/80 text-sm">8 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Problème <span class="font-normal text-white/80 text-sm">(8 points)</span></div>
         On considère la fonction numérique $f$ définie sur $\R$ par :
         \[ \begin{cases} f(x) = (x-1)^2 e^{x(2-x)} & \text{si } x \le 2 \\ f(x) = 1 + (x-2)^2\ln(x-2) & \text{si } x > 2 \end{cases} \]
         Soit $(C)$ sa courbe représentative dans un repère orthonormé $(O,\vec{i},\vec{j})$ (unité : 1cm).

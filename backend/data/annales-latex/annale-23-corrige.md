@@ -11,7 +11,7 @@
     \end{tcolorbox}
 
 % ============================================================
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 1 — Géométrie dans l'espace<span class="float-right font-normal text-white/80 text-sm">3 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 1 — Géométrie dans l'espace <span class="font-normal text-white/80 text-sm">(3 points)</span></div>
 
     $A(0,0,2)$, $B(2,0,0)$ ; sphère $(S)$ de centre $O$ et de rayon $R=2$.
 
@@ -110,7 +110,7 @@
         <div class="my-2 font-semibold" style="color:#1F4E79">⇒ $\sqrt2<r\le2$ pour tout $m\in\R$ (avec $r=2$ pour $m=0$).</div>
 
 % ============================================================
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 2 — Nombres complexes<span class="float-right font-normal text-white/80 text-sm">3,5 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 2 — Nombres complexes <span class="font-normal text-white/80 text-sm">(3,5 points)</span></div>
 
     $a=1+2i$, \ $b=\bar a=1-2i$, \ $c=\dfrac32(3+i)=\dfrac92+\dfrac32 i$, \ $d=\dfrac32(1+i)=\dfrac32+\dfrac32 i$, \ $\omega=\dfrac52$.
 
@@ -208,7 +208,7 @@
         <div class="my-2 font-semibold" style="color:#1F4E79">⇒ $\vec{\Omega D}=3\,\vec{\Omega G}$ : les points $\Omega$, $G$ et $D$ sont alignés.</div>
 
 % ============================================================
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 3 — Probabilités<span class="float-right font-normal text-white/80 text-sm">2,5 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 3 — Probabilités <span class="font-normal text-white/80 text-sm">(2,5 points)</span></div>
 
     Urne : $4$ blanches numérotées $0,1,1,1$ et $2$ noires numérotées $0,1$. Tirage \emph{simultané} de $2$
     boules : $\dbinom62=15$ tirages équiprobables. \\
@@ -269,7 +269,7 @@
     
 
 % ============================================================
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Problème — Logarithme : aire, étude de fonction, suite<span class="float-right font-normal text-white/80 text-sm">11 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Problème — Logarithme : aire, étude de fonction, suite <span class="font-normal text-white/80 text-sm">(11 points)</span></div>
 
     <div class="mt-6 mb-2 text-base font-bold" style="color:#1F4E79">Partie I : inégalités et calculs d'aires</div>
 

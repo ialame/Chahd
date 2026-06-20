@@ -1,4 +1,4 @@
-<div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 1<span class="float-right font-normal text-white/80 text-sm">3 points</span></div>
+<div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 1 <span class="font-normal text-white/80 text-sm">(3 points)</span></div>
         On considère la suite numérique $(u_n)$ définie par $u_0 = 4$ et $u_{n+1} = \frac{4u_n - 2}{1 + u_n}$ pour tout $n \in \N$.
         
              
@@ -30,7 +30,7 @@
         
     
 
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 2<span class="float-right font-normal text-white/80 text-sm">3 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 2 <span class="font-normal text-white/80 text-sm">(3 points)</span></div>
         Dans l'espace rapporté à un repère orthonormé direct $(O,\vec{i},\vec{j},\vec{k})$, on considère les points $A(-1,0,-1)$ et $B(1,2,-1)$, le plan $(P)$ passant par $A$ et de vecteur normal $\vec{n}(2,-2,1)$, et la sphère $(S)$ de centre $\Omega(2,-1,0)$ et de rayon $R = 5$.
         
             
@@ -57,7 +57,7 @@
         
     
 
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 3<span class="float-right font-normal text-white/80 text-sm">4 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 3 <span class="font-normal text-white/80 text-sm">(4 points)</span></div>
         Dans le plan complexe rapporté à un repère orthonormé direct $(O,\vec{u},\vec{v})$, on considère les points $A$ et $B$ d'affixes respectives :
         \[ a = \sqrt{3}(1-i) \quad \text{et} \quad b = 2 + \sqrt{3} + i \]
         
@@ -88,7 +88,7 @@
         
     
 
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 4<span class="float-right font-normal text-white/80 text-sm">2 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 4 <span class="font-normal text-white/80 text-sm">(2 points)</span></div>
         Une urne contient sept boules indiscernables au toucher : quatre boules portant le numéro 1, deux boules portant le numéro 2, et une boule portant le numéro 3.
         On tire simultanément au hasard deux boules de cette urne.
         
@@ -104,7 +104,7 @@
 
     
 
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Problème<span class="float-right font-normal text-white/80 text-sm">8 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Problème <span class="font-normal text-white/80 text-sm">(8 points)</span></div>
         \textbf{Partie I} \\
         On considère les deux fonctions $u$ et $v$ définies sur $\R$ par $u(x) = e^x$ et $v(x) = x$.
         
@@ -149,7 +149,7 @@
 
             
 
-**4)** \begin{minipage}[t]{0.52\linewidth}
+**4)** 
                 
                 La courbe $(C_f)$ ci-contre est la représentation graphique de $f$ dans un repère orthonormé.
 
@@ -159,13 +159,13 @@
 
 **4.b)** Montrer que $e^\alpha - e^\beta = \alpha - \beta$.
 
-            \end{minipage}
+            
              
-            \begin{minipage}[t]{0.44\linewidth}
+            
                 
                 
                 *[Figure — voir le PDF]*
-            \end{minipage}
+            
 
             
 

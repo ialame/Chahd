@@ -10,7 +10,7 @@
     \end{tcolorbox}
 
 % ============================================================
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 1 — Suites numériques<span class="float-right font-normal text-white/80 text-sm">3 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 1 — Suites numériques <span class="font-normal text-white/80 text-sm">(3 points)</span></div>
 
     $(u_n)$ : $\ u_0=\dfrac32$ et $u_{n+1}=\dfrac{3u_n+2}{2+u_n}$.
 
@@ -74,7 +74,7 @@
     
 
 % ============================================================
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 2 — Géométrie dans l'espace<span class="float-right font-normal text-white/80 text-sm">3 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 2 — Géométrie dans l'espace <span class="font-normal text-white/80 text-sm">(3 points)</span></div>
 
     $A(0,3,3)$, $B(1,2,1)$, $C(2,3,1)$, $\vec n(1,-1,1)$ ; plan $(P):x-y+z-6=0$.
 
@@ -155,7 +155,7 @@
         <div class="my-2 font-semibold" style="color:#1F4E79">⇒ Les deux points d'intersection sont $\boxed{H(2,1,5)}$ et $\boxed{\left(\dfrac43,\dfrac53,\dfrac73\right)}$.</div>
 
 % ============================================================
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 3 — Nombres complexes<span class="float-right font-normal text-white/80 text-sm">3,5 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 3 — Nombres complexes <span class="font-normal text-white/80 text-sm">(3,5 points)</span></div>
 
     $a=\dfrac{-\sqrt3+i}{2}$, \ $b=\dfrac{1-i\sqrt3}{2}$, \ $c=1+a$, \ $d=c\,\bar a$.
 
@@ -237,7 +237,7 @@
     
 
 % ============================================================
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 4 — Probabilités<span class="float-right font-normal text-white/80 text-sm">2,5 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 4 — Probabilités <span class="font-normal text-white/80 text-sm">(2,5 points)</span></div>
 
     Sac : $4$ blanches, $3$ noires. Tirage \emph{successif sans remise} de $2$ boules : $7\times6=42$ tirages
     ordonnés équiprobables. \\
@@ -289,7 +289,7 @@
     
 
 % ============================================================
-    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Problème — Fonction exponentielle : étude et aire<span class="float-right font-normal text-white/80 text-sm">8 points</span></div>
+    <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Problème — Fonction exponentielle : étude et aire <span class="font-normal text-white/80 text-sm">(8 points)</span></div>
 
     $f(x)=x-1+\dfrac{4}{e^x+2}$ sur $\R$.
 

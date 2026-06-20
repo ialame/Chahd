@@ -1,4 +1,4 @@
-<div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 1<span class="float-right font-normal text-white/80 text-sm">4 points</span></div>
+<div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 1 <span class="font-normal text-white/80 text-sm">(4 points)</span></div>
 Soit $(u_n)$ la suite numérique définie par $u_0 = \frac{3}{2}$ et $u_{n+1} = \frac{2u_n}{2u_n + 5}$ pour tout $n \in \N$.
 
     
@@ -23,7 +23,7 @@ Soit $(u_n)$ la suite numérique définie par $u_0 = \frac{3}{2}$ et $u_{n+1} = 
 
 **4.b)** Déterminer $v_n$ en fonction de $n$, puis en déduire $u_n$ en fonction de $n$ pour tout $n \in \N$.
 
-<div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 2<span class="float-right font-normal text-white/80 text-sm">5 points</span></div>
+<div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 2 <span class="font-normal text-white/80 text-sm">(5 points)</span></div>
 
     
 
@@ -63,7 +63,7 @@ Soit $(u_n)$ la suite numérique définie par $u_0 = \frac{3}{2}$ et $u_{n+1} = 
 
 **3.d)** Montrer que $a^4 = 128b$, puis en déduire que les points $O$, $B$ et $D$ sont alignés.
 
-<div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 3<span class="float-right font-normal text-white/80 text-sm">4 points</span></div>
+<div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 3 <span class="font-normal text-white/80 text-sm">(4 points)</span></div>
 On considère la fonction numérique $g$ définie sur $]0, +\infty[$ par :
 \[ g(x) = 2\sqrt{x} - 2 - \ln x \]
 
@@ -85,7 +85,7 @@ On considère la fonction numérique $g$ définie sur $]0, +\infty[$ par :
 
 **2.b)** Calculer l'intégrale $\int_1^4 g(x)\,\mathrm{d}x$.
 
-<div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Problème<span class="float-right font-normal text-white/80 text-sm">7 points</span></div>
+<div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Problème <span class="font-normal text-white/80 text-sm">(7 points)</span></div>
 On considère la fonction numérique $f$ définie sur $\R$ par :
 \[ f(x) = -x + \frac{5}{2} - \frac{1}{2} e^{x-2}\left(e^{x-2}-4\right) \]
 Soit $(C_f)$ sa courbe représentative dans un repère orthonormé $(O,\vec{i},\vec{j})$ (unité : 2cm).
