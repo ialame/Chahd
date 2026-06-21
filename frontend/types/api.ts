@@ -64,6 +64,18 @@ export interface FlashcardDto {
   reponse: string
 }
 
+export interface UtilisateurDto {
+  id: number
+  email: string
+  nom: string
+  role: 'ELEVE' | 'ADMIN'
+}
+
+export interface AuthResponseDto {
+  token: string
+  utilisateur: UtilisateurDto
+}
+
 export interface ExoBacDto {
   annee: number
   session: string

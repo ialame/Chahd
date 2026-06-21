@@ -2,6 +2,8 @@ package ma.chahd.bac.web;
 
 import ma.chahd.bac.domain.Activite;
 import ma.chahd.bac.repository.ActiviteRepository;
+import ma.chahd.bac.repository.UtilisateurRepository;
+import ma.chahd.bac.security.AuthContext;
 import ma.chahd.bac.web.dto.ActiviteDto;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
@@ -16,11 +18,14 @@ import java.util.List;
 public class ActiviteController {
 
     private final ActiviteRepository repository;
+    private final UtilisateurRepository utilisateurRepository;
     private final String adminKey;
 
     public ActiviteController(ActiviteRepository repository,
+                              UtilisateurRepository utilisateurRepository,
                               @Value("${app.admin.key:chahd-suivi-dev}") String adminKey) {
         this.repository = repository;
+        this.utilisateurRepository = utilisateurRepository;
         this.adminKey = adminKey;
     }
 
@@ -36,6 +41,11 @@ public class ActiviteController {
         a.setLabel(tronquer(in.label(), 255));
         a.setNote(in.note());
         a.setCreeLe(Instant.now());
+        // Rattachement au compte si l'élève est connecté (jeton JWT).
+        Long userId = AuthContext.userId();
+        if (userId != null) {
+            utilisateurRepository.findById(userId).ifPresent(a::setUtilisateur);
+        }
         repository.save(a);
     }
 

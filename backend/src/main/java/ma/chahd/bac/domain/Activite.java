@@ -37,6 +37,11 @@ public class Activite {
 
     private Double note;
 
+    /** Utilisateur connecté à l'origine de l'activité (null si visiteur anonyme). */
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "utilisateur_id")
+    private Utilisateur utilisateur;
+
     @Column(name = "cree_le", nullable = false)
     private Instant creeLe;
 }

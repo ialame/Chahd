@@ -20,13 +20,23 @@ spring:
 
 server:
   port: ${SERVER_PORT:8081}
+  error:
+    include-message: always
 
 app:
   cors:
     allowed-origins: ${CORS_ORIGINS:http://localhost:3000,http://localhost:3001}
+  jwt:
+    # Secret de signature des jetons (≥ 32 caractères). À surcharger en prod via JWT_SECRET.
+    secret: ${JWT_SECRET:chahd-dev-secret-change-me-please-0123456789abcdef}
+    expiration-seconds: ${JWT_EXPIRATION:604800}
   admin:
     # Clé d'accès au suivi (/api/admin/suivi et page /suivi). À surcharger en prod via ADMIN_KEY.
     key: ${ADMIN_KEY:chahd-suivi-dev}
+    # Compte admin créé/promu au démarrage (laisser vide pour ne rien créer).
+    email: ${ADMIN_EMAIL:}
+    password: ${ADMIN_PASSWORD:}
+    nom: ${ADMIN_NOM:Admin}
 
 logging:
   level:

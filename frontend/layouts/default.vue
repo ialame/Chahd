@@ -7,6 +7,13 @@ const links = [
   { to: '/annales', label: 'Annales' },
   { to: '/planning', label: 'Planning' }
 ]
+
+const { user, estConnecte, estAdmin, deconnexion } = useAuth()
+const router = useRouter()
+function seDeconnecter() {
+  deconnexion()
+  router.push('/')
+}
 </script>
 
 <template>
@@ -26,6 +33,39 @@ const links = [
           >
             {{ l.label }}
           </NuxtLink>
+
+          <span class="mx-1 h-5 w-px bg-slate-200" />
+
+          <template v-if="estConnecte">
+            <NuxtLink
+              v-if="estAdmin" to="/suivi"
+              class="rounded-lg px-3 py-1.5 font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900"
+              active-class="!bg-brand/10 !text-brand-dark"
+            >
+              <i class="fa-solid fa-chart-line" /> Suivi
+            </NuxtLink>
+            <span class="hidden px-2 text-slate-500 sm:inline" :title="user?.email">
+              <i class="fa-solid fa-user text-brand-dark" /> {{ user?.nom }}
+            </span>
+            <button
+              class="rounded-lg px-3 py-1.5 font-medium text-slate-600 hover:bg-slate-100 hover:text-red-600"
+              @click="seDeconnecter"
+            >
+              Déconnexion
+            </button>
+          </template>
+          <template v-else>
+            <NuxtLink
+              to="/connexion"
+              class="rounded-lg px-3 py-1.5 font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900"
+              active-class="!bg-brand/10 !text-brand-dark"
+            >
+              Connexion
+            </NuxtLink>
+            <NuxtLink to="/inscription" class="rounded-lg bg-brand px-3 py-1.5 font-semibold text-white hover:bg-brand-dark">
+              S'inscrire
+            </NuxtLink>
+          </template>
         </nav>
       </div>
     </header>

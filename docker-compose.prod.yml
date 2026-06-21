@@ -30,6 +30,9 @@ services:
       CORS_ORIGINS: https://bacpp.net,https://www.bacpp.net
       JAVA_OPTS: ${JAVA_OPTS:--Xmx512m}
       ADMIN_KEY: ${ADMIN_KEY:?ADMIN_KEY requis (clé du suivi /suivi)}
+      JWT_SECRET: ${JWT_SECRET:?JWT_SECRET requis (>= 32 caractères)}
+      ADMIN_EMAIL: ${ADMIN_EMAIL:-}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-}
     depends_on:
       db:
         condition: service_healthy

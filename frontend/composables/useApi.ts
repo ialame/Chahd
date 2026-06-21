@@ -6,10 +6,15 @@ export const useApi = () => {
   const baseURL =
     import.meta.server && config.apiBaseSsr ? (config.apiBaseSsr as string) : config.public.apiBase
 
-  const get = <T>(path: string) => $fetch<T>(path, { baseURL })
+  // Jeton d'authentification (cookie partagé SSR + client) ajouté à chaque appel.
+  const token = useCookie<string | null>('chahd_token')
+  const authHeaders = (): Record<string, string> =>
+    token.value ? { Authorization: `Bearer ${token.value}` } : {}
+
+  const get = <T>(path: string) => $fetch<T>(path, { baseURL, headers: authHeaders() })
 
   const post = <T>(path: string, body: unknown) =>
-    $fetch<T>(path, { baseURL, method: 'POST', body })
+    $fetch<T>(path, { baseURL, method: 'POST', body, headers: authHeaders() })
 
   // Origine du backend (baseURL sans le suffixe /api)
   const origin = baseURL.replace(/\/api\/?$/, '')
