@@ -50,9 +50,12 @@ public class AnnaleController {
         if (!Files.isReadable(pdf)) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "PDF indisponible pour l'annale " + id);
         }
+        // « inline » sans filename : on évite que le navigateur traite le PDF
+        // comme un téléchargement (confirmation / fenêtre séparée).
         return ResponseEntity.ok()
                 .contentType(MediaType.APPLICATION_PDF)
-                .header(HttpHeaders.CONTENT_DISPOSITION, "inline; filename=\"sujet-" + id + ".pdf\"")
+                .header(HttpHeaders.CONTENT_DISPOSITION, "inline")
+                .header(HttpHeaders.CACHE_CONTROL, "public, max-age=86400")
                 .body(new FileSystemResource(pdf));
     }
 }
