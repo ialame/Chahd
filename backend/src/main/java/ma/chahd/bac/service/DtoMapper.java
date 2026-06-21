@@ -74,6 +74,7 @@ public class DtoMapper {
         return new AnnaleDto(a.getId(), a.getTitre(), a.getAnnee(), a.getSession().name(),
                 a.getSujetUrl(), a.getCorrigeUrl(),
                 a.getMatiere().getSlug(), a.getMatiere().getNom(),
-                annaleContenuService.hasContenu(a.getId()));
+                annaleContenuService.hasContenu(a.getId()),
+                annaleContenuService.hasSujetPdf(a.getId()));
     }
 }

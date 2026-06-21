@@ -32,6 +32,7 @@ export interface AnnaleDto {
   matiereSlug: string
   matiereNom: string
   aContenu: boolean
+  aPdf: boolean
 }
 
 export interface AnnaleContenuDto {

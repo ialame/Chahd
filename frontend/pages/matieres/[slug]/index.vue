@@ -6,6 +6,8 @@ const route = useRoute()
 const slug = route.params.slug as string
 const { get } = useApi()
 const { track } = useActivite()
+const apiBase = useRuntimeConfig().public.apiBase as string
+const pdfUrl = (id: number) => `${apiBase}/annales/${id}/sujet.pdf`
 
 const { data: matiere, error } = await useAsyncData(
   `matiere-${slug}`,
@@ -27,7 +29,7 @@ const annalesParAnnee = computed(() => {
     .sort((a, b) => b[0] - a[0])
     .map(([annee, items]) => ({ annee, items: items.sort((x, y) => x.session.localeCompare(y.session)) }))
 })
-type AnnaleDtoLite = { id: number; titre: string; annee: number; session: string; aContenu: boolean }
+type AnnaleDtoLite = { id: number; titre: string; annee: number; session: string; aContenu: boolean; aPdf: boolean }
 
 // --- État de l'explorateur ---
 const groupes = reactive({ chapitres: true, annales: false })
@@ -38,6 +40,7 @@ const anneeOuverte = reactive<Record<number, boolean>>({})
 type Sel =
   | { kind: 'cours' | 'exercices' | 'problemes' | 'fiches' | 'bac'; lecon: LeconDto }
   | { kind: 'annale'; annale: AnnaleDtoLite }
+  | { kind: 'pdf'; annale: AnnaleDtoLite }
   | { kind: 'quiz'; quizId: number; titre: string; chapitre?: string }
 const selection = ref<Sel | null>(null)
 const loading = ref(false)
@@ -48,6 +51,7 @@ const annale = ref<AnnaleContenuDto | null>(null)
 
 const cleSel = (s: Sel) => {
   if (s.kind === 'annale') return `annale-${s.annale.id}`
+  if (s.kind === 'pdf') return `pdf-${s.annale.id}`
   if (s.kind === 'quiz') return `quiz-${s.quizId}`
   return `${s.kind}-${s.lecon.id}`
 }
@@ -63,9 +67,10 @@ async function selectionner(s: Sel) {
   selection.value = s
   // Suivi : enregistrer l'ouverture
   if (s.kind === 'annale') track({ matiere: slug, item: 'annale', label: s.annale.titre })
+  else if (s.kind === 'pdf') track({ matiere: slug, item: 'pdf', label: s.annale.titre })
   else if (s.kind === 'quiz') track({ matiere: slug, chapitre: s.chapitre, item: 'quiz', label: s.titre })
   else track({ matiere: slug, chapitre: s.lecon.slug, item: s.kind, label: s.lecon.titre })
-  if (s.kind === 'quiz') return // QuizRunner se charge lui-même
+  if (s.kind === 'quiz' || s.kind === 'pdf') return // affichage direct, pas de fetch
   loading.value = true
   try {
     if (s.kind === 'annale') {
@@ -91,6 +96,7 @@ const titreSelection = computed(() => {
   const s = selection.value
   if (!s) return ''
   if (s.kind === 'annale') return s.annale.titre
+  if (s.kind === 'pdf') return `${s.annale.titre} — Sujet original (PDF)`
   if (s.kind === 'quiz') return s.titre
   const suffixe = { cours: 'Cours', exercices: 'Exercices résolus', problemes: 'Problèmes résolus', fiches: 'Fiches de révision', bac: 'Exercices du bac' }[s.kind]
   return `${s.lecon.titre} — ${suffixe}`
@@ -192,16 +198,25 @@ const itemClass = (on: boolean) =>
                 <span>{{ grp.annee }}</span>
               </button>
               <div v-show="anneeOuverte[grp.annee]" class="pl-4 pr-1 pb-1 space-y-0.5">
-                <button
-                  v-for="a in grp.items"
-                  :key="a.id"
-                  :disabled="!a.aContenu"
-                  :class="[itemClass(estSelectionne({ kind: 'annale', annale: a })), a.aContenu ? '' : 'opacity-40 cursor-not-allowed']"
-                  @click="a.aContenu && selectionner({ kind: 'annale', annale: a })"
-                >
-                  <i class="fa-solid fa-file-pen text-amber-500 w-4 text-center" />
-                  Session {{ sessionLabel(a.session) }}
-                </button>
+                <div v-for="a in grp.items" :key="a.id" class="flex items-center gap-1">
+                  <button
+                    :disabled="!a.aContenu"
+                    :class="[itemClass(estSelectionne({ kind: 'annale', annale: a })), 'flex-1', a.aContenu ? '' : 'opacity-40 cursor-not-allowed']"
+                    @click="a.aContenu && selectionner({ kind: 'annale', annale: a })"
+                  >
+                    <i class="fa-solid fa-file-pen text-amber-500 w-4 text-center" />
+                    Session {{ sessionLabel(a.session) }}
+                  </button>
+                  <button
+                    v-if="a.aPdf"
+                    :class="itemClass(estSelectionne({ kind: 'pdf', annale: a }))"
+                    class="shrink-0 !px-2 !w-auto"
+                    title="Voir le sujet original (PDF)"
+                    @click="selectionner({ kind: 'pdf', annale: a })"
+                  >
+                    <i class="fa-solid fa-file-pdf text-red-500" /> PDF
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -221,6 +236,26 @@ const itemClass = (on: boolean) =>
         <!-- QCM interactif dans la colonne de droite -->
         <div v-else-if="selection.kind === 'quiz'" class="card">
           <QuizRunner :key="selection.quizId" :quiz-id="selection.quizId" :matiere-slug="slug" :chapitre="selection.chapitre" />
+        </div>
+
+        <!-- Sujet original (PDF) -->
+        <div v-else-if="selection.kind === 'pdf'" class="card space-y-3">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <h2 class="text-xl font-bold text-slate-900">{{ titreSelection }}</h2>
+            <a
+              :href="pdfUrl(selection.annale.id)" target="_blank" rel="noopener"
+              class="inline-flex items-center gap-2 rounded-lg bg-brand px-3 py-1.5 text-sm font-semibold text-white hover:bg-brand-dark"
+            >
+              <i class="fa-solid fa-up-right-from-square" /> Ouvrir / Imprimer
+            </a>
+          </div>
+          <iframe
+            :key="selection.annale.id" :src="pdfUrl(selection.annale.id)"
+            class="w-full h-[80vh] rounded-lg border border-slate-200" title="Sujet original"
+          />
+          <p class="text-xs text-slate-400">
+            Astuce : cliquez sur « Ouvrir / Imprimer » pour le plein écran et l'impression.
+          </p>
         </div>
 
         <article v-else class="card space-y-4">
