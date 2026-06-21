@@ -14,7 +14,12 @@ BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ANN = os.path.join(BASE, "data", "annales-latex")
 OUT = os.path.join(BASE, "data", "bac", "parties-maths.json")
 
-META = {23: (2025, "NORMALE"), 1: (2024, "RATTRAPAGE"), 2: (2024, "NORMALE"), 20: (2020, "RATTRAPAGE")}
+META = {
+    23: (2025, "NORMALE"), 24: (2025, "RATTRAPAGE"), 1: (2024, "RATTRAPAGE"), 2: (2024, "NORMALE"),
+    3: (2023, "RATTRAPAGE"), 11: (2023, "NORMALE"), 16: (2022, "RATTRAPAGE"), 15: (2022, "NORMALE"),
+    17: (2021, "NORMALE"), 18: (2021, "RATTRAPAGE"), 20: (2020, "RATTRAPAGE"), 19: (2020, "NORMALE"),
+    21: (2019, "NORMALE"), 22: (2019, "RATTRAPAGE"),
+}
 
 # Par annale : chapitre de chaque partie (dans l'ordre) + préfixe d'énoncé éventuel
 # (pour rendre la partie autonome quand elle dépend des précédentes).
@@ -44,6 +49,40 @@ CONFIG = {
 }
 
 ROMAN = ["I", "II", "III", "IV", "V"]
+
+# Découpage par PLAGES DE QUESTIONS (problèmes sans « Partie »).
+# Par annale : preambule (rappel auto de la fonction) + blocs (chapitre, (q_debut, q_fin), titre).
+CONFIG_Q = {
+    24: [  # 2025 rattrapage — étude de f(x)=x-1+4/(e^x+2)
+        ("limites-continuite", (1, 3), "limites et asymptotes de $f(x)=x-1+\\dfrac{4}{e^x+2}$"),
+        ("derivation-convexite", (4, 7), "variations, convexité et point d'inflexion de $f$"),
+        ("primitives-integration", (8, 8), "calcul d'aire sous $(C_f)$"),
+    ],
+}
+
+QLABEL = re.compile(r"\*\*(\d+)(?:\.[a-z])?\)\*\*")
+
+
+def split_questions(text):
+    """-> (préambule, {num_question: bloc})."""
+    ms = list(QLABEL.finditer(text))
+    if not ms:
+        return text, {}
+    preambule = text[:ms[0].start()]
+    blocs, i = {}, 0
+    while i < len(ms):
+        num = int(ms[i].group(1))
+        j = i + 1
+        while j < len(ms) and int(ms[j].group(1)) == num:
+            j += 1
+        fin = ms[j].start() if j < len(ms) else len(text)
+        blocs[num] = text[ms[i].start():fin]
+        i = j
+    return preambule, blocs
+
+
+def bloc(blocs, debut, fin):
+    return "".join(blocs.get(n, "") for n in range(debut, fin + 1)).strip()
 
 
 def corps_probleme(md):
@@ -86,6 +125,22 @@ def main():
                 "chapitres": [chap], "enonce": enonce, "corrige": corrige,
                 "extrait": True,
             })
+
+    # Découpage par plages de questions (problèmes sans « Partie »).
+    for aid, blocs_cfg in CONFIG_Q.items():
+        annee, session = META[aid]
+        pres, qs = split_questions(corps_probleme(open(os.path.join(ANN, f"annale-{aid}-sujet.md")).read()))
+        _, qc = split_questions(corps_probleme(open(os.path.join(ANN, f"annale-{aid}-corrige.md")).read()))
+        rappel = re.sub(r"\[FIGURE\]|<img[^>]*>", "", pres).strip()
+        for k, (chap, (d, fin), titre) in enumerate(blocs_cfg, 1):
+            enonce = (rappel + "\n\n" if rappel else "") + bloc(qs, d, fin)
+            entries.append({
+                "annee": annee, "session": session,
+                "numero": f"Problème · partie {k}",
+                "titre": titre, "chapitres": [chap],
+                "enonce": enonce, "corrige": bloc(qc, d, fin), "extrait": True,
+            })
+
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     with open(OUT, "w", encoding="utf-8") as f:
         json.dump(entries, f, ensure_ascii=False)
