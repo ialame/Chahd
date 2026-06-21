@@ -1,0 +1,13 @@
+[
+  {"question": "Pourquoi module-t-on un signal pour le transmettre ?", "reponse": "Pour transporter une information **basse fréquence** sur une onde **porteuse haute fréquence** (qui se propage bien et permet à plusieurs stations de coexister)."},
+  {"question": "Qu'est-ce que la porteuse ?", "reponse": "Un signal sinusoïdal de **haute fréquence** $F$ : $p(t) = P_m\\cos(2\\pi F t)$."},
+  {"question": "Qu'est-ce que le signal modulant ?", "reponse": "Le signal de **basse fréquence** $f$ qui porte l'**information**."},
+  {"question": "En modulation d'amplitude, qu'est-ce qui varie ?", "reponse": "L'**amplitude de la porteuse**, au rythme du signal modulant. L'enveloppe reproduit l'information."},
+  {"question": "Quelle est l'expression du signal modulé en amplitude ?", "reponse": "$u(t) = P_m\\big(1 + m\\cos(2\\pi f t)\\big)\\cos(2\\pi F t)$."},
+  {"question": "Comment calcule-t-on le taux de modulation ?", "reponse": "$m = \\dfrac{U_{max} - U_{min}}{U_{max} + U_{min}}$ (lu sur l'enveloppe)."},
+  {"question": "Quelle est la condition sur le taux de modulation ?", "reponse": "$m < 1$ (sinon **surmodulation** et distorsion)."},
+  {"question": "Quelle est la condition sur les fréquences ?", "reponse": "$F \\gg f$ : la porteuse doit avoir une fréquence très supérieure à celle du modulant."},
+  {"question": "Que se passe-t-il si $m > 1$ ?", "reponse": "Il y a **surmodulation** : l'enveloppe ne reproduit plus fidèlement l'information (distorsion)."},
+  {"question": "Que contient le spectre d'un signal modulé en amplitude ?", "reponse": "**Trois raies** : la porteuse $F$ et deux raies latérales $F - f$ et $F + f$."},
+  {"question": "Qu'est-ce que la démodulation ?", "reponse": "L'opération inverse : récupérer l'enveloppe (donc l'information) par **détection d'enveloppe** (redressement puis filtrage)."}
+]
