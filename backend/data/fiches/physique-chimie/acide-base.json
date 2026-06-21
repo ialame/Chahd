@@ -1,0 +1,13 @@
+[
+  {"question": "Qu'est-ce qu'un acide selon Brønsted ?", "reponse": "Une espèce capable de **céder** un proton $H^{+}$."},
+  {"question": "Qu'est-ce qu'une base selon Brønsted ?", "reponse": "Une espèce capable de **capter** un proton $H^{+}$."},
+  {"question": "Qu'est-ce qu'un couple acide/base ?", "reponse": "Un acide $AH$ et sa base conjuguée $A^{-}$, liés par $AH = A^{-} + H^{+}$."},
+  {"question": "Que vaut le produit ionique de l'eau à 25 °C ?", "reponse": "$K_e = [H_3O^{+}][OH^{-}] = 10^{-14}$."},
+  {"question": "Comment définit-on le pH d'une solution ?", "reponse": "$pH = -\\log[H_3O^{+}]$, et $[H_3O^{+}] = 10^{-pH}$."},
+  {"question": "À 25 °C, comment reconnaît-on une solution acide, neutre ou basique ?", "reponse": "Acide si $pH < 7$, neutre si $pH = 7$, basique si $pH > 7$."},
+  {"question": "Quelle est l'expression de la constante d'acidité $K_A$ ?", "reponse": "Pour $AH + H_2O \\rightleftharpoons A^{-} + H_3O^{+}$ : $K_A = \\dfrac{[A^{-}][H_3O^{+}]}{[AH]}$, et $pK_A = -\\log K_A$."},
+  {"question": "Quelle relation lie pH et $pK_A$ ?", "reponse": "$pH = pK_A + \\log\\dfrac{[A^{-}]}{[AH]}$."},
+  {"question": "Quels sont les domaines de prédominance ?", "reponse": "$pH < pK_A$ : $AH$ prédomine ; $pH > pK_A$ : $A^{-}$ prédomine ; $pH = pK_A$ : $[AH] = [A^{-}]$."},
+  {"question": "Comment reconnaît-on un acide fort ?", "reponse": "Il réagit **totalement** avec l'eau ; son $pK_A$ est **petit** (un acide est d'autant plus fort que son $pK_A$ est faible)."},
+  {"question": "Qu'est-ce que l'équivalence d'un dosage acido-basique ?", "reponse": "L'instant où les réactifs sont mélangés dans les **proportions stœchiométriques** (repéré par le saut de pH ou un indicateur coloré)."}
+]
