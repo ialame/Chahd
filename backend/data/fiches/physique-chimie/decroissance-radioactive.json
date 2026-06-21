@@ -1,0 +1,15 @@
+[
+  {"question": "De quoi est composé un noyau $^{A}_{Z}X$ ?", "reponse": "De **nucléons** : $Z$ protons et $N$ neutrons, avec $A = Z + N$."},
+  {"question": "Que représente le nombre de masse A ?", "reponse": "Le **nombre de nucléons** (protons + neutrons) du noyau."},
+  {"question": "Que représente le numéro atomique Z ?", "reponse": "Le **nombre de protons** du noyau (il identifie l'élément chimique)."},
+  {"question": "Que sont deux noyaux isotopes ?", "reponse": "Des noyaux de **même Z** mais de **A différent** (ex. $^{12}_{6}C$ et $^{14}_{6}C$)."},
+  {"question": "Qu'est-ce que la radioactivité ?", "reponse": "La transformation **spontanée, aléatoire et inéluctable** d'un noyau instable en un noyau plus stable, avec émission d'une particule."},
+  {"question": "Quelles sont les lois de conservation de Soddy ?", "reponse": "Conservation du **nombre de masse A** et du **nombre de charge Z**."},
+  {"question": "Qu'émet la radioactivité $\\alpha$ ?", "reponse": "Un noyau d'hélium $^{4}_{2}He$ : $^{A}_{Z}X \\rightarrow\\, ^{A-4}_{Z-2}Y +\\, ^{4}_{2}He$."},
+  {"question": "Qu'émet la radioactivité $\\beta^{-}$ ?", "reponse": "Un électron $^{0}_{-1}e$ (un neutron devient proton) : $Z \\rightarrow Z+1$."},
+  {"question": "Qu'émet la radioactivité $\\beta^{+}$ ?", "reponse": "Un positon $^{0}_{+1}e$ (un proton devient neutron) : $Z \\rightarrow Z-1$."},
+  {"question": "Qu'est-ce que l'émission $\\gamma$ ?", "reponse": "L'émission d'un **photon** lors de la désexcitation du noyau fils ($A$ et $Z$ inchangés)."},
+  {"question": "Quelle est la loi de décroissance radioactive ?", "reponse": "$N(t) = N_0\\,e^{-\\lambda t}$, où $\\lambda$ est la constante radioactive."},
+  {"question": "Comment la demi-vie est-elle liée à $\\lambda$ ?", "reponse": "$t_{1/2} = \\dfrac{\\ln 2}{\\lambda}$ : durée au bout de laquelle la moitié des noyaux se sont désintégrés."},
+  {"question": "Qu'est-ce que l'activité d'un échantillon et son unité ?", "reponse": "Le nombre de désintégrations par seconde : $a = \\lambda N$, en **becquerels** (Bq)."}
+]
