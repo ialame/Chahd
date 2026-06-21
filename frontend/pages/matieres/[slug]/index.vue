@@ -53,6 +53,12 @@ const cleSel = (s: Sel) => {
 }
 const estSelectionne = (s: Sel) => selection.value != null && cleSel(selection.value) === cleSel(s)
 
+// Libellé court d'un QCM : « QCM · notions » si le titre a un « : », sinon « QCM ».
+const qcmLabel = (titre: string) => {
+  const i = titre.indexOf(':')
+  return i >= 0 ? `QCM · ${titre.slice(i + 1).trim()}` : 'QCM'
+}
+
 async function selectionner(s: Sel) {
   selection.value = s
   // Suivi : enregistrer l'ouverture
@@ -154,11 +160,12 @@ const itemClass = (on: boolean) =>
                   <i class="fa-solid fa-clone text-rose-500 w-4 text-center" /> Fiches de révision
                 </button>
                 <button
-                  v-if="l.quizId"
-                  :class="itemClass(estSelectionne({ kind: 'quiz', quizId: l.quizId, titre: 'QCM', chapitre: l.slug }))"
-                  @click="selectionner({ kind: 'quiz', quizId: l.quizId, titre: 'QCM', chapitre: l.slug })"
+                  v-for="q in l.quizzes"
+                  :key="q.id"
+                  :class="itemClass(estSelectionne({ kind: 'quiz', quizId: q.id, titre: qcmLabel(q.titre), chapitre: l.slug }))"
+                  @click="selectionner({ kind: 'quiz', quizId: q.id, titre: qcmLabel(q.titre), chapitre: l.slug })"
                 >
-                  <i class="fa-solid fa-list-check text-teal-500 w-4 text-center" /> QCM
+                  <i class="fa-solid fa-list-check text-teal-500 w-4 text-center" /> {{ qcmLabel(q.titre) }}
                 </button>
                 <button v-if="l.aBac" :class="itemClass(estSelectionne({ kind: 'bac', lecon: l }))" @click="selectionner({ kind: 'bac', lecon: l })">
                   <i class="fa-solid fa-graduation-cap text-amber-600 w-4 text-center" /> Exercices du bac

@@ -54,6 +54,7 @@ export interface LeconDto {
   aFiches: boolean
   quizId: number | null
   aBac: boolean
+  quizzes: { id: number; titre: string }[]
 }
 
 export interface FlashcardDto {

@@ -11,6 +11,7 @@ import ma.chahd.bac.web.dto.ExoBacDto;
 import ma.chahd.bac.web.dto.FlashcardDto;
 import ma.chahd.bac.web.dto.LeconContenuDto;
 import ma.chahd.bac.web.dto.LeconDto;
+import ma.chahd.bac.web.dto.QuizRefDto;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -61,20 +62,25 @@ public class CoursService {
     }
 
     public List<LeconDto> listCours(String matiereSlug) {
-        // 1er QCM rattaché à chaque leçon (modèle unifié).
-        java.util.Map<Long, Long> quizParLecon = new java.util.HashMap<>();
+        // QCM rattachés à chaque leçon (plusieurs possibles), dans l'ordre.
+        java.util.Map<Long, List<QuizRefDto>> quizParLecon = new java.util.HashMap<>();
         for (Quiz q : quizRepository.findByLecon_Matiere_SlugOrderByOrdreAsc(matiereSlug)) {
-            if (q.getLecon() != null) quizParLecon.putIfAbsent(q.getLecon().getId(), q.getId());
+            if (q.getLecon() != null)
+                quizParLecon.computeIfAbsent(q.getLecon().getId(), k -> new java.util.ArrayList<>())
+                        .add(new QuizRefDto(q.getId(), q.getTitre()));
         }
         Set<String> bacSlugs = bacChapitres(matiereSlug);
         return leconRepository.findByMatiereSlugOrderByOrdreAsc(matiereSlug).stream()
-                .map(l -> new LeconDto(l.getId(), l.getSlug(), l.getTitre(), l.getOrdre(),
-                        Files.isReadable(file(dir, matiereSlug, l.getSlug())),
-                        Files.isReadable(file(exoDir, matiereSlug, l.getSlug())),
-                        Files.isReadable(file(probDir, matiereSlug, l.getSlug())),
-                        Files.isReadable(fichesFile(matiereSlug, l.getSlug())),
-                        quizParLecon.get(l.getId()),
-                        bacSlugs.contains(l.getSlug())))
+                .map(l -> {
+                    List<QuizRefDto> quizzes = quizParLecon.getOrDefault(l.getId(), List.of());
+                    return new LeconDto(l.getId(), l.getSlug(), l.getTitre(), l.getOrdre(),
+                            Files.isReadable(file(dir, matiereSlug, l.getSlug())),
+                            Files.isReadable(file(exoDir, matiereSlug, l.getSlug())),
+                            Files.isReadable(file(probDir, matiereSlug, l.getSlug())),
+                            Files.isReadable(fichesFile(matiereSlug, l.getSlug())),
+                            quizzes.isEmpty() ? null : quizzes.get(0).id(),
+                            bacSlugs.contains(l.getSlug()), quizzes);
+                })
                 .toList();
     }
 
