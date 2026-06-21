@@ -1,0 +1,13 @@
+[
+  {"question": "Que se passe-t-il dans un circuit RLC en oscillations libres ?", "reponse": "Le condensateur chargé se décharge dans la bobine : l'énergie oscille entre $C$ et $L$."},
+  {"question": "Quelle est l'équation différentielle des oscillations libres d'un RLC ?", "reponse": "$LC\\,\\dfrac{\\mathrm{d}^{2}u_C}{\\mathrm{d}t^{2}} + RC\\,\\dfrac{\\mathrm{d}u_C}{\\mathrm{d}t} + u_C = 0$."},
+  {"question": "Quels sont les trois régimes libres d'un circuit RLC ?", "reponse": "Pseudo-périodique (faible R), critique, et apériodique (grand R)."},
+  {"question": "Quand observe-t-on le régime pseudo-périodique ?", "reponse": "Pour une **faible résistance** : la tension oscille en s'amortissant, avec une pseudo-période $T$."},
+  {"question": "Qu'est-ce que le régime apériodique ?", "reponse": "Pour une **grande résistance** : retour à l'équilibre **lent, sans oscillation**."},
+  {"question": "Qu'est-ce que le régime critique ?", "reponse": "Le retour à l'équilibre **le plus rapide possible**, sans oscillation."},
+  {"question": "Quelle est la cause de l'amortissement des oscillations ?", "reponse": "La dissipation d'énergie par **effet Joule** dans le résistor $R$."},
+  {"question": "Que se passe-t-il dans le cas idéal $R = 0$ (circuit LC) ?", "reponse": "Les oscillations sont **sinusoïdales non amorties** : $\\dfrac{\\mathrm{d}^{2}u_C}{\\mathrm{d}t^{2}} + \\dfrac{1}{LC}u_C = 0$."},
+  {"question": "Quelle est la période propre d'un oscillateur LC ?", "reponse": "$T_0 = 2\\pi\\sqrt{LC}$."},
+  {"question": "Comment la pseudo-période T se compare-t-elle à $T_0$ ?", "reponse": "$T$ est légèrement **supérieure** à $T_0$ (et proche pour un faible amortissement)."},
+  {"question": "Entre quels composants l'énergie s'échange-t-elle ?", "reponse": "Entre le condensateur ($\\tfrac{1}{2}Cu_C^{2}$) et la bobine ($\\tfrac{1}{2}Li^{2}$). Constante pour un LC idéal, elle décroît dans un circuit réel."}
+]
