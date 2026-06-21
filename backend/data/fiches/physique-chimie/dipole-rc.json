@@ -1,0 +1,13 @@
+[
+  {"question": "Qu'est-ce qu'un condensateur ?", "reponse": "Deux armatures conductrices séparées par un isolant ; il porte une charge $q = C\\,u_C$."},
+  {"question": "Quelle est l'unité de la capacité C ?", "reponse": "Le **farad** ($\\mathrm{F}$)."},
+  {"question": "Quelle relation lie l'intensité i et la tension $u_C$ ?", "reponse": "$i = C\\,\\dfrac{\\mathrm{d}u_C}{\\mathrm{d}t}$ (convention récepteur)."},
+  {"question": "Quelle est l'équation différentielle de la charge d'un dipôle RC ?", "reponse": "$RC\\,\\dfrac{\\mathrm{d}u_C}{\\mathrm{d}t} + u_C = E$."},
+  {"question": "Quelle est l'expression de $u_C(t)$ pendant la charge ?", "reponse": "$u_C(t) = E\\left(1 - e^{-t/\\tau}\\right)$, avec $\\tau = RC$."},
+  {"question": "Quelle est l'expression de $u_C(t)$ pendant la décharge ?", "reponse": "$u_C(t) = E\\,e^{-t/\\tau}$."},
+  {"question": "Que vaut la constante de temps d'un dipôle RC ?", "reponse": "$\\tau = RC$ (en secondes)."},
+  {"question": "Que vaut $u_C$ à l'instant $t = \\tau$ pendant la charge ?", "reponse": "$u_C(\\tau) = 0{,}63\\,E$ (environ 63 % de E)."},
+  {"question": "Au bout de combien de temps le régime permanent est-il atteint ?", "reponse": "Pratiquement au bout de $t \\approx 5\\tau$."},
+  {"question": "Comment déterminer $\\tau$ graphiquement ?", "reponse": "Abscisse du point où $u_C = 0{,}63E$, ou intersection de la **tangente à l'origine** avec l'asymptote $u_C = E$."},
+  {"question": "Quelle est l'énergie emmagasinée par un condensateur ?", "reponse": "$E_C = \\dfrac{1}{2}\\,C\\,u_C^{2}$."}
+]
