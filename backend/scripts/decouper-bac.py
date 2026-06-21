@@ -38,6 +38,16 @@ CONFIG = {
         ("primitives-integration", ""),
         ("exponentielle", ""),
     ],
+    21: [  # 2019 normale — Première (étude f log) / Deuxième (suite)
+        ("logarithme", "", "étude complète de $f$ (limites, variations, aire)"),
+        ("recurrence-suites",
+         "On reprend la fonction $f$ étudiée à la première partie.\n\n",
+         "étude de la suite $(u_n)$ avec $u_{n+1}=f(u_n)$"),
+    ],
+    22: [  # 2019 rattrapage — Première (étude f exp) / Deuxième (g et suite)
+        ("exponentielle", "", "étude complète de $f$ (limites, variations, aire)"),
+        ("recurrence-suites", "", "fonction auxiliaire $g$ et suite $(u_n)$"),
+    ],
     20: [  # 2020 rattrapage (parties sans titre -> titres explicites)
         ("derivation-convexite", "", "variations de $g(x)=e^{1-x}+\\dfrac1x-2$"),
         ("exponentielle", "", "étude de $f(x)=(1-x)e^{1-x}-x^2+5x-3-2\\ln x$"),
@@ -124,18 +134,21 @@ def corps_probleme(md):
     return seg[seg.index("</div>") + 6:]
 
 
+MARQ = r"(?:Partie\s+[IVX]+|(?:Première|Deuxième|Troisième) partie)"
+
+
 def parties_sujet(md):
     seg = corps_probleme(md)
-    morceaux = re.split(r"\\textbf\{Partie\s+[IVX]+\}\s*(?:\\\\)?", seg)
+    morceaux = re.split(r"\\textbf\{" + MARQ + r"\}\s*(?:\\\\)?", seg)
     return [m.strip() for m in morceaux[1:]]  # [0] = préambule éventuel
 
 
 def parties_corrige(md):
     seg = corps_probleme(md)
-    morceaux = re.split(r'<div[^>]*color:#1F4E79">(Partie\s+[^<]*)</div>', seg)
+    morceaux = re.split(r'<div[^>]*color:#1F4E79">(' + MARQ + r'[^<]*)</div>', seg)
     titres, corps = [], []
     for i in range(1, len(morceaux), 2):
-        titres.append(re.sub(r"^Partie\s+[IVX]+\s*:?\s*", "", morceaux[i]).strip())
+        titres.append(re.sub(r"^" + MARQ + r"\s*:?\s*", "", morceaux[i]).strip())
         corps.append(morceaux[i + 1].strip())
     return titres, corps
 

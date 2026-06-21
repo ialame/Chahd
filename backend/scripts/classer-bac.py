@@ -29,7 +29,7 @@ BANNER = re.compile(
 
 # Annales dont le PROBLÈME est découpé en parties (voir decouper-bac.py) :
 # on n'émet pas l'entrée « problème entier » pour elles.
-PROBLEMES_DECOUPES = {23, 1, 2, 20, 24, 3, 11, 16, 17, 18, 19}
+PROBLEMES_DECOUPES = {23, 1, 2, 20, 24, 3, 11, 16, 17, 18, 19, 21, 22}
 
 def primaire(titre, contenu, est_probleme):
     """Chapitre PRINCIPAL (unique).
