@@ -1,0 +1,13 @@
+[
+  {"question": "Qu'est-ce qu'un oxydant ?", "reponse": "Une espèce capable de **capter** des électrons."},
+  {"question": "Qu'est-ce qu'un réducteur ?", "reponse": "Une espèce capable de **céder** des électrons."},
+  {"question": "Comment s'écrit la demi-équation d'un couple Ox/Red ?", "reponse": "$Ox + n\\,e^{-} \\rightleftharpoons Red$."},
+  {"question": "Qu'est-ce qu'une pile électrochimique ?", "reponse": "Un dispositif qui transforme l'énergie d'une **réaction spontanée** d'oxydoréduction en **énergie électrique**."},
+  {"question": "Quel est le rôle de l'anode dans une pile ?", "reponse": "Siège de l'**oxydation** ; c'est le pôle **négatif**."},
+  {"question": "Quel est le rôle de la cathode dans une pile ?", "reponse": "Siège de la **réduction** ; c'est le pôle **positif**."},
+  {"question": "Dans quel sens circulent le courant et les électrons (circuit extérieur d'une pile) ?", "reponse": "Le courant du **+ vers le −** ; les électrons du **− vers le +**."},
+  {"question": "Quelle est la relation donnant la quantité d'électricité ?", "reponse": "$Q = I\\,t = n(e^{-})\\,F$, avec $F = 96\\,500~\\mathrm{C\\cdot mol^{-1}}$ (constante de Faraday)."},
+  {"question": "Quand une pile cesse-t-elle de débiter ?", "reponse": "Lorsque le système atteint l'équilibre : $Q_r = K$ (la f.é.m. s'annule)."},
+  {"question": "Qu'est-ce que l'électrolyse ?", "reponse": "Une transformation **forcée** : un générateur impose le courant et provoque la réaction **inverse** de la réaction spontanée."},
+  {"question": "Où ont lieu l'oxydation et la réduction lors d'une électrolyse ?", "reponse": "Oxydation à l'**anode** (borne + du générateur), réduction à la **cathode** (borne −)."}
+]
