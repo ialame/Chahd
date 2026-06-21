@@ -1,0 +1,13 @@
+[
+  {"question": "Quelle est l'expression de la force de gravitation entre deux corps ?", "reponse": "$F = G\\,\\dfrac{m_A\\,m_B}{d^{2}}$, avec $G \\approx 6{,}67\\times10^{-11}~\\mathrm{N\\cdot m^{2}\\cdot kg^{-2}}$."},
+  {"question": "La force de gravitation est-elle attractive ou répulsive ?", "reponse": "**Attractive**, dirigée selon la droite joignant les deux corps."},
+  {"question": "Quel rôle joue la gravitation pour un satellite en orbite circulaire ?", "reponse": "Elle est la **force centripète** : $G\\dfrac{Mm}{r^{2}} = m\\dfrac{v^{2}}{r}$."},
+  {"question": "Quelle est la vitesse d'un satellite en orbite circulaire ?", "reponse": "$v = \\sqrt{\\dfrac{GM}{r}}$. Elle **ne dépend pas** de la masse du satellite."},
+  {"question": "Quelle est la période d'un satellite en orbite circulaire ?", "reponse": "$T^{2} = \\dfrac{4\\pi^{2}}{GM}\\,r^{3}$."},
+  {"question": "Énonce la 1ʳᵉ loi de Kepler (loi des orbites).", "reponse": "Chaque planète décrit une **ellipse** dont le Soleil occupe un **foyer**."},
+  {"question": "Énonce la 2ᵈᵉ loi de Kepler (loi des aires).", "reponse": "Le rayon vecteur balaie des **aires égales pendant des durées égales** (la planète va plus vite près du Soleil)."},
+  {"question": "Énonce la 3ᵉ loi de Kepler (loi des périodes).", "reponse": "$\\dfrac{T^{2}}{a^{3}} = \\text{constante}$ ($a$ = demi-grand axe de l'ellipse)."},
+  {"question": "Qu'est-ce qu'un satellite géostationnaire ?", "reponse": "Un satellite qui paraît immobile au-dessus d'un point : période $T = 24~\\mathrm{h}$, orbite dans le **plan équatorial**, même sens que la Terre."},
+  {"question": "Comment varie la vitesse d'un satellite quand le rayon de l'orbite augmente ?", "reponse": "Elle **diminue** ($v = \\sqrt{GM/r}$)."},
+  {"question": "Où la planète se déplace-t-elle le plus vite sur son orbite ?", "reponse": "Au **voisinage du Soleil** (au périhélie), d'après la loi des aires."}
+]
