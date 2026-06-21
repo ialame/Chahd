@@ -1,0 +1,14 @@
+[
+  {"question": "Qu'est-ce qu'une onde mécanique progressive ?", "reponse": "La propagation d'une perturbation dans un milieu matériel élastique, **sans transport de matière** mais **avec transport d'énergie**."},
+  {"question": "Une onde mécanique transporte-t-elle de la matière ?", "reponse": "Non. Elle transporte de l'**énergie** ; chaque point du milieu oscille seulement autour de sa position d'équilibre."},
+  {"question": "Quelle est la différence entre une onde transversale et une onde longitudinale ?", "reponse": "Transversale : perturbation **perpendiculaire** à la propagation (corde). Longitudinale : perturbation **parallèle** à la propagation (son, ressort)."},
+  {"question": "Donne un exemple d'onde longitudinale.", "reponse": "L'**onde sonore** (ou la compression-dilatation d'un ressort)."},
+  {"question": "Définis la célérité d'une onde et donne sa formule.", "reponse": "La vitesse de propagation de la perturbation : $v = \\dfrac{d}{\\Delta t}$ (en $\\mathrm{m\\cdot s^{-1}}$)."},
+  {"question": "De quoi dépend la célérité d'une onde ?", "reponse": "Du **milieu** (nature, température, tension…). Elle **ne dépend pas** de l'amplitude de la perturbation."},
+  {"question": "Quelle est l'expression du retard temporel d'un point M par rapport à la source S ?", "reponse": "$\\tau = \\dfrac{SM}{v} = \\dfrac{d}{v}$."},
+  {"question": "Comment relie-t-on l'élongation d'un point M à celle de la source S ?", "reponse": "$y_M(t) = y_S(t - \\tau)$ : M reproduit le mouvement de S avec le retard $\\tau$."},
+  {"question": "Qu'est-ce que la longueur d'onde et quelle est sa formule ?", "reponse": "La distance parcourue par l'onde pendant une période (plus petite distance entre deux points en phase) : $\\lambda = v\\,T = \\dfrac{v}{\\nu}$."},
+  {"question": "Quelle relation lie la période T et la fréquence ν ?", "reponse": "$\\nu = \\dfrac{1}{T}$ (ν en $\\mathrm{Hz}$, T en $\\mathrm{s}$)."},
+  {"question": "À quelle condition deux points vibrent-ils en phase ? en opposition de phase ?", "reponse": "En phase si $d = k\\lambda$ ; en opposition de phase si $d = (2k+1)\\dfrac{\\lambda}{2}$ (k entier)."},
+  {"question": "Qu'est-ce qu'un milieu dispersif ?", "reponse": "Un milieu où la **célérité dépend de la fréquence** de l'onde. Sinon, le milieu est non dispersif."}
+]
