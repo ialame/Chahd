@@ -1,0 +1,13 @@
+[
+  {"question": "Quelle est la seule force sur un projectile dans le champ de pesanteur ?", "reponse": "Son **poids** $\\vec{P} = m\\vec{g}$ (on néglige les frottements)."},
+  {"question": "Quelle est l'accélération d'un projectile dans le champ de pesanteur ?", "reponse": "$\\vec{a} = \\vec{g}$ : constante, dirigée vers le bas ($a_x = 0$, $a_y = -g$)."},
+  {"question": "Quelle est la forme de la trajectoire d'un projectile ?", "reponse": "Une **parabole**."},
+  {"question": "Comment sont les mouvements horizontal et vertical d'un projectile ?", "reponse": "Horizontal **uniforme** ; vertical **uniformément accéléré**."},
+  {"question": "Quelle est la force sur une charge q dans un champ électrique uniforme ?", "reponse": "La force électrique $\\vec{F} = q\\,\\vec{E}$, d'où $\\vec{a} = \\dfrac{q\\vec{E}}{m}$ (trajectoire parabolique)."},
+  {"question": "Quelle est l'expression de la force de Lorentz ?", "reponse": "$\\vec{F} = q\\,\\vec{v}\\wedge\\vec{B}$, de valeur $F = |q|\\,v\\,B\\sin\\theta$."},
+  {"question": "Quelle est la direction de la force de Lorentz ?", "reponse": "**Perpendiculaire** au vecteur vitesse $\\vec{v}$ (et à $\\vec{B}$)."},
+  {"question": "La force magnétique travaille-t-elle ? Quelle conséquence ?", "reponse": "**Non** (elle est perpendiculaire à $\\vec{v}$) : la **vitesse reste constante**."},
+  {"question": "Quelle est la trajectoire d'une particule chargée dans un champ magnétique uniforme ($\\vec{v} \\perp \\vec{B}$) ?", "reponse": "Un **cercle** : mouvement circulaire uniforme."},
+  {"question": "Quel est le rayon de la trajectoire circulaire ?", "reponse": "$R = \\dfrac{m\\,v}{|q|\\,B}$."},
+  {"question": "Pourquoi le mouvement d'un projectile et celui d'une charge dans un champ E se ressemblent-ils ?", "reponse": "Dans les deux cas l'accélération est **constante** : la trajectoire est une **parabole**."}
+]
