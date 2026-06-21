@@ -1,0 +1,13 @@
+[
+  {"question": "Quelles forces s'exercent sur un solide en chute dans un fluide ?", "reponse": "Le **poids** $\\vec{P}$, la **poussée d'Archimède** $\\vec{F}_A$ et la **force de frottement fluide** $\\vec{f}$."},
+  {"question": "Quelle est la direction et la valeur de la poussée d'Archimède ?", "reponse": "Dirigée **vers le haut**, de valeur $F_A = \\rho_{fluide}\\,V\\,g$."},
+  {"question": "Quelle est la direction de la force de frottement fluide ?", "reponse": "**Opposée au vecteur vitesse** (vers le haut pendant la chute). On la modélise par $f = kv$ ou $f = kv^{2}$."},
+  {"question": "Quelle est l'équation différentielle de la chute (axe vers le bas) ?", "reponse": "$m\\,\\dfrac{\\mathrm{d}v}{\\mathrm{d}t} = mg - F_A - f$."},
+  {"question": "Quand la vitesse limite est-elle atteinte ?", "reponse": "Quand l'**accélération s'annule** ($\\dfrac{\\mathrm{d}v}{\\mathrm{d}t} = 0$) : les forces se compensent."},
+  {"question": "Quelle est l'expression de la vitesse limite (pour $f = kv$) ?", "reponse": "$v_{lim} = \\dfrac{mg - F_A}{k}$."},
+  {"question": "Quel est le mouvement à la vitesse limite ?", "reponse": "**Rectiligne uniforme** (régime asymptotique / permanent)."},
+  {"question": "Qu'est-ce qu'une chute libre ?", "reponse": "Une chute où le solide n'est soumis **qu'à son poids** (poussée et frottements négligés)."},
+  {"question": "Quelle est l'accélération et la vitesse en chute libre ?", "reponse": "$a = g$ et $v(t) = g\\,t + v_0$ : mouvement rectiligne **uniformément accéléré** (pas de vitesse limite)."},
+  {"question": "En quoi consiste la méthode d'Euler ?", "reponse": "Calculer la vitesse pas à pas : $v_{i+1} = v_i + a_i\\,\\Delta t$."},
+  {"question": "Quels sont les deux régimes du mouvement de chute ?", "reponse": "Le **régime initial** (la vitesse augmente) puis le **régime asymptotique** ($v = v_{lim}$ constante)."}
+]
