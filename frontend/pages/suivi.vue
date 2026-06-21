@@ -25,7 +25,7 @@ interface EleveSuivi {
   activites: Activite[]
 }
 
-const { get } = useApi()
+const { get, put, del } = useApi()
 const { estAdmin, estConnecte } = useAuth()
 
 const eleves = ref<EleveResume[]>([])
@@ -34,6 +34,48 @@ const eleve = ref<EleveSuivi['eleve'] | null>(null)
 const activites = ref<Activite[]>([])
 const dernierRefresh = ref<Date | null>(null)
 let timer: ReturnType<typeof setInterval> | null = null
+
+// Édition / suppression d'un élève
+const edition = ref(false)
+const editNom = ref('')
+const editEmail = ref('')
+const editErreur = ref('')
+
+function ouvrirEdition() {
+  if (!eleve.value) return
+  editNom.value = eleve.value.nom
+  editEmail.value = eleve.value.email
+  editErreur.value = ''
+  edition.value = true
+}
+async function enregistrerEdition() {
+  if (!eleve.value) return
+  editErreur.value = ''
+  try {
+    const maj = await put<EleveSuivi['eleve']>(`/admin/eleves/${eleve.value.id}`, {
+      nom: editNom.value,
+      email: editEmail.value,
+    })
+    eleve.value = maj
+    edition.value = false
+    await chargerEleves()
+  } catch (e: any) {
+    editErreur.value = e?.data?.message || 'Modification impossible.'
+  }
+}
+async function supprimerEleve() {
+  if (!eleve.value) return
+  if (!confirm(`Supprimer définitivement « ${eleve.value.nom} » et toutes ses activités ?`)) return
+  try {
+    await del(`/admin/eleves/${eleve.value.id}`)
+    eleve.value = null
+    selId.value = null
+    activites.value = []
+    await chargerEleves()
+  } catch (e: any) {
+    alert(e?.data?.message || 'Suppression impossible.')
+  }
+}
 
 const { data: lecons } = await useAsyncData('suivi-maths', () => get<LeconDto[]>('/matieres/maths/cours'))
 const totalItemsMaths = computed(() =>
@@ -183,12 +225,49 @@ function heure(iso: string): string {
 
           <template v-else>
             <div class="card space-y-2">
-              <div class="flex items-center justify-between">
-                <div>
+              <div class="flex items-center justify-between gap-3">
+                <div class="min-w-0">
                   <span class="font-semibold text-slate-800">{{ eleve.nom }}</span>
                   <span class="ml-2 text-xs text-slate-400">{{ eleve.email }}</span>
                 </div>
-                <span class="text-2xl font-extrabold text-brand-dark">{{ taux }}%</span>
+                <div class="flex shrink-0 items-center gap-2">
+                  <button
+                    class="rounded-lg px-2 py-1 text-xs font-medium text-slate-500 hover:bg-slate-100 hover:text-slate-800"
+                    title="Renommer" @click="ouvrirEdition"
+                  >
+                    <i class="fa-solid fa-pen" /> Renommer
+                  </button>
+                  <button
+                    class="rounded-lg px-2 py-1 text-xs font-medium text-red-500 hover:bg-red-50"
+                    title="Supprimer" @click="supprimerEleve"
+                  >
+                    <i class="fa-solid fa-trash" /> Supprimer
+                  </button>
+                  <span class="text-2xl font-extrabold text-brand-dark">{{ taux }}%</span>
+                </div>
+              </div>
+
+              <!-- Formulaire d'édition -->
+              <div v-if="edition" class="space-y-2 rounded-lg border border-slate-200 bg-slate-50 p-3">
+                <div class="grid gap-2 sm:grid-cols-2">
+                  <input
+                    v-model="editNom" placeholder="Nom"
+                    class="rounded-lg border border-slate-300 px-3 py-1.5 text-sm focus:border-brand focus:outline-none"
+                  >
+                  <input
+                    v-model="editEmail" type="email" placeholder="Email"
+                    class="rounded-lg border border-slate-300 px-3 py-1.5 text-sm focus:border-brand focus:outline-none"
+                  >
+                </div>
+                <p v-if="editErreur" class="text-xs text-red-600">{{ editErreur }}</p>
+                <div class="flex gap-2">
+                  <button class="rounded-lg bg-brand px-3 py-1.5 text-sm font-semibold text-white hover:bg-brand-dark" @click="enregistrerEdition">
+                    Enregistrer
+                  </button>
+                  <button class="rounded-lg px-3 py-1.5 text-sm font-medium text-slate-500 hover:bg-slate-100" @click="edition = false">
+                    Annuler
+                  </button>
+                </div>
               </div>
               <div class="h-2 overflow-hidden rounded-full bg-slate-100">
                 <div class="h-full bg-brand transition-all" :style="{ width: taux + '%' }" />

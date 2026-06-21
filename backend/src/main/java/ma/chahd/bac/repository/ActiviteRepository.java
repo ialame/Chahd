@@ -15,4 +15,6 @@ public interface ActiviteRepository extends JpaRepository<Activite, Long> {
     long countByUtilisateurId(Long utilisateurId);
 
     Optional<Activite> findFirstByUtilisateurIdOrderByCreeLeDesc(Long utilisateurId);
+
+    void deleteByUtilisateurId(Long utilisateurId);
 }

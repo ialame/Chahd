@@ -16,6 +16,12 @@ export const useApi = () => {
   const post = <T>(path: string, body: unknown) =>
     $fetch<T>(path, { baseURL, method: 'POST', body, headers: authHeaders() })
 
+  const put = <T>(path: string, body: unknown) =>
+    $fetch<T>(path, { baseURL, method: 'PUT', body, headers: authHeaders() })
+
+  const del = <T>(path: string) =>
+    $fetch<T>(path, { baseURL, method: 'DELETE', headers: authHeaders() })
+
   // Origine du backend (baseURL sans le suffixe /api)
   const origin = baseURL.replace(/\/api\/?$/, '')
 
@@ -25,5 +31,5 @@ export const useApi = () => {
     return /^https?:\/\//.test(path) ? path : origin + path
   }
 
-  return { baseURL, origin, get, post, fileUrl }
+  return { baseURL, origin, get, post, put, del, fileUrl }
 }
