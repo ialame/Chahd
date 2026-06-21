@@ -53,10 +53,43 @@ ROMAN = ["I", "II", "III", "IV", "V"]
 # Découpage par PLAGES DE QUESTIONS (problèmes sans « Partie »).
 # Par annale : preambule (rappel auto de la fonction) + blocs (chapitre, (q_debut, q_fin), titre).
 CONFIG_Q = {
-    24: [  # 2025 rattrapage — étude de f(x)=x-1+4/(e^x+2)
+    24: [  # 2025 rattrapage — f(x)=x-1+4/(e^x+2)  (exp)
         ("limites-continuite", (1, 3), "limites et asymptotes de $f(x)=x-1+\\dfrac{4}{e^x+2}$"),
-        ("derivation-convexite", (4, 7), "variations, convexité et point d'inflexion de $f$"),
+        ("exponentielle", (4, 7), "variations, convexité et point d'inflexion de $f$"),
         ("primitives-integration", (8, 8), "calcul d'aire sous $(C_f)$"),
+    ],
+    3: [  # 2023 rattrapage — f définie par morceaux (exp)
+        ("limites-continuite", (1, 1), "continuité de $f$ au point 2"),
+        ("exponentielle", (2, 5), "variations et tracé de $f$"),
+        ("primitives-integration", (6, 6), "aire (intégration par parties)"),
+    ],
+    11: [  # 2023 normale — f avec ln
+        ("limites-continuite", (1, 1), "limites et asymptote"),
+        ("logarithme", (2, 5), "variations, concavité et tracé"),
+        ("primitives-integration", (6, 6), "calcul d'aire"),
+        ("recurrence-suites", (7, 7), "étude d'une suite récurrente $u_{n+1}=f(u_n)$"),
+    ],
+    16: [  # 2022 rattrapage — f(x)=x^2(1-ln x)
+        ("limites-continuite", (1, 2), "limite, continuité et dérivabilité en 0"),
+        ("logarithme", (3, 6), "variations, point d'inflexion et tracé"),
+        ("primitives-integration", (7, 7), "calcul d'aire"),
+    ],
+    17: [  # 2021 normale — f(x)=2x ln x - 2x
+        ("limites-continuite", (1, 2), "continuité et limites"),
+        ("logarithme", (3, 4), "variations et tracé"),
+        ("primitives-integration", (5, 5), "calcul d'aire"),
+        ("derivation-convexite", (6, 8), "minimum, réciproque et dérivabilité"),
+    ],
+    18: [  # 2021 rattrapage — f(x)=2-x e^{-x+1}
+        ("limites-continuite", (1, 2), "limites et asymptotes"),
+        ("exponentielle", (3, 6), "variations, convexité et minimum"),
+        ("primitives-integration", (7, 7), "calcul d'aire"),
+        ("derivation-convexite", (8, 8), "fonction réciproque"),
+    ],
+    19: [  # 2020 normale — f avec e^{x-2}
+        ("limites-continuite", (1, 3), "limites, asymptotes et branches"),
+        ("exponentielle", (4, 7), "variations, convexité et tracé"),
+        ("derivation-convexite", (8, 8), "fonction réciproque"),
     ],
 }
 
