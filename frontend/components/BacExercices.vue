@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { ExoBacDto } from '~/types/api'
 import { parseMarkdown } from '~/utils/parseMarkdown'
+import { inlineMath } from '~/utils/inlineMath'
 
 const props = defineProps<{ exos: ExoBacDto[] }>()
 const open = reactive<Record<number, boolean>>({})
@@ -21,7 +22,7 @@ const sessionLabel = (s: string) => (s === 'RATTRAPAGE' ? 'Rattrapage' : 'Normal
           {{ e.extrait ? "D'après " : '' }}Bac {{ e.annee }} · Session {{ sessionLabel(e.session) }}
         </span>
         <span class="text-sm font-semibold text-slate-700">
-          {{ e.numero }}<template v-if="e.titre"> — {{ e.titre }}</template>
+          {{ e.numero }}<template v-if="e.titre"> — <span v-html="inlineMath(e.titre)" /></template>
         </span>
       </div>
 
