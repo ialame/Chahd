@@ -25,6 +25,22 @@ CONFIG = {
         ("recurrence-suites",
          "Soit $f$ la fonction définie sur $]0,+\\infty[$ par $f(x)=x-\\dfrac{(\\ln x)^2}{x}$.\n\n"),
     ],
+    1: [  # 2024 rattrapage
+        ("recurrence-suites", ""),
+        ("exponentielle", ""),
+    ],
+    2: [  # 2024 normale
+        ("primitives-integration", ""),
+        ("exponentielle", ""),
+    ],
+    20: [  # 2020 rattrapage (parties sans titre -> titres explicites)
+        ("derivation-convexite", "", "variations de $g(x)=e^{1-x}+\\dfrac1x-2$"),
+        ("exponentielle", "", "étude de $f(x)=(1-x)e^{1-x}-x^2+5x-3-2\\ln x$"),
+        ("recurrence-suites",
+         "Soit $f$ la fonction définie sur $]0,+\\infty[$ par "
+         "$f(x)=(1-x)e^{1-x}-x^2+5x-3-2\\ln x$.\n\n",
+         "suite définie par $u_{n+1}=f(u_n)$"),
+    ],
 }
 
 ROMAN = ["I", "II", "III", "IV", "V"]
@@ -58,13 +74,15 @@ def main():
         annee, session = META[aid]
         sujet = parties_sujet(open(os.path.join(ANN, f"annale-{aid}-sujet.md")).read())
         titres, corr = parties_corrige(open(os.path.join(ANN, f"annale-{aid}-corrige.md")).read())
-        for i, (chap, prefixe) in enumerate(parts_cfg):
+        for i, cfg in enumerate(parts_cfg):
+            chap, prefixe = cfg[0], cfg[1]
+            titre_ov = cfg[2] if len(cfg) > 2 else ""
             enonce = prefixe + (sujet[i] if i < len(sujet) else "")
             corrige = corr[i] if i < len(corr) else ""
             entries.append({
                 "annee": annee, "session": session,
                 "numero": f"Problème · Partie {ROMAN[i]}",
-                "titre": titres[i] if i < len(titres) else "",
+                "titre": titre_ov or (titres[i] if i < len(titres) else ""),
                 "chapitres": [chap], "enonce": enonce, "corrige": corrige,
                 "extrait": True,
             })
