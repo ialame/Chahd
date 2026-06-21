@@ -39,9 +39,9 @@ public class CoursService {
     private final ObjectMapper mapper = new ObjectMapper()
             .configure(com.fasterxml.jackson.databind.DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 
-    /** Exercices du bac chargés depuis data/bac/<matiere>.json (en cache). */
+    /** Exercices du bac chargés depuis data/bac/<matiere>.json (+ parties-<matiere>.json). */
     private record BacEntry(int annee, String session, String numero, String titre,
-                            List<String> chapitres, String enonce, String corrige) {}
+                            List<String> chapitres, String enonce, String corrige, boolean extrait) {}
     private final ConcurrentHashMap<String, List<BacEntry>> bacCache = new ConcurrentHashMap<>();
 
     public CoursService(LeconRepository leconRepository,
@@ -87,20 +87,27 @@ public class CoursService {
                 .filter(e -> e.chapitres().contains(slug))
                 .sorted(Comparator.comparingInt(BacEntry::annee).reversed()
                         .thenComparing(BacEntry::session))
-                .map(e -> new ExoBacDto(e.annee(), e.session(), e.numero(), e.titre(), e.enonce(), e.corrige()))
+                .map(e -> new ExoBacDto(e.annee(), e.session(), e.numero(), e.titre(),
+                        e.enonce(), e.corrige(), e.extrait()))
                 .toList();
     }
 
     private List<BacEntry> bacEntries(String matiereSlug) {
         return bacCache.computeIfAbsent(matiereSlug, m -> {
-            Path f = bacDir.resolve(m + ".json");
-            if (!Files.isReadable(f)) return List.of();
-            try {
-                return mapper.readValue(Files.readAllBytes(f), new TypeReference<List<BacEntry>>() {});
-            } catch (IOException e) {
-                return List.of();
-            }
+            List<BacEntry> all = new java.util.ArrayList<>();
+            all.addAll(lireBac(bacDir.resolve(m + ".json")));
+            all.addAll(lireBac(bacDir.resolve("parties-" + m + ".json")));
+            return all;
         });
+    }
+
+    private List<BacEntry> lireBac(Path f) {
+        if (!Files.isReadable(f)) return List.of();
+        try {
+            return mapper.readValue(Files.readAllBytes(f), new TypeReference<List<BacEntry>>() {});
+        } catch (IOException e) {
+            return List.of();
+        }
     }
 
     private Set<String> bacChapitres(String matiereSlug) {

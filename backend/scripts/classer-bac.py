@@ -27,6 +27,10 @@ BANNER = re.compile(
     r'<div class="my-5 rounded-lg px-4 py-2\.5 text-white font-bold" '
     r'style="background:#1F4E79">(.*?)</div>', re.DOTALL)
 
+# Annales dont le PROBLÈME est découpé en parties (voir decouper-bac.py) :
+# on n'émet pas l'entrée « problème entier » pour elles.
+PROBLEMES_DECOUPES = {23}
+
 def primaire(titre, contenu, est_probleme):
     """Chapitre PRINCIPAL (unique).
     Thèmes nets par le titre (géométrie/complexes/probas/suites). Un PROBLÈME va à
@@ -110,6 +114,8 @@ def main():
             theme = titre.split("—", 1)[1].strip() if "—" in titre else titre
             enonce = sujet.get(k, "")
             est_probleme = "robl" in numero.lower()
+            if est_probleme and aid in PROBLEMES_DECOUPES:
+                continue  # remplacé par ses parties (parties-maths.json)
             chs = [primaire(titre, enonce + " " + corrige, est_probleme)]
             entries.append({
                 "annaleId": aid, "annee": annee, "session": session,

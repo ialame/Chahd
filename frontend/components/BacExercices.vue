@@ -18,7 +18,7 @@ const sessionLabel = (s: string) => (s === 'RATTRAPAGE' ? 'Rattrapage' : 'Normal
     <section v-for="(e, i) in exos" :key="i" class="space-y-3 border-b border-slate-100 pb-5 last:border-0">
       <div class="flex flex-wrap items-center gap-2">
         <span class="rounded-full bg-brand/10 px-3 py-1 text-xs font-bold text-brand-dark">
-          Bac {{ e.annee }} · Session {{ sessionLabel(e.session) }}
+          {{ e.extrait ? "D'après " : '' }}Bac {{ e.annee }} · Session {{ sessionLabel(e.session) }}
         </span>
         <span class="text-sm font-semibold text-slate-700">
           {{ e.numero }}<template v-if="e.titre"> — {{ e.titre }}</template>

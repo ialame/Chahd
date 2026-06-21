@@ -68,6 +68,7 @@ export interface ExoBacDto {
   titre: string
   enonce: string
   corrige: string
+  extrait: boolean
 }
 
 export interface LeconContenuDto {
