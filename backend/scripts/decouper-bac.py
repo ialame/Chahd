@@ -101,6 +101,12 @@ CONFIG_Q = {
         ("exponentielle", (4, 7), "variations, convexité et tracé"),
         ("derivation-convexite", (8, 8), "fonction réciproque"),
     ],
+    15: [  # 2022 normale — f(x)=x(e^{x/2}-1)^2  (exp)
+        ("limites-continuite", (1, 3), "limites et asymptote $y=x$"),
+        ("exponentielle", (4, 6), "variations, convexité et tracé de $f$"),
+        ("derivation-convexite", (7, 7), "fonction réciproque"),
+        ("recurrence-suites", (8, 8), "étude de la suite $(u_n)$"),
+    ],
 }
 
 QLABEL = re.compile(r"\*\*(\d+)(?:\.[a-z])?\)\*\*")
