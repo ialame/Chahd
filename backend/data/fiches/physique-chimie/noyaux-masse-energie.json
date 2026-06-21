@@ -1,0 +1,13 @@
+[
+  {"question": "Quelle est la relation d'équivalence masse-énergie ?", "reponse": "$E = m\\,c^{2}$ (Einstein), avec $E$ en J, $m$ en kg, $c \\approx 3{,}00\\times10^{8}~\\mathrm{m\\cdot s^{-1}}$."},
+  {"question": "À quelle énergie correspond $1~\\mathrm{u}$ ?", "reponse": "$1~\\mathrm{u} \\leftrightarrow 931{,}5~\\mathrm{MeV}/c^{2}$."},
+  {"question": "Qu'est-ce que le défaut de masse d'un noyau ?", "reponse": "$\\Delta m = (Z\\,m_p + N\\,m_n) - m_{\\text{noyau}} > 0$ : le noyau est plus léger que ses nucléons séparés."},
+  {"question": "Qu'est-ce que l'énergie de liaison d'un noyau ?", "reponse": "L'énergie à fournir pour séparer ses nucléons : $E_\\ell = \\Delta m\\,c^{2}$."},
+  {"question": "Que mesure l'énergie de liaison par nucléon $E_\\ell/A$ ?", "reponse": "La **stabilité** du noyau : plus $E_\\ell/A$ est grande, plus le noyau est stable."},
+  {"question": "Que représente la courbe d'Aston ?", "reponse": "$E_\\ell/A$ en fonction de $A$. Le maximum ($\\approx 8{,}8$ MeV/nucléon) est atteint vers $A \\approx 60$ (fer)."},
+  {"question": "Qu'est-ce que la fission nucléaire ?", "reponse": "La division d'un **noyau lourd** en deux noyaux plus légers, avec libération d'énergie."},
+  {"question": "Qu'est-ce que la fusion nucléaire ?", "reponse": "L'union de deux **noyaux légers** en un noyau plus lourd (énergie des étoiles), avec libération d'énergie."},
+  {"question": "Comment calcule-t-on l'énergie libérée par une réaction nucléaire ?", "reponse": "$E_{lib} = |\\Delta m|\\,c^{2}$, avec $\\Delta m = m_{\\text{produits}} - m_{\\text{réactifs}}$."},
+  {"question": "À quelle condition une réaction nucléaire libère-t-elle de l'énergie ?", "reponse": "Si la masse **diminue** (masse des produits < masse des réactifs)."},
+  {"question": "Vers quoi évoluent fission et fusion sur la courbe d'Aston ?", "reponse": "Vers des noyaux de **plus grande énergie de liaison par nucléon** (plus stables)."}
+]
