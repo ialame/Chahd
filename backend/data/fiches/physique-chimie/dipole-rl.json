@@ -1,0 +1,13 @@
+[
+  {"question": "Par quelle grandeur une bobine est-elle caractérisée et dans quelle unité ?", "reponse": "Par son **inductance** $L$, en **henrys** ($\\mathrm{H}$)."},
+  {"question": "Quelle est la tension aux bornes d'une bobine idéale ?", "reponse": "$u_L = L\\,\\dfrac{\\mathrm{d}i}{\\mathrm{d}t}$."},
+  {"question": "À quoi s'oppose une bobine ?", "reponse": "Aux **variations** de l'intensité : le courant ne peut pas varier de façon discontinue dans une bobine."},
+  {"question": "Quelle est l'équation différentielle de l'établissement du courant (dipôle RL) ?", "reponse": "$L\\,\\dfrac{\\mathrm{d}i}{\\mathrm{d}t} + R\\,i = E$."},
+  {"question": "Quelle est l'expression de $i(t)$ pendant l'établissement ?", "reponse": "$i(t) = \\dfrac{E}{R}\\left(1 - e^{-t/\\tau}\\right)$, avec $I_0 = \\dfrac{E}{R}$."},
+  {"question": "Quelle est l'expression de $i(t)$ pendant la rupture ?", "reponse": "$i(t) = I_0\\,e^{-t/\\tau}$."},
+  {"question": "Que vaut la constante de temps d'un dipôle RL ?", "reponse": "$\\tau = \\dfrac{L}{R}$ (en secondes)."},
+  {"question": "Que vaut le courant à $t = \\tau$ pendant l'établissement ?", "reponse": "$i(\\tau) = 0{,}63\\,I_0$."},
+  {"question": "Comment se comporte une bobine en régime permanent ?", "reponse": "Comme un **simple fil** ($u_L = 0$ car $\\dfrac{\\mathrm{d}i}{\\mathrm{d}t}=0$), et $I_0 = \\dfrac{E}{R}$."},
+  {"question": "Quelle est l'énergie emmagasinée par une bobine ?", "reponse": "$E_L = \\dfrac{1}{2}\\,L\\,i^{2}$."},
+  {"question": "Au bout de combien de temps le régime permanent est-il atteint ?", "reponse": "Pratiquement au bout de $t \\approx 5\\tau$."}
+]
