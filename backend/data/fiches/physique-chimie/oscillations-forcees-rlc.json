@@ -1,0 +1,13 @@
+[
+  {"question": "En régime forcé, à quelle fréquence oscille le circuit RLC ?", "reponse": "À la **fréquence imposée** $f$ par le générateur (GBF)."},
+  {"question": "Comment définit-on l'impédance d'un circuit ?", "reponse": "$Z = \\dfrac{U_m}{I_m}$ (en ohms, $\\Omega$). Elle dépend de la fréquence."},
+  {"question": "Qu'est-ce que la résonance d'intensité ?", "reponse": "Le phénomène où l'amplitude $I_m$ du courant devient **maximale**."},
+  {"question": "À quelle fréquence se produit la résonance d'intensité ?", "reponse": "À la **fréquence propre** : $f_0 = \\dfrac{1}{2\\pi\\sqrt{LC}}$."},
+  {"question": "Que vaut l'impédance à la résonance ?", "reponse": "Elle est **minimale** et vaut $Z = R$."},
+  {"question": "Que vaut l'intensité maximale à la résonance ?", "reponse": "$I_m = \\dfrac{U_m}{R}$ (maximale)."},
+  {"question": "Quel est le déphasage entre i et u à la résonance ?", "reponse": "**Nul** ($\\varphi = 0$) : le courant et la tension sont **en phase**."},
+  {"question": "Quelle est l'expression du facteur de qualité ?", "reponse": "$Q = \\dfrac{1}{R}\\sqrt{\\dfrac{L}{C}} = \\dfrac{L\\,\\omega_0}{R}$."},
+  {"question": "Quel est l'effet d'un grand facteur de qualité ?", "reponse": "La résonance est plus **aiguë** (bande passante étroite). Un grand Q correspond à une faible R."},
+  {"question": "Qu'est-ce que le phénomène de surtension ?", "reponse": "Pour un Q élevé, la tension aux bornes du condensateur peut **dépasser** $U_m$ à la résonance."},
+  {"question": "De quoi dépend la fréquence propre $f_0$ ?", "reponse": "De $L$ et $C$ uniquement : $f_0 = \\dfrac{1}{2\\pi\\sqrt{LC}}$."}
+]

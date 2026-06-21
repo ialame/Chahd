@@ -1,0 +1,70 @@
+Quand un circuit RLC est alimenté par un **générateur sinusoïdal** (GBF), il oscille en **régime forcé** à la fréquence imposée. Pour une fréquence particulière, l'intensité devient maximale : c'est la **résonance**.
+
+## 1. Le régime sinusoïdal forcé
+
+\begin{definition}[Régime forcé]
+Un GBF impose une tension sinusoïdale $u(t) = U_m\cos(2\pi f t)$. En régime permanent, le circuit RLC oscille à la **fréquence imposée** $f$, et l'intensité s'écrit :
+\[
+i(t) = I_m\cos(2\pi f t + \varphi)
+\]
+où $\varphi$ est le **déphasage** de $i$ par rapport à $u$.
+\end{definition}
+
+<img src="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNDcwIDIyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+PHRleHQgeD0iMjQwIiB5PSIxOCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiMxRjRFNzkiPkNpcmN1aXQgUkxDIGVuIHLDqWdpbWUgZm9yY8OpIChHQkYpPC90ZXh0PjxsaW5lIHgxPSI5NSIgeTE9IjU1IiB4Mj0iOTUiIHkyPSI5NyIgc3Ryb2tlPSIjMzM0MTU1IiBzdHJva2Utd2lkdGg9IjIiLz48Y2lyY2xlIGN4PSI5NSIgY3k9IjExNSIgcj0iMTgiIGZpbGw9IiNmZmYiIHN0cm9rZT0iIzMzNDE1NSIgc3Ryb2tlLXdpZHRoPSIyIi8+PHBhdGggZD0iTTgzLDExNSBxMywtNyA2LDAgdDYsMCB0NiwwIiBmaWxsPSJub25lIiBzdHJva2U9IiMxRjRFNzkiIHN0cm9rZS13aWR0aD0iMS42Ii8+PGxpbmUgeDE9Ijk1IiB5MT0iMTMzIiB4Mj0iOTUiIHkyPSIxNzUiIHN0cm9rZT0iIzMzNDE1NSIgc3Ryb2tlLXdpZHRoPSIyIi8+PHRleHQgeD0iNTgiIHk9IjExOSIgZm9udC1zaXplPSIxMSIgZmlsbD0iIzMzNDE1NSI+R0JGPC90ZXh0PjxsaW5lIHgxPSI5NSIgeTE9IjU1IiB4Mj0iMjE1IiB5Mj0iNTUiIHN0cm9rZT0iIzMzNDE1NSIgc3Ryb2tlLXdpZHRoPSIyIi8+PHJlY3QgeD0iMjE1IiB5PSI0OCIgd2lkdGg9IjQ2IiBoZWlnaHQ9IjE0IiBmaWxsPSIjZmZmIiBzdHJva2U9IiMzMzQxNTUiIHN0cm9rZS13aWR0aD0iMiIvPjx0ZXh0IHg9IjIzOCIgeT0iNDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiMzMzQxNTUiPlI8L3RleHQ+PGxpbmUgeDE9IjI2MSIgeTE9IjU1IiB4Mj0iMzg1IiB5Mj0iNTUiIHN0cm9rZT0iIzMzNDE1NSIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjM4NSIgeTE9IjU1IiB4Mj0iMzg1IiB5Mj0iOTIiIHN0cm9rZT0iIzMzNDE1NSIgc3Ryb2tlLXdpZHRoPSIyIi8+PHBhdGggZD0iTTM4NSw5MiBhNyw3IDAgMCAxIDAsMTQgYTcsNyAwIDAgMSAwLDE0IGE3LDcgMCAwIDEgMCwxNCBhNyw3IDAgMCAxIDAsMTQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzMzNDE1NSIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjM4NSIgeTE9IjE0OCIgeDI9IjM4NSIgeTI9IjE3NSIgc3Ryb2tlPSIjMzM0MTU1IiBzdHJva2Utd2lkdGg9IjIiLz48dGV4dCB4PSI0MDQiIHk9IjEyNCIgZm9udC1zaXplPSIxMyIgZmlsbD0iIzMzNDE1NSIgZm9udC13ZWlnaHQ9ImJvbGQiPkw8L3RleHQ+PGxpbmUgeDE9IjM4NSIgeTE9IjE3NSIgeDI9IjI2MiIgeTI9IjE3NSIgc3Ryb2tlPSIjMzM0MTU1IiBzdHJva2Utd2lkdGg9IjIiLz48bGluZSB4MT0iMjYyIiB5MT0iMTYwIiB4Mj0iMjYyIiB5Mj0iMTkwIiBzdHJva2U9IiMzMzQxNTUiIHN0cm9rZS13aWR0aD0iMyIvPjxsaW5lIHgxPSIyNTAiIHkxPSIxNjAiIHgyPSIyNTAiIHkyPSIxOTAiIHN0cm9rZT0iIzMzNDE1NSIgc3Ryb2tlLXdpZHRoPSIzIi8+PGxpbmUgeDE9IjI1MCIgeTE9IjE3NSIgeDI9Ijk1IiB5Mj0iMTc1IiBzdHJva2U9IiMzMzQxNTUiIHN0cm9rZS13aWR0aD0iMiIvPjx0ZXh0IHg9IjI0OCIgeT0iMjA1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjEzIiBmaWxsPSIjMzM0MTU1IiBmb250LXdlaWdodD0iYm9sZCI+QzwvdGV4dD48L3N2Zz4=" alt="schéma" style="width:100%;max-width:470px;display:block;margin:14px auto">
+
+## 2. Impédance du circuit
+
+\begin{definition}[Impédance]
+L'**impédance** $Z$ du circuit (en ohms, $\Omega$) est le rapport des amplitudes :
+\[
+Z = \frac{U_m}{I_m}
+\]
+Elle dépend de la fréquence $f$.
+\end{definition}
+
+## 3. La résonance d'intensité
+
+\begin{definition}[Résonance]
+La **résonance d'intensité** est obtenue lorsque l'amplitude $I_m$ du courant est **maximale**. Elle se produit quand la fréquence imposée est égale à la **fréquence propre** :
+\[
+\boxed{f = f_0 = \frac{1}{2\pi\sqrt{LC}}}
+\]
+\end{definition}
+
+\begin{propriete}[Caractéristiques à la résonance]
+À la résonance ($f = f_0$) :
+\begin{itemize}
+    \item l'impédance est **minimale** et vaut $Z = R$ ;
+    \item l'intensité maximale vaut $I_m = \dfrac{U_m}{R}$ ;
+    \item le déphasage est **nul** ($\varphi = 0$) : $i$ et $u$ sont **en phase**.
+\end{itemize}
+\end{propriete}
+
+<img src="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNDcwIDIxMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+PGRlZnM+PG1hcmtlciBpZD0iY2EiIG1hcmtlcldpZHRoPSI4IiBtYXJrZXJIZWlnaHQ9IjgiIHJlZlg9IjYiIHJlZlk9IjMiIG9yaWVudD0iYXV0byI+PHBhdGggZD0iTTAsMCBMNiwzIEwwLDYgWiIgZmlsbD0iIzQ3NTU2OSIvPjwvbWFya2VyPjwvZGVmcz48dGV4dCB4PSIyMzUiIHk9IjE2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjE0IiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iIzFGNEU3OSI+Q291cmJlIGRlIHLDqXNvbmFuY2UgZCdpbnRlbnNpdMOpPC90ZXh0PjxsaW5lIHgxPSI1NSIgeTE9IjE3NSIgeDI9IjQ1MCIgeTI9IjE3NSIgc3Ryb2tlPSIjNDc1NTY5IiBzdHJva2Utd2lkdGg9IjEuNCIgbWFya2VyLWVuZD0idXJsKCNjYSkiLz48bGluZSB4MT0iNTUiIHkxPSIxNzUiIHgyPSI1NSIgeTI9IjM1IiBzdHJva2U9IiM0NzU1NjkiIHN0cm9rZS13aWR0aD0iMS40IiBtYXJrZXItZW5kPSJ1cmwoI2NhKSIvPjx0ZXh0IHg9IjQ0IiB5PSI0NCIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzQ3NTU2OSI+STwvdGV4dD48dGV4dCB4PSI1MSIgeT0iNDgiIGZvbnQtc2l6ZT0iOSIgZmlsbD0iIzQ3NTU2OSI+bTwvdGV4dD48dGV4dCB4PSI0NTIiIHk9IjE5MCIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzQ3NTU2OSI+ZjwvdGV4dD48bGluZSB4MT0iMTk1LjMiIHkxPSI1NSIgeDI9IjE5NS4zIiB5Mj0iMTc1IiBzdHJva2U9IiNjYmQ1ZTEiIHN0cm9rZS13aWR0aD0iMSIgc3Ryb2tlLWRhc2hhcnJheT0iNCAzIi8+PHRleHQgeD0iMTk1LjMiIHk9IjE5MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzBmNzY2ZSIgZm9udC13ZWlnaHQ9ImJvbGQiPmYmIzgzMjA7PC90ZXh0Pjxwb2x5bGluZSBwb2ludHM9IjYwLjAsMTY5LjAgNjQuMiwxNjguNiA2OC4zLDE2OC4xIDcyLjUsMTY3LjYgNzYuNiwxNjcuMSA4MC44LDE2Ni42IDg1LjAsMTY2LjAgODkuMSwxNjUuNCA5My4zLDE2NC43IDk3LjUsMTY0LjAgMTAxLjYsMTYzLjIgMTA1LjgsMTYyLjQgMTA5LjksMTYxLjUgMTE0LjEsMTYwLjUgMTE4LjMsMTU5LjUgMTIyLjQsMTU4LjMgMTI2LjYsMTU3LjAgMTMwLjgsMTU1LjUgMTM0LjksMTUzLjkgMTM5LjEsMTUyLjAgMTQzLjIsMTQ5LjkgMTQ3LjQsMTQ3LjQgMTUxLjYsMTQ0LjUgMTU1LjcsMTQxLjEgMTU5LjksMTM3LjAgMTY0LjEsMTMyLjEgMTY4LjIsMTI2LjAgMTcyLjQsMTE4LjQgMTc2LjUsMTA4LjggMTgwLjcsOTYuNyAxODQuOSw4Mi4zIDE4OS4wLDY3LjEgMTkzLjIsNTYuNSAxOTcuNCw1Ni41IDIwMS41LDY2LjUgMjA1LjcsODAuNCAyMDkuOCw5My42IDIxNC4wLDEwNC42IDIxOC4yLDExMy40IDIyMi4zLDEyMC41IDIyNi41LDEyNi4xIDIzMC42LDEzMC44IDIzNC44LDEzNC42IDIzOS4wLDEzNy44IDI0My4xLDE0MC41IDI0Ny4zLDE0Mi45IDI1MS41LDE0NC45IDI1NS42LDE0Ni43IDI1OS44LDE0OC4zIDI2My45LDE0OS42IDI2OC4xLDE1MC45IDI3Mi4zLDE1Mi4wIDI3Ni40LDE1My4wIDI4MC42LDE1My45IDI4NC44LDE1NC44IDI4OC45LDE1NS41IDI5My4xLDE1Ni4yIDI5Ny4yLDE1Ni45IDMwMS40LDE1Ny41IDMwNS42LDE1OC4xIDMwOS43LDE1OC42IDMxMy45LDE1OS4xIDMxOC4xLDE1OS41IDMyMi4yLDE2MC4wIDMyNi40LDE2MC40IDMzMC41LDE2MC43IDMzNC43LDE2MS4xIDMzOC45LDE2MS40IDM0My4wLDE2MS44IDM0Ny4yLDE2Mi4xIDM1MS40LDE2Mi4zIDM1NS41LDE2Mi42IDM1OS43LDE2Mi45IDM2My44LDE2My4xIDM2OC4wLDE2My40IDM3Mi4yLDE2My42IDM3Ni4zLDE2My44IDM4MC41LDE2NC4wIDM4NC42LDE2NC4yIDM4OC44LDE2NC40IDM5My4wLDE2NC42IDM5Ny4xLDE2NC44IDQwMS4zLDE2NS4wIDQwNS41LDE2NS4xIDQwOS42LDE2NS4zIDQxMy44LDE2NS40IDQxNy45LDE2NS42IDQyMi4xLDE2NS43IDQyNi4zLDE2NS45IDQzMC40LDE2Ni4wIDQzNC42LDE2Ni4xIDQzOC44LDE2Ni4yIDQ0Mi45LDE2Ni40IiBmaWxsPSJub25lIiBzdHJva2U9IiMxRjRFNzkiIHN0cm9rZS13aWR0aD0iMi4zIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBvbHlsaW5lIHBvaW50cz0iNjAuMCwxNjMuOSA2NC4yLDE2My4xIDY4LjMsMTYyLjMgNzIuNSwxNjEuNCA3Ni42LDE2MC41IDgwLjgsMTU5LjYgODUuMCwxNTguNiA4OS4xLDE1Ny42IDkzLjMsMTU2LjUgOTcuNSwxNTUuMyAxMDEuNiwxNTQuMSAxMDUuOCwxNTIuOCAxMDkuOSwxNTEuNCAxMTQuMSwxNTAuMCAxMTguMywxNDguNCAxMjIuNCwxNDYuOCAxMjYuNiwxNDUuMCAxMzAuOCwxNDMuMiAxMzQuOSwxNDEuMiAxMzkuMSwxMzkuMSAxNDMuMiwxMzYuOSAxNDcuNCwxMzQuNiAxNTEuNiwxMzIuMiAxNTUuNywxMjkuNyAxNTkuOSwxMjcuMiAxNjQuMSwxMjQuNiAxNjguMiwxMjIuMiAxNzIuNCwxMTkuOSAxNzYuNSwxMTcuNyAxODAuNywxMTUuOSAxODQuOSwxMTQuNSAxODkuMCwxMTMuNSAxOTMuMiwxMTMuMSAxOTcuNCwxMTMuMSAyMDEuNSwxMTMuNSAyMDUuNywxMTQuNCAyMDkuOCwxMTUuNiAyMTQuMCwxMTcuMCAyMTguMiwxMTguNyAyMjIuMywxMjAuNCAyMjYuNSwxMjIuMiAyMzAuNiwxMjQuMSAyMzQuOCwxMjUuOSAyMzkuMCwxMjcuNiAyNDMuMSwxMjkuMyAyNDcuMywxMzAuOSAyNTEuNSwxMzIuNSAyNTUuNiwxMzQuMCAyNTkuOCwxMzUuNCAyNjMuOSwxMzYuNyAyNjguMSwxMzcuOSAyNzIuMywxMzkuMSAyNzYuNCwxNDAuMiAyODAuNiwxNDEuMyAyODQuOCwxNDIuMyAyODguOSwxNDMuMiAyOTMuMSwxNDQuMSAyOTcuMiwxNDQuOSAzMDEuNCwxNDUuNyAzMDUuNiwxNDYuNSAzMDkuNywxNDcuMiAzMTMuOSwxNDcuOCAzMTguMSwxNDguNSAzMjIuMiwxNDkuMSAzMjYuNCwxNDkuNyAzMzAuNSwxNTAuMiAzMzQuNywxNTAuOCAzMzguOSwxNTEuMyAzNDMuMCwxNTEuOCAzNDcuMiwxNTIuMiAzNTEuNCwxNTIuNyAzNTUuNSwxNTMuMSAzNTkuNywxNTMuNSAzNjMuOCwxNTMuOSAzNjguMCwxNTQuMyAzNzIuMiwxNTQuNyAzNzYuMywxNTUuMCAzODAuNSwxNTUuNCAzODQuNiwxNTUuNyAzODguOCwxNTYuMCAzOTMuMCwxNTYuMyAzOTcuMSwxNTYuNiA0MDEuMywxNTYuOSA0MDUuNSwxNTcuMiA0MDkuNiwxNTcuNCA0MTMuOCwxNTcuNyA0MTcuOSwxNTcuOSA0MjIuMSwxNTguMiA0MjYuMywxNTguNCA0MzAuNCwxNTguNiA0MzQuNiwxNTguOSA0MzguOCwxNTkuMSA0NDIuOSwxNTkuMyIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYjQ1MzA5IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1kYXNoYXJyYXk9IjYgMyIvPjx0ZXh0IHg9IjI1MCIgeT0iNTgiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiMxRjRFNzkiIGZvbnQtd2VpZ2h0PSJib2xkIj5RIMOpbGV2w6kgKFIgZmFpYmxlKTwvdGV4dD48dGV4dCB4PSIzMDAiIHk9IjEyMCIgZm9udC1zaXplPSIxMSIgZmlsbD0iI2I0NTMwOSI+USBmYWlibGUgKFIgZ3JhbmQpPC90ZXh0Pjwvc3ZnPg==" alt="schéma" style="width:100%;max-width:470px;display:block;margin:14px auto">
+
+## 4. Le facteur de qualité
+
+\begin{definition}[Facteur de qualité]
+Le **facteur de qualité** $Q$ caractérise l'**acuité** de la résonance :
+\[
+Q = \frac{1}{R}\sqrt{\frac{L}{C}} = \frac{L\,\omega_0}{R}, \qquad \omega_0 = \frac{1}{\sqrt{LC}}
+\]
+\end{definition}
+
+\begin{propriete}[Acuité de la résonance]
+\begin{itemize}
+    \item Plus $Q$ est **grand** (faible $R$), plus la résonance est **aiguë** (bande passante étroite).
+    \item Plus $R$ est grand, plus la courbe de résonance est **plate**.
+    \item Pour $Q$ élevé, la tension aux bornes du condensateur peut dépasser $U_m$ : c'est le phénomène de **surtension**.
+\end{itemize}
+\end{propriete}
+
+## L'essentiel
+
+\begin{propriete}[À retenir]
+\begin{itemize}
+    \item Régime forcé : le circuit oscille à la **fréquence imposée** $f$ ; $Z = \dfrac{U_m}{I_m}$.
+    \item Résonance à $f_0 = \dfrac{1}{2\pi\sqrt{LC}}$ : $Z = R$ (min), $I_m = \dfrac{U_m}{R}$ (max), $\varphi = 0$.
+    \item Facteur de qualité : $Q = \dfrac{1}{R}\sqrt{\dfrac{L}{C}}$ ; grand $Q$ → résonance aiguë.
+\end{itemize}
+\end{propriete}
