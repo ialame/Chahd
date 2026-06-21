@@ -12,18 +12,29 @@ interface Activite {
   note: number | null
   creeLe: string
 }
+interface EleveResume {
+  id: number
+  nom: string
+  email: string
+  creeLe: string
+  nbActivites: number
+  derniereActivite: string | null
+}
+interface EleveSuivi {
+  eleve: { id: number; nom: string; email: string; role: string }
+  activites: Activite[]
+}
 
 const { get } = useApi()
+const { estAdmin, estConnecte } = useAuth()
 
-const cle = ref('')
-const saisieCle = ref('')
-const events = ref<Activite[]>([])
-const erreur = ref('')
-const filtreVisiteur = ref('')
+const eleves = ref<EleveResume[]>([])
+const selId = ref<number | null>(null)
+const eleve = ref<EleveSuivi['eleve'] | null>(null)
+const activites = ref<Activite[]>([])
 const dernierRefresh = ref<Date | null>(null)
 let timer: ReturnType<typeof setInterval> | null = null
 
-// Structure Maths (dénominateur du taux d'avancement).
 const { data: lecons } = await useAsyncData('suivi-maths', () => get<LeconDto[]>('/matieres/maths/cours'))
 const totalItemsMaths = computed(() =>
   (lecons.value ?? []).reduce(
@@ -32,57 +43,59 @@ const totalItemsMaths = computed(() =>
   )
 )
 
-async function charger() {
+async function chargerEleves() {
+  if (!estAdmin.value) return
   try {
-    events.value = await get<Activite[]>(`/admin/suivi?cle=${encodeURIComponent(cle.value)}`)
-    erreur.value = ''
+    eleves.value = await get<EleveResume[]>('/admin/eleves')
     dernierRefresh.value = new Date()
-    if (import.meta.client) localStorage.setItem('chahd:suivi:cle', cle.value)
-  } catch {
-    erreur.value = 'Clé invalide ou accès refusé.'
-    cle.value = ''
-  }
+    if (selId.value == null && eleves.value.length) selectionner(eleves.value[0].id)
+  } catch { /* ignore */ }
 }
 
-function valider() {
-  cle.value = saisieCle.value.trim()
-  if (cle.value) charger()
+async function selectionner(id: number) {
+  selId.value = id
+  try {
+    const s = await get<EleveSuivi>(`/admin/eleves/${id}/suivi`)
+    eleve.value = s.eleve
+    activites.value = s.activites
+    dernierRefresh.value = new Date()
+  } catch { /* ignore */ }
 }
 
 onMounted(() => {
-  cle.value = localStorage.getItem('chahd:suivi:cle') || ''
-  if (cle.value) charger()
-  timer = setInterval(() => { if (cle.value && !erreur.value) charger() }, 12000)
+  chargerEleves()
+  timer = setInterval(() => {
+    if (!estAdmin.value) return
+    chargerEleves()
+    if (selId.value != null) selectionner(selId.value)
+  }, 12000)
 })
 onUnmounted(() => { if (timer) clearInterval(timer) })
 
-const visiteurs = computed(() => [...new Set(events.value.map((e) => e.visiteur).filter(Boolean))] as string[])
-const evFiltres = computed(() => (filtreVisiteur.value ? events.value.filter((e) => e.visiteur === filtreVisiteur.value) : events.value))
-
+// --- Agrégation sur les activités de l'élève sélectionné ---
 const itemsConsultes = computed(() => {
   const s = new Set<string>()
-  for (const e of evFiltres.value)
+  for (const e of activites.value)
     if (e.matiere === 'maths' && e.chapitre && e.item && ['cours', 'exercices', 'problemes', 'fiches'].includes(e.item))
       s.add(e.chapitre + '|' + e.item)
   return s.size
 })
 const quizDone = computed(() =>
-  new Set(evFiltres.value.filter((e) => e.matiere === 'maths' && e.type === 'quiz' && e.note != null).map((e) => e.label)).size
+  new Set(activites.value.filter((e) => e.matiere === 'maths' && e.type === 'quiz' && e.note != null).map((e) => e.label)).size
 )
 const taux = computed(() =>
   totalItemsMaths.value ? Math.round(((itemsConsultes.value + quizDone.value) / totalItemsMaths.value) * 100) : 0
 )
-const quizScores = computed(() => evFiltres.value.filter((e) => e.type === 'quiz' && e.note != null))
+const quizScores = computed(() => activites.value.filter((e) => e.type === 'quiz' && e.note != null))
 
-// Détail chapitre par chapitre (Maths).
 const faitsSet = computed(() => {
   const s = new Set<string>()
-  for (const e of evFiltres.value) if (e.matiere === 'maths' && e.chapitre && e.item) s.add(e.chapitre + '|' + e.item)
+  for (const e of activites.value) if (e.matiere === 'maths' && e.chapitre && e.item) s.add(e.chapitre + '|' + e.item)
   return s
 })
 const noteParChapitre = computed(() => {
   const m: Record<string, number> = {}
-  for (const e of evFiltres.value)
+  for (const e of activites.value)
     if (e.matiere === 'maths' && e.type === 'quiz' && e.chapitre && e.note != null)
       m[e.chapitre] = Math.max(m[e.chapitre] ?? 0, e.note)
   return m
@@ -104,12 +117,13 @@ const chapitres = computed(() =>
 
 const ITEM_LABEL: Record<string, string> = {
   cours: '📘 Cours', exercices: '✅ Exercices', problemes: '🧩 Problèmes', fiches: '🗂 Fiches',
-  quiz: '📋 QCM', annale: '📄 Annale', page: '🔖 Page'
+  quiz: '📋 QCM', annale: '📄 Annale', pdf: '📄 PDF', page: '🔖 Page'
 }
 
-function relatif(iso: string): string {
+function relatif(iso: string | null): string {
+  if (!iso) return 'jamais'
   const d = (Date.now() - new Date(iso).getTime()) / 1000
-  if (d < 60) return 'à l\'instant'
+  if (d < 60) return "à l'instant"
   if (d < 3600) return `il y a ${Math.floor(d / 60)} min`
   if (d < 86400) return `il y a ${Math.floor(d / 3600)} h`
   return new Date(iso).toLocaleDateString('fr-FR')
@@ -120,105 +134,125 @@ function heure(iso: string): string {
 </script>
 
 <template>
-  <div class="mx-auto max-w-3xl space-y-6">
-    <!-- Portail de clé -->
-    <div v-if="!cle || erreur" class="card mx-auto max-w-md space-y-3 text-center">
-      <h1 class="text-xl font-bold text-slate-900">🔒 Suivi élève</h1>
-      <p class="text-sm text-slate-500">Accès réservé. Entrez la clé de suivi.</p>
-      <input
-        v-model="saisieCle"
-        type="password"
-        placeholder="Clé"
-        class="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm"
-        @keyup.enter="valider"
-      />
-      <p v-if="erreur" class="text-sm text-red-600">{{ erreur }}</p>
-      <button class="btn-primary w-full" @click="valider">Accéder</button>
+  <div class="mx-auto max-w-5xl space-y-6">
+    <!-- Accès réservé -->
+    <div v-if="!estAdmin" class="card mx-auto max-w-md space-y-3 text-center">
+      <h1 class="text-xl font-bold text-slate-900">🔒 Suivi des élèves</h1>
+      <p class="text-sm text-slate-500">Espace réservé à l'administrateur.</p>
+      <NuxtLink v-if="!estConnecte" to="/connexion?redirect=/suivi" class="btn-primary inline-block">
+        Se connecter
+      </NuxtLink>
+      <p v-else class="text-sm text-red-600">Ton compte n'a pas les droits d'accès.</p>
     </div>
 
     <template v-else>
       <header class="flex items-center justify-between">
-        <div>
-          <h1 class="text-2xl font-bold text-slate-900">Suivi de l'élève</h1>
-          <p class="text-xs text-slate-400">
-            Mis à jour {{ dernierRefresh ? relatif(dernierRefresh.toISOString()) : '…' }} · auto toutes les 12 s
-          </p>
-        </div>
-        <select v-model="filtreVisiteur" class="rounded-lg border border-slate-200 px-2 py-1 text-sm">
-          <option value="">Tous les visiteurs</option>
-          <option v-for="v in visiteurs" :key="v" :value="v">{{ v }}</option>
-        </select>
+        <h1 class="text-2xl font-bold text-slate-900">Suivi des élèves</h1>
+        <p class="text-xs text-slate-400">
+          {{ eleves.length }} élève(s) · maj {{ dernierRefresh ? relatif(dernierRefresh.toISOString()) : '…' }} · auto 12 s
+        </p>
       </header>
 
-      <!-- Taux d'avancement Maths -->
-      <div class="card space-y-2">
-        <div class="flex items-center justify-between">
-          <span class="font-semibold text-slate-800">Avancement — Maths</span>
-          <span class="text-2xl font-extrabold text-brand-dark">{{ taux }}%</span>
-        </div>
-        <div class="h-2 overflow-hidden rounded-full bg-slate-100">
-          <div class="h-full bg-brand transition-all" :style="{ width: taux + '%' }" />
-        </div>
-        <p class="text-xs text-slate-500">
-          {{ itemsConsultes + quizDone }} / {{ totalItemsMaths }} éléments abordés
-          ({{ itemsConsultes }} consultés · {{ quizDone }} QCM faits)
-        </p>
-      </div>
+      <div class="grid gap-6 lg:grid-cols-12">
+        <!-- Liste des élèves -->
+        <aside class="lg:col-span-4">
+          <div class="card space-y-1">
+            <p v-if="eleves.length === 0" class="text-sm italic text-slate-400">Aucun élève inscrit.</p>
+            <button
+              v-for="el in eleves"
+              :key="el.id"
+              class="w-full rounded-lg px-3 py-2 text-left transition"
+              :class="el.id === selId ? 'bg-brand/10' : 'hover:bg-slate-50'"
+              @click="selectionner(el.id)"
+            >
+              <div class="flex items-center justify-between">
+                <span class="font-semibold text-slate-800">{{ el.nom }}</span>
+                <span class="text-[11px] text-slate-400">{{ el.nbActivites }} act.</span>
+              </div>
+              <div class="truncate text-xs text-slate-400">{{ el.email }}</div>
+              <div class="text-[11px] text-slate-400">Vu {{ relatif(el.derniereActivite) }}</div>
+            </button>
+          </div>
+        </aside>
 
-      <!-- Détail chapitre par chapitre -->
-      <div class="card">
-        <h2 class="mb-3 font-semibold text-slate-800">Détail par chapitre — Maths</h2>
-        <ul class="space-y-3">
-          <li v-for="c in chapitres" :key="c.slug">
-            <div class="mb-1 flex items-center justify-between">
-              <span class="text-sm font-medium text-slate-700">{{ c.titre }}</span>
-              <span class="text-xs font-mono" :class="c.fait === c.total ? 'text-emerald-600' : 'text-slate-400'">{{ c.fait }}/{{ c.total }}</span>
+        <!-- Détail de l'élève sélectionné -->
+        <section class="space-y-6 lg:col-span-8">
+          <div v-if="!eleve" class="card text-center text-sm text-slate-400">
+            Sélectionne un élève à gauche.
+          </div>
+
+          <template v-else>
+            <div class="card space-y-2">
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="font-semibold text-slate-800">{{ eleve.nom }}</span>
+                  <span class="ml-2 text-xs text-slate-400">{{ eleve.email }}</span>
+                </div>
+                <span class="text-2xl font-extrabold text-brand-dark">{{ taux }}%</span>
+              </div>
+              <div class="h-2 overflow-hidden rounded-full bg-slate-100">
+                <div class="h-full bg-brand transition-all" :style="{ width: taux + '%' }" />
+              </div>
+              <p class="text-xs text-slate-500">
+                {{ itemsConsultes + quizDone }} / {{ totalItemsMaths }} éléments abordés
+                ({{ itemsConsultes }} consultés · {{ quizDone }} QCM faits)
+              </p>
             </div>
-            <div class="flex flex-wrap gap-1.5">
-              <span
-                v-for="(it, i) in c.items"
-                :key="i"
-                class="inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-[11px] font-medium"
-                :class="it.done ? 'border-emerald-200 bg-emerald-50 text-emerald-700' : 'border-slate-200 bg-slate-50 text-slate-400'"
-              >
-                {{ it.label }}
-                <template v-if="it.note != null"> · {{ it.note }}/20</template>
-                <i v-else-if="it.done" class="fa-solid fa-check text-[9px]" />
-              </span>
+
+            <div class="card">
+              <h2 class="mb-3 font-semibold text-slate-800">Détail par chapitre — Maths</h2>
+              <ul class="space-y-3">
+                <li v-for="c in chapitres" :key="c.slug">
+                  <div class="mb-1 flex items-center justify-between">
+                    <span class="text-sm font-medium text-slate-700">{{ c.titre }}</span>
+                    <span class="font-mono text-xs" :class="c.fait === c.total ? 'text-emerald-600' : 'text-slate-400'">{{ c.fait }}/{{ c.total }}</span>
+                  </div>
+                  <div class="flex flex-wrap gap-1.5">
+                    <span
+                      v-for="(it, i) in c.items"
+                      :key="i"
+                      class="inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-[11px] font-medium"
+                      :class="it.done ? 'border-emerald-200 bg-emerald-50 text-emerald-700' : 'border-slate-200 bg-slate-50 text-slate-400'"
+                    >
+                      {{ it.label }}
+                      <template v-if="it.note != null"> · {{ it.note }}/20</template>
+                      <i v-else-if="it.done" class="fa-solid fa-check text-[9px]" />
+                    </span>
+                  </div>
+                </li>
+              </ul>
             </div>
-          </li>
-        </ul>
-      </div>
 
-      <!-- Scores QCM -->
-      <div v-if="quizScores.length" class="card">
-        <h2 class="mb-2 font-semibold text-slate-800">Scores aux QCM</h2>
-        <ul class="space-y-1 text-sm">
-          <li v-for="(q, i) in quizScores.slice(0, 12)" :key="i" class="flex items-center justify-between">
-            <span class="truncate text-slate-700">{{ q.label }}</span>
-            <span class="ml-3 shrink-0 font-bold" :class="(q.note ?? 0) >= 10 ? 'text-green-600' : 'text-red-600'">
-              {{ q.note }}/20 <span class="font-normal text-slate-400">· {{ relatif(q.creeLe) }}</span>
-            </span>
-          </li>
-        </ul>
-      </div>
+            <div v-if="quizScores.length" class="card">
+              <h2 class="mb-2 font-semibold text-slate-800">Scores aux QCM</h2>
+              <ul class="space-y-1 text-sm">
+                <li v-for="(q, i) in quizScores.slice(0, 12)" :key="i" class="flex items-center justify-between">
+                  <span class="truncate text-slate-700">{{ q.label }}</span>
+                  <span class="ml-3 shrink-0 font-bold" :class="(q.note ?? 0) >= 10 ? 'text-green-600' : 'text-red-600'">
+                    {{ q.note }}/20 <span class="font-normal text-slate-400">· {{ relatif(q.creeLe) }}</span>
+                  </span>
+                </li>
+              </ul>
+            </div>
 
-      <!-- Fil d'activité -->
-      <div class="card">
-        <h2 class="mb-3 font-semibold text-slate-800">Activité en direct</h2>
-        <p v-if="evFiltres.length === 0" class="text-sm italic text-slate-400">Aucune activité pour l'instant.</p>
-        <ul class="space-y-2">
-          <li v-for="e in evFiltres.slice(0, 60)" :key="e.id" class="flex items-start gap-3 text-sm">
-            <span class="mt-0.5 w-12 shrink-0 font-mono text-xs text-slate-400">{{ heure(e.creeLe) }}</span>
-            <span class="flex-1 text-slate-700">
-              <span class="font-medium">{{ e.type === 'quiz' ? 'a fait' : 'a ouvert' }}</span>
-              {{ ITEM_LABEL[e.item ?? ''] || e.item }}
-              <span v-if="e.label" class="text-slate-500">— {{ e.label }}</span>
-              <span v-if="e.note != null" class="font-bold text-brand-dark"> ({{ e.note }}/20)</span>
-              <span v-if="e.chapitre" class="text-xs text-slate-400"> · {{ e.matiere }}/{{ e.chapitre }}</span>
-            </span>
-          </li>
-        </ul>
+            <div class="card">
+              <h2 class="mb-3 font-semibold text-slate-800">Activité</h2>
+              <p v-if="activites.length === 0" class="text-sm italic text-slate-400">Aucune activité pour l'instant.</p>
+              <ul class="space-y-2">
+                <li v-for="e in activites.slice(0, 60)" :key="e.id" class="flex items-start gap-3 text-sm">
+                  <span class="mt-0.5 w-12 shrink-0 font-mono text-xs text-slate-400">{{ heure(e.creeLe) }}</span>
+                  <span class="flex-1 text-slate-700">
+                    <span class="font-medium">{{ e.type === 'quiz' ? 'a fait' : 'a ouvert' }}</span>
+                    {{ ITEM_LABEL[e.item ?? ''] || e.item }}
+                    <span v-if="e.label" class="text-slate-500">— {{ e.label }}</span>
+                    <span v-if="e.note != null" class="font-bold text-brand-dark"> ({{ e.note }}/20)</span>
+                    <span v-if="e.chapitre" class="text-xs text-slate-400"> · {{ e.matiere }}/{{ e.chapitre }}</span>
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </template>
+        </section>
       </div>
     </template>
   </div>
