@@ -1,0 +1,13 @@
+[
+  {"question": "Qu'est-ce qu'un oscillateur mécanique ?", "reponse": "Un système qui, écarté de sa position d'équilibre stable, effectue un mouvement périodique autour de celle-ci."},
+  {"question": "Quelle est l'équation différentielle du pendule élastique ?", "reponse": "$m\\,\\dfrac{\\mathrm{d}^{2}x}{\\mathrm{d}t^{2}} + k\\,x = 0$."},
+  {"question": "Quelle est la période propre du pendule élastique ?", "reponse": "$T_0 = 2\\pi\\sqrt{\\dfrac{m}{k}}$ ($m$ masse, $k$ raideur du ressort)."},
+  {"question": "La période propre du pendule élastique dépend-elle de l'amplitude ?", "reponse": "**Non** : c'est l'**isochronisme** des oscillations."},
+  {"question": "Quelle est la période propre du pendule simple (petites oscillations) ?", "reponse": "$T_0 = 2\\pi\\sqrt{\\dfrac{\\ell}{g}}$ ($\\ell$ longueur du fil). Elle ne dépend pas de la masse."},
+  {"question": "Quelle est la période propre du pendule de torsion ?", "reponse": "$T_0 = 2\\pi\\sqrt{\\dfrac{J}{C}}$ ($J$ moment d'inertie, $C$ constante de torsion)."},
+  {"question": "Que devient l'énergie mécanique en l'absence de frottements ?", "reponse": "Elle se **conserve** : $E_m = E_c + E_p = \\text{constante}$."},
+  {"question": "Où l'énergie cinétique est-elle maximale ?", "reponse": "À la **position d'équilibre** (la vitesse y est maximale)."},
+  {"question": "Où l'énergie potentielle élastique est-elle maximale ?", "reponse": "Aux **élongations extrêmes** (amplitude maximale) : $E_{pe} = \\tfrac{1}{2}kx^{2}$."},
+  {"question": "Que se passe-t-il en présence de frottements ?", "reponse": "L'énergie mécanique **diminue** : les oscillations sont **amorties** (pseudo-périodiques)."},
+  {"question": "Comment entretenir des oscillations amorties ?", "reponse": "En **apportant de l'énergie** au système (oscillations entretenues / forcées)."}
+]

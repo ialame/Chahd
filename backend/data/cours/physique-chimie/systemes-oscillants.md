@@ -1,0 +1,65 @@
+Un **oscillateur mécanique** effectue des allers-retours autour d'une position d'équilibre. Ce chapitre étudie les principaux pendules, leur **période propre** et les **échanges d'énergie** qui accompagnent les oscillations.
+
+## 1. L'oscillateur mécanique
+
+\begin{definition}[Oscillateur mécanique]
+Un **oscillateur mécanique** est un système qui, écarté de sa position d'équilibre **stable**, effectue un mouvement périodique autour de celle-ci. On le caractérise par sa **période propre** $T_0$, sa fréquence et son **amplitude**.
+\end{definition}
+
+## 2. Le pendule élastique
+
+\begin{definition}[Pendule élastique]
+Un **pendule élastique** est constitué d'un solide de masse $m$ relié à un ressort de **raideur** $k$. La 2ᵉ loi de Newton donne l'équation différentielle :
+\[
+\boxed{m\,\frac{\mathrm{d}^{2}x}{\mathrm{d}t^{2}} + k\,x = 0}
+\quad\text{soit}\quad
+\frac{\mathrm{d}^{2}x}{\mathrm{d}t^{2}} + \frac{k}{m}\,x = 0
+\]
+\end{definition}
+
+<img src="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNDcwIDIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+PGRlZnM+PG1hcmtlciBpZD0ieCIgbWFya2VyV2lkdGg9IjgiIG1hcmtlckhlaWdodD0iOCIgcmVmWD0iNiIgcmVmWT0iMyIgb3JpZW50PSJhdXRvIj48cGF0aCBkPSJNMCwwIEw2LDMgTDAsNiBaIiBmaWxsPSIjMGY3NjZlIi8+PC9tYXJrZXI+PG1hcmtlciBpZD0ieHMiIG1hcmtlcldpZHRoPSI4IiBtYXJrZXJIZWlnaHQ9IjgiIHJlZlg9IjIiIHJlZlk9IjMiIG9yaWVudD0iYXV0byI+PHBhdGggZD0iTTgsMCBMMiwzIEw4LDYgWiIgZmlsbD0iIzBmNzY2ZSIvPjwvbWFya2VyPjwvZGVmcz48dGV4dCB4PSIyMzUiIHk9IjE4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjE0IiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iIzFGNEU3OSI+UGVuZHVsZSDDqWxhc3RpcXVlIChtYXNzZS1yZXNzb3J0KTwvdGV4dD48bGluZSB4MT0iNTAiIHkxPSI3MCIgeDI9IjUwIiB5Mj0iMTUwIiBzdHJva2U9IiMzMzQxNTUiIHN0cm9rZS13aWR0aD0iMyIvPjxwYXRoIGQ9Ik01MCw3MiBsLTksNyBNNTAsODQgbC05LDcgTTUwLDk2IGwtOSw3IE01MCwxMDggbC05LDcgTTUwLDEyMCBsLTksNyBNNTAsMTMyIGwtOSw3IE01MCwxNDQgbC05LDciIHN0cm9rZT0iIzk0YTNiOCIgc3Ryb2tlLXdpZHRoPSIxIi8+PHBvbHlsaW5lIHBvaW50cz0iNTUsMTEwIDcyLDExMCA4MS4wLDEyMSA5MC4wLDk5IDk5LjAsMTIxIDEwOC4wLDk5IDExNy4wLDEyMSAxMjYuMCw5OSAxMzUuMCwxMjEgMTQ0LjAsOTkgMTUzLjAsMTIxIDE2Mi4wLDk5IDE3MS4wLDEyMSAxODAuMCw5OSAxODkuMCwxMjEgMTk4LDExMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNDc1NTY5IiBzdHJva2Utd2lkdGg9IjEuOCIvPjx0ZXh0IHg9IjEyMCIgeT0iODYiIGZvbnQtc2l6ZT0iMTMiIGZpbGw9IiM0NzU1NjkiIGZvbnQtd2VpZ2h0PSJib2xkIj5rPC90ZXh0PjxyZWN0IHg9IjE5OCIgeT0iOTAiIHdpZHRoPSI1MiIgaGVpZ2h0PSI0MCIgZmlsbD0iI2UwZjJmZSIgc3Ryb2tlPSIjMDM2OWExIiBzdHJva2Utd2lkdGg9IjEuNSIvPjx0ZXh0IHg9IjIyNCIgeT0iMTE0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjE0IiBmaWxsPSIjMDM2OWExIiBmb250LXdlaWdodD0iYm9sZCI+bTwvdGV4dD48bGluZSB4MT0iNDAiIHkxPSIxMzAiIHgyPSIzNDAiIHkyPSIxMzAiIHN0cm9rZT0iIzMzNDE1NSIgc3Ryb2tlLXdpZHRoPSIyIi8+PHBhdGggZD0iTTYwLDEzMCBsLTgsOCBNOTAsMTMwIGwtOCw4IE0xMjAsMTMwIGwtOCw4IE0xNTAsMTMwIGwtOCw4IE0xODAsMTMwIGwtOCw4IE0yMTAsMTMwIGwtOCw4IE0yNDAsMTMwIGwtOCw4IE0yNzAsMTMwIGwtOCw4IE0zMDAsMTMwIGwtOCw4IE0zMzAsMTMwIGwtOCw4IiBzdHJva2U9IiM5NGEzYjgiIHN0cm9rZS13aWR0aD0iMSIvPjxsaW5lIHgxPSIxOTgiIHkxPSI4NiIgeDI9IjE5OCIgeTI9IjE3MCIgc3Ryb2tlPSIjOTRhM2I4IiBzdHJva2Utd2lkdGg9IjEiIHN0cm9rZS1kYXNoYXJyYXk9IjQgMyIvPjx0ZXh0IHg9IjE3MCIgeT0iMTY2IiBmb250LXNpemU9IjEwIiBmaWxsPSIjNjQ3NDhiIj7DqXF1aWxpYnJlPC90ZXh0PjxsaW5lIHgxPSIxOTgiIHkxPSIxNTUiIHgyPSIyNTAiIHkyPSIxNTUiIHN0cm9rZT0iIzBmNzY2ZSIgc3Ryb2tlLXdpZHRoPSIxLjYiIG1hcmtlci1zdGFydD0idXJsKCN4cykiIG1hcmtlci1lbmQ9InVybCgjeCkiLz48dGV4dCB4PSIyMjQiIHk9IjE1MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMyIgZmlsbD0iIzBmNzY2ZSIgZm9udC13ZWlnaHQ9ImJvbGQiPng8L3RleHQ+PC9zdmc+" alt="schéma" style="width:100%;max-width:470px;display:block;margin:14px auto">
+
+\begin{propriete}[Période propre]
+La solution est sinusoïdale, $x(t) = X_m\cos\!\left(\dfrac{2\pi}{T_0}t + \varphi\right)$, de **période propre** :
+\[
+\boxed{T_0 = 2\pi\sqrt{\frac{m}{k}}}
+\]
+$T_0$ **ne dépend pas de l'amplitude** (isochronisme des oscillations).
+\end{propriete}
+
+<img src="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNDcwIDIwNSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+PGRlZnM+PG1hcmtlciBpZD0iY2EiIG1hcmtlcldpZHRoPSI4IiBtYXJrZXJIZWlnaHQ9IjgiIHJlZlg9IjYiIHJlZlk9IjMiIG9yaWVudD0iYXV0byI+PHBhdGggZD0iTTAsMCBMNiwzIEwwLDYgWiIgZmlsbD0iIzQ3NTU2OSIvPjwvbWFya2VyPjxtYXJrZXIgaWQ9InRzIiBtYXJrZXJXaWR0aD0iOCIgbWFya2VySGVpZ2h0PSI4IiByZWZYPSIyIiByZWZZPSIzIiBvcmllbnQ9ImF1dG8iPjxwYXRoIGQ9Ik04LDAgTDIsMyBMOCw2IFoiIGZpbGw9IiMwZjc2NmUiLz48L21hcmtlcj48bWFya2VyIGlkPSJ0ZSIgbWFya2VyV2lkdGg9IjgiIG1hcmtlckhlaWdodD0iOCIgcmVmWD0iNiIgcmVmWT0iMyIgb3JpZW50PSJhdXRvIj48cGF0aCBkPSJNMCwwIEw2LDMgTDAsNiBaIiBmaWxsPSIjMGY3NjZlIi8+PC9tYXJrZXI+PC9kZWZzPjx0ZXh0IHg9IjIzNSIgeT0iMTYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTQiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjMUY0RTc5Ij7DiWxvbmdhdGlvbiB4KHQpIOKAlCBvc2NpbGxhdGlvbnM8L3RleHQ+PGxpbmUgeDE9IjU1IiB5MT0iMTA1IiB4Mj0iNDU1IiB5Mj0iMTA1IiBzdHJva2U9IiM0NzU1NjkiIHN0cm9rZS13aWR0aD0iMS4yIiBtYXJrZXItZW5kPSJ1cmwoI2NhKSIvPjxsaW5lIHgxPSI1NSIgeTE9IjE5MCIgeDI9IjU1IiB5Mj0iMzUiIHN0cm9rZT0iIzQ3NTU2OSIgc3Ryb2tlLXdpZHRoPSIxLjIiIG1hcmtlci1lbmQ9InVybCgjY2EpIi8+PHRleHQgeD0iNDQiIHk9IjQ0IiBmb250LXNpemU9IjEyIiBmaWxsPSIjNDc1NTY5Ij54PC90ZXh0Pjx0ZXh0IHg9IjQ1NyIgeT0iMTE5IiBmb250LXNpemU9IjEyIiBmaWxsPSIjNDc1NTY5Ij50PC90ZXh0Pjxwb2x5bGluZSBwb2ludHM9IjU1LDU1LjAgNTcsNTUuMyA1OSw1Ni4xIDYxLDU3LjQgNjMsNTkuMyA2NSw2MS43IDY3LDY0LjUgNjksNjcuOCA3MSw3MS41IDczLDc1LjYgNzUsODAuMCA3Nyw4NC43IDc5LDg5LjUgODEsOTQuNiA4Myw5OS44IDg1LDEwNS4wIDg3LDExMC4yIDg5LDExNS40IDkxLDEyMC41IDkzLDEyNS4zIDk1LDEzMC4wIDk3LDEzNC40IDk5LDEzOC41IDEwMSwxNDIuMiAxMDMsMTQ1LjUgMTA1LDE0OC4zIDEwNywxNTAuNyAxMDksMTUyLjYgMTExLDE1My45IDExMywxNTQuNyAxMTUsMTU1LjAgMTE3LDE1NC43IDExOSwxNTMuOSAxMjEsMTUyLjYgMTIzLDE1MC43IDEyNSwxNDguMyAxMjcsMTQ1LjUgMTI5LDE0Mi4yIDEzMSwxMzguNSAxMzMsMTM0LjQgMTM1LDEzMC4wIDEzNywxMjUuMyAxMzksMTIwLjUgMTQxLDExNS40IDE0MywxMTAuMiAxNDUsMTA1LjAgMTQ3LDk5LjggMTQ5LDk0LjYgMTUxLDg5LjUgMTUzLDg0LjcgMTU1LDgwLjAgMTU3LDc1LjYgMTU5LDcxLjUgMTYxLDY3LjggMTYzLDY0LjUgMTY1LDYxLjcgMTY3LDU5LjMgMTY5LDU3LjQgMTcxLDU2LjEgMTczLDU1LjMgMTc1LDU1LjAgMTc3LDU1LjMgMTc5LDU2LjEgMTgxLDU3LjQgMTgzLDU5LjMgMTg1LDYxLjcgMTg3LDY0LjUgMTg5LDY3LjggMTkxLDcxLjUgMTkzLDc1LjYgMTk1LDgwLjAgMTk3LDg0LjcgMTk5LDg5LjUgMjAxLDk0LjYgMjAzLDk5LjggMjA1LDEwNS4wIDIwNywxMTAuMiAyMDksMTE1LjQgMjExLDEyMC41IDIxMywxMjUuMyAyMTUsMTMwLjAgMjE3LDEzNC40IDIxOSwxMzguNSAyMjEsMTQyLjIgMjIzLDE0NS41IDIyNSwxNDguMyAyMjcsMTUwLjcgMjI5LDE1Mi42IDIzMSwxNTMuOSAyMzMsMTU0LjcgMjM1LDE1NS4wIDIzNywxNTQuNyAyMzksMTUzLjkgMjQxLDE1Mi42IDI0MywxNTAuNyAyNDUsMTQ4LjMgMjQ3LDE0NS41IDI0OSwxNDIuMiAyNTEsMTM4LjUgMjUzLDEzNC40IDI1NSwxMzAuMCAyNTcsMTI1LjMgMjU5LDEyMC41IDI2MSwxMTUuNCAyNjMsMTEwLjIgMjY1LDEwNS4wIDI2Nyw5OS44IDI2OSw5NC42IDI3MSw4OS41IDI3Myw4NC43IDI3NSw4MC4wIDI3Nyw3NS42IDI3OSw3MS41IDI4MSw2Ny44IDI4Myw2NC41IDI4NSw2MS43IDI4Nyw1OS4zIDI4OSw1Ny40IDI5MSw1Ni4xIDI5Myw1NS4zIDI5NSw1NS4wIDI5Nyw1NS4zIDI5OSw1Ni4xIDMwMSw1Ny40IDMwMyw1OS4zIDMwNSw2MS43IDMwNyw2NC41IDMwOSw2Ny44IDMxMSw3MS41IDMxMyw3NS42IDMxNSw4MC4wIDMxNyw4NC43IDMxOSw4OS41IDMyMSw5NC42IDMyMyw5OS44IDMyNSwxMDUuMCAzMjcsMTEwLjIgMzI5LDExNS40IDMzMSwxMjAuNSAzMzMsMTI1LjMgMzM1LDEzMC4wIDMzNywxMzQuNCAzMzksMTM4LjUgMzQxLDE0Mi4yIDM0MywxNDUuNSAzNDUsMTQ4LjMgMzQ3LDE1MC43IDM0OSwxNTIuNiAzNTEsMTUzLjkgMzUzLDE1NC43IDM1NSwxNTUuMCAzNTcsMTU0LjcgMzU5LDE1My45IDM2MSwxNTIuNiAzNjMsMTUwLjcgMzY1LDE0OC4zIDM2NywxNDUuNSAzNjksMTQyLjIgMzcxLDEzOC41IDM3MywxMzQuNCAzNzUsMTMwLjAgMzc3LDEyNS4zIDM3OSwxMjAuNSAzODEsMTE1LjQgMzgzLDExMC4yIDM4NSwxMDUuMCAzODcsOTkuOCAzODksOTQuNiAzOTEsODkuNSAzOTMsODQuNyAzOTUsODAuMCAzOTcsNzUuNiAzOTksNzEuNSA0MDEsNjcuOCA0MDMsNjQuNSA0MDUsNjEuNyA0MDcsNTkuMyA0MDksNTcuNCA0MTEsNTYuMSA0MTMsNTUuMyA0MTUsNTUuMCA0MTcsNTUuMyA0MTksNTYuMSA0MjEsNTcuNCA0MjMsNTkuMyA0MjUsNjEuNyA0MjcsNjQuNSA0MjksNjcuOCA0MzEsNzEuNSA0MzMsNzUuNiA0MzUsODAuMCA0MzcsODQuNyA0MzksODkuNSA0NDEsOTQuNiA0NDMsOTkuOCA0NDUsMTA1LjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzFGNEU3OSIgc3Ryb2tlLXdpZHRoPSIyLjMiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48bGluZSB4MT0iNTUiIHkxPSI1NSIgeDI9IjQ0NSIgeTI9IjU1IiBzdHJva2U9IiNjYmQ1ZTEiIHN0cm9rZS1kYXNoYXJyYXk9IjMgMyIvPjx0ZXh0IHg9IjQ4IiB5PSI1OSIgdGV4dC1hbmNob3I9ImVuZCIgZm9udC1zaXplPSIxMCIgZmlsbD0iIzBmNzY2ZSI+WDwvdGV4dD48dGV4dCB4PSI0OCIgeT0iNjYiIHRleHQtYW5jaG9yPSJlbmQiIGZvbnQtc2l6ZT0iOCIgZmlsbD0iIzBmNzY2ZSI+bTwvdGV4dD48bGluZSB4MT0iMTE1IiB5MT0iNDIiIHgyPSIyMzUiIHkyPSI0MiIgc3Ryb2tlPSIjMGY3NjZlIiBzdHJva2Utd2lkdGg9IjEuNCIgbWFya2VyLXN0YXJ0PSJ1cmwoI3RzKSIgbWFya2VyLWVuZD0idXJsKCN0ZSkiLz48dGV4dCB4PSIxNzUiIHk9IjM3IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjEyIiBmaWxsPSIjMGY3NjZlIiBmb250LXdlaWdodD0iYm9sZCI+VCYjODMyMDs8L3RleHQ+PC9zdmc+" alt="schéma" style="width:100%;max-width:470px;display:block;margin:14px auto">
+
+## 3. Les autres pendules
+
+\begin{propriete}[Périodes propres]
+\begin{itemize}
+    \item **Pendule simple** (masse au bout d'un fil de longueur $\ell$, petites oscillations) : $T_0 = 2\pi\sqrt{\dfrac{\ell}{g}}$ ;
+    \item **Pendule de torsion** (fil de constante de torsion $C$, moment d'inertie $J$) : $T_0 = 2\pi\sqrt{\dfrac{J}{C}}$ ;
+    \item **Pendule pesant** : solide oscillant autour d'un axe horizontal sous l'effet de son poids.
+\end{itemize}
+\end{propriete}
+
+## 4. Aspects énergétiques
+
+\begin{propriete}[Conservation de l'énergie mécanique]
+En l'absence de frottements, l'**énergie mécanique** $E_m = E_c + E_p$ se **conserve**. L'énergie s'échange en permanence entre :
+\begin{itemize}
+    \item l'**énergie cinétique** $E_c = \tfrac{1}{2}mv^{2}$ (maximale à la position d'équilibre) ;
+    \item l'**énergie potentielle** (élastique $E_{pe} = \tfrac{1}{2}kx^{2}$, maximale aux **élongations extrêmes**).
+\end{itemize}
+\end{propriete}
+
+\begin{remarque}
+En présence de **frottements**, l'énergie mécanique **diminue** : les oscillations sont **amorties** (pseudo-périodiques). Pour les entretenir, il faut **apporter de l'énergie** (oscillations forcées).
+\end{remarque}
+
+## L'essentiel
+
+\begin{propriete}[À retenir]
+\begin{itemize}
+    \item Pendule élastique : $m\,x'' + kx = 0$, $T_0 = 2\pi\sqrt{\dfrac{m}{k}}$ (indépendante de l'amplitude).
+    \item Pendule simple : $T_0 = 2\pi\sqrt{\dfrac{\ell}{g}}$ ; pendule de torsion : $T_0 = 2\pi\sqrt{\dfrac{J}{C}}$.
+    \item Sans frottement : $E_m = E_c + E_p = \text{cste}$ (échange $E_c \leftrightarrow E_p$).
+    \item Avec frottement : oscillations amorties.
+\end{itemize}
+\end{propriete}
