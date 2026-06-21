@@ -1,0 +1,12 @@
+[
+  {"question": "Qu'est-ce qu'un référentiel galiléen ?", "reponse": "Un référentiel dans lequel le **principe d'inertie** est vérifié (ex. : terrestre, pour de courtes durées)."},
+  {"question": "Comment définit-on le vecteur vitesse ?", "reponse": "$\\vec{v} = \\dfrac{\\mathrm{d}\\overrightarrow{OG}}{\\mathrm{d}t}$ ; il est **tangent à la trajectoire**."},
+  {"question": "Comment définit-on le vecteur accélération ?", "reponse": "$\\vec{a} = \\dfrac{\\mathrm{d}\\vec{v}}{\\mathrm{d}t}$ (en $\\mathrm{m\\cdot s^{-2}}$)."},
+  {"question": "Énonce le principe d'inertie (1ʳᵉ loi de Newton).", "reponse": "Dans un référentiel galiléen, le centre d'inertie est au repos ou en MRU **si et seulement si** $\\sum \\vec{F}_{ext} = \\vec{0}$."},
+  {"question": "Quelle est la relation fondamentale de la dynamique (2ᵈᵉ loi) ?", "reponse": "$\\sum \\vec{F}_{ext} = m\\,\\vec{a}_G$ (dans un référentiel galiléen)."},
+  {"question": "Énonce le principe des actions réciproques (3ᵉ loi).", "reponse": "$\\vec{F}_{A/B} = -\\,\\vec{F}_{B/A}$ : forces opposées, même droite d'action."},
+  {"question": "À quoi correspond un mouvement rectiligne uniforme en termes de forces ?", "reponse": "À une accélération nulle, donc $\\sum \\vec{F}_{ext} = \\vec{0}$."},
+  {"question": "Quelle est l'unité de la force et celle de l'accélération ?", "reponse": "La force en **newtons** (N), l'accélération en $\\mathrm{m\\cdot s^{-2}}$."},
+  {"question": "Quelles sont les étapes pour appliquer les lois de Newton ?", "reponse": "1) système + référentiel galiléen ; 2) bilan des forces ; 3) RFD $\\sum \\vec{F}_{ext} = m\\vec{a}_G$ ; 4) projection sur les axes."},
+  {"question": "Pourquoi la 1ʳᵉ loi est-elle un cas particulier de la 2ᵈᵉ ?", "reponse": "Si $\\sum \\vec{F}_{ext} = \\vec{0}$, alors $\\vec{a}_G = \\vec{0}$, donc $\\vec{v}_G$ est constant (repos ou MRU)."}
+]
