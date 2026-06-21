@@ -1,0 +1,67 @@
+Beaucoup de transformations ne sont pas **totales** : elles s'arrêtent à un **état d'équilibre** où réactifs et produits coexistent. Ce chapitre introduit le **quotient de réaction** et la **constante d'équilibre**, qui permettent de prévoir le sens d'évolution d'un système.
+
+## 1. Transformations non totales
+
+\begin{definition}[Transformation limitée]
+Une transformation est **limitée** (non totale) lorsqu'elle s'effectue **dans les deux sens** : le système atteint un **état d'équilibre** où les réactifs ne sont pas entièrement consommés.
+\end{definition}
+
+\begin{remarque}
+L'état d'équilibre est **dynamique** : à l'échelle microscopique, les deux réactions (directe et inverse) se poursuivent à la **même vitesse**, si bien que les quantités de matière n'évoluent plus à l'échelle macroscopique.
+\end{remarque}
+
+## 2. Le quotient de réaction
+
+\begin{definition}[Quotient de réaction]
+Pour une réaction $a\,A + b\,B \;\rightleftharpoons\; c\,C + d\,D$, le **quotient de réaction** est :
+\[
+\boxed{Q_r = \frac{[C]^{c}\,[D]^{d}}{[A]^{a}\,[B]^{b}}}
+\]
+(concentrations en $\mathrm{mol\cdot L^{-1}}$). Les **solides** et le **solvant** n'interviennent pas (leur terme vaut $1$).
+\end{definition}
+
+## 3. La constante d'équilibre
+
+\begin{definition}[Constante d'équilibre]
+À l'état d'équilibre, le quotient de réaction prend une valeur particulière, la **constante d'équilibre** $K$ :
+\[
+\boxed{Q_{r,\text{éq}} = K}
+\]
+$K$ ne dépend **que de la température** (pas des concentrations initiales).
+\end{definition}
+
+<img src="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNDcwIDIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+PGRlZnM+PG1hcmtlciBpZD0ibSIgbWFya2VyV2lkdGg9IjgiIG1hcmtlckhlaWdodD0iOCIgcmVmWD0iNiIgcmVmWT0iMyIgb3JpZW50PSJhdXRvIj48cGF0aCBkPSJNMCwwIEw2LDMgTDAsNiBaIiBmaWxsPSIjNDc1NTY5Ii8+PC9tYXJrZXI+PC9kZWZzPjx0ZXh0IHg9IjIzNSIgeT0iMTYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTQiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjMUY0RTc5Ij7DiXZvbHV0aW9uIGRlIFFfciB2ZXJzIGwnw6lxdWlsaWJyZTwvdGV4dD48bGluZSB4MT0iNTUiIHkxPSIxODAiIHgyPSI0NTAiIHkyPSIxODAiIHN0cm9rZT0iIzQ3NTU2OSIgc3Ryb2tlLXdpZHRoPSIxLjMiIG1hcmtlci1lbmQ9InVybCgjbSkiLz48bGluZSB4MT0iNTUiIHkxPSIxODAiIHgyPSI1NSIgeTI9IjM1IiBzdHJva2U9IiM0NzU1NjkiIHN0cm9rZS13aWR0aD0iMS4zIiBtYXJrZXItZW5kPSJ1cmwoI20pIi8+PHRleHQgeD0iNDAiIHk9IjQ0IiBmb250LXNpemU9IjEyIiBmaWxsPSIjNDc1NTY5Ij5RPC90ZXh0Pjx0ZXh0IHg9IjQ5IiB5PSI0OCIgZm9udC1zaXplPSI5IiBmaWxsPSIjNDc1NTY5Ij5yPC90ZXh0Pjx0ZXh0IHg9IjQ1MiIgeT0iMTk0IiBmb250LXNpemU9IjEyIiBmaWxsPSIjNDc1NTY5Ij50PC90ZXh0PjxsaW5lIHgxPSI1NSIgeTE9IjEwMCIgeDI9IjQ0NSIgeTI9IjEwMCIgc3Ryb2tlPSIjMUY0RTc5IiBzdHJva2Utd2lkdGg9IjEuMiIgc3Ryb2tlLWRhc2hhcnJheT0iNiAzIi8+PHRleHQgeD0iNDQ4IiB5PSIxMDQiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiMxRjRFNzkiIGZvbnQtd2VpZ2h0PSJib2xkIj5LPC90ZXh0Pjxwb2x5bGluZSBwb2ludHM9IjU1LDE2Mi4wIDU5LDE1OC42IDYzLDE1NS4zIDY3LDE1Mi4yIDcxLDE0OS4zIDc1LDE0Ni42IDc5LDE0NC4wIDgzLDE0MS42IDg3LDEzOS4zIDkxLDEzNy4xIDk1LDEzNS4wIDk5LDEzMy4xIDEwMywxMzEuMiAxMDcsMTI5LjUgMTExLDEyNy45IDExNSwxMjYuMyAxMTksMTI0LjggMTIzLDEyMy41IDEyNywxMjIuMiAxMzEsMTIwLjkgMTM1LDExOS44IDEzOSwxMTguNyAxNDMsMTE3LjYgMTQ3LDExNi43IDE1MSwxMTUuNyAxNTUsMTE0LjkgMTU5LDExNC4wIDE2MywxMTMuMyAxNjcsMTEyLjUgMTcxLDExMS44IDE3NSwxMTEuMiAxNzksMTEwLjUgMTgzLDExMC4wIDE4NywxMDkuNCAxOTEsMTA4LjkgMTk1LDEwOC40IDE5OSwxMDcuOSAyMDMsMTA3LjUgMjA3LDEwNy4xIDIxMSwxMDYuNyAyMTUsMTA2LjMgMjE5LDEwNi4wIDIyMywxMDUuNiAyMjcsMTA1LjMgMjMxLDEwNS4wIDIzNSwxMDQuNyAyMzksMTA0LjUgMjQzLDEwNC4yIDI0NywxMDQuMCAyNTEsMTAzLjggMjU1LDEwMy42IDI1OSwxMDMuNCAyNjMsMTAzLjIgMjY3LDEwMy4wIDI3MSwxMDIuOCAyNzUsMTAyLjcgMjc5LDEwMi41IDI4MywxMDIuNCAyODcsMTAyLjMgMjkxLDEwMi4xIDI5NSwxMDIuMCAyOTksMTAxLjkgMzAzLDEwMS44IDMwNywxMDEuNyAzMTEsMTAxLjYgMzE1LDEwMS41IDMxOSwxMDEuNCAzMjMsMTAxLjMgMzI3LDEwMS4zIDMzMSwxMDEuMiAzMzUsMTAxLjEgMzM5LDEwMS4xIDM0MywxMDEuMCAzNDcsMTAxLjAgMzUxLDEwMC45IDM1NSwxMDAuOSAzNTksMTAwLjggMzYzLDEwMC44IDM2NywxMDAuNyAzNzEsMTAwLjcgMzc1LDEwMC42IDM3OSwxMDAuNiAzODMsMTAwLjYgMzg3LDEwMC41IDM5MSwxMDAuNSAzOTUsMTAwLjUgMzk5LDEwMC41IDQwMywxMDAuNCA0MDcsMTAwLjQgNDExLDEwMC40IDQxNSwxMDAuNCA0MTksMTAwLjMgNDIzLDEwMC4zIDQyNywxMDAuMyA0MzEsMTAwLjMgNDM1LDEwMC4zIDQzOSwxMDAuMyIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMGY3NjZlIiBzdHJva2Utd2lkdGg9IjIuMyIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwb2x5bGluZSBwb2ludHM9IjU1LDQ4LjAgNTksNTAuOSA2Myw1My42IDY3LDU2LjIgNzEsNTguNiA3NSw2MC45IDc5LDYzLjEgODMsNjUuMSA4Nyw2Ny4xIDkxLDY4LjkgOTUsNzAuNiA5OSw3Mi4zIDEwMyw3My44IDEwNyw3NS4zIDExMSw3Ni42IDExNSw3Ny45IDExOSw3OS4yIDEyMyw4MC4zIDEyNyw4MS40IDEzMSw4Mi40IDEzNSw4My40IDEzOSw4NC4zIDE0Myw4NS4yIDE0Nyw4Ni4wIDE1MSw4Ni44IDE1NSw4Ny41IDE1OSw4OC4yIDE2Myw4OC45IDE2Nyw4OS41IDE3MSw5MC4xIDE3NSw5MC42IDE3OSw5MS4yIDE4Myw5MS42IDE4Nyw5Mi4xIDE5MSw5Mi41IDE5NSw5My4wIDE5OSw5My40IDIwMyw5My43IDIwNyw5NC4xIDIxMSw5NC40IDIxNSw5NC43IDIxOSw5NS4wIDIyMyw5NS4zIDIyNyw5NS41IDIzMSw5NS44IDIzNSw5Ni4wIDIzOSw5Ni4yIDI0Myw5Ni41IDI0Nyw5Ni43IDI1MSw5Ni44IDI1NSw5Ny4wIDI1OSw5Ny4yIDI2Myw5Ny4zIDI2Nyw5Ny41IDI3MSw5Ny42IDI3NSw5Ny44IDI3OSw5Ny45IDI4Myw5OC4wIDI4Nyw5OC4xIDI5MSw5OC4yIDI5NSw5OC4zIDI5OSw5OC40IDMwMyw5OC41IDMwNyw5OC42IDMxMSw5OC43IDMxNSw5OC43IDMxOSw5OC44IDMyMyw5OC45IDMyNyw5OC45IDMzMSw5OS4wIDMzNSw5OS4wIDMzOSw5OS4xIDM0Myw5OS4yIDM0Nyw5OS4yIDM1MSw5OS4yIDM1NSw5OS4zIDM1OSw5OS4zIDM2Myw5OS40IDM2Nyw5OS40IDM3MSw5OS40IDM3NSw5OS41IDM3OSw5OS41IDM4Myw5OS41IDM4Nyw5OS41IDM5MSw5OS42IDM5NSw5OS42IDM5OSw5OS42IDQwMyw5OS42IDQwNyw5OS43IDQxMSw5OS43IDQxNSw5OS43IDQxOSw5OS43IDQyMyw5OS43IDQyNyw5OS43IDQzMSw5OS44IDQzNSw5OS44IDQzOSw5OS44IiBmaWxsPSJub25lIiBzdHJva2U9IiNiNDUzMDkiIHN0cm9rZS13aWR0aD0iMi4zIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHRleHQgeD0iMTUwIiB5PSIxNjUiIGZvbnQtc2l6ZT0iMTAiIGZpbGw9IiMwZjc2NmUiPlFfciBpbml0aWFsICZsdDsgSyAoc2VucyBkaXJlY3QpPC90ZXh0Pjx0ZXh0IHg9IjE1MCIgeT0iNjAiIGZvbnQtc2l6ZT0iMTAiIGZpbGw9IiNiNDUzMDkiPlFfciBpbml0aWFsICZndDsgSyAoc2VucyBpbnZlcnNlKTwvdGV4dD48L3N2Zz4=" alt="schéma" style="width:100%;max-width:470px;display:block;margin:14px auto">
+
+## 4. Le taux d'avancement final
+
+\begin{definition}[Taux d'avancement final]
+Le **taux d'avancement final** compare l'avancement final à l'avancement maximal :
+\[
+\tau = \frac{x_f}{x_{max}}
+\]
+$\tau = 1$ : transformation **totale** ; $\tau < 1$ : transformation **limitée**.
+\end{definition}
+
+## 5. Critère d'évolution spontanée
+
+\begin{propriete}[Sens d'évolution]
+On compare le quotient de réaction initial $Q_{r,i}$ à la constante $K$ :
+\begin{itemize}
+    \item si $Q_{r,i} < K$ : le système évolue dans le **sens direct** ($\rightarrow$) ;
+    \item si $Q_{r,i} > K$ : le système évolue dans le **sens inverse** ($\leftarrow$) ;
+    \item si $Q_{r,i} = K$ : le système est **déjà à l'équilibre** (pas d'évolution).
+\end{itemize}
+\end{propriete}
+
+<img src="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNDcwIDE2NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+PGRlZnM+PG1hcmtlciBpZD0iYXgiIG1hcmtlcldpZHRoPSI4IiBtYXJrZXJIZWlnaHQ9IjgiIHJlZlg9IjYiIHJlZlk9IjMiIG9yaWVudD0iYXV0byI+PHBhdGggZD0iTTAsMCBMNiwzIEwwLDYgWiIgZmlsbD0iIzQ3NTU2OSIvPjwvbWFya2VyPjxtYXJrZXIgaWQ9ImdyIiBtYXJrZXJXaWR0aD0iOSIgbWFya2VySGVpZ2h0PSI5IiByZWZYPSI3IiByZWZZPSIzIiBvcmllbnQ9ImF1dG8iPjxwYXRoIGQ9Ik0wLDAgTDcsMyBMMCw2IFoiIGZpbGw9IiMwZjc2NmUiLz48L21hcmtlcj48bWFya2VyIGlkPSJvciIgbWFya2VyV2lkdGg9IjkiIG1hcmtlckhlaWdodD0iOSIgcmVmWD0iNyIgcmVmWT0iMyIgb3JpZW50PSJhdXRvIj48cGF0aCBkPSJNMCwwIEw3LDMgTDAsNiBaIiBmaWxsPSIjYjQ1MzA5Ii8+PC9tYXJrZXI+PC9kZWZzPjx0ZXh0IHg9IjIzNSIgeT0iMTgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTQiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjMUY0RTc5Ij5Dcml0w6hyZSBkJ8Opdm9sdXRpb24gc3BvbnRhbsOpZTwvdGV4dD48bGluZSB4MT0iNTUiIHkxPSI5NSIgeDI9IjQyNSIgeTI9Ijk1IiBzdHJva2U9IiM0NzU1NjkiIHN0cm9rZS13aWR0aD0iMS41IiBtYXJrZXItZW5kPSJ1cmwoI2F4KSIvPjx0ZXh0IHg9IjQyOCIgeT0iOTkiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiM0NzU1NjkiPlE8L3RleHQ+PHRleHQgeD0iNDM4IiB5PSIxMDMiIGZvbnQtc2l6ZT0iOSIgZmlsbD0iIzQ3NTU2OSI+cjwvdGV4dD48bGluZSB4MT0iMjQwIiB5MT0iODMiIHgyPSIyNDAiIHkyPSIxMDciIHN0cm9rZT0iIzFGNEU3OSIgc3Ryb2tlLXdpZHRoPSIyLjUiLz48dGV4dCB4PSIyNDAiIHk9Ijc2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjEzIiBmaWxsPSIjMUY0RTc5IiBmb250LXdlaWdodD0iYm9sZCI+SzwvdGV4dD48dGV4dCB4PSIyNDAiIHk9IjEyMiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMCIgZmlsbD0iIzFGNEU3OSI+w6lxdWlsaWJyZTwvdGV4dD48bGluZSB4MT0iMTYwIiB5MT0iNjAiIHgyPSIyMjIiIHkyPSI2MCIgc3Ryb2tlPSIjMGY3NjZlIiBzdHJva2Utd2lkdGg9IjIiIG1hcmtlci1lbmQ9InVybCgjZ3IpIi8+PHRleHQgeD0iMTIwIiB5PSI1MCIgZm9udC1zaXplPSIxMSIgZmlsbD0iIzBmNzY2ZSIgZm9udC13ZWlnaHQ9ImJvbGQiPlE8L3RleHQ+PHRleHQgeD0iMTI5IiB5PSI1MyIgZm9udC1zaXplPSI4IiBmaWxsPSIjMGY3NjZlIj5yPC90ZXh0Pjx0ZXh0IHg9IjEzNSIgeT0iNTAiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiMwZjc2NmUiIGZvbnQtd2VpZ2h0PSJib2xkIj4mbHQ7IEsgOiBzZW5zIGRpcmVjdDwvdGV4dD48bGluZSB4MT0iMzIwIiB5MT0iNjAiIHgyPSIyNTgiIHkyPSI2MCIgc3Ryb2tlPSIjYjQ1MzA5IiBzdHJva2Utd2lkdGg9IjIiIG1hcmtlci1lbmQ9InVybCgjb3IpIi8+PHRleHQgeD0iMjcwIiB5PSI1MCIgZm9udC1zaXplPSIxMSIgZmlsbD0iI2I0NTMwOSIgZm9udC13ZWlnaHQ9ImJvbGQiPlE8L3RleHQ+PHRleHQgeD0iMjc5IiB5PSI1MyIgZm9udC1zaXplPSI4IiBmaWxsPSIjYjQ1MzA5Ij5yPC90ZXh0Pjx0ZXh0IHg9IjI4NSIgeT0iNTAiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiNiNDUzMDkiIGZvbnQtd2VpZ2h0PSJib2xkIj4mZ3Q7IEsgOiBzZW5zIGludmVyc2U8L3RleHQ+PC9zdmc+" alt="schéma" style="width:100%;max-width:470px;display:block;margin:14px auto">
+
+## L'essentiel
+
+\begin{propriete}[À retenir]
+\begin{itemize}
+    \item Transformation limitée : deux sens, état d'équilibre dynamique.
+    \item Quotient de réaction : $Q_r = \dfrac{[C]^{c}[D]^{d}}{[A]^{a}[B]^{b}}$ (solides et solvant exclus).
+    \item À l'équilibre : $Q_{r,\text{éq}} = K$ (ne dépend que de $T$).
+    \item Évolution : $Q_{r,i} < K \Rightarrow$ sens direct ; $Q_{r,i} > K \Rightarrow$ sens inverse.
+\end{itemize}
+\end{propriete}

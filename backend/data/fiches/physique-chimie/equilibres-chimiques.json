@@ -1,0 +1,13 @@
+[
+  {"question": "Qu'est-ce qu'une transformation limitée ?", "reponse": "Une transformation **non totale** qui s'effectue dans les **deux sens** : le système atteint un état d'équilibre."},
+  {"question": "Pourquoi dit-on que l'état d'équilibre est dynamique ?", "reponse": "Les réactions directe et inverse se poursuivent à la **même vitesse** : les quantités n'évoluent plus à l'échelle macroscopique."},
+  {"question": "Quelle est l'expression du quotient de réaction pour $a\\,A + b\\,B \\rightleftharpoons c\\,C + d\\,D$ ?", "reponse": "$Q_r = \\dfrac{[C]^{c}\\,[D]^{d}}{[A]^{a}\\,[B]^{b}}$."},
+  {"question": "Comment interviennent les solides et le solvant dans $Q_r$ ?", "reponse": "Ils **n'interviennent pas** : leur terme vaut $1$."},
+  {"question": "Que vaut le quotient de réaction à l'équilibre ?", "reponse": "Il est égal à la **constante d'équilibre** : $Q_{r,\\text{éq}} = K$."},
+  {"question": "De quoi dépend la constante d'équilibre K ?", "reponse": "Uniquement de la **température** (pas des concentrations initiales)."},
+  {"question": "Comment définit-on le taux d'avancement final ?", "reponse": "$\\tau = \\dfrac{x_f}{x_{max}}$. $\\tau = 1$ : transformation totale ; $\\tau < 1$ : limitée."},
+  {"question": "Que se passe-t-il si $Q_{r,i} < K$ ?", "reponse": "Le système évolue dans le **sens direct** ($\\rightarrow$)."},
+  {"question": "Que se passe-t-il si $Q_{r,i} > K$ ?", "reponse": "Le système évolue dans le **sens inverse** ($\\leftarrow$)."},
+  {"question": "Que se passe-t-il si $Q_{r,i} = K$ ?", "reponse": "Le système est **déjà à l'équilibre** : il n'évolue pas."},
+  {"question": "Comment prévoit-on le sens d'évolution d'un système ?", "reponse": "On compare le quotient de réaction initial $Q_{r,i}$ à la constante $K$."}
+]
