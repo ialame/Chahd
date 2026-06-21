@@ -249,16 +249,7 @@ const itemClass = (on: boolean) =>
               <i class="fa-solid fa-up-right-from-square" /> Ouvrir / Imprimer
             </a>
           </div>
-          <object
-            :key="selection.annale.id" :data="pdfUrl(selection.annale.id)"
-            type="application/pdf" class="w-full h-[80vh] rounded-lg border border-slate-200"
-          >
-            <embed :src="pdfUrl(selection.annale.id)" type="application/pdf" class="w-full h-[80vh]" />
-            <p class="p-4 text-sm text-slate-500">
-              Votre navigateur n'affiche pas le PDF intégré.
-              <a :href="pdfUrl(selection.annale.id)" target="_blank" rel="noopener" class="text-brand font-semibold underline">Ouvrir le sujet</a>.
-            </p>
-          </object>
+          <PdfViewer :key="selection.annale.id" :url="pdfUrl(selection.annale.id)" />
           <p class="text-xs text-slate-400">
             Astuce : cliquez sur « Ouvrir / Imprimer » pour le plein écran et l'impression.
           </p>
