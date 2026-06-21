@@ -1,0 +1,14 @@
+[
+  {"question": "Quelle est la nature de la lumière ?", "reponse": "Une **onde électromagnétique** ; contrairement aux ondes mécaniques, elle se propage **dans le vide**."},
+  {"question": "Quelle est la célérité de la lumière dans le vide ?", "reponse": "$c \\approx 3{,}00\\times10^{8}~\\mathrm{m\\cdot s^{-1}}$."},
+  {"question": "Qu'est-ce qu'une lumière monochromatique ?", "reponse": "Une lumière de **fréquence unique** $\\nu$. Sa longueur d'onde dans le vide est $\\lambda_0 = \\dfrac{c}{\\nu}$."},
+  {"question": "Qu'est-ce que l'indice de réfraction d'un milieu ?", "reponse": "$n = \\dfrac{c}{v}$ (avec $n \\ge 1$), où $v$ est la vitesse de la lumière dans le milieu."},
+  {"question": "Que devient la fréquence d'une radiation quand elle change de milieu ?", "reponse": "Elle **ne change pas**. Seule la longueur d'onde change : $\\lambda = \\dfrac{\\lambda_0}{n}$."},
+  {"question": "Qu'est-ce que la diffraction ?", "reponse": "La déviation d'une onde par une **ouverture ou un obstacle de taille comparable à $\\lambda$**. C'est une **preuve du caractère ondulatoire** de la lumière."},
+  {"question": "Quel est l'écart angulaire de diffraction par une fente de largeur a ?", "reponse": "$\\theta = \\dfrac{\\lambda}{a}$ ($\\theta$ en radians)."},
+  {"question": "Quelle est la largeur de la tache centrale de diffraction sur un écran à distance D ?", "reponse": "$L = 2D\\theta = \\dfrac{2\\lambda D}{a}$."},
+  {"question": "La diffraction est-elle plus marquée pour une grande ou une petite ouverture ?", "reponse": "Pour une **petite** ouverture (a de l'ordre de $\\lambda$). Si $a \\gg \\lambda$, pas de diffraction visible."},
+  {"question": "Qu'est-ce qu'un milieu dispersif ?", "reponse": "Un milieu où l'**indice n (donc la vitesse) dépend de la fréquence**. Le verre est dispersif."},
+  {"question": "Pourquoi un prisme décompose-t-il la lumière blanche ?", "reponse": "Car le verre est dispersif : chaque radiation est déviée différemment (le violet plus que le rouge), d'où le spectre."},
+  {"question": "La lumière blanche est-elle monochromatique ?", "reponse": "Non, elle est **polychromatique** : composée de toutes les radiations du violet ($\\approx 400$ nm) au rouge ($\\approx 800$ nm)."}
+]
