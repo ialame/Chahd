@@ -1,0 +1,13 @@
+[
+  {"question": "Qu'est-ce qu'une transformation chimique rapide ?", "reponse": "Une transformation qui paraît **instantanée** (ex. : réactions acide-base, précipitation)."},
+  {"question": "Qu'est-ce qu'une transformation chimique lente ?", "reponse": "Une transformation dont l'évolution est **mesurable dans le temps**."},
+  {"question": "Cite des méthodes de suivi temporel d'une transformation.", "reponse": "Conductimétrie, pH-métrie, spectrophotométrie, mesure du volume ou de la pression d'un gaz, titrages successifs."},
+  {"question": "Comment définit-on la vitesse volumique de réaction ?", "reponse": "$v = \\dfrac{1}{V}\\dfrac{\\mathrm{d}x}{\\mathrm{d}t}$, en $\\mathrm{mol\\cdot L^{-1}\\cdot s^{-1}}$ ($x$ = avancement)."},
+  {"question": "Comment la vitesse de réaction évolue-t-elle au cours du temps ?", "reponse": "Elle **diminue** : maximale à $t = 0$, nulle quand la réaction est terminée."},
+  {"question": "Comment lit-on la vitesse sur la courbe x(t) ?", "reponse": "Elle est proportionnelle à la **pente de la tangente** à la courbe $x(t)$."},
+  {"question": "Qu'est-ce que le temps de demi-réaction ?", "reponse": "La durée au bout de laquelle l'avancement atteint la moitié de sa valeur finale : $x(t_{1/2}) = \\dfrac{x_{max}}{2}$."},
+  {"question": "Quels sont les facteurs cinétiques ?", "reponse": "La **température**, la **concentration** des réactifs, et le **catalyseur**."},
+  {"question": "Quel est l'effet d'une élévation de température sur la vitesse ?", "reponse": "Elle **augmente** la vitesse de réaction."},
+  {"question": "Quel est le rôle d'un catalyseur ?", "reponse": "Il **accélère** la réaction **sans être consommé** ni apparaître dans le bilan."},
+  {"question": "Quels sont les types de catalyse ?", "reponse": "**Homogène** (même phase), **hétérogène** (phases différentes) et **enzymatique** (biologique)."}
+]
