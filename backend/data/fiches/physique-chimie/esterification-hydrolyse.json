@@ -1,0 +1,13 @@
+[
+  {"question": "Quel est le groupe caractéristique d'un acide carboxylique ?", "reponse": "Le groupe **$-COOH$**."},
+  {"question": "Quel est le groupe caractéristique d'un alcool ?", "reponse": "Le groupe **$-OH$**."},
+  {"question": "Quel est le groupe caractéristique d'un ester ?", "reponse": "Le groupe **$-COO-$**."},
+  {"question": "Quelle est l'équation de l'estérification ?", "reponse": "$R\\!-\\!COOH + R'\\!-\\!OH \\rightleftharpoons R\\!-\\!COO\\!-\\!R' + H_2O$ (acide + alcool $\\rightleftharpoons$ ester + eau)."},
+  {"question": "Quelles sont les trois caractéristiques de l'estérification ?", "reponse": "Elle est **lente**, **limitée** (équilibre) et **athermique**."},
+  {"question": "Qu'est-ce que l'hydrolyse d'un ester ?", "reponse": "La réaction **inverse** de l'estérification : ester + eau $\\rightarrow$ acide + alcool."},
+  {"question": "Comment définit-on le rendement d'une estérification ?", "reponse": "$r = \\dfrac{n_{ester\\ formé}}{n_{ester\\ max}}$."},
+  {"question": "Quel est le rendement typique (quantités égales, alcool primaire) ?", "reponse": "Environ **67 %** : la transformation est limitée."},
+  {"question": "Quel est l'effet d'un catalyseur (acide) sur l'estérification ?", "reponse": "Il **accélère** la réaction (équilibre atteint plus vite) **sans modifier le rendement**."},
+  {"question": "Comment augmenter le rendement d'une estérification ?", "reponse": "En utilisant un **excès** d'un réactif ou en **éliminant l'eau** (ou l'ester) formée : on déplace l'équilibre vers l'ester."},
+  {"question": "La constante d'équilibre de l'estérification dépend-elle de la température ?", "reponse": "Non : la réaction est **athermique**, donc $K$ (et le rendement) ne dépendent pas de $T$."}
+]

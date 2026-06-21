@@ -1,0 +1,64 @@
+L'**estérification** (formation d'un ester à partir d'un acide et d'un alcool) et son inverse, l'**hydrolyse**, constituent un système à l'**équilibre**. Ce chapitre étudie cette transformation limitée et les moyens d'en **contrôler la vitesse et le rendement**.
+
+## 1. Groupes caractéristiques
+
+\begin{definition}[Groupes caractéristiques]
+\begin{itemize}
+    \item **acide carboxylique** : groupe $-COOH$ ;
+    \item **alcool** : groupe $-OH$ ;
+    \item **ester** : groupe $-COO-$.
+\end{itemize}
+\end{definition}
+
+## 2. Estérification et hydrolyse
+
+\begin{definition}[Estérification]
+La réaction d'**estérification** d'un acide carboxylique et d'un alcool produit un **ester** et de l'**eau** :
+\[
+\boxed{R\!-\!COOH + R'\!-\!OH \;\rightleftharpoons\; R\!-\!COO\!-\!R' + H_2O}
+\]
+Elle est **lente**, **limitée** (elle conduit à un équilibre) et **athermique** (peu d'échange de chaleur).
+\end{definition}
+
+<img src="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNDcwIDEzNSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+PGRlZnM+PG1hcmtlciBpZD0iZCIgbWFya2VyV2lkdGg9IjkiIG1hcmtlckhlaWdodD0iOSIgcmVmWD0iNyIgcmVmWT0iMyIgb3JpZW50PSJhdXRvIj48cGF0aCBkPSJNMCwwIEw3LDMgTDAsNiBaIiBmaWxsPSIjMGY3NjZlIi8+PC9tYXJrZXI+PG1hcmtlciBpZD0iaCIgbWFya2VyV2lkdGg9IjkiIG1hcmtlckhlaWdodD0iOSIgcmVmWD0iNyIgcmVmWT0iMyIgb3JpZW50PSJhdXRvIj48cGF0aCBkPSJNMCwwIEw3LDMgTDAsNiBaIiBmaWxsPSIjYjQ1MzA5Ii8+PC9tYXJrZXI+PC9kZWZzPjx0ZXh0IHg9IjIzNSIgeT0iMjIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTQiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjMUY0RTc5Ij5Fc3TDqXJpZmljYXRpb24gJiM4NjUxOyBoeWRyb2x5c2U8L3RleHQ+PHJlY3QgeD0iNTUiIHk9IjU4IiB3aWR0aD0iMTM1IiBoZWlnaHQ9IjM0IiByeD0iNiIgZmlsbD0iI2UwZjJmZSIgc3Ryb2tlPSIjMDM2OWExIi8+PHRleHQgeD0iMTIyIiB5PSI4MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMyIgZmlsbD0iIzAzNjlhMSIgZm9udC13ZWlnaHQ9ImJvbGQiPmFjaWRlICsgYWxjb29sPC90ZXh0PjxyZWN0IHg9IjI4NSIgeT0iNTgiIHdpZHRoPSIxMzAiIGhlaWdodD0iMzQiIHJ4PSI2IiBmaWxsPSIjY2NmYmYxIiBzdHJva2U9IiMwZDk0ODgiLz48dGV4dCB4PSIzNTAiIHk9IjgwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjEzIiBmaWxsPSIjMGY3NjZlIiBmb250LXdlaWdodD0iYm9sZCI+ZXN0ZXIgKyBlYXU8L3RleHQ+PGxpbmUgeDE9IjE5OCIgeTE9IjY0IiB4Mj0iMjc3IiB5Mj0iNjQiIHN0cm9rZT0iIzBmNzY2ZSIgc3Ryb2tlLXdpZHRoPSIyIiBtYXJrZXItZW5kPSJ1cmwoI2QpIi8+PHRleHQgeD0iMjM3IiB5PSI1OCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMCIgZmlsbD0iIzBmNzY2ZSIgZm9udC13ZWlnaHQ9ImJvbGQiPmVzdMOpcmlmaWNhdGlvbjwvdGV4dD48bGluZSB4MT0iMjc3IiB5MT0iODYiIHgyPSIxOTgiIHkyPSI4NiIgc3Ryb2tlPSIjYjQ1MzA5IiBzdHJva2Utd2lkdGg9IjIiIG1hcmtlci1lbmQ9InVybCgjaCkiLz48dGV4dCB4PSIyMzciIHk9IjEwMyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMCIgZmlsbD0iI2I0NTMwOSIgZm9udC13ZWlnaHQ9ImJvbGQiPmh5ZHJvbHlzZTwvdGV4dD48dGV4dCB4PSIyMzUiIHk9IjEyNSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMCIgZmlsbD0iIzY0NzQ4YiI+bGVudGUgwrcgbGltaXTDqWUgwrcgYXRoZXJtaXF1ZTwvdGV4dD48L3N2Zz4K" alt="schéma" style="width:100%;max-width:470px;display:block;margin:14px auto">
+
+\begin{definition}[Hydrolyse]
+L'**hydrolyse** de l'ester est la réaction **inverse** : l'ester réagit avec l'eau pour redonner l'acide et l'alcool. Les deux réactions coexistent à l'équilibre.
+\end{definition}
+
+## 3. État d'équilibre et rendement
+
+\begin{definition}[Rendement]
+Le **rendement** compare la quantité d'ester réellement formée à la quantité maximale (si la réaction était totale) :
+\[
+\boxed{r = \frac{n_{ester\ formé}}{n_{ester\ max}}}
+\]
+Pour des quantités initiales égales (alcool primaire), $r \approx 67\,\%$ : la transformation est **limitée**.
+\end{definition}
+
+<img src="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNDcwIDIwNSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+PGRlZnM+PG1hcmtlciBpZD0ibSIgbWFya2VyV2lkdGg9IjgiIG1hcmtlckhlaWdodD0iOCIgcmVmWD0iNiIgcmVmWT0iMyIgb3JpZW50PSJhdXRvIj48cGF0aCBkPSJNMCwwIEw2LDMgTDAsNiBaIiBmaWxsPSIjNDc1NTY5Ii8+PC9tYXJrZXI+PC9kZWZzPjx0ZXh0IHg9IjIzNSIgeT0iMTYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTQiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjMUY0RTc5Ij5SZW5kZW1lbnQgOiDDqXZvbHV0aW9uIHZlcnMgbCfDqXF1aWxpYnJlPC90ZXh0PjxsaW5lIHgxPSI1NSIgeTE9IjE3NSIgeDI9IjQ1MCIgeTI9IjE3NSIgc3Ryb2tlPSIjNDc1NTY5IiBzdHJva2Utd2lkdGg9IjEuMyIgbWFya2VyLWVuZD0idXJsKCNtKSIvPjxsaW5lIHgxPSI1NSIgeTE9IjE4MCIgeDI9IjU1IiB5Mj0iMzUiIHN0cm9rZT0iIzQ3NTU2OSIgc3Ryb2tlLXdpZHRoPSIxLjMiIG1hcmtlci1lbmQ9InVybCgjbSkiLz48dGV4dCB4PSIzOCIgeT0iNDYiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiM0NzU1NjkiPm4oZXN0ZXIpPC90ZXh0Pjx0ZXh0IHg9IjQ1MiIgeT0iMTkwIiBmb250LXNpemU9IjEyIiBmaWxsPSIjNDc1NTY5Ij50PC90ZXh0PjxsaW5lIHgxPSI1NSIgeTE9IjUwIiB4Mj0iNDQ1IiB5Mj0iNTAiIHN0cm9rZT0iI2NiZDVlMSIgc3Ryb2tlLWRhc2hhcnJheT0iMyAzIi8+PHRleHQgeD0iNDQ4IiB5PSI1NCIgZm9udC1zaXplPSI5IiBmaWxsPSIjOTRhM2I4Ij5uX21heCAoMTAwJSk8L3RleHQ+PGxpbmUgeDE9IjU1IiB5MT0iOTEiIHgyPSI0NDUiIHkyPSI5MSIgc3Ryb2tlPSIjMUY0RTc5IiBzdHJva2Utd2lkdGg9IjEiIHN0cm9rZS1kYXNoYXJyYXk9IjYgMyIvPjx0ZXh0IHg9IjQ0OCIgeT0iOTUiIGZvbnQtc2l6ZT0iOSIgZmlsbD0iIzFGNEU3OSIgZm9udC13ZWlnaHQ9ImJvbGQiPsOpcXVpbGlicmUgKH42NyUpPC90ZXh0Pjxwb2x5bGluZSBwb2ludHM9IjU1LDE3NS4wIDU5LDE2NC41IDYzLDE1NS4zIDY3LDE0Ny4zIDcxLDE0MC4zIDc1LDEzNC4xIDc5LDEyOC43IDgzLDEyNC4wIDg3LDExOS45IDkxLDExNi4zIDk1LDExMy4xIDk5LDExMC40IDEwMywxMDguMCAxMDcsMTA1LjggMTExLDEwNC4wIDExNSwxMDIuNCAxMTksMTAwLjkgMTIzLDk5LjcgMTI3LDk4LjYgMTMxLDk3LjcgMTM1LDk2LjggMTM5LDk2LjEgMTQzLDk1LjUgMTQ3LDk0LjkgMTUxLDk0LjQgMTU1LDk0LjAgMTU5LDkzLjYgMTYzLDkzLjMgMTY3LDkzLjAgMTcxLDkyLjggMTc1LDkyLjUgMTc5LDkyLjMgMTgzLDkyLjIgMTg3LDkyLjAgMTkxLDkxLjkgMTk1LDkxLjggMTk5LDkxLjcgMjAzLDkxLjYgMjA3LDkxLjUgMjExLDkxLjUgMjE1LDkxLjQgMjE5LDkxLjQgMjIzLDkxLjMgMjI3LDkxLjMgMjMxLDkxLjIgMjM1LDkxLjIgMjM5LDkxLjIgMjQzLDkxLjIgMjQ3LDkxLjEgMjUxLDkxLjEgMjU1LDkxLjEgMjU5LDkxLjEgMjYzLDkxLjEgMjY3LDkxLjEgMjcxLDkxLjEgMjc1LDkxLjEgMjc5LDkxLjAgMjgzLDkxLjAgMjg3LDkxLjAgMjkxLDkxLjAgMjk1LDkxLjAgMjk5LDkxLjAgMzAzLDkxLjAgMzA3LDkxLjAgMzExLDkxLjAgMzE1LDkxLjAgMzE5LDkxLjAgMzIzLDkxLjAgMzI3LDkxLjAgMzMxLDkxLjAgMzM1LDkxLjAgMzM5LDkxLjAgMzQzLDkxLjAgMzQ3LDkxLjAgMzUxLDkxLjAgMzU1LDkxLjAgMzU5LDkxLjAgMzYzLDkxLjAgMzY3LDkxLjAgMzcxLDkxLjAgMzc1LDkxLjAgMzc5LDkxLjAgMzgzLDkxLjAgMzg3LDkxLjAgMzkxLDkxLjAgMzk1LDkxLjAgMzk5LDkxLjAgNDAzLDkxLjAgNDA3LDkxLjAgNDExLDkxLjAgNDE1LDkxLjAgNDE5LDkxLjAgNDIzLDkxLjAgNDI3LDkxLjAgNDMxLDkxLjAgNDM1LDkxLjAgNDM5LDkxLjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzBmNzY2ZSIgc3Ryb2tlLXdpZHRoPSIyLjMiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cG9seWxpbmUgcG9pbnRzPSI1NSwxNzUuMCA1OSwxNzEuNSA2MywxNjguMiA2NywxNjUuMCA3MSwxNjIuMCA3NSwxNTkuMSA3OSwxNTYuMiA4MywxNTMuNiA4NywxNTEuMCA5MSwxNDguNSA5NSwxNDYuMSA5OSwxNDMuOSAxMDMsMTQxLjcgMTA3LDEzOS42IDExMSwxMzcuNiAxMTUsMTM1LjcgMTE5LDEzMy44IDEyMywxMzIuMSAxMjcsMTMwLjQgMTMxLDEyOC43IDEzNSwxMjcuMiAxMzksMTI1LjcgMTQzLDEyNC4zIDE0NywxMjIuOSAxNTEsMTIxLjYgMTU1LDEyMC4zIDE1OSwxMTkuMSAxNjMsMTE3LjkgMTY3LDExNi44IDE3MSwxMTUuOCAxNzUsMTE0LjggMTc5LDExMy44IDE4MywxMTIuOCAxODcsMTExLjkgMTkxLDExMS4xIDE5NSwxMTAuMiAxOTksMTA5LjQgMjAzLDEwOC43IDIwNywxMDguMCAyMTEsMTA3LjMgMjE1LDEwNi42IDIxOSwxMDUuOSAyMjMsMTA1LjMgMjI3LDEwNC43IDIzMSwxMDQuMiAyMzUsMTAzLjYgMjM5LDEwMy4xIDI0MywxMDIuNiAyNDcsMTAyLjEgMjUxLDEwMS43IDI1NSwxMDEuMiAyNTksMTAwLjggMjYzLDEwMC40IDI2NywxMDAuMCAyNzEsOTkuNiAyNzUsOTkuMyAyNzksOTguOSAyODMsOTguNiAyODcsOTguMyAyOTEsOTguMCAyOTUsOTcuNyAyOTksOTcuNCAzMDMsOTcuMiAzMDcsOTYuOSAzMTEsOTYuNyAzMTUsOTYuNCAzMTksOTYuMiAzMjMsOTYuMCAzMjcsOTUuOCAzMzEsOTUuNiAzMzUsOTUuNCAzMzksOTUuMiAzNDMsOTUuMSAzNDcsOTQuOSAzNTEsOTQuNyAzNTUsOTQuNiAzNTksOTQuNCAzNjMsOTQuMyAzNjcsOTQuMSAzNzEsOTQuMCAzNzUsOTMuOSAzNzksOTMuOCAzODMsOTMuNyAzODcsOTMuNSAzOTEsOTMuNCAzOTUsOTMuMyAzOTksOTMuMiA0MDMsOTMuMiA0MDcsOTMuMSA0MTEsOTMuMCA0MTUsOTIuOSA0MTksOTIuOCA0MjMsOTIuNyA0MjcsOTIuNyA0MzEsOTIuNiA0MzUsOTIuNSA0MzksOTIuNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYjQ1MzA5IiBzdHJva2Utd2lkdGg9IjIuMyIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLWRhc2hhcnJheT0iNiAzIi8+PHRleHQgeD0iMTUwIiB5PSI4MCIgZm9udC1zaXplPSIxMCIgZmlsbD0iIzBmNzY2ZSI+YXZlYyBjYXRhbHlzZXVyIChwbHVzIHJhcGlkZSk8L3RleHQ+PHRleHQgeD0iMjUwIiB5PSIxMzUiIGZvbnQtc2l6ZT0iMTAiIGZpbGw9IiNiNDUzMDkiPnNhbnMgY2F0YWx5c2V1cjwvdGV4dD48dGV4dCB4PSIyMzUiIHk9IjIwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSI5IiBmaWxsPSIjNjQ3NDhiIj5sZSBjYXRhbHlzZXVyIGNoYW5nZSBsYSB2aXRlc3NlLCBwYXMgbGUgcmVuZGVtZW50PC90ZXh0Pjwvc3ZnPg==" alt="schéma" style="width:100%;max-width:470px;display:block;margin:14px auto">
+
+\begin{remarque}
+Comme la réaction est **athermique**, la constante d'équilibre (et donc le rendement) **ne dépend pas de la température**.
+\end{remarque}
+
+## 4. Contrôler la transformation
+
+\begin{propriete}[Vitesse et rendement]
+On distingue deux objectifs :
+\begin{itemize}
+    \item **accélérer** la réaction (atteindre l'équilibre plus vite) : **chauffer** ou ajouter un **catalyseur** (acide $H^{+}$). Cela **ne modifie pas le rendement** ;
+    \item **augmenter le rendement** : utiliser un **excès** d'un réactif, ou **éliminer** un produit (l'eau ou l'ester) au fur et à mesure. Cela **déplace l'équilibre** vers l'ester.
+\end{itemize}
+\end{propriete}
+
+## L'essentiel
+
+\begin{propriete}[À retenir]
+\begin{itemize}
+    \item Estérification : acide + alcool $\rightleftharpoons$ ester + eau ; **lente, limitée, athermique**.
+    \item Hydrolyse : réaction **inverse** (ester + eau $\rightarrow$ acide + alcool).
+    \item Rendement : $r = \dfrac{n_{ester\ formé}}{n_{ester\ max}}$.
+    \item Catalyseur / chaleur → plus **rapide** (rendement inchangé) ; excès ou élimination de l'eau → meilleur **rendement**.
+\end{itemize}
+\end{propriete}
