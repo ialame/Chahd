@@ -58,4 +58,17 @@ public class AnnaleController {
                 .header(HttpHeaders.CACHE_CONTROL, "public, max-age=86400")
                 .body(new FileSystemResource(pdf));
     }
+
+    /** Page N du sujet pré-rendue en image (affichage fiable dans la colonne). */
+    @GetMapping("/{id}/page/{n}.png")
+    public ResponseEntity<Resource> sujetPage(@PathVariable Long id, @PathVariable int n) {
+        Path img = annaleContenuService.sujetPage(id, n);
+        if (!Files.isReadable(img)) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Page indisponible");
+        }
+        return ResponseEntity.ok()
+                .contentType(MediaType.IMAGE_PNG)
+                .header(HttpHeaders.CACHE_CONTROL, "public, max-age=604800")
+                .body(new FileSystemResource(img));
+    }
 }

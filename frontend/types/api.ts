@@ -33,6 +33,7 @@ export interface AnnaleDto {
   matiereNom: string
   aContenu: boolean
   aPdf: boolean
+  pdfPages: number
 }
 
 export interface AnnaleContenuDto {

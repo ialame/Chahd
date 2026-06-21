@@ -39,6 +39,18 @@ public class AnnaleContenuService {
         return Files.isReadable(sujetPdf(id));
     }
 
+    /** Page N (1-indexée) du sujet pré-rendue en PNG. */
+    public Path sujetPage(Long id, int n) {
+        return pdfDir.resolve("pages").resolve("annale-" + id + "-p" + n + ".png");
+    }
+
+    /** Nombre de pages PNG disponibles pour le sujet (0 si aucune). */
+    public int sujetPageCount(Long id) {
+        int n = 0;
+        while (Files.isReadable(sujetPage(id, n + 1))) n++;
+        return n;
+    }
+
     public Optional<String> getSujet(Long id) {
         Optional<String> s = read(part(id, "sujet"));
         return s.isPresent() ? s : read(legacy(id));

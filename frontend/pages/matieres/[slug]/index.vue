@@ -8,6 +8,7 @@ const { get } = useApi()
 const { track } = useActivite()
 const apiBase = useRuntimeConfig().public.apiBase as string
 const pdfUrl = (id: number) => `${apiBase}/annales/${id}/sujet.pdf`
+const pageUrl = (id: number, n: number) => `${apiBase}/annales/${id}/page/${n}.png`
 
 const { data: matiere, error } = await useAsyncData(
   `matiere-${slug}`,
@@ -29,7 +30,7 @@ const annalesParAnnee = computed(() => {
     .sort((a, b) => b[0] - a[0])
     .map(([annee, items]) => ({ annee, items: items.sort((x, y) => x.session.localeCompare(y.session)) }))
 })
-type AnnaleDtoLite = { id: number; titre: string; annee: number; session: string; aContenu: boolean; aPdf: boolean }
+type AnnaleDtoLite = { id: number; titre: string; annee: number; session: string; aContenu: boolean; aPdf: boolean; pdfPages: number }
 
 // --- État de l'explorateur ---
 const groupes = reactive({ chapitres: true, annales: false })
@@ -249,7 +250,13 @@ const itemClass = (on: boolean) =>
               <i class="fa-solid fa-up-right-from-square" /> Ouvrir / Imprimer
             </a>
           </div>
-          <PdfViewer :key="selection.annale.id" :url="pdfUrl(selection.annale.id)" />
+          <div class="max-h-[80vh] space-y-3 overflow-auto rounded-lg bg-slate-100 p-2">
+            <img
+              v-for="n in selection.annale.pdfPages" :key="n"
+              :src="pageUrl(selection.annale.id, n)" :alt="`Page ${n}`" loading="lazy"
+              class="w-full rounded border border-slate-200 bg-white shadow-sm"
+            >
+          </div>
           <p class="text-xs text-slate-400">
             Astuce : cliquez sur « Ouvrir / Imprimer » pour le plein écran et l'impression.
           </p>
