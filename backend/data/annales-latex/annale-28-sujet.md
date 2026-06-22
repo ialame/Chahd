@@ -76,11 +76,11 @@ Chaque électrode est plongée dans une solution aqueuse de volume $V = 600~\mat
 <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Exercice 2 <span class="font-normal text-white/80 text-sm">(2 points)</span></div>
 **Physique — Les ondes sonores**
 
-**1.** Recopier le numéro de la question et répondre par vrai ou faux. *(1 pt)*
-**a.** L'onde sonore est une onde électromagnétique.
-**b.** L'onde sonore est une onde longitudinale.
-**c.** L'onde sonore est une onde qui se propage dans le vide.
-**d.** L'onde sonore se propage avec une célérité qui dépend du milieu de propagation.
+- **1.** Recopier le numéro de la question et répondre par vrai ou faux. *(1 pt)*
+- **a.** L'onde sonore est une onde électromagnétique.
+- **b.** L'onde sonore est une onde longitudinale.
+- **c.** L'onde sonore est une onde qui se propage dans le vide.
+- **d.** L'onde sonore se propage avec une célérité qui dépend du milieu de propagation.
 
 **2.** Pour déterminer la nature du matériau constituant une barre métallique, on réalise l'expérience représentée par le schéma du dispositif (**figure 1**). Ce dispositif est composé d'une barre métallique, de deux capteurs $C_1$ et $C_2$ séparés l'un de l'autre d'une distance $d$ et d'un système d'acquisition informatisé. On produit une impulsion sonore par un bref coup de marteau sur l'extrémité gauche de la barre et on mesure, pour différentes valeurs de la distance $d$, la durée de propagation $\Delta t$ de l'onde entre les deux capteurs. Le système d'acquisition permet de tracer la courbe de variations de $\Delta t$ en fonction de $d$ (**figure 2**).
 
@@ -197,9 +197,9 @@ Les deux courbes $C_1$ et $C_2$ de la **figure 2** représentent respectivement 
 
 **2.** Déduire les expressions littérales des équations $v_x(t)$ et $v_y(t)$ en fonction de $V_0$, $\alpha$ et $t$. *(0,5 pt)*
 
-**3.** Trouver, en exploitant les courbes $C_1$ et $C_2$ :
-**3.1.** L'accélération de la pesanteur $g$. *(0,5 pt)*
-**3.2.** L'angle $\alpha$ de tir. *(0,5 pt)*
-**3.3.** La vitesse initiale $V_0$. *(0,5 pt)*
+- **3.** Trouver, en exploitant les courbes $C_1$ et $C_2$ :
+- **3.1.** L'accélération de la pesanteur $g$. *(0,5 pt)*
+- **3.2.** L'angle $\alpha$ de tir. *(0,5 pt)*
+- **3.3.** La vitesse initiale $V_0$. *(0,5 pt)*
 
 **4.** La flèche atteint la cible en un point $E$ situé sur la verticale qui passe par le centre $C$. Déterminer la vitesse $V_E$ de la flèche au point $E$. *(0,5 pt)*

@@ -12,10 +12,10 @@ On dispose d'une solution $(S)$ de jus d'orange de volume $V = 200~\mathrm{mL}$ 
 <img src="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMzYwIDIwNSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+PGRlZnM+PG1hcmtlciBpZD0iYSIgbWFya2VyV2lkdGg9IjgiIG1hcmtlckhlaWdodD0iOCIgcmVmWD0iNiIgcmVmWT0iMyIgb3JpZW50PSJhdXRvIj48cGF0aCBkPSJNMCwwIEw2LDMgTDAsNiBaIiBmaWxsPSIjNDc1NTY5Ii8+PC9tYXJrZXI+PC9kZWZzPjx0ZXh0IHg9IjE4MCIgeT0iMTUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjMUY0RTc5Ij5GaWd1cmUgMTwvdGV4dD48bGluZSB4MT0iNTAiIHkxPSIxNzUiIHgyPSIzNDUiIHkyPSIxNzUiIHN0cm9rZT0iIzQ3NTU2OSIgbWFya2VyLWVuZD0idXJsKCNhKSIvPjxsaW5lIHgxPSI1MCIgeTE9IjE4MCIgeDI9IjUwIiB5Mj0iMzIiIHN0cm9rZT0iIzQ3NTU2OSIgbWFya2VyLWVuZD0idXJsKCNhKSIvPjx0ZXh0IHg9IjIwIiB5PSI0NCIgZm9udC1zaXplPSIxMCIgZmlsbD0iIzQ3NTU2OSI+eChtbW9sKTwvdGV4dD48dGV4dCB4PSIzNDciIHk9IjE5MCIgZm9udC1zaXplPSIxMCIgZmlsbD0iIzQ3NTU2OSI+dChoKTwvdGV4dD48bGluZSB4MT0iNDYiIHkxPSIxMjEiIHgyPSI1MCIgeTI9IjEyMSIgc3Ryb2tlPSIjNDc1NTY5Ii8+PHRleHQgeD0iNDQiIHk9IjEyNCIgdGV4dC1hbmNob3I9ImVuZCIgZm9udC1zaXplPSI5IiBmaWxsPSIjNDc1NTY5Ij4wLDE8L3RleHQ+PGxpbmUgeDE9IjQ2IiB5MT0iNjciIHgyPSI1MCIgeTI9IjY3IiBzdHJva2U9IiM0NzU1NjkiLz48dGV4dCB4PSI0NCIgeT0iNzAiIHRleHQtYW5jaG9yPSJlbmQiIGZvbnQtc2l6ZT0iOSIgZmlsbD0iIzQ3NTU2OSI+MCwyPC90ZXh0Pjx0ZXh0IHg9IjE0MiIgeT0iMTg4IiBmb250LXNpemU9IjkiIGZpbGw9IiM0NzU1NjkiPjQwPC90ZXh0Pjx0ZXh0IHg9IjIzNCIgeT0iMTg4IiBmb250LXNpemU9IjkiIGZpbGw9IiM0NzU1NjkiPjgwPC90ZXh0Pjxwb2x5bGluZSBwb2ludHM9IjUwLDE3NS4wIDUzLDE3MC41IDU2LDE2Ni4yIDU5LDE2Mi4xIDYyLDE1OC4xIDY1LDE1NC4zIDY4LDE1MC42IDcxLDE0Ny4wIDc0LDE0My42IDc3LDE0MC4zIDgwLDEzNy4xIDgzLDEzNC4xIDg2LDEzMS4yIDg5LDEyOC4zIDkyLDEyNS42IDk1LDEyMy4wIDk4LDEyMC41IDEwMSwxMTguMSAxMDQsMTE1LjggMTA3LDExMy41IDExMCwxMTEuNCAxMTMsMTA5LjMgMTE2LDEwNy4zIDExOSwxMDUuNCAxMjIsMTAzLjUgMTI1LDEwMS43IDEyOCwxMDAuMCAxMzEsOTguNCAxMzQsOTYuOCAxMzcsOTUuMyAxNDAsOTMuOCAxNDMsOTIuNCAxNDYsOTEuMCAxNDksODkuNyAxNTIsODguNCAxNTUsODcuMiAxNTgsODYuMSAxNjEsODQuOSAxNjQsODMuOSAxNjcsODIuOCAxNzAsODEuOCAxNzMsODAuOCAxNzYsNzkuOSAxNzksNzkuMCAxODIsNzguMiAxODUsNzcuMyAxODgsNzYuNSAxOTEsNzUuOCAxOTQsNzUuMCAxOTcsNzQuMyAyMDAsNzMuNiAyMDMsNzMuMCAyMDYsNzIuNCAyMDksNzEuOCAyMTIsNzEuMiAyMTUsNzAuNiAyMTgsNzAuMSAyMjEsNjkuNSAyMjQsNjkuMCAyMjcsNjguNiAyMzAsNjguMSAyMzMsNjcuNiAyMzYsNjcuMiAyMzksNjYuOCAyNDIsNjYuNCAyNDUsNjYuMCAyNDgsNjUuNiAyNTEsNjUuMyAyNTQsNjQuOSAyNTcsNjQuNiAyNjAsNjQuMyAyNjMsNjQuMCAyNjYsNjMuNyAyNjksNjMuNCAyNzIsNjMuMSAyNzUsNjIuOSAyNzgsNjIuNiAyODEsNjIuNCAyODQsNjIuMiAyODcsNjEuOSAyOTAsNjEuNyAyOTMsNjEuNSAyOTYsNjEuMyAyOTksNjEuMSAzMDIsNjAuOSAzMDUsNjAuOCAzMDgsNjAuNiAzMTEsNjAuNCAzMTQsNjAuMyAzMTcsNjAuMSAzMjAsNjAuMCAzMjMsNTkuOCAzMjYsNTkuNyAzMjksNTkuNiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMUY0RTc5IiBzdHJva2Utd2lkdGg9IjIuMiIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxsaW5lIHgxPSIxMDUiIHkxPSIxMjgiIHgyPSIzMDUiIHkyPSIyMiIgc3Ryb2tlPSIjYjQ1MzA5IiBzdHJva2Utd2lkdGg9IjEuMyIgc3Ryb2tlLWRhc2hhcnJheT0iNSA0Ii8+PHRleHQgeD0iMzA3IiB5PSIyNCIgZm9udC1zaXplPSIxMCIgZmlsbD0iI2I0NTMwOSI+KFQpPC90ZXh0PjxsaW5lIHgxPSIxODgiIHkxPSI4MCIgeDI9IjE4OCIgeTI9IjE3NSIgc3Ryb2tlPSIjOTRhM2I4IiBzdHJva2UtZGFzaGFycmF5PSIzIDMiLz48dGV4dCB4PSIxODgiIHk9IjE4OCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSI5IiBmaWxsPSIjMGY3NjZlIiBmb250LXdlaWdodD0iYm9sZCI+dOKCgTwvdGV4dD48dGV4dCB4PSIyNTAiIHk9IjYwIiBmb250LXNpemU9IjEwIiBmaWxsPSIjMUY0RTc5Ij4oQyk8L3RleHQ+PC9zdmc+" alt="figure" style="width:100%;max-width:430px;display:block;margin:12px auto">
 
 
-**1.** Répondre par vrai ou faux (sans justification) : *(0,75 pt)*
-**a.** La concentration initiale des réactifs est un facteur cinétique.
-**b.** L'évolution d'un système chimique est toujours considérée comme terminée au bout d'une durée égale à deux fois le temps de demi-réaction.
-**c.** Plus les chocs entre les espèces réactives sont nombreux et efficaces, plus la réaction chimique est rapide.
+- **1.** Répondre par vrai ou faux (sans justification) : *(0,75 pt)*
+- **a.** La concentration initiale des réactifs est un facteur cinétique.
+- **b.** L'évolution d'un système chimique est toujours considérée comme terminée au bout d'une durée égale à deux fois le temps de demi-réaction.
+- **c.** Plus les chocs entre les espèces réactives sont nombreux et efficaces, plus la réaction chimique est rapide.
 
 **2.** Déterminer graphiquement le temps de demi-réaction $t_{1/2}$. *(0,5 pt)*
 
@@ -54,11 +54,11 @@ Un caillou jeté en un point $O$ dans une cuve contenant de l'eau de profondeur 
 <img src="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMzYwIDIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+PHRleHQgeD0iMTgwIiB5PSIxNCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMiIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiMxRjRFNzkiPkFzcGVjdCBkZSBsYSBzdXJmYWNlIGRlIGwnZWF1PC90ZXh0PjxjaXJjbGUgY3g9IjEyMCIgY3k9IjExMCIgcj0iMzAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzdkZDNmYyIgc3Ryb2tlLXdpZHRoPSIxLjUiLz48Y2lyY2xlIGN4PSIxMjAiIGN5PSIxMTAiIHI9IjU1IiBmaWxsPSJub25lIiBzdHJva2U9IiMzOGJkZjgiIHN0cm9rZS13aWR0aD0iMS41Ii8+PGNpcmNsZSBjeD0iMTIwIiBjeT0iMTEwIiByPSI4MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMGVhNWU5IiBzdHJva2Utd2lkdGg9IjEuNSIvPjxjaXJjbGUgY3g9IjEyMCIgY3k9IjExMCIgcj0iNCIgZmlsbD0iIzMzNDE1NSIvPjx0ZXh0IHg9IjEyMCIgeT0iOTgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTAiIGZpbGw9IiMzMzQxNTUiIGZvbnQtd2VpZ2h0PSJib2xkIj5PPC90ZXh0Pjx0ZXh0IHg9IjEyMCIgeT0iNzgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iOSIgZmlsbD0iIzY0NzQ4YiI+KGNhaWxsb3UpPC90ZXh0PjxsaW5lIHgxPSIxMjAiIHkxPSIxMTAiIHgyPSIxNzUiIHkyPSIxMTAiIHN0cm9rZT0iIzBmNzY2ZSIgc3Ryb2tlLXdpZHRoPSIxLjMiLz48dGV4dCB4PSIxNDgiIHk9IjEwNSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMCIgZmlsbD0iIzBmNzY2ZSIgZm9udC13ZWlnaHQ9ImJvbGQiPnLigoE8L3RleHQ+PGxpbmUgeDE9IjEyMCIgeTE9IjExMCIgeDI9IjEyMCIgeTI9IjE5MCIgc3Ryb2tlPSIjYjQ1MzA5IiBzdHJva2Utd2lkdGg9IjEuMyIgc3Ryb2tlLWRhc2hhcnJheT0iNCAzIi8+PHRleHQgeD0iMTI4IiB5PSIxNjAiIGZvbnQtc2l6ZT0iMTAiIGZpbGw9IiNiNDUzMDkiIGZvbnQtd2VpZ2h0PSJib2xkIj5y4oKCPC90ZXh0Pjx0ZXh0IHg9IjI1MCIgeT0iNzAiIGZvbnQtc2l6ZT0iOSIgZmlsbD0iIzY0NzQ4YiI+aW5zdGFudCB04oKBIDogcmF5b24gcuKCgTwvdGV4dD48dGV4dCB4PSIyNTAiIHk9IjE1MCIgZm9udC1zaXplPSI5IiBmaWxsPSIjNjQ3NDhiIj5pbnN0YW50IHTigoIgOiByYXlvbiBy4oKCPC90ZXh0Pjwvc3ZnPg==" alt="figure" style="width:100%;max-width:430px;display:block;margin:12px auto">
 
 
-**1.** Choisir la proposition juste : *(0,5 pt)*
-**A.** Une onde progressive périodique est caractérisée par sa célérité.
-**B.** Un milieu est dispersif si la célérité de l'onde dépend de sa période $T$.
-**C.** Lors de la diffraction dans un même milieu, la célérité de l'onde est modifiée.
-**D.** Les ondes mécaniques progressives peuvent se propager dans le vide.
+- **1.** Choisir la proposition juste : *(0,5 pt)*
+- **A.** Une onde progressive périodique est caractérisée par sa célérité.
+- **B.** Un milieu est dispersif si la célérité de l'onde dépend de sa période $T$.
+- **C.** Lors de la diffraction dans un même milieu, la célérité de l'onde est modifiée.
+- **D.** Les ondes mécaniques progressives peuvent se propager dans le vide.
 
 **2.** Le tableau donne les rayons du front d'onde à des instants donnés :
 
@@ -70,8 +70,8 @@ Un caillou jeté en un point $O$ dans une cuve contenant de l'eau de profondeur 
 
 **2.2.** Déterminer la valeur de $t_1$. *(0,5 pt)*
 
-**3.** On estime la célérité par $v = \sqrt{g\,h}$ avec $g = 9{,}8~\mathrm{m\cdot s^{-2}}$ et $h$ la profondeur de l'eau.
-**3.1.** Par analyse dimensionnelle, vérifier l'homogénéité de cette relation. *(0,5 pt)*
+- **3.** On estime la célérité par $v = \sqrt{g\,h}$ avec $g = 9{,}8~\mathrm{m\cdot s^{-2}}$ et $h$ la profondeur de l'eau.
+- **3.1.** Par analyse dimensionnelle, vérifier l'homogénéité de cette relation. *(0,5 pt)*
 
 **3.2.** Calculer $h$. *(0,5 pt)*
 
@@ -84,8 +84,8 @@ La curiethérapie traite des tumeurs par insertion d'une source radioactive. L'i
 
 **2.** Écrire l'équation de désintégration en précisant son type. *(0,5 pt)*
 
-**3.** À $t=0$, on implante au patient une source d'iridium 192 d'activité $a_0 = 1{,}08\cdot10^{7}~\mathrm{Bq}$.
-**3.1.** Calculer $N_0$, le nombre de noyaux d'iridium 192 dans la source à $t=0$. *(0,5 pt)*
+- **3.** À $t=0$, on implante au patient une source d'iridium 192 d'activité $a_0 = 1{,}08\cdot10^{7}~\mathrm{Bq}$.
+- **3.1.** Calculer $N_0$, le nombre de noyaux d'iridium 192 dans la source à $t=0$. *(0,5 pt)*
 
 **3.2.** Déterminer le nombre de noyaux désintégrés au bout de deux ans ($\Delta t = 730~\text{jours}$). Commenter. *(0,5 pt)*
 

@@ -58,11 +58,11 @@ On se propose dans cet exercice d'étudier la désintégration du cadmium 107. L
 
 *Données :* Masses : $m(^{107}_{48}\mathrm{Cd}) = 106{,}88045~\mathrm{u}$ ; $m(^{107}_{47}\mathrm{Ag}) = 106{,}87947~\mathrm{u}$ ; $m(^{A}_{Z}\mathrm{e}) = 5{,}486\cdot10^{-4}~\mathrm{u}$ ; demi-vie du $^{107}_{48}\mathrm{Cd}$ : $t_{1/2} = 6{,}93~\text{heures}$ ; $1~\mathrm{u} = 931{,}49~\mathrm{MeV\cdot c^{-2}}$.
 
-**1.** Choisir parmi les affirmations suivantes l'affirmation juste : *(0,5 pt)*
-**A.** Dans le noyau $^{107}_{48}\mathrm{Cd}$ il y a $59$ protons.
-**B.** La désintégration d'un échantillon radioactif est d'autant plus rapide que sa constante radioactive $\lambda$ est plus petite.
-**C.** Dans le diagramme $(N, Z)$ de Segré, les isotopes sont sur une ligne perpendiculaire à l'axe des $Z$.
-**D.** La cohésion du noyau est d'autant plus forte que son énergie de liaison par nucléon est petite.
+- **1.** Choisir parmi les affirmations suivantes l'affirmation juste : *(0,5 pt)*
+- **A.** Dans le noyau $^{107}_{48}\mathrm{Cd}$ il y a $59$ protons.
+- **B.** La désintégration d'un échantillon radioactif est d'autant plus rapide que sa constante radioactive $\lambda$ est plus petite.
+- **C.** Dans le diagramme $(N, Z)$ de Segré, les isotopes sont sur une ligne perpendiculaire à l'axe des $Z$.
+- **D.** La cohésion du noyau est d'autant plus forte que son énergie de liaison par nucléon est petite.
 
 **2.** Écrire l'équation de désintégration d'un noyau de cadmium $^{107}_{48}\mathrm{Cd}$ en précisant le type de cette désintégration. *(0,5 pt)*
 
@@ -105,9 +105,9 @@ Lorsque la tension entre les bornes du condensateur prend la valeur $u_C = U_0 =
 
 **2-1.** Établir l'équation différentielle vérifiée par $u_C(t)$. *(0,5 pt)*
 
-**2-2.** En exploitant la courbe de la figure 3, déterminer :
-**2-2-1.** la valeur de la pseudopériode des oscillations. *(0,5 pt)*
-**2-2-2.** le signe de l'intensité du courant $i$ entre l'instant $t_A$ et l'instant $t_B$. *(0,5 pt)*
+- **2-2.** En exploitant la courbe de la figure 3, déterminer :
+- **2-2-1.** la valeur de la pseudopériode des oscillations. *(0,5 pt)*
+- **2-2-2.** le signe de l'intensité du courant $i$ entre l'instant $t_A$ et l'instant $t_B$. *(0,5 pt)*
 
 **2-3.** Montrer que $\dfrac{dE_T}{dt} = -r\,i^2$, avec $E_T$ l'énergie totale du circuit à un instant $t$. *(0,5 pt)*
 
@@ -142,8 +142,8 @@ On considère que la Terre est sphérique, de centre $O$, de rayon $R_T$, de mas
 
 **1.** Écrire l'expression vectorielle de la force d'attraction gravitationnelle $\vec{F}$ exercée par la Terre sur $(S)$ dans la base de Frenet $(\vec{u}\,;\vec{n})$ (figure 1). *(0,5 pt)*
 
-**2.** En appliquant la deuxième loi de Newton :
-**2-1.** Montrer que le mouvement circulaire du centre d'inertie $G_S$ autour de la Terre est uniforme. *(0,5 pt)*
+- **2.** En appliquant la deuxième loi de Newton :
+- **2-1.** Montrer que le mouvement circulaire du centre d'inertie $G_S$ autour de la Terre est uniforme. *(0,5 pt)*
 
 **2-2.** Déterminer $v_S$ la norme de la vitesse de $G_S$ en fonction de $G$, $m_T$, $R_T$ et $h$. *(0,75 pt)*
 

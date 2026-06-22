@@ -60,11 +60,11 @@ La courbe de la **figure 2** représente l'évolution temporelle de l'avancement
 
 Cet exercice vise à déterminer l'indice de réfraction d'un liquide pour une lumière monochromatique. Une source laser émet, dans l'air, un faisceau de lumière monochromatique de longueur d'onde $\lambda_a$. *Données :* la célérité de la lumière dans le vide ou dans l'air $c = 3\cdot10^{8}~\mathrm{m\cdot s^{-1}}$ ; on prend l'indice de réfraction de l'air $n_a = 1$.
 
-**1.** Choisir la proposition juste parmi les propositions suivantes : *(0,5 pt)*
-**A.** La lumière émise par la source laser est une onde mécanique.
-**B.** La vitesse de la lumière est plus grande dans les fibres optiques en verre que dans le vide.
-**C.** Les radiations du spectre visible ont des longueurs d'onde dans le vide comprises entre $0{,}4~\mathrm{nm}$ et $0{,}8~\mathrm{nm}$.
-**D.** La fréquence d'une lumière monochromatique ne dépend pas du milieu de propagation.
+- **1.** Choisir la proposition juste parmi les propositions suivantes : *(0,5 pt)*
+- **A.** La lumière émise par la source laser est une onde mécanique.
+- **B.** La vitesse de la lumière est plus grande dans les fibres optiques en verre que dans le vide.
+- **C.** Les radiations du spectre visible ont des longueurs d'onde dans le vide comprises entre $0{,}4~\mathrm{nm}$ et $0{,}8~\mathrm{nm}$.
+- **D.** La fréquence d'une lumière monochromatique ne dépend pas du milieu de propagation.
 
 **2.** Le dispositif expérimental représenté sur la figure ci-contre est constitué de : la source laser précédente ; une fente de largeur $a$ ; un écran parallèle à la fente et placé à une distance $D$ de la fente. Le faisceau de lumière émis par la source laser arrive perpendiculairement à la fente. On observe sur l'écran des tâches lumineuses comme le montre la figure. La tâche centrale a une largeur $L = 2{,}4~\mathrm{cm}$.
 

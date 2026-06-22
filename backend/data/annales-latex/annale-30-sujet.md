@@ -63,15 +63,15 @@ L'échographie est une technique d'imagerie médicale utilisant les ondes ultras
 
 <img src="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMzYwIDIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+PGRlZnM+PG1hcmtlciBpZD0idmQiIG1hcmtlcldpZHRoPSI4IiBtYXJrZXJIZWlnaHQ9IjgiIHJlZlg9IjYiIHJlZlk9IjMiIG9yaWVudD0iYXV0byI+PHBhdGggZD0iTTAsMCBMNiwzIEwwLDYgWiIgZmlsbD0iIzBmNzY2ZSIvPjwvbWFya2VyPjwvZGVmcz48dGV4dCB4PSIxODAiIHk9IjE0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjEyIiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iIzFGNEU3OSI+RmlndXJlIDE8L3RleHQ+PGVsbGlwc2UgY3g9IjE4MCIgY3k9IjEyMCIgcng9IjEyMCIgcnk9IjYwIiBmaWxsPSIjZTBmMmZlIiBzdHJva2U9IiM3ZGQzZmMiIHN0cm9rZS13aWR0aD0iMS41Ii8+PGNpcmNsZSBjeD0iMTgwIiBjeT0iMTQwIiByPSIyMiIgZmlsbD0iI2JhZTZmZCIgc3Ryb2tlPSIjMGVhNWU5IiBzdHJva2Utd2lkdGg9IjEuNSIvPjx0ZXh0IHg9IjE4MCIgeT0iMTc4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjkiIGZpbGw9IiMzMzQxNTUiPkbFk3R1czwvdGV4dD48cmVjdCB4PSIxNzAiIHk9IjM0IiB3aWR0aD0iMjAiIGhlaWdodD0iMjYiIGZpbGw9IiNjYmQ1ZTEiIHN0cm9rZT0iIzMzNDE1NSIvPjx0ZXh0IHg9IjIwMCIgeT0iNTAiIGZvbnQtc2l6ZT0iOSIgZmlsbD0iIzMzNDE1NSI+c29uZGU8L3RleHQ+PHRleHQgeD0iMjIwIiB5PSIzNiIgZm9udC1zaXplPSI4IiBmaWxsPSIjNDc1NTY5Ij52ZXJzIGwnb3JkaW5hdGV1cjwvdGV4dD48bGluZSB4MT0iMTgwIiB5MT0iMzQiIHgyPSIxODAiIHkyPSIyMiIgc3Ryb2tlPSIjMGY3NjZlIiBzdHJva2Utd2lkdGg9IjEuNCIgbWFya2VyLWVuZD0idXJsKCN2ZCkiLz48bGluZSB4MT0iMTYwIiB5MT0iNjIiIHgyPSIxNjAiIHkyPSIxMTYiIHN0cm9rZT0iI2I0NTMwOSIgc3Ryb2tlLXdpZHRoPSIxLjIiLz48dGV4dCB4PSIxNTAiIHk9IjkyIiBmb250LXNpemU9IjEwIiBmaWxsPSIjYjQ1MzA5IiBmb250LXdlaWdodD0iYm9sZCI+ZOKCgTwvdGV4dD48bGluZSB4MT0iMTgwIiB5MT0iMTE4IiB4Mj0iMTgwIiB5Mj0iMTYyIiBzdHJva2U9IiMwZjc2NmUiIHN0cm9rZS13aWR0aD0iMS4yIi8+PHRleHQgeD0iMTg2IiB5PSIxNDMiIGZvbnQtc2l6ZT0iMTAiIGZpbGw9IiMwZjc2NmUiIGZvbnQtd2VpZ2h0PSJib2xkIj5k4oKCPC90ZXh0Pjwvc3ZnPg==" alt="figure" style="width:100%;max-width:430px;display:block;margin:12px auto">
 
-**1.1.** Une onde ultrasonore peut se propager : *(0,5 pt)*
-**A.** dans un milieu matériel.
-**B.** dans le vide.
-**C.** dans un milieu matériel et dans le vide.
+- **1.1.** Une onde ultrasonore peut se propager : *(0,5 pt)*
+- **A.** dans un milieu matériel.
+- **B.** dans le vide.
+- **C.** dans un milieu matériel et dans le vide.
 
-**1.2.** Dans un milieu non dispersif : *(0,5 pt)*
-**A.** la célérité de l'onde dépend de sa fréquence.
-**B.** la célérité de l'onde ne dépend pas de sa fréquence.
-**C.** la longueur d'onde d'une onde dépend de sa fréquence.
+- **1.2.** Dans un milieu non dispersif : *(0,5 pt)*
+- **A.** la célérité de l'onde dépend de sa fréquence.
+- **B.** la célérité de l'onde ne dépend pas de sa fréquence.
+- **C.** la longueur d'onde d'une onde dépend de sa fréquence.
 
 **2.** L'oscillogramme de la figure 2 représente les deux signaux réfléchis captés par la sonde. On note $t_1$ et $t_2$ les dates auxquelles la sonde reçoit respectivement le premier et le second signal.
 

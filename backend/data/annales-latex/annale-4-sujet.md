@@ -75,11 +75,11 @@ Les oscillogrammes obtenus sur les deux voies A et B de l'oscilloscope sont repr
 
 **1.** Définir une onde mécanique longitudinale. *(0,25 pt)*
 
-**2.** Répondre par vrai ou faux (sans justification) aux propositions suivantes : *(1 pt)*
-**a.** Les ondes lumineuses sont des ondes mécaniques.
-**b.** Dans un même milieu, la diffraction modifie la longueur d'onde.
-**c.** La célérité du son dépend du milieu de propagation.
-**d.** Une onde longitudinale se propage avec transport de la matière.
+- **2.** Répondre par vrai ou faux (sans justification) aux propositions suivantes : *(1 pt)*
+- **a.** Les ondes lumineuses sont des ondes mécaniques.
+- **b.** Dans un même milieu, la diffraction modifie la longueur d'onde.
+- **c.** La célérité du son dépend du milieu de propagation.
+- **d.** Une onde longitudinale se propage avec transport de la matière.
 
 **3.** Déterminer le retard temporel $\tau$ avec lequel le son arrive en $M_2$ par rapport à $M_1$. *(0,5 pt)*
 

@@ -76,9 +76,9 @@ On visualise à l'aide d'un système d'acquisition informatisé, à la fois, le 
 
 <img src="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMzYwIDIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+PHRleHQgeD0iMTgwIiB5PSIxNCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMiIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiMxRjRFNzkiPkZpZ3VyZSAyPC90ZXh0PjxyZWN0IHg9IjUwIiB5PSIzMCIgd2lkdGg9IjI2MCIgaGVpZ2h0PSIxMzAiIGZpbGw9IiNmOGZhZmMiIHN0cm9rZT0iIzMzNDE1NSIgc3Ryb2tlLXdpZHRoPSIxLjMiLz48bGluZSB4MT0iNzYuMCIgeTE9IjMwIiB4Mj0iNzYuMCIgeTI9IjE2MCIgc3Ryb2tlPSIjZTJlOGYwIi8+PGxpbmUgeDE9IjEwMi4wIiB5MT0iMzAiIHgyPSIxMDIuMCIgeTI9IjE2MCIgc3Ryb2tlPSIjZTJlOGYwIi8+PGxpbmUgeDE9IjEyOC4wIiB5MT0iMzAiIHgyPSIxMjguMCIgeTI9IjE2MCIgc3Ryb2tlPSIjZTJlOGYwIi8+PGxpbmUgeDE9IjE1NC4wIiB5MT0iMzAiIHgyPSIxNTQuMCIgeTI9IjE2MCIgc3Ryb2tlPSIjZTJlOGYwIi8+PGxpbmUgeDE9IjE4MC4wIiB5MT0iMzAiIHgyPSIxODAuMCIgeTI9IjE2MCIgc3Ryb2tlPSIjZTJlOGYwIi8+PGxpbmUgeDE9IjIwNi4wIiB5MT0iMzAiIHgyPSIyMDYuMCIgeTI9IjE2MCIgc3Ryb2tlPSIjZTJlOGYwIi8+PGxpbmUgeDE9IjIzMi4wIiB5MT0iMzAiIHgyPSIyMzIuMCIgeTI9IjE2MCIgc3Ryb2tlPSIjZTJlOGYwIi8+PGxpbmUgeDE9IjI1OC4wIiB5MT0iMzAiIHgyPSIyNTguMCIgeTI9IjE2MCIgc3Ryb2tlPSIjZTJlOGYwIi8+PGxpbmUgeDE9IjI4NC4wIiB5MT0iMzAiIHgyPSIyODQuMCIgeTI9IjE2MCIgc3Ryb2tlPSIjZTJlOGYwIi8+PGxpbmUgeDE9IjUwIiB5MT0iNTEuNyIgeDI9IjMxMCIgeTI9IjUxLjciIHN0cm9rZT0iI2UyZThmMCIvPjxsaW5lIHgxPSI1MCIgeTE9IjczLjMiIHgyPSIzMTAiIHkyPSI3My4zIiBzdHJva2U9IiNlMmU4ZjAiLz48bGluZSB4MT0iNTAiIHkxPSI5NS4wIiB4Mj0iMzEwIiB5Mj0iOTUuMCIgc3Ryb2tlPSIjZTJlOGYwIi8+PGxpbmUgeDE9IjUwIiB5MT0iMTE2LjciIHgyPSIzMTAiIHkyPSIxMTYuNyIgc3Ryb2tlPSIjZTJlOGYwIi8+PGxpbmUgeDE9IjUwIiB5MT0iMTM4LjMiIHgyPSIzMTAiIHkyPSIxMzguMyIgc3Ryb2tlPSIjZTJlOGYwIi8+PHJlY3QgeD0iMTAyLjAiIHk9IjUxLjciIHdpZHRoPSIyNi4wIiBoZWlnaHQ9IjIxLjciIGZpbGw9IiMzMzQxNTUiLz48dGV4dCB4PSI2MC40IiB5PSI2Ni44IiBmb250LXNpemU9IjEwIiBmaWxsPSIjMzM0MTU1Ij4oYSk8L3RleHQ+PHJlY3QgeD0iMjMyLjAiIHk9Ijk1LjAiIHdpZHRoPSIyNi4wIiBoZWlnaHQ9IjIxLjciIGZpbGw9IiMzMzQxNTUiLz48dGV4dCB4PSIyNjMuMiIgeT0iMTEwLjIiIGZvbnQtc2l6ZT0iMTAiIGZpbGw9IiMzMzQxNTUiPihiKTwvdGV4dD48bGluZSB4MT0iMjg0LjAiIHkxPSIxODAiIHgyPSIzMTAuMCIgeTI9IjE4MCIgc3Ryb2tlPSIjMzM0MTU1IiBzdHJva2Utd2lkdGg9IjEuMiIvPjxsaW5lIHgxPSIyODQuMCIgeTE9IjE3NiIgeDI9IjI4NC4wIiB5Mj0iMTg0IiBzdHJva2U9IiMzMzQxNTUiLz48bGluZSB4MT0iMzEwLjAiIHkxPSIxNzYiIHgyPSIzMTAuMCIgeTI9IjE4NCIgc3Ryb2tlPSIjMzM0MTU1Ii8+PHRleHQgeD0iMjk3LjAiIHk9IjE5NSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSI5IiBmaWxsPSIjMzM0MTU1Ij4wLDUgbXM8L3RleHQ+PC9zdmc+" alt="figure" style="width:100%;max-width:430px;display:block;margin:12px auto">
 
-**1.** Recopier le numéro de la question et répondre par vrai ou faux.
-**1.1.** L'onde sonore est une onde transversale. *(0,25 pt)*
-**1.2.** L'onde sonore ne se propage pas dans le vide. *(0,25 pt)*
+- **1.** Recopier le numéro de la question et répondre par vrai ou faux.
+- **1.1.** L'onde sonore est une onde transversale. *(0,25 pt)*
+- **1.2.** L'onde sonore ne se propage pas dans le vide. *(0,25 pt)*
 
 **2.** Déterminer la durée $\Delta t$ mise par le signal pour arriver au récepteur $R$. *(0,25 pt)*
 
@@ -187,8 +187,8 @@ La bille est soumise, durant sa chute verticale dans le liquide, à son poids $\
 
 **2.** Par application de la deuxième loi de Newton, montrer que l'équation différentielle du mouvement de $G$ s'écrit : $\dfrac{dv}{dt} + \dfrac{1}{\tau}\,v = g\left(1 - \dfrac{\rho_r}{\rho_a}\right)$ où $\tau$ est le temps caractéristique qu'on exprimera en fonction de $m$ et $k$. *(0,75 pt)*
 
-**3.** Déterminer graphiquement :
-**3.1.** la valeur de $\tau$ puis en déduire, dans le système international d'unités, la valeur de $k$. *(0,5 pt)*
+- **3.** Déterminer graphiquement :
+- **3.1.** la valeur de $\tau$ puis en déduire, dans le système international d'unités, la valeur de $k$. *(0,5 pt)*
 
 **3.2.** la valeur de la vitesse limite $V_\ell$. *(0,25 pt)*
 

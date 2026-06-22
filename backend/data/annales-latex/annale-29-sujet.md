@@ -63,35 +63,35 @@ On branche un conducteur ohmique en série avec un ampèremètre, et on place le
 
 **I.** Recopier le numéro de la question et écrire, parmi les affirmations proposées, la lettre qui correspond à la réponse juste.
 
-**1.** Lors de la propagation d'une onde : *(0,25 pt)*
-**A.** il y a transport de la matière et il n'y a pas transport de l'énergie ;
-**B.** il y a transport de l'énergie et il n'y a pas transport de la matière ;
-**C.** il n'y a ni transport de la matière ni transport de l'énergie ;
-**D.** il y a transport de la matière et de l'énergie.
+- **1.** Lors de la propagation d'une onde : *(0,25 pt)*
+- **A.** il y a transport de la matière et il n'y a pas transport de l'énergie ;
+- **B.** il y a transport de l'énergie et il n'y a pas transport de la matière ;
+- **C.** il n'y a ni transport de la matière ni transport de l'énergie ;
+- **D.** il y a transport de la matière et de l'énergie.
 
-**2.** Une onde est dite transversale si : *(0,25 pt)*
-**A.** la perturbation se fait dans la même direction que celle de la propagation ;
-**B.** elle se propage dans le vide ;
-**C.** la perturbation se fait perpendiculairement à la direction de la propagation ;
-**D.** la propagation se fait sans amortissement.
+- **2.** Une onde est dite transversale si : *(0,25 pt)*
+- **A.** la perturbation se fait dans la même direction que celle de la propagation ;
+- **B.** elle se propage dans le vide ;
+- **C.** la perturbation se fait perpendiculairement à la direction de la propagation ;
+- **D.** la propagation se fait sans amortissement.
 
-**3.** Le son est une onde : *(0,25 pt)*
-**A.** électromagnétique ;
-**B.** mécanique transversale ;
-**C.** mécanique longitudinale ;
-**D.** qui se propage dans le vide.
+- **3.** Le son est une onde : *(0,25 pt)*
+- **A.** électromagnétique ;
+- **B.** mécanique transversale ;
+- **C.** mécanique longitudinale ;
+- **D.** qui se propage dans le vide.
 
-**4.** Lors de la diffraction d'une onde : *(0,25 pt)*
-**A.** il y a modification de la fréquence ;
-**B.** il y a modification de la longueur d'onde ;
-**C.** il y a modification de la célérité ;
-**D.** la fréquence, la longueur d'onde et la célérité ne sont pas modifiées.
+- **4.** Lors de la diffraction d'une onde : *(0,25 pt)*
+- **A.** il y a modification de la fréquence ;
+- **B.** il y a modification de la longueur d'onde ;
+- **C.** il y a modification de la célérité ;
+- **D.** la fréquence, la longueur d'onde et la célérité ne sont pas modifiées.
 
-**5.** On considère un point $M$ de la surface de l'eau où se propage une onde progressive. Ce point $M$ reprend le même mouvement que celui de la source $S$ avec un retard temporel $\tau$. La relation entre l'élongation du point $M$ et celle de la source est : *(0,25 pt)*
-**A.** $y_M(t) = y_s(t + \tau)$ ;
-**B.** $y_M(t) = y_s(t - 2\tau)$ ;
-**C.** $y_M(t) = y_s(t + 2\tau)$ ;
-**D.** $y_M(t) = y_s(t - \tau)$.
+- **5.** On considère un point $M$ de la surface de l'eau où se propage une onde progressive. Ce point $M$ reprend le même mouvement que celui de la source $S$ avec un retard temporel $\tau$. La relation entre l'élongation du point $M$ et celle de la source est : *(0,25 pt)*
+- **A.** $y_M(t) = y_s(t + \tau)$ ;
+- **B.** $y_M(t) = y_s(t - 2\tau)$ ;
+- **C.** $y_M(t) = y_s(t + 2\tau)$ ;
+- **D.** $y_M(t) = y_s(t - \tau)$.
 
 **II.** La pointe $S$ d'un vibreur crée une onde progressive sinusoïdale de fréquence $N$ à la surface libre de l'eau d'une cuve à ondes. L'onde, ainsi créée, se propage sans amortissement ni réflexion avec une célérité $v = 0{,}25~\mathrm{m\cdot s^{-1}}$. La figure ci-contre reproduit l'aspect de la surface de l'eau à un instant $t_1$. Les lignes circulaires représentent les crêtes.
 

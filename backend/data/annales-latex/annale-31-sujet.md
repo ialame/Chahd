@@ -77,8 +77,8 @@ Le radon de symbole $Rn$ est un gaz rare naturellement présent dans l'atmosphè
 
 **2.** Montrer que l'énergie de liaison d'un noyau d'hélium $^{4}_{2}\mathrm{He}$ est $E_\ell(\mathrm{He}) = 28{,}28~\mathrm{MeV}$. *(0,25 pt)*
 
-**3.** L'équation de désintégration du radon 222 s'écrit : $^{222}_{86}\mathrm{Rn} \longrightarrow\ ^{218}_{84}\mathrm{Po} + \ ^{4}_{2}\mathrm{He}$. Choisir la réponse juste parmi les propositions suivantes. L'énergie libérée lors de la désintégration d'un noyau du radon 222 est : *(0,5 pt)*
-**A.** $E_{lib} = 7{,}11~\mathrm{MeV}$ ; **B.** $E_{lib} = 22{,}56~\mathrm{MeV}$ ; **C.** $E_{lib} = 6{,}24~\mathrm{MeV}$ ; **D.** $E_{lib} = 3420{,}6~\mathrm{MeV}$.
+- **3.** L'équation de désintégration du radon 222 s'écrit : $^{222}_{86}\mathrm{Rn} \longrightarrow\ ^{218}_{84}\mathrm{Po} + \ ^{4}_{2}\mathrm{He}$. Choisir la réponse juste parmi les propositions suivantes. L'énergie libérée lors de la désintégration d'un noyau du radon 222 est : *(0,5 pt)*
+- **A.** $E_{lib} = 7{,}11~\mathrm{MeV}$ ; **B.** $E_{lib} = 22{,}56~\mathrm{MeV}$ ; **C.** $E_{lib} = 6{,}24~\mathrm{MeV}$ ; **D.** $E_{lib} = 3420{,}6~\mathrm{MeV}$.
 
 **4.** On considère un échantillon de noyaux du radon 222 ayant, à l'instant $t=0$, une activité $a_0$. Trouver, en jours, l'instant de date $t_1$ auquel cet échantillon a une activité $a_1 = \dfrac{a_0}{4}$. *(0,5 pt)*
 
