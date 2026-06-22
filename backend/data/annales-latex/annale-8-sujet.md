@@ -2,26 +2,48 @@
 
 <div class="my-5 rounded-lg px-4 py-2.5 text-white font-bold" style="background:#1F4E79">Restitution des connaissances <span class="font-normal text-white/80 text-sm">(5 points)</span></div>
 **I.** Recopier le numéro de chaque définition et donner le terme ou l'expression qui lui correspond. *(1 pt)*
-**1.** Décomposition biologique des déchets organiques en aérobiose pour produire des fertilisants du sol.
-**2.** Technique qui consiste à séparer les ordures ménagères selon leur nature dans le but de les valoriser.
-**3.** Décomposition biologique des déchets organiques en condition d'anaérobiose pour produire du biogaz.
-**4.** Phénomène naturel qui résulte de la rétention d'une partie des rayons infrarouges par certains gaz de l'atmosphère et qui permet de maintenir une température convenable à la vie sur terre.
+
+- **1.** Décomposition biologique des déchets organiques en aérobiose pour produire des fertilisants du sol.
+- **2.** Technique qui consiste à séparer les ordures ménagères selon leur nature dans le but de les valoriser.
+- **3.** Décomposition biologique des déchets organiques en condition d'anaérobiose pour produire du biogaz.
+- **4.** Phénomène naturel qui résulte de la rétention d'une partie des rayons infrarouges par certains gaz de l'atmosphère et qui permet de maintenir une température convenable à la vie sur terre.
 
 **II.** Pour chacune des propositions numérotées de 1 à 4, il y a une seule suggestion correcte. Recopier les couples et associer à chaque numéro la lettre de la suggestion correcte. *(2 pts)*
 
-**1.** La dégradation du glucose dans le hyaloplasme libère du $CO_2$ lors de la transformation : **a.** du pyruvate en éthanol. **b.** de l'éthanol en pyruvate. **c.** du pyruvate en acide lactique. **d.** de l'acide lactique en pyruvate.
+**1.** La dégradation du glucose dans le hyaloplasme libère du $CO_2$ lors de la transformation :
 
-**2.** La glycolyse permet de produire, à partir d'une molécule de glucose : **a.** 2 pyruvates, 2 ATP et 2 $NADH,H^+$. **b.** 2 pyruvates, 2 ATP et 2 $NAD^+$. **c.** 2 pyruvates, 6 ATP et 2 $NADH,H^+$. **d.** 2 pyruvates, 6 ATP et 2 $NAD^+$.
+- **a.** du pyruvate en éthanol.
+- **b.** de l'éthanol en pyruvate.
+- **c.** du pyruvate en acide lactique.
+- **d.** de l'acide lactique en pyruvate.
 
-**3.** Les réactions de fermentation dans le sarcoplasme sont des réactions : **a.** aérobies qui produisent du lactate et du $CO_2$. **b.** anaérobies qui produisent de l'éthanol et du $CO_2$. **c.** anaérobies qui produisent du lactate et de l'ATP. **d.** aérobies qui produisent de l'éthanol et de l'ATP.
+**2.** La glycolyse permet de produire, à partir d'une molécule de glucose :
 
-**4.** Lors de la contraction musculaire, on a un raccourcissement : **a.** de la bande claire et de la zone H. **b.** de la bande sombre et de la bande claire. **c.** des bandes sombre et claire et de la zone H. **d.** de la bande sombre et de la zone H.
+- **a.** 2 pyruvates, 2 ATP et 2 $NADH,H^+$.
+- **b.** 2 pyruvates, 2 ATP et 2 $NAD^+$.
+- **c.** 2 pyruvates, 6 ATP et 2 $NADH,H^+$.
+- **d.** 2 pyruvates, 6 ATP et 2 $NAD^+$.
+
+**3.** Les réactions de fermentation dans le sarcoplasme sont des réactions :
+
+- **a.** aérobies qui produisent du lactate et du $CO_2$.
+- **b.** anaérobies qui produisent de l'éthanol et du $CO_2$.
+- **c.** anaérobies qui produisent du lactate et de l'ATP.
+- **d.** aérobies qui produisent de l'éthanol et de l'ATP.
+
+**4.** Lors de la contraction musculaire, on a un raccourcissement :
+
+- **a.** de la bande claire et de la zone H.
+- **b.** de la bande sombre et de la bande claire.
+- **c.** des bandes sombre et claire et de la zone H.
+- **d.** de la bande sombre et de la zone H.
 
 **III.** Recopier les lettres a, b, c et d, puis écrire devant chaque lettre « Vrai » si la proposition est correcte ou « Faux » si elle est fausse. *(1 pt)*
-**a.** À la fin d'une méiose, on obtient 4 cellules filles génétiquement identiques à la cellule mère.
-**b.** La réplication de l'ADN se déroule lors de la phase S de l'interphase.
-**c.** La division équationnelle est précédée par une réplication de l'ADN.
-**d.** L'ARN polymérase est une enzyme qui intervient dans la traduction de l'ARNm.
+
+- **a.** À la fin d'une méiose, on obtient 4 cellules filles génétiquement identiques à la cellule mère.
+- **b.** La réplication de l'ADN se déroule lors de la phase S de l'interphase.
+- **c.** La division équationnelle est précédée par une réplication de l'ADN.
+- **d.** L'ARN polymérase est une enzyme qui intervient dans la traduction de l'ARNm.
 
 **IV.** Recopier les couples (1;…),(2;…),(3;…),(4;…) et associer à chaque numéro de l'ensemble A la lettre correspondante de l'ensemble B. *(1 pt)*
 
