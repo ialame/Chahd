@@ -71,4 +71,31 @@ public class AnnaleController {
                 .header(HttpHeaders.CACHE_CONTROL, "public, max-age=604800")
                 .body(new FileSystemResource(img));
     }
+
+    /** PDF original du corrigé (affiché inline pour visualisation/impression). */
+    @GetMapping("/{id}/corrige.pdf")
+    public ResponseEntity<Resource> corrigePdf(@PathVariable Long id) {
+        Path pdf = annaleContenuService.corrigePdf(id);
+        if (!Files.isReadable(pdf)) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Corrigé PDF indisponible pour l'annale " + id);
+        }
+        return ResponseEntity.ok()
+                .contentType(MediaType.APPLICATION_PDF)
+                .header(HttpHeaders.CONTENT_DISPOSITION, "inline")
+                .header(HttpHeaders.CACHE_CONTROL, "public, max-age=86400")
+                .body(new FileSystemResource(pdf));
+    }
+
+    /** Page N du corrigé pré-rendue en image. */
+    @GetMapping("/{id}/corrige/{n}.png")
+    public ResponseEntity<Resource> corrigePage(@PathVariable Long id, @PathVariable int n) {
+        Path img = annaleContenuService.corrigePage(id, n);
+        if (!Files.isReadable(img)) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Page indisponible");
+        }
+        return ResponseEntity.ok()
+                .contentType(MediaType.IMAGE_PNG)
+                .header(HttpHeaders.CACHE_CONTROL, "public, max-age=604800")
+                .body(new FileSystemResource(img));
+    }
 }

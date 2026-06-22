@@ -76,6 +76,8 @@ public class DtoMapper {
                 a.getMatiere().getSlug(), a.getMatiere().getNom(),
                 annaleContenuService.hasContenu(a.getId()),
                 annaleContenuService.hasSujetPdf(a.getId()),
-                annaleContenuService.sujetPageCount(a.getId()));
+                annaleContenuService.sujetPageCount(a.getId()),
+                annaleContenuService.hasCorrigePdf(a.getId()),
+                annaleContenuService.corrigePageCount(a.getId()));
     }
 }

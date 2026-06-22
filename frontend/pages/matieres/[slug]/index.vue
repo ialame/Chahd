@@ -9,6 +9,8 @@ const { track } = useActivite()
 const apiBase = useRuntimeConfig().public.apiBase as string
 const pdfUrl = (id: number) => `${apiBase}/annales/${id}/sujet.pdf`
 const pageUrl = (id: number, n: number) => `${apiBase}/annales/${id}/page/${n}.png`
+const corrigeUrl = (id: number) => `${apiBase}/annales/${id}/corrige.pdf`
+const corrigePageUrl = (id: number, n: number) => `${apiBase}/annales/${id}/corrige/${n}.png`
 
 const { data: matiere, error } = await useAsyncData(
   `matiere-${slug}`,
@@ -30,7 +32,7 @@ const annalesParAnnee = computed(() => {
     .sort((a, b) => b[0] - a[0])
     .map(([annee, items]) => ({ annee, items: items.sort((x, y) => x.session.localeCompare(y.session)) }))
 })
-type AnnaleDtoLite = { id: number; titre: string; annee: number; session: string; aContenu: boolean; aPdf: boolean; pdfPages: number }
+type AnnaleDtoLite = { id: number; titre: string; annee: number; session: string; aContenu: boolean; aPdf: boolean; pdfPages: number; aCorrigePdf: boolean; corrigePdfPages: number }
 
 // --- État de l'explorateur ---
 const groupes = reactive({ chapitres: true, annales: false })
@@ -42,6 +44,7 @@ type Sel =
   | { kind: 'cours' | 'exercices' | 'problemes' | 'fiches' | 'bac'; lecon: LeconDto }
   | { kind: 'annale'; annale: AnnaleDtoLite }
   | { kind: 'pdf'; annale: AnnaleDtoLite }
+  | { kind: 'corrige-pdf'; annale: AnnaleDtoLite }
   | { kind: 'quiz'; quizId: number; titre: string; chapitre?: string }
 const selection = ref<Sel | null>(null)
 const loading = ref(false)
@@ -53,10 +56,20 @@ const annale = ref<AnnaleContenuDto | null>(null)
 const cleSel = (s: Sel) => {
   if (s.kind === 'annale') return `annale-${s.annale.id}`
   if (s.kind === 'pdf') return `pdf-${s.annale.id}`
+  if (s.kind === 'corrige-pdf') return `corrige-pdf-${s.annale.id}`
   if (s.kind === 'quiz') return `quiz-${s.quizId}`
   return `${s.kind}-${s.lecon.id}`
 }
 const estSelectionne = (s: Sel) => selection.value != null && cleSel(selection.value) === cleSel(s)
+
+// Bouton principal d'une annale : ouvre la transcription si elle existe,
+// sinon le sujet PDF (cas des annales sans transcription, ex. Physique-Chimie).
+function ouvrirAnnale(a: AnnaleDtoLite) {
+  if (a.aContenu) selectionner({ kind: 'annale', annale: a })
+  else if (a.aPdf) selectionner({ kind: 'pdf', annale: a })
+}
+const annaleSelActive = (a: AnnaleDtoLite) =>
+  a.aContenu ? estSelectionne({ kind: 'annale', annale: a }) : estSelectionne({ kind: 'pdf', annale: a })
 
 // Libellé court d'un QCM : « QCM · notions » si le titre a un « : », sinon « QCM ».
 const qcmLabel = (titre: string) => {
@@ -69,9 +82,10 @@ async function selectionner(s: Sel) {
   // Suivi : enregistrer l'ouverture
   if (s.kind === 'annale') track({ matiere: slug, item: 'annale', label: s.annale.titre })
   else if (s.kind === 'pdf') track({ matiere: slug, item: 'pdf', label: s.annale.titre })
+  else if (s.kind === 'corrige-pdf') track({ matiere: slug, item: 'pdf', label: `${s.annale.titre} (corrigé)` })
   else if (s.kind === 'quiz') track({ matiere: slug, chapitre: s.chapitre, item: 'quiz', label: s.titre })
   else track({ matiere: slug, chapitre: s.lecon.slug, item: s.kind, label: s.lecon.titre })
-  if (s.kind === 'quiz' || s.kind === 'pdf') return // affichage direct, pas de fetch
+  if (s.kind === 'quiz' || s.kind === 'pdf' || s.kind === 'corrige-pdf') return // affichage direct, pas de fetch
   loading.value = true
   try {
     if (s.kind === 'annale') {
@@ -98,6 +112,7 @@ const titreSelection = computed(() => {
   if (!s) return ''
   if (s.kind === 'annale') return s.annale.titre
   if (s.kind === 'pdf') return `${s.annale.titre} — Sujet original (PDF)`
+  if (s.kind === 'corrige-pdf') return `${s.annale.titre} — Corrigé (PDF)`
   if (s.kind === 'quiz') return s.titre
   const suffixe = { cours: 'Cours', exercices: 'Exercices résolus', problemes: 'Problèmes résolus', fiches: 'Fiches de révision', bac: 'Exercices du bac' }[s.kind]
   return `${s.lecon.titre} — ${suffixe}`
@@ -201,21 +216,30 @@ const itemClass = (on: boolean) =>
               <div v-show="anneeOuverte[grp.annee]" class="pl-4 pr-1 pb-1 space-y-0.5">
                 <div v-for="a in grp.items" :key="a.id" class="flex items-center gap-1">
                   <button
-                    :disabled="!a.aContenu"
-                    :class="[itemClass(estSelectionne({ kind: 'annale', annale: a })), 'flex-1', a.aContenu ? '' : 'opacity-40 cursor-not-allowed']"
-                    @click="a.aContenu && selectionner({ kind: 'annale', annale: a })"
+                    :disabled="!a.aContenu && !a.aPdf"
+                    :class="[itemClass(annaleSelActive(a)), 'flex-1', (a.aContenu || a.aPdf) ? '' : 'opacity-40 cursor-not-allowed']"
+                    @click="ouvrirAnnale(a)"
                   >
                     <i class="fa-solid fa-file-pen text-amber-500 w-4 text-center" />
                     Session {{ sessionLabel(a.session) }}
                   </button>
                   <button
-                    v-if="a.aPdf"
+                    v-if="a.aPdf && a.aContenu"
                     :class="itemClass(estSelectionne({ kind: 'pdf', annale: a }))"
                     class="shrink-0 !px-2 !w-auto"
                     title="Voir le sujet original (PDF)"
                     @click="selectionner({ kind: 'pdf', annale: a })"
                   >
                     <i class="fa-solid fa-file-pdf text-red-500" /> PDF
+                  </button>
+                  <button
+                    v-if="a.aCorrigePdf"
+                    :class="itemClass(estSelectionne({ kind: 'corrige-pdf', annale: a }))"
+                    class="shrink-0 !px-2 !w-auto"
+                    title="Voir le corrigé (PDF)"
+                    @click="selectionner({ kind: 'corrige-pdf', annale: a })"
+                  >
+                    <i class="fa-solid fa-circle-check text-emerald-500" /> Corrigé
                   </button>
                 </div>
               </div>
@@ -254,6 +278,29 @@ const itemClass = (on: boolean) =>
             <img
               v-for="n in selection.annale.pdfPages" :key="n"
               :src="pageUrl(selection.annale.id, n)" :alt="`Page ${n}`" loading="lazy"
+              class="w-full rounded border border-slate-200 bg-white shadow-sm"
+            >
+          </div>
+          <p class="text-xs text-slate-400">
+            Astuce : cliquez sur « Ouvrir / Imprimer » pour le plein écran et l'impression.
+          </p>
+        </div>
+
+        <!-- Corrigé original (PDF) -->
+        <div v-else-if="selection.kind === 'corrige-pdf'" class="card space-y-3">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <h2 class="text-xl font-bold text-slate-900">{{ titreSelection }}</h2>
+            <a
+              :href="corrigeUrl(selection.annale.id)" target="_blank" rel="noopener"
+              class="inline-flex items-center gap-2 rounded-lg bg-brand px-3 py-1.5 text-sm font-semibold text-white hover:bg-brand-dark"
+            >
+              <i class="fa-solid fa-up-right-from-square" /> Ouvrir / Imprimer
+            </a>
+          </div>
+          <div class="max-h-[80vh] space-y-3 overflow-auto rounded-lg bg-slate-100 p-2">
+            <img
+              v-for="n in selection.annale.corrigePdfPages" :key="n"
+              :src="corrigePageUrl(selection.annale.id, n)" :alt="`Page ${n}`" loading="lazy"
               class="w-full rounded border border-slate-200 bg-white shadow-sm"
             >
           </div>

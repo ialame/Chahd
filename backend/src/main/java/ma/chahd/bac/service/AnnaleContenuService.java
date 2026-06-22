@@ -51,6 +51,27 @@ public class AnnaleContenuService {
         return n;
     }
 
+    /** PDF original du corrigé, s'il a été déposé. */
+    public Path corrigePdf(Long id) {
+        return pdfDir.resolve("annale-" + id + "-corrige.pdf");
+    }
+
+    public boolean hasCorrigePdf(Long id) {
+        return Files.isReadable(corrigePdf(id));
+    }
+
+    /** Page N (1-indexée) du corrigé pré-rendue en PNG. */
+    public Path corrigePage(Long id, int n) {
+        return pdfDir.resolve("pages").resolve("annale-" + id + "-c" + n + ".png");
+    }
+
+    /** Nombre de pages PNG disponibles pour le corrigé (0 si aucune). */
+    public int corrigePageCount(Long id) {
+        int n = 0;
+        while (Files.isReadable(corrigePage(id, n + 1))) n++;
+        return n;
+    }
+
     public Optional<String> getSujet(Long id) {
         Optional<String> s = read(part(id, "sujet"));
         return s.isPresent() ? s : read(legacy(id));

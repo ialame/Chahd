@@ -2,6 +2,9 @@
 import type { AnnaleDto } from '~/types/api'
 
 const { get } = useApi()
+const apiBase = useRuntimeConfig().public.apiBase as string
+const pdfUrl = (id: number) => `${apiBase}/annales/${id}/sujet.pdf`
+const corrigeUrl = (id: number) => `${apiBase}/annales/${id}/corrige.pdf`
 const { data: annales } = await useAsyncData('annales', () => get<AnnaleDto[]>('/annales'))
 
 const matiereFiltre = ref<string>('')
@@ -58,7 +61,21 @@ const sessionLabel = (s: string) => (s === 'RATTRAPAGE' ? 'Rattrapage' : 'Normal
         </div>
         <div class="flex flex-wrap items-center gap-2 text-sm">
           <NuxtLink v-if="a.aContenu" :to="`/annales/${a.id}`" class="btn-primary">📄 Lire</NuxtLink>
-          <span v-else class="self-center text-xs text-slate-400">Bientôt</span>
+          <a
+            v-if="a.aPdf"
+            :href="pdfUrl(a.id)" target="_blank" rel="noopener"
+            class="inline-flex items-center gap-1.5 rounded-lg bg-slate-100 px-3 py-1.5 text-sm font-semibold text-slate-700 ring-1 ring-slate-200 hover:bg-slate-200"
+          >
+            <i class="fa-solid fa-file-pdf text-red-500" /> Sujet
+          </a>
+          <a
+            v-if="a.aCorrigePdf"
+            :href="corrigeUrl(a.id)" target="_blank" rel="noopener"
+            class="inline-flex items-center gap-1.5 rounded-lg bg-emerald-50 px-3 py-1.5 text-sm font-semibold text-emerald-700 ring-1 ring-emerald-200 hover:bg-emerald-100"
+          >
+            <i class="fa-solid fa-circle-check text-emerald-500" /> Corrigé
+          </a>
+          <span v-if="!a.aContenu && !a.aPdf" class="self-center text-xs text-slate-400">Bientôt</span>
         </div>
       </li>
       <li v-if="filtrees.length === 0" class="px-4 py-8 text-center text-sm text-slate-500">

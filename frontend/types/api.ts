@@ -34,6 +34,8 @@ export interface AnnaleDto {
   aContenu: boolean
   aPdf: boolean
   pdfPages: number
+  aCorrigePdf: boolean
+  corrigePdfPages: number
 }
 
 export interface AnnaleContenuDto {
