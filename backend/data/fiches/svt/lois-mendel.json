@@ -1,0 +1,13 @@
+[
+  {"question": "Qu'est-ce qu'un allèle ?", "reponse": "Une **version** d'un gène, située à un **locus** précis du chromosome."},
+  {"question": "Quelle est la différence entre homozygote et hétérozygote ?", "reponse": "**Homozygote** : deux allèles **identiques** ($A//A$) ; **hétérozygote** : deux allèles **différents** ($A//a$)."},
+  {"question": "Qu'est-ce qu'un allèle dominant et un allèle récessif ?", "reponse": "Le **dominant** (majuscule) s'exprime même à l'état hétérozygote ; le **récessif** (minuscule) ne s'exprime qu'à l'état **homozygote**."},
+  {"question": "Quelle est la différence entre génotype et phénotype ?", "reponse": "Le **génotype** est la composition allélique (entre barres) ; le **phénotype** est le caractère observé (entre crochets $[\\;]$)."},
+  {"question": "Qu'est-ce qu'une race pure ?", "reponse": "Un individu **homozygote** pour le caractère étudié."},
+  {"question": "Énonce la 1ʳᵉ loi de Mendel.", "reponse": "**Uniformité de la F1** : le croisement de deux races pures donne des hybrides F1 tous identiques."},
+  {"question": "Énonce la 2ᵉ loi de Mendel.", "reponse": "**Disjonction des allèles** : le croisement F1 × F1 donne une F2 dans le rapport **3 : 1** (en cas de dominance)."},
+  {"question": "Quel rapport obtient-on en F2 sans dominance ?", "reponse": "Le rapport **1 : 2 : 1** (codominance ou dominance intermédiaire)."},
+  {"question": "Quel rapport donne le dihybridisme avec des gènes indépendants ?", "reponse": "**9 : 3 : 3 : 1** (brassage interchromosomique)."},
+  {"question": "Comment reconnaît-on des gènes liés ?", "reponse": "Les phénotypes **parentaux sont majoritaires** et les **recombinés minoritaires** (crossing-over) ; la distance se mesure en **centimorgans (cM)**."},
+  {"question": "Qu'est-ce qu'un croisement-test (test-cross) ?", "reponse": "Le croisement d'un **hybride** avec un **homozygote récessif** : il révèle directement les proportions des gamètes de l'hybride."}
+]
