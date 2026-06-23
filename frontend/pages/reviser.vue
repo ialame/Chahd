@@ -62,7 +62,7 @@ const courante = computed(() => cartes.value[idx.value] ?? null)
 const termine = computed(() => !chargement.value && idx.value >= total.value && total.value >= 0 && courante.value === null)
 
 const matiereNom: Record<string, string> = {
-  maths: 'Maths', 'physique-chimie': 'Physique-Chimie', svt: 'SVT', anglais: 'Anglais'
+  maths: 'Maths', 'physique-chimie': 'Physique-Chimie', svt: 'SVT', anglais: 'Anglais', philosophie: 'Philosophie'
 }
 
 async function noter(qualite: number) {

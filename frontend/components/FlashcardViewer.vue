@@ -56,7 +56,7 @@ function prev() { if (idx.value > 0) { idx.value--; revealed.value = false } }
       <span class="mb-3 text-[11px] font-bold uppercase tracking-widest" :class="revealed ? 'text-theo' : 'text-brand'">
         {{ revealed ? 'Réponse' : 'Question' }}
       </span>
-      <div class="leading-relaxed text-ink" v-html="inlineMath(revealed ? current.reponse : current.question)" />
+      <div dir="auto" class="leading-relaxed text-ink" v-html="inlineMath(revealed ? current.reponse : current.question)" />
       <span class="mt-4 text-[11px] text-[#a8998a]">
         <i class="fa-solid fa-hand-pointer mr-1" />{{ revealed ? 'cliquer pour revoir la question' : 'cliquer pour révéler la réponse' }}
       </span>

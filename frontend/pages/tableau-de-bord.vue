@@ -64,7 +64,7 @@ onMounted(() => {
   charger()
 })
 
-const monos: Record<string, string> = { maths: '∑', 'physique-chimie': 'PC', svt: 'SVT', anglais: 'EN' }
+const monos: Record<string, string> = { maths: '∑', 'physique-chimie': 'PC', svt: 'SVT', anglais: 'EN', philosophie: 'ف' }
 function pct(m: MatiereProg) {
   return m.lecons ? Math.round((m.leconsLues / m.lecons) * 100) : 0
 }

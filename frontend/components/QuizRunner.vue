@@ -130,7 +130,7 @@ const noteColor = computed(() => {
           <span class="mt-0.5 flex h-6 w-6 flex-none items-center justify-center rounded-full bg-brand-light text-xs font-bold text-brand">
             {{ idx + 1 }}
           </span>
-          <h3 class="font-semibold text-ink" v-html="inlineMath(q.enonce)" />
+          <h3 dir="auto" class="font-semibold text-ink" v-html="inlineMath(q.enonce)" />
         </div>
 
         <div class="space-y-2">
@@ -150,7 +150,7 @@ const noteColor = computed(() => {
               <span v-if="detailPour(q.id)?.bonsChoix.includes(c.id)">✓</span>
               <span v-else-if="isSelected(q.id, c.id)">•</span>
             </span>
-            <span v-html="inlineMath(c.texte)" />
+            <span dir="auto" v-html="inlineMath(c.texte)" />
           </button>
         </div>
 

@@ -342,8 +342,8 @@ const itemClass = (on: boolean) =>
             <BacExercices :key="selection.lecon.id" :exos="bacExos" />
           </template>
 
-          <!-- Cours / Exercices / Problèmes -->
-          <div v-else class="leading-relaxed text-[#6b5f57]" v-html="renduTexte" />
+          <!-- Cours / Exercices / Problèmes (dir auto : RTL pour l'arabe, LTR sinon) -->
+          <div v-else dir="auto" class="leading-relaxed text-[#6b5f57]" v-html="renduTexte" />
         </article>
       </section>
     </div>

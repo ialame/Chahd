@@ -55,7 +55,8 @@ const monos: Record<string, string> = {
   maths: '∑',
   'physique-chimie': 'PC',
   svt: 'SVT',
-  anglais: 'EN'
+  anglais: 'EN',
+  philosophie: 'ف'
 }
 function mono(slug: string) {
   return monos[slug] ?? '∑'
