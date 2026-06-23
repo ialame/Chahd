@@ -44,4 +44,14 @@ public class AuthController {
         return repository.findById(id).map(authService::dto)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Compte introuvable"));
     }
+
+    /** Change la filière du compte connecté. */
+    @PutMapping("/me/filiere")
+    public UtilisateurDto changerFiliere(@RequestBody java.util.Map<String, String> body) {
+        Long id = AuthContext.userId();
+        if (id == null) {
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Non connecté");
+        }
+        return authService.changerFiliere(id, body.get("filiere"));
+    }
 }

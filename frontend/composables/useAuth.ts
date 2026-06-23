@@ -8,7 +8,7 @@ export const useAuth = () => {
     path: '/',
   })
   const user = useState<UtilisateurDto | null>('auth_user', () => null)
-  const { get, post } = useApi()
+  const { get, post, put } = useApi()
 
   const estConnecte = computed(() => !!user.value)
   const estAdmin = computed(() => user.value?.role === 'ADMIN')
@@ -33,10 +33,15 @@ export const useAuth = () => {
     user.value = r.utilisateur
   }
 
-  async function inscription(email: string, motDePasse: string, nom: string) {
-    const r = await post<AuthResponseDto>('/auth/register', { email, motDePasse, nom })
+  async function inscription(email: string, motDePasse: string, nom: string, filiere: string) {
+    const r = await post<AuthResponseDto>('/auth/register', { email, motDePasse, nom, filiere })
     token.value = r.token
     user.value = r.utilisateur
+  }
+
+  /** Change la filière du compte connecté. */
+  async function changerFiliere(filiere: string) {
+    user.value = await put<UtilisateurDto>('/auth/me/filiere', { filiere })
   }
 
   function deconnexion() {
@@ -44,5 +49,5 @@ export const useAuth = () => {
     user.value = null
   }
 
-  return { token, user, estConnecte, estAdmin, rafraichir, connexion, inscription, deconnexion }
+  return { token, user, estConnecte, estAdmin, rafraichir, connexion, inscription, changerFiliere, deconnexion }
 }

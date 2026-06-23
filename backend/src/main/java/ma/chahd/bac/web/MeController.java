@@ -45,7 +45,9 @@ public class MeController {
                         a.getChapitre(), a.getItem(), a.getLabel(), a.getNote(), a.getCreeLe()))
                 .toList();
         return new EleveSuiviDto(
-                new UtilisateurDto(u.getId(), u.getEmail(), u.getNom(), u.getRole().name()), acts);
+                new UtilisateurDto(u.getId(), u.getEmail(), u.getNom(), u.getRole().name(),
+                        u.getFiliere() != null ? u.getFiliere().getSlug() : null,
+                        u.getFiliere() != null ? u.getFiliere().getNom() : null), acts);
     }
 
     /** Tableau de bord agrégé : progression par matière, scores QCM, fiches à réviser. */

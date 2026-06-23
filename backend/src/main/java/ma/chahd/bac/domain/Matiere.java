@@ -5,7 +5,9 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /** Une matière du Bac scientifique (Maths, Physique-Chimie, SVT, ...). */
 @Entity
@@ -49,4 +51,11 @@ public class Matiere {
     @OneToMany(mappedBy = "matiere", cascade = CascadeType.ALL, orphanRemoval = true)
     @OrderBy("annee DESC")
     private List<Annale> annales = new ArrayList<>();
+
+    /** Filières où cette matière est enseignée. */
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "matiere_filiere",
+            joinColumns = @JoinColumn(name = "matiere_id"),
+            inverseJoinColumns = @JoinColumn(name = "filiere_id"))
+    private Set<Filiere> filieres = new HashSet<>();
 }

@@ -71,6 +71,8 @@ export interface UtilisateurDto {
   email: string
   nom: string
   role: 'ELEVE' | 'ADMIN'
+  filiere?: string
+  filiereNom?: string
 }
 
 export interface AuthResponseDto {

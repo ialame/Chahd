@@ -30,6 +30,10 @@ public class Utilisateur {
     @Column(nullable = false, length = 20)
     private Role role = Role.ELEVE;
 
+    @ManyToOne(optional = false, fetch = FetchType.EAGER)
+    @JoinColumn(name = "filiere_id", nullable = false)
+    private Filiere filiere;
+
     @Column(name = "cree_le", nullable = false)
     private Instant creeLe = Instant.now();
 }

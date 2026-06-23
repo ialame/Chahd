@@ -2,6 +2,7 @@ package ma.chahd.bac.config;
 
 import ma.chahd.bac.domain.Role;
 import ma.chahd.bac.domain.Utilisateur;
+import ma.chahd.bac.repository.FiliereRepository;
 import ma.chahd.bac.repository.UtilisateurRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,15 +24,17 @@ public class AdminBootstrap implements ApplicationRunner {
     private static final Logger log = LoggerFactory.getLogger(AdminBootstrap.class);
 
     private final UtilisateurRepository repository;
+    private final FiliereRepository filiereRepository;
     private final String email;
     private final String password;
     private final String nom;
 
-    public AdminBootstrap(UtilisateurRepository repository,
+    public AdminBootstrap(UtilisateurRepository repository, FiliereRepository filiereRepository,
                           @Value("${app.admin.email:}") String email,
                           @Value("${app.admin.password:}") String password,
                           @Value("${app.admin.nom:Admin}") String nom) {
         this.repository = repository;
+        this.filiereRepository = filiereRepository;
         this.email = email;
         this.password = password;
         this.nom = nom;
@@ -49,6 +52,7 @@ public class AdminBootstrap implements ApplicationRunner {
         if (u.getNom() == null) u.setNom(nom);
         if (u.getMotDePasseHash() == null) u.setMotDePasseHash(new BCryptPasswordEncoder().encode(password));
         if (u.getCreeLe() == null) u.setCreeLe(Instant.now());
+        if (u.getFiliere() == null) u.setFiliere(filiereRepository.findBySlug("sciences-physiques").orElse(null));
         u.setRole(Role.ADMIN);
         repository.save(u);
         log.info("Compte admin {} : {}", nouveau ? "créé" : "promu", mail);

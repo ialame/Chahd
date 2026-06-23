@@ -32,8 +32,15 @@ public class ContentService {
     }
 
     public List<MatiereDto> listMatieres() {
-        return matiereRepository.findAllByOrderByOrdreAsc().stream()
-                .map(mapper::toMatiereDto).toList();
+        return listMatieres(null);
+    }
+
+    /** Liste des matières, filtrée par filière si fournie (sinon toutes). */
+    public List<MatiereDto> listMatieres(String filiereSlug) {
+        var matieres = (filiereSlug == null || filiereSlug.isBlank())
+                ? matiereRepository.findAllByOrderByOrdreAsc()
+                : matiereRepository.findByFilieres_SlugOrderByOrdreAsc(filiereSlug);
+        return matieres.stream().map(mapper::toMatiereDto).toList();
     }
 
     public MatiereDetailDto getMatiere(String slug) {

@@ -73,9 +73,12 @@ watch(estConnecte, chargerRevision)
             >
               <i class="fa-solid fa-chart-line" /> Suivi
             </NuxtLink>
-            <span class="hidden px-2 text-[#a8998a] sm:inline" :title="user?.email">
+            <NuxtLink
+              to="/compte" class="hidden px-2 text-[#a8998a] hover:text-brand sm:inline"
+              :title="(user?.email || '') + ' — ' + (user?.filiereNom || '')"
+            >
               <i class="fa-solid fa-user text-brand" /> {{ user?.nom }}
-            </span>
+            </NuxtLink>
             <button
               class="rounded px-3 py-1.5 font-medium text-[#6b5f57] hover:bg-brand-light hover:text-brand"
               @click="seDeconnecter"

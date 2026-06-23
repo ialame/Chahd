@@ -6,8 +6,14 @@ const route = useRoute()
 const nom = ref('')
 const email = ref('')
 const motDePasse = ref('')
+const filiere = ref('sciences-physiques')
 const erreur = ref('')
 const loading = ref(false)
+
+const filieres = [
+  { slug: 'sciences-physiques', nom: 'Sciences Physiques', desc: 'Maths, PC, SVT…' },
+  { slug: 'sciences-mathematiques', nom: 'Sciences Mathématiques', desc: 'Maths, PC, Informatique…' },
+]
 
 async function soumettre() {
   erreur.value = ''
@@ -17,7 +23,7 @@ async function soumettre() {
   }
   loading.value = true
   try {
-    await inscription(email.value, motDePasse.value, nom.value)
+    await inscription(email.value, motDePasse.value, nom.value, filiere.value)
     await router.push((route.query.redirect as string) || '/')
   } catch (e: any) {
     const code = e?.statusCode || e?.response?.status
@@ -66,6 +72,22 @@ async function soumettre() {
             class="w-full rounded-lg border border-rule px-3 py-2 focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
             placeholder="au moins 6 caractères"
           >
+        </div>
+
+        <div>
+          <label class="mb-1 block text-sm font-semibold text-[#6b5f57]">Ta filière</label>
+          <div class="grid grid-cols-2 gap-2">
+            <button
+              v-for="f in filieres" :key="f.slug" type="button"
+              class="rounded-lg border px-3 py-2 text-left transition"
+              :class="filiere === f.slug ? 'border-brand bg-brand-light ring-1 ring-brand' : 'border-rule hover:bg-paper'"
+              @click="filiere = f.slug"
+            >
+              <span class="block text-sm font-semibold text-ink">{{ f.nom }}</span>
+              <span class="block text-xs text-[#a8998a]">{{ f.desc }}</span>
+            </button>
+          </div>
+          <p class="mt-1 text-xs text-[#a8998a]">Tu ne verras que les matières de ta filière. Modifiable plus tard dans « Mon compte ».</p>
         </div>
 
         <p v-if="erreur" class="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700">{{ erreur }}</p>

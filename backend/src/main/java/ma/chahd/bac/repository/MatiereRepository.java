@@ -10,5 +10,8 @@ public interface MatiereRepository extends JpaRepository<Matiere, Long> {
 
     List<Matiere> findAllByOrderByOrdreAsc();
 
+    /** Matières d'une filière donnée, triées. */
+    List<Matiere> findByFilieres_SlugOrderByOrdreAsc(String filiereSlug);
+
     Optional<Matiere> findBySlug(String slug);
 }

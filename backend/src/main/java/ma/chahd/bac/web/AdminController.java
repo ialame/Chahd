@@ -61,7 +61,9 @@ public class AdminController {
                         a.getChapitre(), a.getItem(), a.getLabel(), a.getNote(), a.getCreeLe()))
                 .toList();
         return new EleveSuiviDto(
-                new UtilisateurDto(u.getId(), u.getEmail(), u.getNom(), u.getRole().name()), acts);
+                new UtilisateurDto(u.getId(), u.getEmail(), u.getNom(), u.getRole().name(),
+                        u.getFiliere() != null ? u.getFiliere().getSlug() : null,
+                        u.getFiliere() != null ? u.getFiliere().getNom() : null), acts);
     }
 
     /** Renommer un élève (et éventuellement changer son email). */
@@ -79,7 +81,9 @@ public class AdminController {
             u.setEmail(email);
         }
         utilisateurs.save(u);
-        return new UtilisateurDto(u.getId(), u.getEmail(), u.getNom(), u.getRole().name());
+        return new UtilisateurDto(u.getId(), u.getEmail(), u.getNom(), u.getRole().name(),
+                        u.getFiliere() != null ? u.getFiliere().getSlug() : null,
+                        u.getFiliere() != null ? u.getFiliere().getNom() : null);
     }
 
     /** Supprimer un élève et toutes ses activités. Un admin n'est pas supprimable ici. */
