@@ -1,0 +1,13 @@
+[
+  {"question": "Quelles sont les deux étapes de l'expression de l'information génétique ?", "reponse": "La **transcription** (noyau) puis la **traduction** (cytoplasme) : ADN $\\rightarrow$ ARNm $\\rightarrow$ protéine."},
+  {"question": "Qu'est-ce que la transcription ?", "reponse": "La synthèse d'un **ARNm** à partir d'un brin d'ADN (**brin transcrit**) par l'**ARN polymérase**, dans le **noyau**."},
+  {"question": "En quoi l'ARNm diffère-t-il de l'ADN ?", "reponse": "Il est **simple brin**, contient du **ribose** et de l'**uracile (U)** à la place de la thymine (T)."},
+  {"question": "Quelle est la complémentarité ADN → ARNm ?", "reponse": "$A \\rightarrow U$ ; $T \\rightarrow A$ ; $C \\rightarrow G$ ; $G \\rightarrow C$."},
+  {"question": "Qu'est-ce que la traduction ?", "reponse": "La lecture de l'ARNm par le **ribosome**, par triplets (**codons**) ; chaque codon correspond à un **acide aminé** apporté par un **ARNt**."},
+  {"question": "Qu'est-ce qu'un codon ?", "reponse": "Un **triplet de nucléotides** de l'ARNm qui code un acide aminé."},
+  {"question": "Quels sont le codon initiateur et les codons stop ?", "reponse": "Initiateur : **AUG** (Méthionine) ; stop : **UAA, UAG, UGA**."},
+  {"question": "Quelles sont les propriétés du code génétique ?", "reponse": "**Universel**, **dégénéré** (plusieurs codons pour un même acide aminé) et **non chevauchant**."},
+  {"question": "Qu'est-ce qu'une mutation ?", "reponse": "Une **modification de la séquence des nucléotides** de l'ADN."},
+  {"question": "Quels sont les trois types de mutations ?", "reponse": "**Substitution** (remplacement), **addition** (insertion) et **délétion** (perte) d'un nucléotide."},
+  {"question": "Quelles sont les conséquences des mutations ?", "reponse": "Une **substitution** modifie au plus un acide aminé ; une **addition/délétion** provoque un **décalage du cadre de lecture** (protéine souvent non fonctionnelle)."}
+]
