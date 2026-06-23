@@ -1,0 +1,13 @@
+[
+  {"question": "Qu'est-ce qu'une déformation souple ?", "reponse": "Un **pli** (anticlinal ou synclinal), formé sous l'effet de contraintes de **compression** dans des roches **ductiles**."},
+  {"question": "Qu'est-ce qu'une déformation cassante ?", "reponse": "Une **faille** : cassure d'une roche **fragile** accompagnée d'un déplacement."},
+  {"question": "Quelle est la différence entre anticlinal et synclinal ?", "reponse": "L'**anticlinal** est **bombé vers le haut** ; le **synclinal** est **en creux**."},
+  {"question": "Que traduit une faille normale ?", "reponse": "Des contraintes d'**extension** (contexte de **divergence**)."},
+  {"question": "Que traduit une faille inverse ?", "reponse": "Des contraintes de **compression** (contexte de **convergence**) ; cas extrême : le **chevauchement**."},
+  {"question": "Qu'est-ce qu'un décrochement ?", "reponse": "Une faille où les blocs **coulissent horizontalement** l'un par rapport à l'autre."},
+  {"question": "Qu'est-ce que les ophiolites ?", "reponse": "Des **vestiges de croûte océanique** (basaltes, gabbros, **péridotites**) : ils témoignent d'un **océan disparu**."},
+  {"question": "Qu'est-ce que la racine crustale ?", "reponse": "L'**épaississement** de la croûte continentale qui s'enfonce en profondeur sous une chaîne (équilibre d'**isostasie**)."},
+  {"question": "Comment se forme la chaîne des Andes ?", "reponse": "Par **subduction** (la plaque océanique plonge sous le continent) : magmatisme et relief."},
+  {"question": "Qu'est-ce que l'obduction ?", "reponse": "Le **chevauchement** de lithosphère **océanique** sur la lithosphère **continentale** (met en place des ophiolites)."},
+  {"question": "Comment se forment les Alpes et l'Himalaya ?", "reponse": "Par **collision** de deux continents : **raccourcissement** et **épaississement** crustal."}
+]
