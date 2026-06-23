@@ -29,29 +29,29 @@ watch(estConnecte, chargerRevision)
 
 <template>
   <div class="min-h-screen flex flex-col">
-    <header class="sticky top-0 z-10 border-b border-slate-200 bg-white/90 backdrop-blur">
+    <header class="sticky top-0 z-10 border-b-2 border-brand bg-paper/95 backdrop-blur">
       <div class="mx-auto flex max-w-5xl items-center justify-between px-4 py-3">
-        <NuxtLink to="/" class="flex items-center gap-2 text-lg font-bold text-brand-dark">
-          <span class="text-2xl">🎓</span> Chahd
+        <NuxtLink to="/" class="font-serif text-2xl font-semibold text-brand">
+          Chahd
         </NuxtLink>
         <nav class="flex items-center gap-1 text-sm">
           <NuxtLink
             v-for="l in links"
             :key="l.to"
             :to="l.to"
-            class="rounded-lg px-3 py-1.5 font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900"
-            active-class="!bg-brand/10 !text-brand-dark"
+            class="rounded px-3 py-1.5 font-medium text-[#6b5f57] hover:bg-brand-light hover:text-brand"
+            active-class="!bg-brand-light !text-brand"
           >
             {{ l.label }}
           </NuxtLink>
 
-          <span class="mx-1 h-5 w-px bg-slate-200" />
+          <span class="mx-1 h-5 w-px bg-rule" />
 
           <template v-if="estConnecte">
             <NuxtLink
               to="/reviser"
-              class="relative rounded-lg px-3 py-1.5 font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900"
-              active-class="!bg-brand/10 !text-brand-dark"
+              class="relative rounded px-3 py-1.5 font-medium text-[#6b5f57] hover:bg-brand-light hover:text-brand"
+              active-class="!bg-brand-light !text-brand"
             >
               <i class="fa-solid fa-layer-group" /> Réviser
               <span
@@ -61,23 +61,23 @@ watch(estConnecte, chargerRevision)
             </NuxtLink>
             <NuxtLink
               to="/tableau-de-bord"
-              class="rounded-lg px-3 py-1.5 font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900"
-              active-class="!bg-brand/10 !text-brand-dark"
+              class="rounded px-3 py-1.5 font-medium text-[#6b5f57] hover:bg-brand-light hover:text-brand"
+              active-class="!bg-brand-light !text-brand"
             >
               <i class="fa-solid fa-chart-simple" /> Tableau de bord
             </NuxtLink>
             <NuxtLink
               v-if="estAdmin" to="/suivi"
-              class="rounded-lg px-3 py-1.5 font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900"
-              active-class="!bg-brand/10 !text-brand-dark"
+              class="rounded px-3 py-1.5 font-medium text-[#6b5f57] hover:bg-brand-light hover:text-brand"
+              active-class="!bg-brand-light !text-brand"
             >
               <i class="fa-solid fa-chart-line" /> Suivi
             </NuxtLink>
-            <span class="hidden px-2 text-slate-500 sm:inline" :title="user?.email">
-              <i class="fa-solid fa-user text-brand-dark" /> {{ user?.nom }}
+            <span class="hidden px-2 text-[#a8998a] sm:inline" :title="user?.email">
+              <i class="fa-solid fa-user text-brand" /> {{ user?.nom }}
             </span>
             <button
-              class="rounded-lg px-3 py-1.5 font-medium text-slate-600 hover:bg-slate-100 hover:text-red-600"
+              class="rounded px-3 py-1.5 font-medium text-[#6b5f57] hover:bg-brand-light hover:text-brand"
               @click="seDeconnecter"
             >
               Déconnexion
@@ -86,12 +86,12 @@ watch(estConnecte, chargerRevision)
           <template v-else>
             <NuxtLink
               to="/connexion"
-              class="rounded-lg px-3 py-1.5 font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900"
-              active-class="!bg-brand/10 !text-brand-dark"
+              class="rounded px-3 py-1.5 font-medium text-[#6b5f57] hover:bg-brand-light hover:text-brand"
+              active-class="!bg-brand-light !text-brand"
             >
               Connexion
             </NuxtLink>
-            <NuxtLink to="/inscription" class="rounded-lg bg-brand px-3 py-1.5 font-semibold text-white hover:bg-brand-dark">
+            <NuxtLink to="/inscription" class="rounded bg-brand px-3 py-1.5 font-semibold text-white hover:bg-brand-dark">
               S'inscrire
             </NuxtLink>
           </template>
@@ -103,9 +103,9 @@ watch(estConnecte, chargerRevision)
       <slot />
     </main>
 
-    <footer class="border-t border-slate-200 bg-white">
-      <div class="mx-auto max-w-5xl px-4 py-6 text-center text-sm text-slate-500">
-        Chahd — réviser et réussir le rattrapage du Bac scientifique 🇲🇦
+    <footer class="border-t border-rule bg-white">
+      <div class="mx-auto max-w-5xl px-4 py-6 text-center text-sm text-[#a8998a]">
+        Chahd — réviser et réussir le rattrapage du Bac scientifique
       </div>
     </footer>
   </div>
