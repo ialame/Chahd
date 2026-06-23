@@ -1,0 +1,12 @@
+[
+  {"question": "Qu'est-ce que la méiose ?", "reponse": "Une succession de **deux divisions cellulaires** transformant une cellule diploïde ($2n$) en **4 cellules haploïdes** ($n$), les gamètes."},
+  {"question": "Que réalise la méiose ?", "reponse": "La **réduction chromatique** : le passage de $2n$ à $n$ chromosomes."},
+  {"question": "Que se passe-t-il lors de la première division (réductionnelle) ?", "reponse": "La **séparation des chromosomes homologues** (après leur appariement en prophase I) : $2n \\rightarrow n$."},
+  {"question": "Que se passe-t-il lors de la deuxième division (équationnelle) ?", "reponse": "La **séparation des chromatides sœurs** (comme une mitose) : on obtient des cellules à $n$ chromosomes à 1 chromatide."},
+  {"question": "Quand se déroule le crossing-over ?", "reponse": "En **prophase I**, lors de l'appariement des chromosomes homologues."},
+  {"question": "Qu'est-ce que le brassage interchromosomique ?", "reponse": "La **répartition aléatoire et indépendante** des chromosomes homologues à l'**anaphase I**."},
+  {"question": "Qu'est-ce que le brassage intrachromosomique ?", "reponse": "L'**échange de segments** entre chromosomes homologues (**crossing-over**), créant de nouvelles combinaisons d'allèles."},
+  {"question": "Combien de combinaisons de gamètes le brassage interchromosomique produit-il ?", "reponse": "$2^n$ pour $n$ paires de chromosomes."},
+  {"question": "Que produit le crossing-over ?", "reponse": "Des **chromosomes recombinés** (gamètes recombinés), associant des allèles parentaux différents."},
+  {"question": "Comment la diversité génétique des individus est-elle assurée ?", "reponse": "Par les **brassages** de la méiose (inter- et intrachromosomique) **et** la **fécondation** (rencontre aléatoire des gamètes)."}
+]
