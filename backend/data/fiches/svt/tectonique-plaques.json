@@ -1,0 +1,13 @@
+[
+  {"question": "Quelles sont les couches du globe terrestre ?", "reponse": "La **croûte**, le **manteau** et le **noyau** (de la surface vers le centre)."},
+  {"question": "Quelle est la différence entre lithosphère et asthénosphère ?", "reponse": "La **lithosphère** est **rigide** (croûte + manteau supérieur) ; l'**asthénosphère** est **ductile** : les plaques y glissent."},
+  {"question": "Quels sont les deux types de croûte ?", "reponse": "La croûte **continentale** (granitique) et la croûte **océanique** (basaltique)."},
+  {"question": "Quelle théorie Wegener a-t-il proposée ?", "reponse": "La **dérive des continents**, à l'origine de la tectonique des plaques."},
+  {"question": "Quelles sont les preuves de la tectonique des plaques ?", "reponse": "Complémentarité des **côtes** et des **fossiles**, **expansion océanique**, **anomalies magnétiques symétriques**, âge croissant des **sédiments**."},
+  {"question": "Où se crée la lithosphère océanique ?", "reponse": "Au niveau des **dorsales** (expansion océanique / accrétion)."},
+  {"question": "Que montrent les anomalies magnétiques océaniques ?", "reponse": "Elles sont **symétriques** de part et d'autre de la dorsale : preuve de l'**expansion océanique**."},
+  {"question": "Qu'est-ce qu'une frontière divergente ?", "reponse": "Une **dorsale** : les plaques s'**écartent** et de la lithosphère est créée (accrétion)."},
+  {"question": "Qu'est-ce qu'une frontière convergente ?", "reponse": "Une **subduction** (une plaque océanique plonge sous une autre) ou une **collision** (deux continents $\\rightarrow$ chaîne de montagnes)."},
+  {"question": "Qu'est-ce qu'une frontière transformante ?", "reponse": "Une **faille** où les plaques **coulissent** l'une contre l'autre."},
+  {"question": "Quel est le moteur du déplacement des plaques ?", "reponse": "Les **courants de convection** du manteau."}
+]
