@@ -1,0 +1,12 @@
+[
+  {"question": "Pourquoi étudie-t-on l'hérédité humaine par arbres généalogiques ?", "reponse": "Parce que les **croisements expérimentaux sont impossibles** chez l'Homme."},
+  {"question": "Quels sont les symboles d'un arbre généalogique ?", "reponse": "**Cercle** = femme, **carré** = homme, symbole **rempli** = individu atteint, **trait horizontal** = union."},
+  {"question": "Comment savoir qu'un allèle est récessif ?", "reponse": "Si **deux parents non atteints** ont un **enfant atteint**, l'allèle responsable est **récessif** (parents hétérozygotes)."},
+  {"question": "Comment distinguer un gène autosomique d'un gène lié au sexe ?", "reponse": "S'il touche **autant les filles que les garçons** : **autosomique** ; s'il touche **surtout les garçons** : **lié au chromosome X**."},
+  {"question": "Quel est l'indice d'une transmission récessive liée à X ?", "reponse": "Un **père atteint** transmet l'allèle à **toutes ses filles** (qui deviennent porteuses) ; un garçon reçoit son X de sa **mère**."},
+  {"question": "Quels sont les caryotypes de la femme et de l'homme ?", "reponse": "Femme : **44 autosomes + XX** ; homme : **44 autosomes + XY**."},
+  {"question": "Cite des maladies autosomiques récessives.", "reponse": "Drépanocytose, mucoviscidose, albinisme."},
+  {"question": "Cite des maladies autosomiques dominantes.", "reponse": "Chorée de Huntington, hypercholestérolémie familiale."},
+  {"question": "Cite des maladies récessives liées au chromosome X.", "reponse": "Hémophilie, daltonisme, myopathie de Duchenne (plus fréquentes chez les garçons)."},
+  {"question": "Comment calcule-t-on le risque qu'un enfant soit atteint ?", "reponse": "En croisant les **génotypes des parents** dans un **échiquier de croisement** et en lisant les proportions."}
+]
