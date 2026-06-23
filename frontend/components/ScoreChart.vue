@@ -10,7 +10,8 @@ const props = defineProps<{ points: Point[] }>()
 const MATS: Record<string, { nom: string; col: string }> = {
   maths: { nom: 'Maths', col: '#2563eb' },
   'physique-chimie': { nom: 'Physique-Chimie', col: '#dc2626' },
-  svt: { nom: 'SVT', col: '#16a34a' }
+  svt: { nom: 'SVT', col: '#16a34a' },
+  anglais: { nom: 'Anglais', col: '#7c3aed' }
 }
 const couleur = (slug: string | null) => (slug && MATS[slug] ? MATS[slug].col : '#64748b')
 

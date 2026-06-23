@@ -9,7 +9,8 @@ const moyenne = computed(() => moyenneParMatiere(props.matiere.slug))
 const monos: Record<string, string> = {
   maths: '∑',
   'physique-chimie': 'PC',
-  svt: 'SVT'
+  svt: 'SVT',
+  anglais: 'EN'
 }
 const mono = computed(() => monos[props.matiere.slug] ?? '∑')
 </script>

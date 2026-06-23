@@ -54,7 +54,8 @@ function formatDate(iso: string) {
 const monos: Record<string, string> = {
   maths: '∑',
   'physique-chimie': 'PC',
-  svt: 'SVT'
+  svt: 'SVT',
+  anglais: 'EN'
 }
 function mono(slug: string) {
   return monos[slug] ?? '∑'
