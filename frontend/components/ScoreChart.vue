@@ -12,7 +12,8 @@ const MATS: Record<string, { nom: string; col: string }> = {
   'physique-chimie': { nom: 'Physique-Chimie', col: '#dc2626' },
   svt: { nom: 'SVT', col: '#16a34a' },
   anglais: { nom: 'Anglais', col: '#7c3aed' },
-  philosophie: { nom: 'Philosophie', col: '#0891b2' }
+  philosophie: { nom: 'Philosophie', col: '#0891b2' },
+  francais: { nom: 'Français', col: '#ea580c' }
 }
 const couleur = (slug: string | null) => (slug && MATS[slug] ? MATS[slug].col : '#64748b')
 
