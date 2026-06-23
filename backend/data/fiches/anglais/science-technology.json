@@ -1,0 +1,12 @@
+[
+  {"question": "What is **renewable energy**?", "reponse": "Energy from sources that **never run out**, such as the **sun, wind and water**. It is **clean** and does not pollute, unlike fossil fuels."},
+  {"question": "What are **fossil fuels**?", "reponse": "**Coal, oil and gas** formed underground over millions of years. They are **limited** and produce **pollution** when burned."},
+  {"question": "What does **climate change** mean?", "reponse": "Long-term changes in the world''s **weather patterns**, mainly caused by human activity and **greenhouse gases**."},
+  {"question": "What is a **carbon footprint**?", "reponse": "The amount of **CO2** a person or activity produces (*flying or driving **increases** your carbon footprint*)."},
+  {"question": "What is **biodiversity**?", "reponse": "The **variety of plants and animals** in a region. Losing it puts **endangered species** at risk."},
+  {"question": "Define **sustainability**.", "reponse": "Using **resources** today **without harming future generations** — the heart of sustainable development."},
+  {"question": "What is **artificial intelligence (AI)**?", "reponse": "**Machines that can learn and make decisions** like humans, for example helping doctors read medical scans."},
+  {"question": "What is a **breakthrough**?", "reponse": "An **important discovery** or sudden major progress, such as a **medical breakthrough**."},
+  {"question": "What is **recycling**?", "reponse": "**Turning used materials into new products** (we sort waste so glass, paper and plastic can be **reused**)."},
+  {"question": "What does **deforestation** mean?", "reponse": "The **cutting down of large areas of forest**, which harms **biodiversity** and increases **global warming**."}
+]

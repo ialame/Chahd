@@ -1,0 +1,12 @@
+[
+  {"question": "Give three connectors of addition.", "reponse": "**moreover, furthermore, in addition** (also **and**, **besides**). They join an idea to another of the same kind (*The plan is cheap. **Moreover**, it is safe*)."},
+  {"question": "What is the difference between 'although' and 'despite' in construction?", "reponse": "**Although** (and *though, even though*) is followed by a **clause** (subject + verb); **despite / in spite of** is followed by a **noun** or **-ing** form. *Although it **rained**...* vs *Despite the **rain**...*"},
+  {"question": "Rewrite with 'despite': 'Although he was tired, he kept working.'", "reponse": "**Despite being tired**, he kept working. (despite + -ing, no subject/verb)."},
+  {"question": "What is the difference between 'because' and 'because of'?", "reponse": "**because** + a **clause** (subject + verb); **because of** + a **noun**. *...because it **rained*** vs *...because of the **rain***."},
+  {"question": "Give three connectors that introduce a result/consequence.", "reponse": "**therefore, thus, consequently** (also **so**, **as a result**). *Prices rose. **As a result**, sales fell.*"},
+  {"question": "What connector shows contrast by comparing two facts in one sentence?", "reponse": "**whereas** (or **while**). *My brother likes sport, **whereas** I prefer reading.*"},
+  {"question": "How do we express purpose with an infinitive?", "reponse": "With **to** or **in order to + infinitive** (*She studies hard **to**/**in order to** pass the Bac*)."},
+  {"question": "Which connector of purpose is followed by a clause (subject + verb)?", "reponse": "**so that**. *Speak louder **so that** everyone **can** hear.*"},
+  {"question": "Complete with a cause connector + noun: 'The flight was delayed ___ the fog.'", "reponse": "**because of** (or **due to**) the fog — both are followed by a **noun**."},
+  {"question": "List the connectors that order a paragraph step by step.", "reponse": "**first (of all)**, then **then / next / after that**, and **finally / in conclusion**."}
+]

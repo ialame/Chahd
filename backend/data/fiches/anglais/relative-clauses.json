@@ -1,0 +1,12 @@
+[
+  {"question": "Which relative pronoun do we use for people, and which for things?", "reponse": "**who** for people (*the teacher **who** helps us*) and **which** for things (*the book **which** I read*). **that** can replace both in defining clauses."},
+  {"question": "What is 'whose' used for?", "reponse": "**Possession**: it links a noun to its owner (*the girl **whose** bag was stolen*, *the house **whose** roof is red*)."},
+  {"question": "When do we use 'where' and 'when' as relatives?", "reponse": "**where** for places (*the city **where** I was born*) and **when** for time (*the day **when** we met*)."},
+  {"question": "What is a defining relative clause?", "reponse": "A clause giving **essential** information needed to identify the noun. It takes **no commas** (*The student **who won the prize** is my friend*)."},
+  {"question": "What is a non-defining relative clause?", "reponse": "A clause giving **extra**, non-essential information, placed **between commas** (*My father, **who is a teacher**, works in Fez*). Removing it still leaves a complete sentence."},
+  {"question": "Can we use 'that' in a non-defining clause?", "reponse": "**No.** In non-defining clauses **that** is impossible and the pronoun can **never** be omitted. We use who, which, whose, etc."},
+  {"question": "When can we omit the relative pronoun?", "reponse": "Only in a **defining** clause when the pronoun is the **object** (*The film (that) I watched...*). We cannot omit it when it is the **subject** (*the man **who** called*)."},
+  {"question": "Explain the difference: 'My sister who lives in Rabat...' vs 'My sister, who lives in Rabat,...'", "reponse": "**No commas** (defining) = I have several sisters; this one lives in Rabat. **With commas** (non-defining) = I have one sister, and by the way she lives in Rabat."},
+  {"question": "Where can the preposition go in a relative clause?", "reponse": "At the **end** (informal): *the man (who) I spoke **to***; or **before** whom/which (formal): *the man **to whom** I spoke*."},
+  {"question": "Can we say 'the house to that we live' in the formal structure?", "reponse": "**No.** After a preposition we use **whom** (people) or **which** (things); **that** and the omitted pronoun are impossible. Say *the house **in which** we live*."}
+]

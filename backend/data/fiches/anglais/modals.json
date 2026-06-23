@@ -1,0 +1,12 @@
+[
+  {"question": "What form of the verb always follows a modal?", "reponse": "The **base verb** (no *to*, no **-s**, no **-ed**): *She **can swim***, never *can swims* or *can to swim*."},
+  {"question": "How do we express ability in the past?", "reponse": "**could** for a general past ability (*She **could read** at five*); **was/were able to** or **managed to** for a single past success (*I **was able to** open the door*)."},
+  {"question": "Which modal asks permission most politely and formally?", "reponse": "**may** (*May I come in?*). **could** is also polite for **asking** (*Could I ask...?*), while **can** is informal."},
+  {"question": "What is the difference between 'must' and 'have to' for obligation?", "reponse": "**must** = obligation felt by the **speaker** (internal); **have to** = obligation from an **external** authority (rule, law). Only *have to* has a past/future (*had to, will have to*)."},
+  {"question": "What is the difference between 'don't have to' and 'mustn't'?", "reponse": "Opposite meanings. **don't have to** = it is **not necessary** (optional); **mustn't** = it is **forbidden** (not allowed)."},
+  {"question": "Which modals give advice, and which is the strongest?", "reponse": "**should** and **ought to** give advice; **had better** is **stronger**, warning of a bad result (*You **had better** hurry, or you'll miss it*)."},
+  {"question": "Which modals express possibility?", "reponse": "**may**, **might** and **could** (*It **may rain**; she **might come***). **might** often suggests a slightly smaller chance."},
+  {"question": "How do we make a logical deduction in English?", "reponse": "**must** for **certainty** (*Someone **must be** home — the lights are on*) and **can't** for **impossibility** (*He **can't be** hungry; he just ate*)."},
+  {"question": "True or false: the opposite of deduction 'must' is 'mustn't'.", "reponse": "**False**. The opposite of deduction *must* is **can't** (*She **must** be tired* / *She **can't** be tired*). *mustn't* means **forbidden**."},
+  {"question": "Why do we use 'be able to' and 'have to' as substitutes?", "reponse": "Because modals have **no future or perfect forms**. We say *will **be able to**, have **been able to**, had **to**, will **have to*** where *can* and *must* cannot be used."}
+]

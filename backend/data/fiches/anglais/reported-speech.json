@@ -1,0 +1,12 @@
+[
+  {"question": "What is the difference between direct and reported speech?", "reponse": "**Direct speech** gives the exact words in quotation marks (*She said, \"I am tired.\"*); **reported speech** tells the message without quotation marks, often with **that** (*She said that she was tired*)."},
+  {"question": "What is the backshift of tenses?", "reponse": "When the reporting verb is **past** (said, told), the reported verb moves **one step back**: Present Simple → Past Simple, Present Continuous → Past Continuous, Present Perfect/Past Simple → Past Perfect."},
+  {"question": "How do 'will', 'can', 'may' and 'must' change in reported speech?", "reponse": "**will → would**, **can → could**, **may → might**, **must → had to** (*\"I can swim\" → He said he could swim*)."},
+  {"question": "When do we NOT backshift the tense?", "reponse": "When reporting a **general truth** or something **still true** (*She said the Earth goes round the Sun*). Modals **would, could, might, should** also stay the same."},
+  {"question": "What is the difference between 'say' and 'tell'?", "reponse": "**tell** needs a listener (*She told **me** that...*); **say** does not (*She **said** that...*). We never say *she said me*."},
+  {"question": "How do time and place words change? Give examples.", "reponse": "**now → then, today → that day, tomorrow → the next day, yesterday → the day before, here → there, this → that** (*\"I'll see you tomorrow\" → He said he would see me the next day*)."},
+  {"question": "How do we report a yes/no question?", "reponse": "With **if** or **whether** + normal word order, no *do/does/did*, no question mark (*\"Do you speak English?\" → He asked **if** I spoke English*)."},
+  {"question": "How do we report a wh- question?", "reponse": "Keep the **question word**, then use **normal word order** (subject + verb), no auxiliary (*\"Where do you live?\" → She asked **where** I lived*)."},
+  {"question": "How do we report a command or a request?", "reponse": "With **tell / ask + object + (not) to + infinitive** (*\"Open the door\" → She told me **to open** the door; \"Don't be late\" → He told me **not to be** late*)."},
+  {"question": "Which reporting verbs follow the pattern 'verb + object + to + infinitive'?", "reponse": "**tell, ask, advise, order, warn, remind, invite** (*She **advised me to** rest*). Note: **suggest** takes **-ing** or a that-clause (*He suggested **going** out*)."}
+]

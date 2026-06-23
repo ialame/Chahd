@@ -1,0 +1,12 @@
+[
+  {"question": "How is the passive voice formed?", "reponse": "With the verb **be** (in the right tense) + the **past participle** (*The room **is cleaned**; the letter **was sent***)."},
+  {"question": "Which verbs can be made passive?", "reponse": "Only **transitive verbs** (verbs that take an **object**). Verbs like *arrive* or *sleep* have no object, so no passive form."},
+  {"question": "Put 'They built the bridge' into the passive.", "reponse": "**The bridge was built.** (Past Simple: was/were + past participle.)"},
+  {"question": "How do you form the Present Perfect passive?", "reponse": "**has/have been + past participle** (*The letter **has been sent**; many trees **have been planted***)."},
+  {"question": "How is the modal passive formed?", "reponse": "**modal + be + past participle** (*The work **can be done**; the exam **must be taken***)."},
+  {"question": "Give three reasons to use the passive.", "reponse": "The agent is **unknown** (*My bike **was stolen***), **obvious/unimportant** (*He **was arrested***), or we focus on the **action/result** (*Penicillin **was discovered** in 1928*)."},
+  {"question": "When do we keep 'by + agent', and when do we omit it?", "reponse": "**Keep** it when the doer is **important** (*written **by** Tolstoy*). **Omit** it when the agent is **unknown, obvious, or a general 'people'** (*English **is spoken** here*)."},
+  {"question": "What are the three steps to change active into passive?", "reponse": "1. The **object** becomes the **subject**. 2. Put **be** in the **same tense** + **past participle**. 3. The old subject becomes the **agent** with **by** (or is dropped)."},
+  {"question": "Transform: 'The chef cooks the meal.'", "reponse": "**The meal is cooked by the chef.** (Object → subject; be in present simple + past participle; old subject → by + agent.)"},
+  {"question": "Give the two passive patterns for 'People say that he is rich.'", "reponse": "**It is said that he is rich.** / **He is said to be rich.** (It + is + past participle + that... / Subject + is + past participle + to + infinitive.)"}
+]
