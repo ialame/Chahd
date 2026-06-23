@@ -4,6 +4,8 @@ import { parseMarkdown } from '~/utils/parseMarkdown'
 
 const route = useRoute()
 const slug = route.params.slug as string
+// Matières au contenu arabe : page en RTL (explorateur à droite)
+const isRtl = slug === 'philosophie'
 const { get } = useApi()
 const { track } = useActivite()
 const apiBase = useRuntimeConfig().public.apiBase as string
@@ -130,7 +132,7 @@ const renduTexte = computed(() => {
 })
 const sessionLabel = (s: string) => (s === 'RATTRAPAGE' ? 'Rattrapage' : 'Normale')
 const itemClass = (on: boolean) =>
-  'w-full flex items-center gap-2 px-3 py-1.5 rounded-lg text-left text-[13px] transition ' +
+  'w-full flex items-center gap-2 px-3 py-1.5 rounded-lg text-start text-[13px] transition ' +
   (on ? 'bg-brand-light text-brand font-semibold' : 'text-[#6b5f57] hover:bg-paper')
 </script>
 
@@ -152,14 +154,14 @@ const itemClass = (on: boolean) =>
       </div>
     </header>
 
-    <!-- 2 colonnes -->
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 items-start">
+    <!-- 2 colonnes (RTL pour l'arabe : explorateur à droite) -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 items-start" :dir="isRtl ? 'rtl' : 'ltr'">
       <!-- Colonne 1 : explorateur -->
       <aside class="lg:col-span-4 lg:sticky lg:top-20">
         <div class="rounded-xl bg-white ring-1 ring-rule overflow-hidden max-h-[80vh] overflow-y-auto">
           <!-- Groupe Chapitres -->
           <button
-            class="w-full flex items-center gap-2 px-4 py-3 text-left text-xs font-bold uppercase tracking-wide text-[#a8998a] hover:bg-paper"
+            class="w-full flex items-center gap-2 px-4 py-3 text-start text-xs font-bold uppercase tracking-wide text-[#a8998a] hover:bg-paper"
             @click="groupes.chapitres = !groupes.chapitres"
           >
             <i :class="['fa-solid text-[10px]', groupes.chapitres ? 'fa-chevron-down' : 'fa-chevron-right']" />
@@ -168,7 +170,7 @@ const itemClass = (on: boolean) =>
           <div v-show="groupes.chapitres" class="px-2 pb-2 space-y-1">
             <div v-for="l in lecons ?? []" :key="l.id" class="rounded-lg">
               <button
-                class="w-full flex items-center gap-2 px-3 py-2 text-left text-[13px] font-semibold text-[#6b5f57] hover:bg-paper rounded-lg"
+                class="w-full flex items-center gap-2 px-3 py-2 text-start text-[13px] font-semibold text-[#6b5f57] hover:bg-paper rounded-lg"
                 @click="leconOuverte[l.id] = !leconOuverte[l.id]"
               >
                 <i :class="['fa-solid text-[10px] shrink-0', leconOuverte[l.id] ? 'fa-chevron-down text-brand' : 'fa-chevron-right text-[#a8998a]']" />
@@ -204,7 +206,7 @@ const itemClass = (on: boolean) =>
 
           <!-- Groupe Annales -->
           <button
-            class="w-full flex items-center gap-2 px-4 py-3 text-left text-xs font-bold uppercase tracking-wide text-[#a8998a] border-t border-rule hover:bg-paper"
+            class="w-full flex items-center gap-2 px-4 py-3 text-start text-xs font-bold uppercase tracking-wide text-[#a8998a] border-t border-rule hover:bg-paper"
             @click="groupes.annales = !groupes.annales"
           >
             <i :class="['fa-solid text-[10px]', groupes.annales ? 'fa-chevron-down' : 'fa-chevron-right']" />
@@ -213,7 +215,7 @@ const itemClass = (on: boolean) =>
           <div v-show="groupes.annales" class="px-2 pb-2 space-y-1">
             <div v-for="grp in annalesParAnnee" :key="grp.annee" class="rounded-lg">
               <button
-                class="w-full flex items-center gap-2 px-3 py-2 text-left text-[13px] font-semibold text-[#6b5f57] hover:bg-paper rounded-lg"
+                class="w-full flex items-center gap-2 px-3 py-2 text-start text-[13px] font-semibold text-[#6b5f57] hover:bg-paper rounded-lg"
                 @click="anneeOuverte[grp.annee] = !anneeOuverte[grp.annee]"
               >
                 <i :class="['fa-solid text-[10px] shrink-0', anneeOuverte[grp.annee] ? 'fa-chevron-down text-brand' : 'fa-chevron-right text-[#a8998a]']" />
