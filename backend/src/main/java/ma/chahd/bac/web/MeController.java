@@ -4,13 +4,15 @@ import ma.chahd.bac.domain.Utilisateur;
 import ma.chahd.bac.repository.ActiviteRepository;
 import ma.chahd.bac.repository.UtilisateurRepository;
 import ma.chahd.bac.security.AuthContext;
+import ma.chahd.bac.service.DashboardService;
 import ma.chahd.bac.web.dto.ActiviteDto;
 import ma.chahd.bac.web.dto.EleveSuiviDto;
+import ma.chahd.bac.web.dto.MarquerLeconDto;
+import ma.chahd.bac.web.dto.ProgressionLeconDto;
+import ma.chahd.bac.web.dto.TableauBordDto;
 import ma.chahd.bac.web.dto.UtilisateurDto;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
@@ -22,10 +24,12 @@ public class MeController {
 
     private final UtilisateurRepository utilisateurs;
     private final ActiviteRepository activites;
+    private final DashboardService dashboard;
 
-    public MeController(UtilisateurRepository utilisateurs, ActiviteRepository activites) {
+    public MeController(UtilisateurRepository utilisateurs, ActiviteRepository activites, DashboardService dashboard) {
         this.utilisateurs = utilisateurs;
         this.activites = activites;
+        this.dashboard = dashboard;
     }
 
     @GetMapping("/suivi")
@@ -42,5 +46,31 @@ public class MeController {
                 .toList();
         return new EleveSuiviDto(
                 new UtilisateurDto(u.getId(), u.getEmail(), u.getNom(), u.getRole().name()), acts);
+    }
+
+    /** Tableau de bord agrégé : progression par matière, scores QCM, fiches à réviser. */
+    @GetMapping("/tableau-de-bord")
+    public TableauBordDto tableauDeBord() {
+        return dashboard.tableauDeBord(userId());
+    }
+
+    /** États de progression des leçons (LU | A_REVOIR) de l'utilisateur. */
+    @GetMapping("/progression")
+    public List<ProgressionLeconDto> progression() {
+        return dashboard.progressionsLecons(userId());
+    }
+
+    /** Marque une leçon : statut LU | A_REVOIR, ou null pour effacer. */
+    @PutMapping("/progression/lecon/{leconId}")
+    public void marquerLecon(@PathVariable Long leconId, @RequestBody MarquerLeconDto body) {
+        dashboard.marquerLecon(userId(), leconId, body == null ? null : body.statut());
+    }
+
+    private Long userId() {
+        Long id = AuthContext.userId();
+        if (id == null) {
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Non connecté");
+        }
+        return id;
     }
 }
