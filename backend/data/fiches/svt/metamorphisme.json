@@ -1,0 +1,12 @@
+[
+  {"question": "Qu'est-ce que le métamorphisme ?", "reponse": "La transformation d'une roche **à l'état solide** (sans fusion) sous l'effet de variations de **pression** et de **température**."},
+  {"question": "Quelles structures le métamorphisme produit-il ?", "reponse": "De **nouveaux minéraux** et des structures orientées : **foliation** et **schistosité** (minéraux alignés perpendiculairement à la contrainte)."},
+  {"question": "Qu'est-ce qu'un minéral index ?", "reponse": "Un minéral **caractéristique de conditions P–T précises** (ex. le **glaucophane** $\\rightarrow$ HP/BT)."},
+  {"question": "Qu'est-ce qu'un faciès métamorphique ?", "reponse": "Un **domaine de stabilité** dans le diagramme P–T : schistes verts, schistes bleus, éclogites, amphibolites, granulites."},
+  {"question": "Quelles sont les conditions du métamorphisme de subduction ?", "reponse": "**HP / BT** (haute pression, basse température) : schistes bleus puis **éclogites** (gradient « froid »)."},
+  {"question": "Quelles sont les conditions du métamorphisme de collision ?", "reponse": "**HP–HT** (épaississement) puis, en profondeur, **BP–HT** pouvant conduire à l'**anatexie**."},
+  {"question": "Qu'est-ce que l'anatexie ?", "reponse": "La **fusion partielle** des roches en profondeur (BP–HT), produisant des **migmatites** et des **granites**."},
+  {"question": "Que représente le trajet P–T–t ?", "reponse": "L'**histoire** d'une roche dans le temps : **enfouissement** ($\\uparrow P$, $\\uparrow T$) puis **exhumation** (remontée)."},
+  {"question": "Quel minéral index caractérise la subduction ?", "reponse": "Le **glaucophane** (des schistes bleus), marqueur de **haute pression / basse température**."},
+  {"question": "Le métamorphisme implique-t-il une fusion de la roche ?", "reponse": "Non : il se fait **à l'état solide**. La fusion (anatexie) marque la **limite** du domaine métamorphique (solidus)."}
+]
