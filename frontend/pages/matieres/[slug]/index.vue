@@ -131,24 +131,24 @@ const renduTexte = computed(() => {
 const sessionLabel = (s: string) => (s === 'RATTRAPAGE' ? 'Rattrapage' : 'Normale')
 const itemClass = (on: boolean) =>
   'w-full flex items-center gap-2 px-3 py-1.5 rounded-lg text-left text-[13px] transition ' +
-  (on ? 'bg-brand/10 text-brand-dark font-semibold' : 'text-slate-600 hover:bg-slate-100')
+  (on ? 'bg-brand-light text-brand font-semibold' : 'text-[#6b5f57] hover:bg-paper')
 </script>
 
 <template>
-  <div v-if="error" class="card text-center text-slate-500">
-    Matière introuvable. <NuxtLink to="/matieres" class="text-brand-dark underline">Retour</NuxtLink>
+  <div v-if="error" class="card text-center text-[#a8998a]">
+    Matière introuvable. <NuxtLink to="/matieres" class="text-brand underline">Retour</NuxtLink>
   </div>
 
   <div v-else-if="matiere" class="space-y-4">
     <!-- En-tête -->
     <header class="flex items-center justify-between gap-3">
       <div>
-        <nav class="text-sm text-slate-500">
+        <nav class="text-sm text-[#a8998a]">
           <NuxtLink to="/matieres" class="hover:underline">Matières</NuxtLink>
           <span class="mx-1">/</span>
-          <span class="text-slate-700">{{ matiere.nom }}</span>
+          <span class="text-[#6b5f57]">{{ matiere.nom }}</span>
         </nav>
-        <h1 class="text-2xl font-bold text-slate-900">{{ matiere.nom }}</h1>
+        <h1 class="text-2xl font-bold text-ink">{{ matiere.nom }}</h1>
       </div>
     </header>
 
@@ -156,36 +156,36 @@ const itemClass = (on: boolean) =>
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 items-start">
       <!-- Colonne 1 : explorateur -->
       <aside class="lg:col-span-4 lg:sticky lg:top-20">
-        <div class="rounded-xl bg-white ring-1 ring-slate-200 overflow-hidden max-h-[80vh] overflow-y-auto">
+        <div class="rounded-xl bg-white ring-1 ring-rule overflow-hidden max-h-[80vh] overflow-y-auto">
           <!-- Groupe Chapitres -->
           <button
-            class="w-full flex items-center gap-2 px-4 py-3 text-left text-xs font-bold uppercase tracking-wide text-slate-500 hover:bg-slate-50"
+            class="w-full flex items-center gap-2 px-4 py-3 text-left text-xs font-bold uppercase tracking-wide text-[#a8998a] hover:bg-paper"
             @click="groupes.chapitres = !groupes.chapitres"
           >
             <i :class="['fa-solid text-[10px]', groupes.chapitres ? 'fa-chevron-down' : 'fa-chevron-right']" />
-            <i class="fa-solid fa-book-open text-brand-dark" /> Chapitres
+            <i class="fa-solid fa-book-open text-brand" /> Chapitres
           </button>
           <div v-show="groupes.chapitres" class="px-2 pb-2 space-y-1">
             <div v-for="l in lecons ?? []" :key="l.id" class="rounded-lg">
               <button
-                class="w-full flex items-center gap-2 px-3 py-2 text-left text-[13px] font-semibold text-slate-700 hover:bg-slate-50 rounded-lg"
+                class="w-full flex items-center gap-2 px-3 py-2 text-left text-[13px] font-semibold text-[#6b5f57] hover:bg-paper rounded-lg"
                 @click="leconOuverte[l.id] = !leconOuverte[l.id]"
               >
-                <i :class="['fa-solid text-[10px] shrink-0', leconOuverte[l.id] ? 'fa-chevron-down text-brand' : 'fa-chevron-right text-slate-400']" />
+                <i :class="['fa-solid text-[10px] shrink-0', leconOuverte[l.id] ? 'fa-chevron-down text-brand' : 'fa-chevron-right text-[#a8998a]']" />
                 <span class="truncate">{{ l.titre }}</span>
               </button>
               <div v-show="leconOuverte[l.id]" class="pl-4 pr-1 pb-1 space-y-0.5">
                 <button v-if="l.aContenu" :class="itemClass(estSelectionne({ kind: 'cours', lecon: l }))" @click="selectionner({ kind: 'cours', lecon: l })">
-                  <i class="fa-solid fa-graduation-cap text-purple-500 w-4 text-center" /> Le cours
+                  <i class="fa-solid fa-graduation-cap text-brand w-4 text-center" /> Le cours
                 </button>
                 <button v-if="l.aExercices" :class="itemClass(estSelectionne({ kind: 'exercices', lecon: l }))" @click="selectionner({ kind: 'exercices', lecon: l })">
-                  <i class="fa-solid fa-check-double text-emerald-500 w-4 text-center" /> Exercices résolus
+                  <i class="fa-solid fa-check-double text-brand w-4 text-center" /> Exercices résolus
                 </button>
                 <button v-if="l.aProblemes" :class="itemClass(estSelectionne({ kind: 'problemes', lecon: l }))" @click="selectionner({ kind: 'problemes', lecon: l })">
-                  <i class="fa-solid fa-puzzle-piece text-indigo-500 w-4 text-center" /> Problèmes résolus
+                  <i class="fa-solid fa-puzzle-piece text-brand w-4 text-center" /> Problèmes résolus
                 </button>
                 <button v-if="l.aFiches" :class="itemClass(estSelectionne({ kind: 'fiches', lecon: l }))" @click="selectionner({ kind: 'fiches', lecon: l })">
-                  <i class="fa-solid fa-clone text-rose-500 w-4 text-center" /> Fiches de révision
+                  <i class="fa-solid fa-clone text-brand w-4 text-center" /> Fiches de révision
                 </button>
                 <button
                   v-for="q in l.quizzes"
@@ -193,10 +193,10 @@ const itemClass = (on: boolean) =>
                   :class="itemClass(estSelectionne({ kind: 'quiz', quizId: q.id, titre: qcmLabel(q.titre), chapitre: l.slug }))"
                   @click="selectionner({ kind: 'quiz', quizId: q.id, titre: qcmLabel(q.titre), chapitre: l.slug })"
                 >
-                  <i class="fa-solid fa-list-check text-teal-500 w-4 text-center" /> {{ qcmLabel(q.titre) }}
+                  <i class="fa-solid fa-list-check text-brand w-4 text-center" /> {{ qcmLabel(q.titre) }}
                 </button>
                 <button v-if="l.aBac" :class="itemClass(estSelectionne({ kind: 'bac', lecon: l }))" @click="selectionner({ kind: 'bac', lecon: l })">
-                  <i class="fa-solid fa-graduation-cap text-amber-600 w-4 text-center" /> Exercices du bac
+                  <i class="fa-solid fa-graduation-cap text-brand w-4 text-center" /> Exercices du bac
                 </button>
               </div>
             </div>
@@ -204,19 +204,19 @@ const itemClass = (on: boolean) =>
 
           <!-- Groupe Annales -->
           <button
-            class="w-full flex items-center gap-2 px-4 py-3 text-left text-xs font-bold uppercase tracking-wide text-slate-500 border-t border-slate-100 hover:bg-slate-50"
+            class="w-full flex items-center gap-2 px-4 py-3 text-left text-xs font-bold uppercase tracking-wide text-[#a8998a] border-t border-rule hover:bg-paper"
             @click="groupes.annales = !groupes.annales"
           >
             <i :class="['fa-solid text-[10px]', groupes.annales ? 'fa-chevron-down' : 'fa-chevron-right']" />
-            <i class="fa-solid fa-file-lines text-brand-dark" /> Annales
+            <i class="fa-solid fa-file-lines text-brand" /> Annales
           </button>
           <div v-show="groupes.annales" class="px-2 pb-2 space-y-1">
             <div v-for="grp in annalesParAnnee" :key="grp.annee" class="rounded-lg">
               <button
-                class="w-full flex items-center gap-2 px-3 py-2 text-left text-[13px] font-semibold text-slate-700 hover:bg-slate-50 rounded-lg"
+                class="w-full flex items-center gap-2 px-3 py-2 text-left text-[13px] font-semibold text-[#6b5f57] hover:bg-paper rounded-lg"
                 @click="anneeOuverte[grp.annee] = !anneeOuverte[grp.annee]"
               >
-                <i :class="['fa-solid text-[10px] shrink-0', anneeOuverte[grp.annee] ? 'fa-chevron-down text-brand' : 'fa-chevron-right text-slate-400']" />
+                <i :class="['fa-solid text-[10px] shrink-0', anneeOuverte[grp.annee] ? 'fa-chevron-down text-brand' : 'fa-chevron-right text-[#a8998a]']" />
                 <span>{{ grp.annee }}</span>
               </button>
               <div v-show="anneeOuverte[grp.annee]" class="pl-4 pr-1 pb-1 space-y-0.5">
@@ -226,7 +226,7 @@ const itemClass = (on: boolean) =>
                     :class="[itemClass(annaleSelActive(a)), 'flex-1', (a.aContenu || a.aPdf) ? '' : 'opacity-40 cursor-not-allowed']"
                     @click="ouvrirAnnale(a)"
                   >
-                    <i class="fa-solid fa-file-pen text-amber-500 w-4 text-center" />
+                    <i class="fa-solid fa-file-pen text-brand w-4 text-center" />
                     Session {{ sessionLabel(a.session) }}
                   </button>
                   <button
@@ -236,7 +236,7 @@ const itemClass = (on: boolean) =>
                     title="Voir le sujet original (PDF)"
                     @click="selectionner({ kind: 'pdf', annale: a })"
                   >
-                    <i class="fa-solid fa-file-pdf text-red-500" /> PDF
+                    <i class="fa-solid fa-file-pdf text-brand" /> PDF
                   </button>
                   <button
                     v-if="a.aCorrigePdf"
@@ -245,7 +245,7 @@ const itemClass = (on: boolean) =>
                     title="Voir le corrigé (PDF)"
                     @click="selectionner({ kind: 'corrige-pdf', annale: a })"
                   >
-                    <i class="fa-solid fa-circle-check text-emerald-500" /> Corrigé
+                    <i class="fa-solid fa-circle-check text-theo" /> Corrigé
                   </button>
                 </div>
               </div>
@@ -258,9 +258,9 @@ const itemClass = (on: boolean) =>
       <!-- Colonne 2 : contenu -->
       <section class="lg:col-span-8 min-w-0">
         <!-- Vide -->
-        <div v-if="!selection" class="card flex flex-col items-center justify-center text-center min-h-[60vh] text-slate-500">
-          <i class="fa-solid fa-hand-pointer text-3xl text-slate-300 mb-3" />
-          <p class="font-semibold text-slate-700">Choisissez un élément à gauche</p>
+        <div v-if="!selection" class="card flex flex-col items-center justify-center text-center min-h-[60vh] text-[#a8998a]">
+          <i class="fa-solid fa-hand-pointer text-3xl text-[#a8998a] mb-3" />
+          <p class="font-semibold text-[#6b5f57]">Choisissez un élément à gauche</p>
           <p class="text-sm">Cours, exercices, problèmes, fiches ou annales — le contenu s'affiche ici.</p>
         </div>
 
@@ -272,7 +272,7 @@ const itemClass = (on: boolean) =>
         <!-- Sujet original (PDF) -->
         <div v-else-if="selection.kind === 'pdf'" class="card space-y-3">
           <div class="flex flex-wrap items-center justify-between gap-2">
-            <h2 class="text-xl font-bold text-slate-900">{{ titreSelection }}</h2>
+            <h2 class="text-xl font-bold text-ink">{{ titreSelection }}</h2>
             <a
               :href="pdfUrl(selection.annale.id)" target="_blank" rel="noopener"
               class="inline-flex items-center gap-2 rounded-lg bg-brand px-3 py-1.5 text-sm font-semibold text-white hover:bg-brand-dark"
@@ -280,14 +280,14 @@ const itemClass = (on: boolean) =>
               <i class="fa-solid fa-up-right-from-square" /> Ouvrir / Imprimer
             </a>
           </div>
-          <div class="max-h-[80vh] space-y-3 overflow-auto rounded-lg bg-slate-100 p-2">
+          <div class="max-h-[80vh] space-y-3 overflow-auto rounded-lg bg-rule p-2">
             <img
               v-for="n in selection.annale.pdfPages" :key="n"
               :src="pageUrl(selection.annale.id, n)" :alt="`Page ${n}`" loading="lazy"
-              class="w-full rounded border border-slate-200 bg-white shadow-sm"
+              class="w-full rounded border border-rule bg-white shadow-sm"
             >
           </div>
-          <p class="text-xs text-slate-400">
+          <p class="text-xs text-[#a8998a]">
             Astuce : cliquez sur « Ouvrir / Imprimer » pour le plein écran et l'impression.
           </p>
         </div>
@@ -295,7 +295,7 @@ const itemClass = (on: boolean) =>
         <!-- Corrigé original (PDF) -->
         <div v-else-if="selection.kind === 'corrige-pdf'" class="card space-y-3">
           <div class="flex flex-wrap items-center justify-between gap-2">
-            <h2 class="text-xl font-bold text-slate-900">{{ titreSelection }}</h2>
+            <h2 class="text-xl font-bold text-ink">{{ titreSelection }}</h2>
             <a
               :href="corrigeUrl(selection.annale.id)" target="_blank" rel="noopener"
               class="inline-flex items-center gap-2 rounded-lg bg-brand px-3 py-1.5 text-sm font-semibold text-white hover:bg-brand-dark"
@@ -303,20 +303,20 @@ const itemClass = (on: boolean) =>
               <i class="fa-solid fa-up-right-from-square" /> Ouvrir / Imprimer
             </a>
           </div>
-          <div class="max-h-[80vh] space-y-3 overflow-auto rounded-lg bg-slate-100 p-2">
+          <div class="max-h-[80vh] space-y-3 overflow-auto rounded-lg bg-rule p-2">
             <img
               v-for="n in selection.annale.corrigePdfPages" :key="n"
               :src="corrigePageUrl(selection.annale.id, n)" :alt="`Page ${n}`" loading="lazy"
-              class="w-full rounded border border-slate-200 bg-white shadow-sm"
+              class="w-full rounded border border-rule bg-white shadow-sm"
             >
           </div>
-          <p class="text-xs text-slate-400">
+          <p class="text-xs text-[#a8998a]">
             Astuce : cliquez sur « Ouvrir / Imprimer » pour le plein écran et l'impression.
           </p>
         </div>
 
         <article v-else class="card space-y-4">
-          <h2 class="text-xl font-bold text-slate-900">{{ titreSelection }}</h2>
+          <h2 class="text-xl font-bold text-ink">{{ titreSelection }}</h2>
 
           <LeconActions
             v-if="leconSel"
@@ -325,7 +325,7 @@ const itemClass = (on: boolean) =>
             :has-fiches="leconSel.aFiches"
           />
 
-          <p v-if="loading" class="text-center text-sm text-slate-400 py-10">Chargement…</p>
+          <p v-if="loading" class="text-center text-sm text-[#a8998a] py-10">Chargement…</p>
 
           <!-- Annale : énoncé puis corrigé repliable, exercice par exercice -->
           <template v-else-if="selection.kind === 'annale' && annale">
@@ -343,7 +343,7 @@ const itemClass = (on: boolean) =>
           </template>
 
           <!-- Cours / Exercices / Problèmes -->
-          <div v-else class="leading-relaxed text-slate-700" v-html="renduTexte" />
+          <div v-else class="leading-relaxed text-[#6b5f57]" v-html="renduTexte" />
         </article>
       </section>
     </div>

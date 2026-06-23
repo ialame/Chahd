@@ -30,41 +30,41 @@ const sessionLabel = (s: string) => (s === 'RATTRAPAGE' ? 'Rattrapage' : 'Normal
 <template>
   <div class="space-y-6">
     <header>
-      <h1 class="text-2xl font-bold text-slate-900">Annales d'examens</h1>
-      <p class="text-slate-500">Sujets des sessions normale et de rattrapage, par matière.</p>
+      <h1 class="font-serif text-2xl font-bold text-ink">Annales d'examens</h1>
+      <p class="text-[#a8998a]">Sujets des sessions normale et de rattrapage, par matière.</p>
     </header>
 
     <!-- Filtres -->
     <div class="flex flex-wrap gap-3">
-      <select v-model="matiereFiltre" class="rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm">
+      <select v-model="matiereFiltre" class="rounded-lg border border-rule bg-white px-3 py-2 text-sm">
         <option value="">Toutes les matières</option>
         <option v-for="m in matieresDispo" :key="m.slug" :value="m.slug">{{ m.nom }}</option>
       </select>
-      <select v-model="sessionFiltre" class="rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm">
+      <select v-model="sessionFiltre" class="rounded-lg border border-rule bg-white px-3 py-2 text-sm">
         <option value="">Toutes les sessions</option>
         <option value="NORMALE">Session normale</option>
         <option value="RATTRAPAGE">Session de rattrapage</option>
       </select>
     </div>
 
-    <ul class="divide-y divide-slate-100 overflow-hidden rounded-xl bg-white ring-1 ring-slate-100">
+    <ul class="divide-y divide-rule overflow-hidden rounded-xl bg-white ring-1 ring-rule">
       <li v-for="a in filtrees" :key="a.id" class="flex items-center justify-between gap-3 px-4 py-3">
         <div>
-          <p class="font-medium text-slate-800">{{ a.titre }}</p>
-          <p class="text-xs text-slate-500">
+          <p class="font-medium text-ink">{{ a.titre }}</p>
+          <p class="text-xs text-[#a8998a]">
             {{ a.matiereNom }} · {{ a.annee }} ·
             <span
               class="rounded-full px-2 py-0.5 text-[11px] font-medium"
-              :class="a.session === 'RATTRAPAGE' ? 'bg-amber-100 text-amber-700' : 'bg-slate-100 text-slate-600'"
+              :class="a.session === 'RATTRAPAGE' ? 'bg-brand-light text-brand' : 'bg-rule text-[#6b5f57]'"
             >{{ sessionLabel(a.session) }}</span>
           </p>
         </div>
         <div class="flex flex-wrap items-center gap-2 text-sm">
-          <NuxtLink v-if="a.aContenu" :to="`/annales/${a.id}`" class="btn-primary">📄 Lire</NuxtLink>
+          <NuxtLink v-if="a.aContenu" :to="`/annales/${a.id}`" class="btn-primary"><i class="fa-solid fa-book-open" /> Lire</NuxtLink>
           <a
             v-if="a.aPdf"
             :href="pdfUrl(a.id)" target="_blank" rel="noopener"
-            class="inline-flex items-center gap-1.5 rounded-lg bg-slate-100 px-3 py-1.5 text-sm font-semibold text-slate-700 ring-1 ring-slate-200 hover:bg-slate-200"
+            class="inline-flex items-center gap-1.5 rounded-lg bg-rule px-3 py-1.5 text-sm font-semibold text-[#6b5f57] ring-1 ring-rule hover:bg-paper"
           >
             <i class="fa-solid fa-file-pdf text-red-500" /> Sujet
           </a>
@@ -75,10 +75,10 @@ const sessionLabel = (s: string) => (s === 'RATTRAPAGE' ? 'Rattrapage' : 'Normal
           >
             <i class="fa-solid fa-circle-check text-emerald-500" /> Corrigé
           </a>
-          <span v-if="!a.aContenu && !a.aPdf" class="self-center text-xs text-slate-400">Bientôt</span>
+          <span v-if="!a.aContenu && !a.aPdf" class="self-center text-xs text-[#a8998a]">Bientôt</span>
         </div>
       </li>
-      <li v-if="filtrees.length === 0" class="px-4 py-8 text-center text-sm text-slate-500">
+      <li v-if="filtrees.length === 0" class="px-4 py-8 text-center text-sm text-[#a8998a]">
         Aucune annale ne correspond à ces filtres.
       </li>
     </ul>

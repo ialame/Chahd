@@ -49,28 +49,28 @@ const gridNotes = [0, 5, 10, 15, 20]
 </script>
 
 <template>
-  <div class="rounded-2xl border border-slate-200 p-4">
+  <div class="rounded border border-rule p-4">
     <div class="mb-3 flex flex-wrap items-center justify-between gap-2">
-      <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-500">
-        <i class="fa-solid fa-chart-line text-slate-400" /> Évolution des scores
+      <h2 class="text-sm font-semibold uppercase tracking-wide text-[#a8998a]">
+        <i class="fa-solid fa-chart-line text-[#a8998a]" /> Évolution des scores
       </h2>
       <div v-if="matieresDispo.length > 1" class="flex gap-1 text-xs">
         <button
-          class="rounded-lg px-2 py-1 font-medium transition-colors"
-          :class="filtre === null ? 'bg-slate-800 text-white' : 'text-slate-500 hover:bg-slate-100'"
+          class="rounded px-2 py-1 font-medium transition-colors"
+          :class="filtre === null ? 'bg-brand text-white' : 'text-[#a8998a] hover:bg-rule'"
           @click="filtre = null"
         >Toutes</button>
         <button
           v-for="m in matieresDispo" :key="m"
-          class="rounded-lg px-2 py-1 font-medium transition-colors"
-          :class="filtre === m ? 'text-white' : 'text-slate-500 hover:bg-slate-100'"
+          class="rounded px-2 py-1 font-medium transition-colors"
+          :class="filtre === m ? 'text-white' : 'text-[#a8998a] hover:bg-rule'"
           :style="filtre === m ? { backgroundColor: MATS[m].col } : {}"
           @click="filtre = m"
         >{{ MATS[m].nom }}</button>
       </div>
     </div>
 
-    <p v-if="geom.n === 0" class="py-10 text-center text-sm italic text-slate-400">
+    <p v-if="geom.n === 0" class="py-10 text-center text-sm italic text-[#a8998a]">
       Aucun QCM réalisé pour l'instant. Vos scores apparaîtront ici au fil de vos quiz.
     </p>
 
@@ -111,7 +111,7 @@ const gridNotes = [0, 5, 10, 15, 20]
           {{ fmtDate(geom.coords[geom.n - 1].pt.date) }}
         </text>
       </svg>
-      <p v-if="geom.n === 1" class="mt-1 text-center text-xs text-slate-400">
+      <p v-if="geom.n === 1" class="mt-1 text-center text-xs text-[#a8998a]">
         Réalisez d'autres QCM pour visualiser la progression.
       </p>
     </template>

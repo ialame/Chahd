@@ -49,38 +49,48 @@ const conseils = [
 function formatDate(iso: string) {
   return new Date(iso).toLocaleDateString('fr-FR', { day: 'numeric', month: 'short', year: 'numeric' })
 }
+
+// Monogrammes typographiques par matière (à la place des emoji).
+const monos: Record<string, string> = {
+  maths: '∑',
+  'physique-chimie': 'PC',
+  svt: 'SVT'
+}
+function mono(slug: string) {
+  return monos[slug] ?? '∑'
+}
 </script>
 
 <template>
   <div class="space-y-8">
     <header>
-      <h1 class="text-2xl font-bold text-slate-900">Mon planning de révision</h1>
-      <p class="text-slate-500">Organise tes révisions et suis ta progression vers le rattrapage.</p>
+      <h1 class="text-2xl font-bold text-ink">Mon planning de révision</h1>
+      <p class="text-[#a8998a]">Organise tes révisions et suis ta progression vers le rattrapage.</p>
     </header>
 
     <!-- Compte à rebours + moyenne -->
     <section class="grid gap-4 sm:grid-cols-3">
       <div class="card sm:col-span-1">
-        <label class="text-xs font-medium text-slate-500">Date de l'examen</label>
+        <label class="text-xs font-medium text-[#a8998a]">Date de l'examen</label>
         <input
           v-model="dateExamen"
           type="date"
-          class="mt-1 w-full rounded-lg border border-slate-200 px-3 py-2 text-sm"
+          class="mt-1 w-full rounded-lg border border-rule px-3 py-2 text-sm"
         />
         <p v-if="joursRestants !== null" class="mt-2 text-sm">
-          <span class="text-2xl font-extrabold text-brand-dark">{{ joursRestants }}</span>
-          <span class="text-slate-500"> jour(s) restants</span>
+          <span class="font-serif text-2xl font-extrabold text-brand">{{ joursRestants }}</span>
+          <span class="text-[#a8998a]"> jour(s) restants</span>
         </p>
       </div>
       <div class="card text-center">
-        <p class="text-xs text-slate-500">Moyenne QCM (simple)</p>
-        <p class="text-3xl font-extrabold text-brand-dark">
+        <p class="text-xs text-[#a8998a]">Moyenne QCM (simple)</p>
+        <p class="font-serif text-3xl font-extrabold text-brand">
           {{ moyenneGenerale !== null ? moyenneGenerale + '/20' : '—' }}
         </p>
       </div>
       <div class="card text-center">
-        <p class="text-xs text-slate-500">Moyenne pondérée (coef.)</p>
-        <p class="text-3xl font-extrabold text-brand-dark">
+        <p class="text-xs text-[#a8998a]">Moyenne pondérée (coef.)</p>
+        <p class="font-serif text-3xl font-extrabold text-brand">
           {{ moyennePonderee !== null ? moyennePonderee + '/20' : '—' }}
         </p>
       </div>
@@ -88,18 +98,18 @@ function formatDate(iso: string) {
 
     <!-- Progression par matière -->
     <section>
-      <h2 class="mb-3 text-lg font-bold text-slate-900">Progression par matière</h2>
+      <h2 class="mb-3 text-lg font-bold text-ink">Progression par matière</h2>
       <div class="space-y-3">
         <div v-for="m in matieres" :key="m.id" class="card flex items-center gap-4">
-          <span class="text-2xl">{{ m.icone ?? '📘' }}</span>
+          <span class="flex h-12 w-12 items-center justify-center rounded bg-brand-light font-serif text-xl font-semibold text-brand">{{ mono(m.slug) }}</span>
           <div class="flex-1">
             <div class="flex items-center justify-between">
-              <span class="font-medium text-slate-800">{{ m.nom }}</span>
-              <span class="text-sm text-slate-500">
+              <span class="font-medium text-ink">{{ m.nom }}</span>
+              <span class="text-sm text-[#a8998a]">
                 {{ moyenneParMatiere(m.slug) !== null ? moyenneParMatiere(m.slug) + '/20' : 'Pas encore évalué' }}
               </span>
             </div>
-            <div class="mt-1.5 h-2 w-full overflow-hidden rounded-full bg-slate-100">
+            <div class="mt-1.5 h-2 w-full overflow-hidden rounded-full bg-rule">
               <div
                 class="h-full rounded-full bg-brand transition-all"
                 :style="{ width: ((moyenneParMatiere(m.slug) ?? 0) / 20 * 100) + '%' }"
@@ -113,24 +123,24 @@ function formatDate(iso: string) {
     <!-- Historique des quiz -->
     <section v-if="quizFaits.length">
       <div class="mb-3 flex items-center justify-between">
-        <h2 class="text-lg font-bold text-slate-900">Historique des quiz</h2>
-        <button class="text-xs text-slate-400 hover:text-red-500" @click="reinitialiser">Réinitialiser</button>
+        <h2 class="text-lg font-bold text-ink">Historique des quiz</h2>
+        <button class="text-xs text-[#a8998a] hover:text-red-500" @click="reinitialiser">Réinitialiser</button>
       </div>
-      <ul class="divide-y divide-slate-100 overflow-hidden rounded-xl bg-white ring-1 ring-slate-100">
+      <ul class="divide-y divide-rule overflow-hidden rounded-xl bg-white ring-1 ring-rule">
         <li v-for="s in quizFaits" :key="s.quizId" class="flex items-center justify-between px-4 py-3 text-sm">
-          <span class="text-slate-700">{{ s.titre }}</span>
+          <span class="text-[#6b5f57]">{{ s.titre }}</span>
           <span class="flex items-center gap-3">
-            <span class="text-xs text-slate-400">{{ formatDate(s.date) }}</span>
-            <span class="font-semibold text-brand-dark">{{ s.noteSur20 }}/20</span>
+            <span class="text-xs text-[#a8998a]">{{ formatDate(s.date) }}</span>
+            <span class="font-semibold text-brand">{{ s.noteSur20 }}/20</span>
           </span>
         </li>
       </ul>
     </section>
 
     <!-- Conseils -->
-    <section class="card bg-brand/5 ring-brand/20">
-      <h2 class="mb-2 text-lg font-bold text-brand-dark">💡 Conseils pour le rattrapage</h2>
-      <ul class="list-disc space-y-1 pl-5 text-sm text-slate-700">
+    <section class="card bg-brand-light ring-brand/20">
+      <h2 class="mb-2 text-lg font-bold text-brand"><i class="fa-solid fa-lightbulb" /> Conseils pour le rattrapage</h2>
+      <ul class="list-disc space-y-1 pl-5 text-sm text-[#6b5f57]">
         <li v-for="(c, i) in conseils" :key="i">{{ c }}</li>
       </ul>
     </section>

@@ -38,19 +38,19 @@ const html = computed(() => renderMath(props.source))
 
 <style scoped>
 .math-content :deep(hr) {
-  @apply my-6 border-slate-200;
+  @apply my-6 border-rule;
 }
 .math-content :deep(h1) {
-  @apply text-xl font-extrabold text-slate-900 mt-2 mb-3;
+  @apply text-xl font-extrabold text-ink mt-2 mb-3;
 }
 .math-content :deep(h2) {
-  @apply text-lg font-bold text-brand-dark mt-6 mb-2;
+  @apply text-lg font-bold text-brand mt-6 mb-2;
 }
 .math-content :deep(h3) {
-  @apply text-base font-semibold text-slate-800 mt-4 mb-1;
+  @apply text-base font-semibold text-ink mt-4 mb-1;
 }
 .math-content :deep(blockquote) {
-  @apply border-l-4 border-brand/40 bg-brand/5 px-3 py-1 text-slate-600 my-3 rounded-r;
+  @apply border-l-4 border-brand/40 bg-brand-light px-3 py-1 text-[#6b5f57] my-3 rounded-r;
 }
 .math-content :deep(.katex) {
   font-size: 1.02em;

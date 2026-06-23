@@ -84,46 +84,46 @@ async function noter(qualite: number) {
   <div class="mx-auto max-w-2xl">
     <div class="mb-6 flex items-center justify-between">
       <div>
-        <h1 class="text-2xl font-bold text-brand-dark">
+        <h1 class="font-serif text-2xl font-bold text-brand">
           <i class="fa-solid fa-layer-group" /> Réviser
         </h1>
-        <p class="text-sm text-slate-500">
+        <p class="text-sm text-[#a8998a]">
           {{ leconId ? 'Fiches de ce chapitre' : 'Vos fiches à réviser aujourd\'hui' }} — répétition espacée
         </p>
       </div>
-      <NuxtLink to="/tableau-de-bord" class="rounded-lg border border-slate-200 px-3 py-1.5 text-sm text-slate-600 hover:bg-slate-50">
+      <NuxtLink to="/tableau-de-bord" class="rounded border border-rule px-3 py-1.5 text-sm text-[#6b5f57] hover:bg-paper">
         <i class="fa-solid fa-chart-simple" /> Tableau de bord
       </NuxtLink>
     </div>
 
     <!-- Chargement -->
-    <div v-if="chargement" class="py-20 text-center text-slate-400">
+    <div v-if="chargement" class="py-20 text-center text-[#a8998a]">
       <i class="fa-solid fa-spinner fa-spin text-2xl" />
       <p class="mt-2 text-sm">Chargement des fiches…</p>
     </div>
 
     <!-- Rien à réviser -->
-    <div v-else-if="total === 0" class="rounded-2xl border-2 border-dashed border-slate-200 py-16 text-center">
-      <div class="text-4xl">🎉</div>
-      <p class="mt-3 font-semibold text-slate-700">Aucune fiche à réviser pour l'instant !</p>
-      <p class="mt-1 text-sm text-slate-500">
+    <div v-else-if="total === 0" class="rounded border-2 border-dashed border-rule py-16 text-center">
+      <div class="text-3xl text-[#d8c6b0]"><i class="fa-regular fa-circle-check" /></div>
+      <p class="mt-3 font-semibold text-ink">Aucune fiche à réviser pour l'instant !</p>
+      <p class="mt-1 text-sm text-[#a8998a]">
         Ouvrez les fiches d'un chapitre et lancez une révision pour alimenter votre file.
       </p>
-      <NuxtLink to="/matieres" class="mt-5 inline-block rounded-lg bg-brand px-4 py-2 font-semibold text-white hover:bg-brand-dark">
+      <NuxtLink to="/matieres" class="mt-5 inline-block rounded bg-brand px-4 py-2 font-semibold text-white hover:bg-brand-dark">
         Parcourir les matières
       </NuxtLink>
     </div>
 
     <!-- Terminé -->
-    <div v-else-if="termine" class="rounded-2xl border-2 border-emerald-200 bg-emerald-50/50 py-16 text-center">
-      <div class="text-4xl">✅</div>
-      <p class="mt-3 text-lg font-bold text-emerald-700">Session terminée !</p>
-      <p class="mt-1 text-sm text-slate-600">{{ notes }} fiche(s) révisée(s). Bravo 👏</p>
+    <div v-else-if="termine" class="rounded border-2 border-theo/30 bg-theo/5 py-16 text-center">
+      <div class="text-3xl text-theo"><i class="fa-solid fa-circle-check" /></div>
+      <p class="mt-3 text-lg font-bold text-theo">Session terminée !</p>
+      <p class="mt-1 text-sm text-[#6b5f57]">{{ notes }} fiche(s) révisée(s). Bravo.</p>
       <div class="mt-5 flex justify-center gap-2">
-        <button class="rounded-lg border border-slate-200 px-4 py-2 text-sm font-medium text-slate-600 hover:bg-white" @click="charger">
+        <button class="rounded border border-rule px-4 py-2 text-sm font-medium text-[#6b5f57] hover:bg-white" @click="charger">
           <i class="fa-solid fa-rotate-right" /> Recommencer
         </button>
-        <NuxtLink to="/tableau-de-bord" class="rounded-lg bg-brand px-4 py-2 text-sm font-semibold text-white hover:bg-brand-dark">
+        <NuxtLink to="/tableau-de-bord" class="rounded bg-brand px-4 py-2 text-sm font-semibold text-white hover:bg-brand-dark">
           Voir ma progression
         </NuxtLink>
       </div>
@@ -132,50 +132,50 @@ async function noter(qualite: number) {
     <!-- Révision -->
     <div v-else-if="courante" class="space-y-4">
       <!-- progression -->
-      <div class="flex items-center justify-between text-xs text-slate-500">
+      <div class="flex items-center justify-between text-xs text-[#a8998a]">
         <span>Fiche {{ idx + 1 }} / {{ total }}</span>
-        <span class="rounded-full bg-slate-100 px-2 py-0.5 font-medium text-slate-600">
+        <span class="rounded-full bg-rule px-2 py-0.5 font-medium text-[#6b5f57]">
           {{ matiereNom[courante.matiereSlug] || courante.matiereSlug }} · {{ courante.leconTitre }}
         </span>
       </div>
-      <div class="h-1.5 overflow-hidden rounded-full bg-slate-100">
+      <div class="h-1.5 overflow-hidden rounded-full bg-rule">
         <div class="h-full bg-brand transition-all" :style="{ width: (idx / total * 100) + '%' }" />
       </div>
 
       <!-- carte -->
       <div
-        class="flex min-h-[240px] cursor-pointer flex-col items-center justify-center rounded-2xl border-2 p-6 text-center transition-colors"
-        :class="revealed ? 'border-emerald-200 bg-emerald-50/50' : 'border-slate-200 bg-slate-50'"
+        class="flex min-h-[240px] cursor-pointer flex-col items-center justify-center rounded border-2 p-6 text-center transition-colors"
+        :class="revealed ? 'border-theo/30 bg-theo/5' : 'border-rule bg-paper'"
         @click="revealed = !revealed"
       >
-        <span class="mb-3 text-[11px] font-bold uppercase tracking-widest" :class="revealed ? 'text-emerald-600' : 'text-brand-dark'">
+        <span class="mb-3 text-[11px] font-bold uppercase tracking-widest" :class="revealed ? 'text-theo' : 'text-brand'">
           {{ revealed ? 'Réponse' : 'Question' }}
         </span>
-        <div class="leading-relaxed text-slate-800" v-html="inlineMath(revealed ? courante.reponse : courante.question)" />
-        <span v-if="!revealed" class="mt-4 text-[11px] text-slate-400">Cliquez pour révéler la réponse</span>
+        <div class="leading-relaxed text-ink" v-html="inlineMath(revealed ? courante.reponse : courante.question)" />
+        <span v-if="!revealed" class="mt-4 text-[11px] text-[#a8998a]">Cliquez pour révéler la réponse</span>
       </div>
 
       <!-- boutons -->
       <div v-if="!revealed" class="text-center">
-        <button class="rounded-lg bg-brand px-6 py-2.5 font-semibold text-white hover:bg-brand-dark" @click="revealed = true">
+        <button class="rounded bg-brand px-6 py-2.5 font-semibold text-white hover:bg-brand-dark" @click="revealed = true">
           Révéler la réponse
         </button>
       </div>
       <div v-else class="grid grid-cols-3 gap-2">
-        <button class="rounded-xl border-2 border-red-200 bg-red-50 py-3 text-sm font-semibold text-red-700 hover:bg-red-100" @click="noter(1)">
+        <button class="rounded border-2 border-red-200 bg-red-50 py-3 text-sm font-semibold text-red-700 hover:bg-red-100" @click="noter(1)">
           <div class="text-base"><i class="fa-solid fa-rotate-left" /></div>
           À revoir
           <div class="text-[10px] font-normal text-red-400">demain</div>
         </button>
-        <button class="rounded-xl border-2 border-amber-200 bg-amber-50 py-3 text-sm font-semibold text-amber-700 hover:bg-amber-100" @click="noter(3)">
+        <button class="rounded border-2 border-amber-200 bg-amber-50 py-3 text-sm font-semibold text-amber-700 hover:bg-amber-100" @click="noter(3)">
           <div class="text-base"><i class="fa-regular fa-face-meh" /></div>
           Moyen
           <div class="text-[10px] font-normal text-amber-400">bientôt</div>
         </button>
-        <button class="rounded-xl border-2 border-emerald-200 bg-emerald-50 py-3 text-sm font-semibold text-emerald-700 hover:bg-emerald-100" @click="noter(5)">
+        <button class="rounded border-2 border-theo/40 bg-theo/10 py-3 text-sm font-semibold text-theo hover:bg-theo/20" @click="noter(5)">
           <div class="text-base"><i class="fa-regular fa-face-smile" /></div>
           Facile
-          <div class="text-[10px] font-normal text-emerald-400">plus tard</div>
+          <div class="text-[10px] font-normal text-theo/70">plus tard</div>
         </button>
       </div>
     </div>

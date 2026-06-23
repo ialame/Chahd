@@ -66,14 +66,14 @@ function choixClass(questionId: number, choixId: number) {
   const d = detailPour(questionId)
   if (!d) {
     return isSelected(questionId, choixId)
-      ? 'border-brand bg-brand/10 ring-1 ring-brand'
-      : 'border-slate-200 hover:border-brand/50 hover:bg-slate-50'
+      ? 'border-brand bg-brand-light ring-1 ring-brand'
+      : 'border-rule hover:border-brand/50 hover:bg-paper'
   }
   const estBon = d.bonsChoix.includes(choixId)
   const estCoche = d.choixSelectionnes.includes(choixId)
-  if (estBon) return 'border-green-500 bg-green-50'
+  if (estBon) return 'border-theo bg-green-50'
   if (estCoche && !estBon) return 'border-red-400 bg-red-50'
-  return 'border-slate-200 opacity-70'
+  return 'border-rule opacity-70'
 }
 
 async function soumettre() {
@@ -105,32 +105,32 @@ const noteColor = computed(() => {
 </script>
 
 <template>
-  <div v-if="loadError" class="text-center text-sm text-slate-500 py-8">QCM introuvable.</div>
+  <div v-if="loadError" class="text-center text-sm text-[#a8998a] py-8">QCM introuvable.</div>
 
-  <div v-else-if="!quiz" class="text-center text-sm text-slate-400 py-8">Chargement du QCM…</div>
+  <div v-else-if="!quiz" class="text-center text-sm text-[#a8998a] py-8">Chargement du QCM…</div>
 
   <div v-else class="space-y-5">
     <header>
-      <h2 class="text-lg font-bold text-slate-900">{{ quiz.titre }}</h2>
-      <p v-if="quiz.description" class="text-sm text-slate-500">{{ quiz.description }}</p>
+      <h2 class="text-lg font-bold text-ink">{{ quiz.titre }}</h2>
+      <p v-if="quiz.description" class="text-sm text-[#a8998a]">{{ quiz.description }}</p>
     </header>
 
     <!-- Résultat -->
-    <div v-if="result" class="rounded-xl border border-slate-200 p-4 text-center">
-      <p class="text-sm text-slate-500">Ton résultat</p>
-      <p class="text-3xl font-extrabold" :class="noteColor">{{ result.noteSur20 }}/20</p>
-      <p class="mt-1 text-sm text-slate-600">{{ result.score }} / {{ result.total }} bonnes réponses</p>
-      <button class="btn-ghost mt-3" @click="recommencer">↻ Recommencer</button>
+    <div v-if="result" class="rounded-xl border border-rule p-4 text-center">
+      <p class="text-sm text-[#a8998a]">Ton résultat</p>
+      <p class="text-3xl font-serif font-extrabold" :class="noteColor">{{ result.noteSur20 }}/20</p>
+      <p class="mt-1 text-sm text-[#6b5f57]">{{ result.score }} / {{ result.total }} bonnes réponses</p>
+      <button class="btn-ghost mt-3" @click="recommencer"><i class="fa-solid fa-rotate-right mr-1" />Recommencer</button>
     </div>
 
     <!-- Questions -->
     <div class="space-y-4">
-      <div v-for="(q, idx) in quiz.questions" :key="q.id" class="rounded-xl border border-slate-200 p-4">
+      <div v-for="(q, idx) in quiz.questions" :key="q.id" class="rounded-xl border border-rule p-4">
         <div class="mb-3 flex items-start gap-2">
-          <span class="mt-0.5 flex h-6 w-6 flex-none items-center justify-center rounded-full bg-brand/10 text-xs font-bold text-brand-dark">
+          <span class="mt-0.5 flex h-6 w-6 flex-none items-center justify-center rounded-full bg-brand-light text-xs font-bold text-brand">
             {{ idx + 1 }}
           </span>
-          <h3 class="font-semibold text-slate-900" v-html="inlineMath(q.enonce)" />
+          <h3 class="font-semibold text-ink" v-html="inlineMath(q.enonce)" />
         </div>
 
         <div class="space-y-2">
@@ -145,7 +145,7 @@ const noteColor = computed(() => {
           >
             <span
               class="flex h-5 w-5 flex-none items-center justify-center rounded border text-xs"
-              :class="isSelected(q.id, c.id) || detailPour(q.id)?.bonsChoix.includes(c.id) ? 'border-current' : 'border-slate-300'"
+              :class="isSelected(q.id, c.id) || detailPour(q.id)?.bonsChoix.includes(c.id) ? 'border-current' : 'border-rule'"
             >
               <span v-if="detailPour(q.id)?.bonsChoix.includes(c.id)">✓</span>
               <span v-else-if="isSelected(q.id, c.id)">•</span>
@@ -157,17 +157,19 @@ const noteColor = computed(() => {
         <div
           v-if="detailPour(q.id)"
           class="mt-3 rounded-lg px-3 py-2 text-sm"
-          :class="detailPour(q.id)!.correcte ? 'bg-green-50 text-green-800' : 'bg-amber-50 text-amber-800'"
+          :class="detailPour(q.id)!.correcte ? 'bg-green-50 text-theo' : 'bg-amber-50 text-amber-800'"
         >
-          <span class="font-semibold">{{ detailPour(q.id)!.correcte ? '✅ Correct' : '💡 À revoir' }}</span>
+          <span class="font-semibold">
+            <i :class="detailPour(q.id)!.correcte ? 'fa-solid fa-circle-check mr-1' : 'fa-solid fa-lightbulb mr-1'" />{{ detailPour(q.id)!.correcte ? 'Correct' : 'À revoir' }}
+          </span>
           <span v-if="detailPour(q.id)!.explication"> — <span v-html="inlineMath(detailPour(q.id)!.explication!)" /></span>
         </div>
       </div>
     </div>
 
     <!-- Action -->
-    <div v-if="!result" class="sticky bottom-4 flex items-center justify-between rounded-xl bg-white p-4 shadow-md ring-1 ring-slate-100">
-      <span class="text-sm text-slate-500">{{ nbRepondues }} / {{ quiz.questions.length }} répondues</span>
+    <div v-if="!result" class="sticky bottom-4 flex items-center justify-between rounded-xl bg-white p-4 shadow-md ring-1 ring-rule">
+      <span class="text-sm text-[#a8998a]">{{ nbRepondues }} / {{ quiz.questions.length }} répondues</span>
       <button class="btn-primary" :disabled="submitting || nbRepondues === 0" @click="soumettre">
         {{ submitting ? 'Correction…' : 'Valider mes réponses' }}
       </button>

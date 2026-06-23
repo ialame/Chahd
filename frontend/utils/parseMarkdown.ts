@@ -58,16 +58,16 @@ export function parseMarkdown(text: string, hardBreaks = false): string {
 
     // Définition — carte bordée, liseré ardoise
     p = p.replace(/\\begin\{definition\}\[(.*?)\]/gis,
-      '<div class="my-[18px] rounded-[10px] bg-white border border-[#E4DED4] border-l-[3px] border-l-[#475569] px-5 py-4 shadow-sm"><div class="flex items-center gap-2.5 mb-2.5"><span class="w-2 h-2 rounded-[2px] bg-[#475569] shrink-0"></span><span class="font-extrabold uppercase tracking-wide text-[13px] text-[#475569]">Définition</span><span class="font-semibold text-[13px] text-[#8A8276]">$1</span></div>' + CONTENT)
+      '<div class="my-[18px] rounded-[10px] bg-white border border-[#E4DED4] border-l-[3px] border-l-[#8a3324] px-5 py-4"><div class="flex items-center gap-2.5 mb-2.5"><span class="w-2 h-2 rounded-[2px] bg-[#8a3324] shrink-0"></span><span class="font-extrabold uppercase tracking-wide text-[13px] text-[#8a3324]">Définition</span><span class="font-semibold text-[13px] text-[#8A8276]">$1</span></div>' + CONTENT)
     p = p.replace(/\\begin\{definition\}/gis,
-      '<div class="my-[18px] rounded-[10px] bg-white border border-[#E4DED4] border-l-[3px] border-l-[#475569] px-5 py-4 shadow-sm"><div class="flex items-center gap-2.5 mb-2.5"><span class="w-2 h-2 rounded-[2px] bg-[#475569] shrink-0"></span><span class="font-extrabold uppercase tracking-wide text-[13px] text-[#475569]">Définition</span></div>' + CONTENT)
+      '<div class="my-[18px] rounded-[10px] bg-white border border-[#E4DED4] border-l-[3px] border-l-[#8a3324] px-5 py-4"><div class="flex items-center gap-2.5 mb-2.5"><span class="w-2 h-2 rounded-[2px] bg-[#8a3324] shrink-0"></span><span class="font-extrabold uppercase tracking-wide text-[13px] text-[#8a3324]">Définition</span></div>' + CONTENT)
     p = p.replace(/\\end\{definition\}/gis, '</div></div>')
 
     // Théorème — bande à filets horizontaux orange + losange ◆
     p = p.replace(/\\begin\{(theoreme|theorem)\}\[(.*?)\]/gis,
-      '<div style="border-top:2px solid #C2410C;border-bottom:2px solid #C2410C;background:#FDF6EF" class="px-4 py-3.5 my-[18px]"><div class="flex items-center gap-2.5 mb-2"><span style="color:#C2410C;font-size:11px" class="shrink-0">◆</span><span style="color:#C2410C" class="font-extrabold uppercase tracking-wide text-[13px]">Théorème</span><span style="color:#A06A3A" class="font-semibold text-[13px]">$2</span></div>' + CONTENT)
+      '<div style="border-top:2px solid #4a7340;border-bottom:2px solid #4a7340;background:#f3f6f1" class="px-4 py-3.5 my-[18px]"><div class="flex items-center gap-2.5 mb-2"><span style="color:#4a7340;font-size:11px" class="shrink-0">◆</span><span style="color:#4a7340" class="font-extrabold uppercase tracking-wide text-[13px]">Théorème</span><span style="color:#5a7350" class="font-semibold text-[13px]">$2</span></div>' + CONTENT)
     p = p.replace(/\\begin\{(theoreme|theorem)\}/gis,
-      '<div style="border-top:2px solid #C2410C;border-bottom:2px solid #C2410C;background:#FDF6EF" class="px-4 py-3.5 my-[18px]"><div class="flex items-center gap-2.5 mb-2"><span style="color:#C2410C;font-size:11px" class="shrink-0">◆</span><span style="color:#C2410C" class="font-extrabold uppercase tracking-wide text-[13px]">Théorème</span></div>' + CONTENT)
+      '<div style="border-top:2px solid #4a7340;border-bottom:2px solid #4a7340;background:#f3f6f1" class="px-4 py-3.5 my-[18px]"><div class="flex items-center gap-2.5 mb-2"><span style="color:#4a7340;font-size:11px" class="shrink-0">◆</span><span style="color:#4a7340" class="font-extrabold uppercase tracking-wide text-[13px]">Théorème</span></div>' + CONTENT)
     p = p.replace(/\\end\{(theoreme|theorem)\}/gis, '</div></div>')
 
     // Proposition — filet vertical bleu + puce ronde
@@ -79,9 +79,9 @@ export function parseMarkdown(text: string, hardBreaks = false): string {
 
     // Propriété — carte teal
     p = p.replace(/\\begin\{(propriete|property)\}\[(.*?)\]/gis,
-      '<div class="p-5 rounded-2xl bg-teal-50 border border-teal-200 my-6 shadow-sm"><h4 class="text-teal-700 font-bold mb-3 flex items-center text-sm"><i class="fa-solid fa-list-check mr-2 text-base"></i>Propriété : $2</h4>' + CONTENT)
+      '<div class="p-5 rounded-2xl bg-brand-light border border-rule my-6"><h4 class="text-brand font-bold mb-3 flex items-center text-sm"><i class="fa-solid fa-list-check mr-2 text-base"></i>Propriété : $2</h4>' + CONTENT)
     p = p.replace(/\\begin\{(propriete|property)\}/gis,
-      '<div class="p-5 rounded-2xl bg-teal-50 border border-teal-200 my-6 shadow-sm"><h4 class="text-teal-700 font-bold mb-3 flex items-center text-sm"><i class="fa-solid fa-list-check mr-2 text-base"></i>Propriété</h4>' + CONTENT)
+      '<div class="p-5 rounded-2xl bg-brand-light border border-rule my-6"><h4 class="text-brand font-bold mb-3 flex items-center text-sm"><i class="fa-solid fa-list-check mr-2 text-base"></i>Propriété</h4>' + CONTENT)
     p = p.replace(/\\end\{(propriete|property)\}/gis, '</div></div>')
 
     // Méthode — liseré or (ajout Chahd : utilisée par le livre)
