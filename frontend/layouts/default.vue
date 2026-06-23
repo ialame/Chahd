@@ -9,11 +9,24 @@ const links = [
 ]
 
 const { user, estConnecte, estAdmin, deconnexion } = useAuth()
+const { get } = useApi()
 const router = useRouter()
 function seDeconnecter() {
   deconnexion()
   router.push('/')
 }
+
+// Nombre de fiches à réviser aujourd'hui (badge de navigation).
+const revisionDue = ref(0)
+async function chargerRevision() {
+  if (!estConnecte.value) { revisionDue.value = 0; return }
+  try {
+    const s = await get<{ dueAujourdhui: number }>('/revision/stats')
+    revisionDue.value = s.dueAujourdhui
+  } catch { revisionDue.value = 0 }
+}
+onMounted(chargerRevision)
+watch(estConnecte, chargerRevision)
 </script>
 
 <template>
@@ -38,11 +51,22 @@ function seDeconnecter() {
 
           <template v-if="estConnecte">
             <NuxtLink
-              to="/mon-avancement"
+              to="/reviser"
+              class="relative rounded-lg px-3 py-1.5 font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900"
+              active-class="!bg-brand/10 !text-brand-dark"
+            >
+              <i class="fa-solid fa-layer-group" /> Réviser
+              <span
+                v-if="revisionDue > 0"
+                class="absolute -right-1 -top-1 inline-flex h-4 min-w-4 items-center justify-center rounded-full bg-brand px-1 text-[10px] font-bold text-white"
+              >{{ revisionDue }}</span>
+            </NuxtLink>
+            <NuxtLink
+              to="/tableau-de-bord"
               class="rounded-lg px-3 py-1.5 font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900"
               active-class="!bg-brand/10 !text-brand-dark"
             >
-              <i class="fa-solid fa-chart-simple" /> Mon avancement
+              <i class="fa-solid fa-chart-simple" /> Tableau de bord
             </NuxtLink>
             <NuxtLink
               v-if="estAdmin" to="/suivi"

@@ -62,6 +62,12 @@ const cleSel = (s: Sel) => {
 }
 const estSelectionne = (s: Sel) => selection.value != null && cleSel(selection.value) === cleSel(s)
 
+// Leçon courante (pour les actions « marquer comme lu / à revoir »), si la sélection en porte une.
+const leconSel = computed(() => {
+  const s = selection.value
+  return s && 'lecon' in s ? s.lecon : null
+})
+
 // Bouton principal d'une annale : ouvre la transcription si elle existe,
 // sinon le sujet PDF (cas des annales sans transcription, ex. Physique-Chimie).
 function ouvrirAnnale(a: AnnaleDtoLite) {
@@ -311,6 +317,13 @@ const itemClass = (on: boolean) =>
 
         <article v-else class="card space-y-4">
           <h2 class="text-xl font-bold text-slate-900">{{ titreSelection }}</h2>
+
+          <LeconActions
+            v-if="leconSel"
+            :key="leconSel.id"
+            :lecon-id="leconSel.id"
+            :has-fiches="leconSel.aFiches"
+          />
 
           <p v-if="loading" class="text-center text-sm text-slate-400 py-10">Chargement…</p>
 
