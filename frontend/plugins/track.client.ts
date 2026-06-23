@@ -8,8 +8,6 @@ export default defineNuxtPlugin(() => {
     '/': 'Accueil',
     '/matieres': 'Matières',
     '/annales': 'Annales (liste)',
-    '/exercices': 'Exercices (liste)',
-    '/problemes': 'Problèmes (liste)',
     '/planning': 'Planning'
   }
 
