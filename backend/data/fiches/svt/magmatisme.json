@@ -1,0 +1,12 @@
+[
+  {"question": "Comment naissent les magmas ?", "reponse": "Par **fusion partielle** des **péridotites** du manteau."},
+  {"question": "Quels mécanismes déclenchent la fusion ?", "reponse": "La **décompression** (dorsales), l'**hydratation** (subduction, l'eau abaisse le solidus) et l'**apport de chaleur** (points chauds)."},
+  {"question": "Comment la fusion se produit-elle à une dorsale ?", "reponse": "Par **décompression** : la péridotite remonte, la pression chute et franchit le **solidus**."},
+  {"question": "Comment la fusion se produit-elle en subduction ?", "reponse": "Par **hydratation** : l'eau libérée par la plaque plongeante **abaisse le solidus** de la péridotite."},
+  {"question": "Que donne un refroidissement lent en profondeur ?", "reponse": "Des roches **plutoniques** à structure **grenue** (gros cristaux visibles) : **granite**, **gabbro**."},
+  {"question": "Que donne un refroidissement rapide en surface ?", "reponse": "Des roches **volcaniques** à structure **microlitique** (verre + microlites) : **basalte**, **andésite**."},
+  {"question": "Qu'est-ce qu'une structure grenue ?", "reponse": "Une roche **entièrement cristallisée** en cristaux **jointifs et visibles** (refroidissement lent, plutonique)."},
+  {"question": "Qu'est-ce qu'une structure microlitique ?", "reponse": "De petits cristaux (microlites) noyés dans un **verre** (refroidissement rapide, volcanique)."},
+  {"question": "Quelles roches caractérisent le magmatisme des dorsales ?", "reponse": "Un magma **basaltique** (fluide) : **basalte** (volcanique) et **gabbro** (plutonique)."},
+  {"question": "Quelles roches caractérisent le magmatisme de subduction ?", "reponse": "Un magma riche en **silice** (visqueux) : **andésite** et **granodiorite** ; volcanisme **explosif**."}
+]
