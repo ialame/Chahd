@@ -87,3 +87,8 @@ svt-2019-normale-sujet	https://www.alloschool.com/assets/documents/course-399/ex
 svt-2019-normale-corrige	https://www.alloschool.com/assets/documents/course-399/examen-national-svt-sciences-physiques-2019-normale-corrige.pdf
 svt-2019-rattrapage-sujet	https://www.alloschool.com/assets/documents/course-399/examen-national-svt-sciences-physiques-2019-rattrapage-sujet.pdf
 svt-2019-rattrapage-corrige	https://www.alloschool.com/assets/documents/course-399/examen-national-svt-sciences-physiques-2019-rattrapage-corrige.pdf
+
+# ===== ANGLAIS (course-107) =====
+# Examen national d'anglais (2 Bac) — sujets + corrigés, 2019-2025.
+# Pattern : course-107/examen-anglais-<annee>-session-<normale|rattrapage>-<sujet|corrige>.pdf
+# (2020 : session normale uniquement ; 2021/2022 rattrapage : corrigé indisponible)
