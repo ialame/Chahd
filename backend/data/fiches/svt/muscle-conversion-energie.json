@@ -1,0 +1,13 @@
+[
+  {"question": "Quelle est l'organisation du muscle squelettique ?", "reponse": "Muscle $\\rightarrow$ **faisceaux** $\\rightarrow$ **fibres musculaires** (cellules) $\\rightarrow$ **myofibrilles** $\\rightarrow$ **sarcomères**."},
+  {"question": "Qu'est-ce qu'un sarcomère ?", "reponse": "L'**unité contractile**, comprise entre deux **stries Z**, formée de filaments fins d'**actine** et de filaments épais de **myosine**."},
+  {"question": "À quoi correspond la striation du muscle ?", "reponse": "À l'alternance de **bandes sombres** (A, myosine), de **bandes claires** (I, de part et d'autre de la strie Z) et de la **zone H** (centre de la bande sombre)."},
+  {"question": "Quel est le mécanisme de la contraction musculaire ?", "reponse": "Le **glissement des filaments d'actine entre les filaments de myosine** (tirés par les têtes de myosine)."},
+  {"question": "Que devient le sarcomère lors de la contraction ?", "reponse": "Il se **raccourcit** : la **bande claire (I)** et la **zone H** se raccourcissent, la **bande sombre (A)** reste **constante**."},
+  {"question": "Qu'enregistre un myogramme ?", "reponse": "La **secousse musculaire** : phase de latence, contraction, puis relâchement."},
+  {"question": "Quelle est la source directe d'énergie de la contraction ?", "reponse": "L'**hydrolyse de l'ATP** : $ATP \\rightarrow ADP + P_i + \\text{énergie}$ (par la myosine ATPase)."},
+  {"question": "Pourquoi l'ATP doit-il être régénéré en permanence ?", "reponse": "Parce que le **stock d'ATP musculaire est très limité**."},
+  {"question": "En quoi consiste la voie de la créatine phosphate ?", "reponse": "$\\text{phosphocréatine} + ADP \\rightarrow ATP + \\text{créatine}$ : **immédiate** (anaérobie alactique), très rapide mais de courte durée."},
+  {"question": "En quoi consiste la voie de la fermentation lactique ?", "reponse": "Glycolyse $\\rightarrow$ **lactate** (anaérobie lactique) : rapide, pour les **efforts intenses et brefs**."},
+  {"question": "En quoi consiste la voie de la respiration ?", "reponse": "Oxydation complète du glucose dans la **mitochondrie** (aérobie) : rendement **élevé**, pour les **efforts d'endurance**."}
+]
