@@ -1,0 +1,12 @@
+[
+  {"question": "Sur combien de points l'étude de texte est-elle généralement notée ?", "reponse": "Sur **10 points** ; la rédaction compte pour les **10 autres**."},
+  {"question": "Quelles informations le chapeau introductif donne-t-il ?", "reponse": "L'**auteur**, l'**œuvre**, le **contexte** et parfois le **genre** : il faut toujours l'exploiter."},
+  {"question": "Quelles sont les étapes d'une bonne lecture du texte ?", "reponse": "Une **première lecture** (thème, tonalité), une **deuxième** (genre, énonciateur), puis une **lecture-crayon** qui souligne les indices."},
+  {"question": "Qu'attend-on d'une question de contextualisation (situation du passage) ?", "reponse": "Replacer l'extrait dans l'**œuvre** : ce qui se passe **avant** et **après**, en précisant auteur et titre."},
+  {"question": "Comment répondre à une question de compréhension ?", "reponse": "En **reformulant** le sens explicite avec ses **propres mots**, sans recopier des phrases entières."},
+  {"question": "Quels sont les trois temps de l'analyse d'une figure de style ?", "reponse": "**Citer** le passage, **nommer** la figure, puis **expliquer l'effet** produit."},
+  {"question": "Qu'appelle-t-on l'énonciation dans un texte ?", "reponse": "Le repérage de **qui parle**, **à qui**, et des **marques** (première personne, présent, modalisateurs)."},
+  {"question": "Quelles sont les trois focalisations possibles ?", "reponse": "La focalisation **interne** (yeux d'un personnage), **externe** (témoin extérieur) et **zéro** (narrateur omniscient)."},
+  {"question": "Cite trois registres que l'on peut être amené à identifier.", "reponse": "Le **pathétique**, le **tragique**, le **comique**, l'**ironique**, le **polémique** ou le **lyrique**."},
+  {"question": "Quelles sont les principales erreurs à éviter ?", "reponse": "Répondre à côté de la consigne, **recopier** sans reformuler, oublier la **citation** et négliger l'**effet** des figures."}
+]

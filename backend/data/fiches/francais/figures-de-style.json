@@ -1,0 +1,12 @@
+[
+  {"question": "Quelle figure rapproche deux éléments à l'aide d'un **outil** (*comme*, *tel*, *pareil à*) ?", "reponse": "La **comparaison**. Ex. : *Ses mains étaient froides comme deux galets.*"},
+  {"question": "Quelle figure rapproche deux réalités **sans outil de comparaison** ?", "reponse": "La **métaphore**. Ex. : *Une mer de blé ondulait jusqu'à l'horizon.*"},
+  {"question": "Identifie la figure : *Le vent murmurait des secrets à l'oreille des volets.*", "reponse": "Une **personnification** : on prête des traits humains au vent."},
+  {"question": "Identifie la figure : *Je t'ai attendu pendant des siècles devant cette porte.*", "reponse": "Une **hyperbole** : c'est une exagération."},
+  {"question": "Quelle figure réunit côte à côte deux termes **contraires** (ex. *un silence assourdissant*) ?", "reponse": "L'**oxymore**."},
+  {"question": "Identifie la figure : *Il était inquiet, puis anxieux, puis fou de terreur.*", "reponse": "Une **gradation** (intensité croissante)."},
+  {"question": "Quelle figure **atténue** une réalité dure, comme *il nous a quittés* pour dire *il est mort* ?", "reponse": "L'**euphémisme**."},
+  {"question": "Quelle figure dit **moins pour suggérer plus**, comme *ce n'est pas mauvais du tout* (= excellent) ?", "reponse": "La **litote**."},
+  {"question": "Identifie la figure : *L'astre du jour se couchait derrière les collines.* (= le soleil)", "reponse": "Une **périphrase** : une expression remplace le mot *soleil*."},
+  {"question": "Quel **registre** vise à inspirer la **pitié** face à la souffrance ?", "reponse": "Le registre **pathétique**."}
+]
