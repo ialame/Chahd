@@ -1,0 +1,13 @@
+[
+  {"question": "Où se déroule la glycolyse et nécessite-t-elle du dioxygène ?", "reponse": "Dans le **hyaloplasme** (cytoplasme), **sans** dioxygène."},
+  {"question": "Quel est le bilan de la glycolyse ?", "reponse": "Glucose $\\rightarrow$ **2 acides pyruviques + 2 ATP + 2 $NADH,H^+$**."},
+  {"question": "Qu'est-ce que la fermentation et à quoi sert-elle ?", "reponse": "Voie **anaérobie** qui transforme le pyruvate pour **régénérer le $NAD^+$** nécessaire à la glycolyse. Rendement faible : 2 ATP."},
+  {"question": "Quels sont les deux types de fermentation ?", "reponse": "**Lactique** (pyruvate $\\rightarrow$ lactate) et **alcoolique** (pyruvate $\\rightarrow$ éthanol + $CO_2$)."},
+  {"question": "Où se déroule la respiration cellulaire ?", "reponse": "Dans la **mitochondrie**, en **présence de dioxygène**."},
+  {"question": "Quelle est la structure de la mitochondrie ?", "reponse": "Deux membranes (**externe** et **interne** repliée en **crêtes**) délimitant l'**espace intermembranaire** et la **matrice**."},
+  {"question": "Que se passe-t-il dans la matrice mitochondriale ?", "reponse": "Le **cycle de Krebs** : décarboxylation et oxydation du pyruvate $\\rightarrow$ $CO_2$ + transporteurs réduits ($NADH,H^+$, $FADH_2$)."},
+  {"question": "Quel est le rôle de la chaîne respiratoire ?", "reponse": "Réoxyder $NADH,H^+$ et $FADH_2$ : transfert des électrons jusqu'au dioxygène, créant un **gradient de protons $H^+$**."},
+  {"question": "Quel est l'accepteur final d'électrons de la chaîne respiratoire ?", "reponse": "Le **dioxygène** : $\\tfrac{1}{2}O_2 \\rightarrow H_2O$."},
+  {"question": "Comment l'ATP est-il produit lors de la phosphorylation oxydative ?", "reponse": "Par le **retour des protons $H^+$** à travers l'**ATP synthase**."},
+  {"question": "Comparer le rendement de la respiration et de la fermentation.", "reponse": "Respiration : oxydation **complète**, $\\approx 36$ ATP ; fermentation : dégradation **incomplète**, **2 ATP** par glucose."}
+]
