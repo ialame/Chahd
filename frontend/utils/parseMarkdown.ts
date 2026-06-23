@@ -115,6 +115,17 @@ export function parseMarkdown(text: string, hardBreaks = false): string {
       '<div class="p-4 rounded-xl bg-yellow-50 border border-yellow-200 my-4"><h4 class="text-yellow-700 font-bold mb-2 flex items-center text-xs"><i class="fa-solid fa-circle-exclamation mr-2"></i>Remarque</h4>' + CONTENT)
     p = p.replace(/\\end\{(remarque|remark)\}/gis, '</div></div>')
 
+    // Encadrés arabes (philosophie) — RTL, libellés en arabe
+    p = p.replace(/\\begin\{ishkal\}/gis,
+      '<div dir="rtl" class="p-4 rounded-xl bg-cyan-50 border border-cyan-200 my-4"><h4 class="text-cyan-800 font-bold mb-2 text-sm">إشكال</h4>' + CONTENT)
+    p = p.replace(/\\end\{ishkal\}/gis, '</div></div>')
+    p = p.replace(/\\begin\{khulasa\}/gis,
+      '<div dir="rtl" class="p-4 rounded-xl bg-[#f3f6f1] border border-[#dde6d6] my-4"><h4 class="text-[#4a7340] font-bold mb-2 text-sm">خلاصة</h4>' + CONTENT)
+    p = p.replace(/\\end\{khulasa\}/gis, '</div></div>')
+    p = p.replace(/\\begin\{mawqif\}\[(.*?)\]/gis,
+      '<div dir="rtl" class="my-3 border-r-[3px] border-cyan-600 pr-4"><h4 class="text-cyan-800 font-bold mb-1 text-sm">$1</h4>' + CONTENT)
+    p = p.replace(/\\end\{mawqif\}/gis, '</div></div>')
+
     // Démonstration / Solution — repliables
     p = p.replace(/\\begin\{(demonstration|proof)\}\[(.*?)\]/gis,
       '<details class="group my-6 border border-[#e2d8c9] rounded-2xl bg-[#faf8f5] overflow-hidden"><summary class="flex items-center justify-between p-4 cursor-pointer text-xs font-bold text-gray-500 hover:text-gray-900 select-none"><div class="flex items-center"><i class="fa-solid fa-key mr-2 text-emerald-700"></i>Démonstration ($2)</div><span class="transition-transform group-open:rotate-180"><i class="fa-solid fa-chevron-down"></i></span></summary><div class="p-4 pt-0 border-t border-[#e2d8c9] bg-white text-gray-700 leading-relaxed font-sans text-xs select-text">')
