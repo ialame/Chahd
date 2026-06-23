@@ -12,11 +12,11 @@ watch(() => props.sujet, () => { for (const k of Object.keys(open)) delete open[
 
 <template>
   <div class="space-y-5">
-    <div v-if="view.preambleHtml" class="leading-relaxed text-slate-700" v-html="view.preambleHtml" />
+    <div v-if="view.preambleHtml" class="leading-relaxed text-[#6b5f57]" v-html="view.preambleHtml" />
 
     <section v-for="(sec, i) in view.sections" :key="i" class="space-y-3">
       <!-- Énoncé -->
-      <div class="leading-relaxed text-slate-700" v-html="sec.enonceHtml" />
+      <div class="leading-relaxed text-[#6b5f57]" v-html="sec.enonceHtml" />
 
       <!-- Bouton solution + corrigé repliable -->
       <template v-if="sec.corrigeHtml">
@@ -33,10 +33,10 @@ watch(() => props.sujet, () => { for (const k of Object.keys(open)) delete open[
           <div class="mb-2 flex items-center gap-1.5 text-sm font-bold text-emerald-700">
             <i class="fa-solid fa-check-double" /> Corrigé
           </div>
-          <div class="leading-relaxed text-slate-700" v-html="sec.corrigeHtml" />
+          <div class="leading-relaxed text-[#6b5f57]" v-html="sec.corrigeHtml" />
         </div>
       </template>
-      <p v-else class="text-xs italic text-slate-400">Corrigé non disponible.</p>
+      <p v-else class="text-xs italic text-[#a8998a]">Corrigé non disponible.</p>
     </section>
   </div>
 </template>

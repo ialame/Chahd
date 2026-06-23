@@ -30,17 +30,17 @@ async function marquer(s: string) {
 </script>
 
 <template>
-  <div v-if="estConnecte" class="flex flex-wrap items-center gap-2 border-b border-slate-100 pb-3 text-sm">
+  <div v-if="estConnecte" class="flex flex-wrap items-center gap-2 border-b border-rule pb-3 text-sm">
     <button
-      class="rounded-lg border px-3 py-1.5 font-medium transition-colors"
-      :class="statut === 'LU' ? 'border-emerald-300 bg-emerald-50 text-emerald-700' : 'border-slate-200 text-slate-600 hover:bg-slate-50'"
+      class="rounded border px-3 py-1.5 font-medium transition-colors"
+      :class="statut === 'LU' ? 'border-theo/40 bg-theo/10 text-theo' : 'border-rule text-[#6b5f57] hover:bg-paper'"
       @click="marquer('LU')"
     >
-      <i class="fa-solid fa-check" /> {{ statut === 'LU' ? 'Lu ✓' : 'Marquer comme lu' }}
+      <i class="fa-solid fa-check" /> {{ statut === 'LU' ? 'Lu' : 'Marquer comme lu' }}
     </button>
     <button
-      class="rounded-lg border px-3 py-1.5 font-medium transition-colors"
-      :class="statut === 'A_REVOIR' ? 'border-amber-300 bg-amber-50 text-amber-700' : 'border-slate-200 text-slate-600 hover:bg-slate-50'"
+      class="rounded border px-3 py-1.5 font-medium transition-colors"
+      :class="statut === 'A_REVOIR' ? 'border-amber-300 bg-amber-50 text-amber-700' : 'border-rule text-[#6b5f57] hover:bg-paper'"
       @click="marquer('A_REVOIR')"
     >
       <i class="fa-solid fa-flag" /> À revoir
@@ -48,7 +48,7 @@ async function marquer(s: string) {
     <NuxtLink
       v-if="hasFiches"
       :to="`/reviser?lecon=${leconId}`"
-      class="ml-auto rounded-lg bg-brand px-3 py-1.5 font-semibold text-white hover:bg-brand-dark"
+      class="ml-auto rounded bg-brand px-3 py-1.5 font-semibold text-white hover:bg-brand-dark"
     >
       <i class="fa-solid fa-layer-group" /> Réviser ces fiches
     </NuxtLink>

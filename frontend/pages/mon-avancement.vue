@@ -78,13 +78,13 @@ const noteParChapitre = computed(() => {
 const chapitres = computed(() =>
   (lecons.value ?? []).map((l) => {
     const items: { label: string; done: boolean; note?: number }[] = []
-    if (l.aContenu) items.push({ label: '📘 Cours', done: faitsSet.value.has(l.slug + '|cours') })
-    if (l.aExercices) items.push({ label: '✅ Exos', done: faitsSet.value.has(l.slug + '|exercices') })
-    if (l.aProblemes) items.push({ label: '🧩 Pb', done: faitsSet.value.has(l.slug + '|problemes') })
-    if (l.aFiches) items.push({ label: '🗂 Fiches', done: faitsSet.value.has(l.slug + '|fiches') })
+    if (l.aContenu) items.push({ label: 'Cours', done: faitsSet.value.has(l.slug + '|cours') })
+    if (l.aExercices) items.push({ label: 'Exos', done: faitsSet.value.has(l.slug + '|exercices') })
+    if (l.aProblemes) items.push({ label: 'Pb', done: faitsSet.value.has(l.slug + '|problemes') })
+    if (l.aFiches) items.push({ label: 'Fiches', done: faitsSet.value.has(l.slug + '|fiches') })
     if (l.quizId) {
       const note = noteParChapitre.value[l.slug]
-      items.push({ label: '📋 QCM', done: note != null, note })
+      items.push({ label: 'QCM', done: note != null, note })
     }
     return { slug: l.slug, titre: l.titre, items, fait: items.filter((i) => i.done).length, total: items.length }
   })
@@ -96,8 +96,8 @@ function heure(iso: string): string {
   return new Date(iso).toLocaleDateString('fr-FR', { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' })
 }
 const ITEM_LABEL: Record<string, string> = {
-  cours: '📘 Cours', exercices: '✅ Exercices', problemes: '🧩 Problèmes', fiches: '🗂 Fiches',
-  quiz: '📋 QCM', annale: '📄 Annale', pdf: '📄 PDF', page: '🔖 Page'
+  cours: 'Cours', exercices: 'Exercices', problemes: 'Problèmes', fiches: 'Fiches',
+  quiz: 'QCM', annale: 'Annale', pdf: 'PDF', page: 'Page'
 }
 </script>
 
@@ -105,10 +105,10 @@ const ITEM_LABEL: Record<string, string> = {
   <div class="mx-auto max-w-3xl space-y-6">
     <!-- Non connecté -->
     <div v-if="!estConnecte" class="card mx-auto max-w-md space-y-3 text-center">
-      <h1 class="text-xl font-bold text-slate-900">📈 Mon avancement</h1>
-      <p class="text-sm text-slate-500">Connecte-toi pour suivre ta progression.</p>
+      <h1 class="text-xl font-bold text-ink">Mon avancement</h1>
+      <p class="text-sm text-[#a8998a]">Connecte-toi pour suivre ta progression.</p>
       <NuxtLink to="/connexion?redirect=/mon-avancement" class="btn-primary inline-block">Se connecter</NuxtLink>
-      <p class="text-sm text-slate-500">
+      <p class="text-sm text-[#a8998a]">
         Pas de compte ?
         <NuxtLink to="/inscription" class="font-semibold text-brand hover:underline">S'inscrire</NuxtLink>
       </p>
@@ -116,22 +116,22 @@ const ITEM_LABEL: Record<string, string> = {
 
     <template v-else>
       <header>
-        <h1 class="text-2xl font-bold text-slate-900">Bonjour {{ user?.nom }} 👋</h1>
-        <p class="text-sm text-slate-500">Voici ta progression en mathématiques.</p>
+        <h1 class="text-2xl font-bold text-ink">Bonjour {{ user?.nom }}</h1>
+        <p class="text-sm text-[#a8998a]">Voici ta progression en mathématiques.</p>
       </header>
 
       <!-- Avancement global -->
       <div class="card space-y-2">
         <div class="flex items-center justify-between">
-          <span class="font-semibold text-slate-800">Avancement — Maths</span>
-          <span class="text-3xl font-extrabold text-brand-dark">{{ taux }}%</span>
+          <span class="font-semibold text-ink">Avancement — Maths</span>
+          <span class="font-serif text-3xl font-extrabold text-brand">{{ taux }}%</span>
         </div>
-        <div class="h-3 overflow-hidden rounded-full bg-slate-100">
+        <div class="h-3 overflow-hidden rounded-full bg-rule">
           <div class="h-full bg-brand transition-all" :style="{ width: taux + '%' }" />
         </div>
-        <div class="flex flex-wrap gap-4 pt-1 text-xs text-slate-500">
+        <div class="flex flex-wrap gap-4 pt-1 text-xs text-[#a8998a]">
           <span>{{ itemsConsultes + quizDone }} / {{ totalItemsMaths }} éléments abordés</span>
-          <span v-if="moyenneQcm != null">Moyenne QCM : <b class="text-slate-700">{{ moyenneQcm }}/20</b></span>
+          <span v-if="moyenneQcm != null">Moyenne QCM : <b class="text-[#6b5f57]">{{ moyenneQcm }}/20</b></span>
         </div>
       </div>
 
@@ -143,30 +143,30 @@ const ITEM_LABEL: Record<string, string> = {
       >
         <div>
           <p class="text-xs font-semibold uppercase tracking-wide text-brand">Continue ici</p>
-          <p class="font-semibold text-slate-800">{{ prochain.titre }}</p>
-          <p class="text-xs text-slate-400">{{ prochain.fait }}/{{ prochain.total }} éléments faits</p>
+          <p class="font-semibold text-ink">{{ prochain.titre }}</p>
+          <p class="text-xs text-[#a8998a]">{{ prochain.fait }}/{{ prochain.total }} éléments faits</p>
         </div>
         <i class="fa-solid fa-arrow-right text-brand" />
       </NuxtLink>
-      <div v-else class="card text-center text-emerald-700">
-        🎉 Bravo, tu as parcouru tout le programme de maths !
+      <div v-else class="card text-center text-theo">
+        Bravo, tu as parcouru tout le programme de maths !
       </div>
 
       <!-- Détail par chapitre -->
       <div class="card">
-        <h2 class="mb-3 font-semibold text-slate-800">Chapitre par chapitre</h2>
+        <h2 class="mb-3 font-semibold text-ink">Chapitre par chapitre</h2>
         <ul class="space-y-3">
           <li v-for="c in chapitres" :key="c.slug">
             <div class="mb-1 flex items-center justify-between">
-              <span class="text-sm font-medium text-slate-700">{{ c.titre }}</span>
-              <span class="font-mono text-xs" :class="c.fait === c.total ? 'text-emerald-600' : 'text-slate-400'">{{ c.fait }}/{{ c.total }}</span>
+              <span class="text-sm font-medium text-[#6b5f57]">{{ c.titre }}</span>
+              <span class="font-mono text-xs" :class="c.fait === c.total ? 'text-theo' : 'text-[#a8998a]'">{{ c.fait }}/{{ c.total }}</span>
             </div>
             <div class="flex flex-wrap gap-1.5">
               <span
                 v-for="(it, i) in c.items"
                 :key="i"
                 class="inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-[11px] font-medium"
-                :class="it.done ? 'border-emerald-200 bg-emerald-50 text-emerald-700' : 'border-slate-200 bg-slate-50 text-slate-400'"
+                :class="it.done ? 'border-theo/30 bg-theo/10 text-theo' : 'border-rule bg-paper text-[#a8998a]'"
               >
                 {{ it.label }}
                 <template v-if="it.note != null"> · {{ it.note }}/20</template>
@@ -179,18 +179,18 @@ const ITEM_LABEL: Record<string, string> = {
 
       <!-- Scores QCM -->
       <div v-if="quizScores.length" class="card">
-        <h2 class="mb-2 font-semibold text-slate-800">Mes scores aux QCM</h2>
+        <h2 class="mb-2 font-semibold text-ink">Mes scores aux QCM</h2>
         <ul class="space-y-1 text-sm">
           <li v-for="(q, i) in quizScores.slice(0, 12)" :key="i" class="flex items-center justify-between">
-            <span class="truncate text-slate-700">{{ q.label }}</span>
-            <span class="ml-3 shrink-0 font-bold" :class="(q.note ?? 0) >= 10 ? 'text-green-600' : 'text-red-600'">
-              {{ q.note }}/20 <span class="font-normal text-slate-400">· {{ heure(q.creeLe) }}</span>
+            <span class="truncate text-[#6b5f57]">{{ q.label }}</span>
+            <span class="ml-3 shrink-0 font-bold" :class="(q.note ?? 0) >= 10 ? 'text-theo' : 'text-red-600'">
+              {{ q.note }}/20 <span class="font-normal text-[#a8998a]">· {{ heure(q.creeLe) }}</span>
             </span>
           </li>
         </ul>
       </div>
 
-      <div v-if="activites.length === 0" class="card text-center text-sm text-slate-400">
+      <div v-if="activites.length === 0" class="card text-center text-sm text-[#a8998a]">
         Tu n'as pas encore d'activité. Ouvre un cours ou fais un QCM pour démarrer !
       </div>
     </template>
