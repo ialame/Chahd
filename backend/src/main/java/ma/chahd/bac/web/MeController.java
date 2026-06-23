@@ -60,6 +60,12 @@ public class MeController {
         return dashboard.historiqueScores(userId());
     }
 
+    /** Score moyen par chapitre (répartition en barres). */
+    @GetMapping("/scores-par-chapitre")
+    public List<ma.chahd.bac.web.dto.ChapitreScoreDto> scoresParChapitre() {
+        return dashboard.scoresParChapitre(userId());
+    }
+
     /** États de progression des leçons (LU | A_REVOIR) de l'utilisateur. */
     @GetMapping("/progression")
     public List<ProgressionLeconDto> progression() {

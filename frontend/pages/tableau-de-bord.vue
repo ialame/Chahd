@@ -28,20 +28,29 @@ interface ScorePoint {
   matiereSlug: string | null
   quizTitre: string | null
 }
+interface ChapitreScore {
+  matiereSlug: string | null
+  leconTitre: string
+  noteSur20: number
+  quizFaits: number
+}
 
 const data = ref<TableauBord | null>(null)
 const scores = ref<ScorePoint[]>([])
+const chapitres = ref<ChapitreScore[]>([])
 const chargement = ref(true)
 
 async function charger() {
   chargement.value = true
   try {
-    const [tb, sc] = await Promise.all([
+    const [tb, sc, ch] = await Promise.all([
       get<TableauBord>('/me/tableau-de-bord'),
-      get<ScorePoint[]>('/me/historique-scores')
+      get<ScorePoint[]>('/me/historique-scores'),
+      get<ChapitreScore[]>('/me/scores-par-chapitre')
     ])
     data.value = tb
     scores.value = sc
+    chapitres.value = ch
   } finally {
     chargement.value = false
   }
@@ -111,6 +120,9 @@ function couleurNote(n: number | null) {
 
       <!-- Courbe d'évolution des scores -->
       <ScoreChart :points="scores" />
+
+      <!-- Répartition des scores par chapitre -->
+      <ChapitreScores :items="chapitres" />
 
       <!-- Par matière -->
       <div class="space-y-3">

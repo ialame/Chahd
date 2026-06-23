@@ -110,6 +110,56 @@ public class DashboardService {
         return new TableauBordDto(fichesDuesGlobal, fiches.size(), quizFaitsGlobal, moyenneGlobale, parMatiere);
     }
 
+    /** Score moyen par chapitre (leçon) : meilleure note par QCM, moyennée sur les QCM de la leçon. */
+    @Transactional(readOnly = true)
+    public List<ma.chahd.bac.web.dto.ChapitreScoreDto> scoresParChapitre(Long userId) {
+        Map<Long, Double> meilleureNote = new HashMap<>();
+        for (QuizTentative t : tentatives.findByUtilisateurId(userId)) {
+            meilleureNote.merge(t.getQuizId(), t.getNoteSur20(), Math::max);
+        }
+        if (meilleureNote.isEmpty()) return List.of();
+
+        Map<Long, Quiz> quizParId = new HashMap<>();
+        quizzes.findAllById(meilleureNote.keySet()).forEach(q -> quizParId.put(q.getId(), q));
+
+        // Agrégation par leçon : somme des notes + nombre de QCM.
+        Map<Long, double[]> agg = new HashMap<>();
+        Map<Long, Quiz> exemplaire = new HashMap<>();
+        for (Map.Entry<Long, Double> e : meilleureNote.entrySet()) {
+            Quiz q = quizParId.get(e.getKey());
+            if (q == null || q.getLecon() == null) continue;
+            Long leconId = q.getLecon().getId();
+            double[] a = agg.computeIfAbsent(leconId, k -> new double[2]);
+            a[0] += e.getValue();
+            a[1] += 1;
+            exemplaire.putIfAbsent(leconId, q);
+        }
+
+        List<Map.Entry<Long, double[]>> entries = new ArrayList<>(agg.entrySet());
+        entries.sort(Comparator
+                .comparingInt((Map.Entry<Long, double[]> en) -> ordreMatiere(exemplaire.get(en.getKey())))
+                .thenComparingInt(en -> ordreLecon(exemplaire.get(en.getKey()))));
+
+        List<ma.chahd.bac.web.dto.ChapitreScoreDto> out = new ArrayList<>();
+        for (Map.Entry<Long, double[]> en : entries) {
+            Quiz q = exemplaire.get(en.getKey());
+            double moy = en.getValue()[0] / en.getValue()[1];
+            String slug = q.getLecon().getMatiere() != null ? q.getLecon().getMatiere().getSlug() : null;
+            out.add(new ma.chahd.bac.web.dto.ChapitreScoreDto(slug, q.getLecon().getTitre(),
+                    Math.round(moy * 100.0) / 100.0, (int) en.getValue()[1]));
+        }
+        return out;
+    }
+
+    private int ordreLecon(Quiz q) {
+        return q != null && q.getLecon() != null && q.getLecon().getOrdre() != null ? q.getLecon().getOrdre() : 0;
+    }
+
+    private int ordreMatiere(Quiz q) {
+        return q != null && q.getLecon() != null && q.getLecon().getMatiere() != null
+                && q.getLecon().getMatiere().getOrdre() != null ? q.getLecon().getMatiere().getOrdre() : 0;
+    }
+
     /** Historique chronologique des tentatives de QCM (pour la courbe d'évolution des scores). */
     @Transactional(readOnly = true)
     public List<ScorePointDto> historiqueScores(Long userId) {
