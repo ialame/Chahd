@@ -54,6 +54,12 @@ public class MeController {
         return dashboard.tableauDeBord(userId());
     }
 
+    /** Historique des scores de QCM (courbe d'évolution dans le temps). */
+    @GetMapping("/historique-scores")
+    public List<ma.chahd.bac.web.dto.ScorePointDto> historiqueScores() {
+        return dashboard.historiqueScores(userId());
+    }
+
     /** États de progression des leçons (LU | A_REVOIR) de l'utilisateur. */
     @GetMapping("/progression")
     public List<ProgressionLeconDto> progression() {

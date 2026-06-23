@@ -3,20 +3,24 @@ package ma.chahd.bac.service;
 import ma.chahd.bac.domain.FicheRevision;
 import ma.chahd.bac.domain.LeconProgression;
 import ma.chahd.bac.domain.Matiere;
+import ma.chahd.bac.domain.Quiz;
 import ma.chahd.bac.domain.QuizTentative;
 import ma.chahd.bac.repository.*;
 import ma.chahd.bac.web.dto.MatiereProgressionDto;
+import ma.chahd.bac.web.dto.ScorePointDto;
 import ma.chahd.bac.web.dto.TableauBordDto;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 /** Synthèse de progression de l'utilisateur, agrégée par matière. */
 @Service
@@ -104,6 +108,26 @@ public class DashboardService {
                 : Math.round((meilleureNote.values().stream().mapToDouble(Double::doubleValue).average().orElse(0)) * 100.0) / 100.0;
 
         return new TableauBordDto(fichesDuesGlobal, fiches.size(), quizFaitsGlobal, moyenneGlobale, parMatiere);
+    }
+
+    /** Historique chronologique des tentatives de QCM (pour la courbe d'évolution des scores). */
+    @Transactional(readOnly = true)
+    public List<ScorePointDto> historiqueScores(Long userId) {
+        List<QuizTentative> tts = new ArrayList<>(tentatives.findByUtilisateurId(userId));
+        tts.sort(Comparator.comparing(QuizTentative::getCreeLe));
+        Set<Long> quizIds = tts.stream().map(QuizTentative::getQuizId).collect(Collectors.toSet());
+        Map<Long, Quiz> quizParId = new HashMap<>();
+        quizzes.findAllById(quizIds).forEach(q -> quizParId.put(q.getId(), q));
+
+        List<ScorePointDto> out = new ArrayList<>();
+        for (QuizTentative t : tts) {
+            Quiz q = quizParId.get(t.getQuizId());
+            String slug = (q != null && q.getLecon() != null && q.getLecon().getMatiere() != null)
+                    ? q.getLecon().getMatiere().getSlug() : null;
+            String titre = q != null ? q.getTitre() : null;
+            out.add(new ScorePointDto(t.getCreeLe(), t.getNoteSur20(), slug, titre));
+        }
+        return out;
     }
 
     @Transactional(readOnly = true)

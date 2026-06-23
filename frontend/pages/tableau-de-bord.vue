@@ -22,13 +22,26 @@ const { get } = useApi()
 const { estConnecte } = useAuth()
 const router = useRouter()
 
+interface ScorePoint {
+  date: string
+  noteSur20: number
+  matiereSlug: string | null
+  quizTitre: string | null
+}
+
 const data = ref<TableauBord | null>(null)
+const scores = ref<ScorePoint[]>([])
 const chargement = ref(true)
 
 async function charger() {
   chargement.value = true
   try {
-    data.value = await get<TableauBord>('/me/tableau-de-bord')
+    const [tb, sc] = await Promise.all([
+      get<TableauBord>('/me/tableau-de-bord'),
+      get<ScorePoint[]>('/me/historique-scores')
+    ])
+    data.value = tb
+    scores.value = sc
   } finally {
     chargement.value = false
   }
@@ -95,6 +108,9 @@ function couleurNote(n: number | null) {
           <p class="mt-2 text-xs text-slate-500">sur l'ensemble des matières</p>
         </div>
       </div>
+
+      <!-- Courbe d'évolution des scores -->
+      <ScoreChart :points="scores" />
 
       <!-- Par matière -->
       <div class="space-y-3">
