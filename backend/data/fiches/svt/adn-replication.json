@@ -1,0 +1,13 @@
+[
+  {"question": "Que porte la molécule d'ADN et où se trouve-t-elle ?", "reponse": "Elle porte l'**information génétique** ; elle est située dans le **noyau** (au sein des chromosomes)."},
+  {"question": "De quoi est constitué un nucléotide ?", "reponse": "D'un groupe **phosphate**, d'un sucre (**désoxyribose**) et d'une **base azotée** (A, T, C ou G)."},
+  {"question": "Quelles sont les quatre bases azotées de l'ADN ?", "reponse": "**Adénine (A)**, **thymine (T)**, **cytosine (C)** et **guanine (G)**."},
+  {"question": "Quelle est la structure de l'ADN ?", "reponse": "Une **double hélice** de deux brins **antiparallèles** et **complémentaires** (Watson et Crick)."},
+  {"question": "Quelle est la règle de complémentarité des bases ?", "reponse": "$A = T$ (2 liaisons hydrogène) et $C \\equiv G$ (3 liaisons hydrogène)."},
+  {"question": "Qu'est-ce qui porte l'information génétique dans l'ADN ?", "reponse": "La **séquence** (l'ordre) des nucléotides le long du brin."},
+  {"question": "Qu'est-ce qu'un gène ?", "reponse": "Une **portion d'ADN** responsable de l'expression d'un caractère."},
+  {"question": "Qu'est-ce que la réplication de l'ADN ?", "reponse": "La **copie** de l'ADN avant la division cellulaire (phase **S**) : la double hélice s'ouvre et chaque brin sert de **matrice**."},
+  {"question": "Pourquoi la réplication est-elle dite semi-conservative ?", "reponse": "Chaque molécule fille est formée d'un **brin parental** (ancien) et d'un **brin néoformé** (nouveau)."},
+  {"question": "Quelle enzyme intervient dans la réplication ?", "reponse": "L'**ADN polymérase**."},
+  {"question": "Quelle expérience a confirmé le modèle semi-conservatif ?", "reponse": "L'expérience de **Meselson et Stahl** (marquage de l'ADN à l'azote lourd $^{15}N$ puis $^{14}N$)."}
+]
