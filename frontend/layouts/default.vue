@@ -2,8 +2,6 @@
 const links = [
   { to: '/', label: 'Accueil' },
   { to: '/matieres', label: 'Matières' },
-  { to: '/exercices', label: 'Exercices' },
-  { to: '/problemes', label: 'Problèmes' },
   { to: '/annales', label: 'Annales' },
   { to: '/planning', label: 'Planning' }
 ]
