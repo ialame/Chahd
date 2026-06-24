@@ -1,5 +1,7 @@
 package ma.chahd.bac.web;
 
+import ma.chahd.bac.repository.UtilisateurRepository;
+import ma.chahd.bac.security.AuthContext;
 import ma.chahd.bac.service.CoursService;
 import ma.chahd.bac.web.dto.LeconContenuDto;
 import ma.chahd.bac.web.dto.LeconDto;
@@ -12,15 +14,26 @@ import java.util.List;
 public class CoursController {
 
     private final CoursService coursService;
+    private final UtilisateurRepository utilisateurRepository;
 
-    public CoursController(CoursService coursService) {
+    public CoursController(CoursService coursService, UtilisateurRepository utilisateurRepository) {
         this.coursService = coursService;
+        this.utilisateurRepository = utilisateurRepository;
     }
 
-    /** Liste des leçons (cours) d'une matière. */
+    /** Filière du compte connecté (null si non connecté → toutes les leçons). */
+    private String filiereCourante() {
+        Long id = AuthContext.userId();
+        if (id == null) return null;
+        return utilisateurRepository.findById(id)
+                .map(u -> u.getFiliere() != null ? u.getFiliere().getSlug() : null)
+                .orElse(null);
+    }
+
+    /** Liste des leçons (cours) d'une matière, filtrée par la filière du compte. */
     @GetMapping("/matieres/{slug}/cours")
     public List<LeconDto> list(@PathVariable String slug) {
-        return coursService.listCours(slug);
+        return coursService.listCours(slug, filiereCourante());
     }
 
     /** Contenu Markdown + LaTeX d'une leçon. */

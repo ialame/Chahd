@@ -4,6 +4,9 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /** Une leçon de cours (chapitre du livre), au contenu Markdown + LaTeX servi depuis le disque. */
 @Entity
 @Table(name = "lecon", uniqueConstraints = @UniqueConstraint(columnNames = {"matiere_id", "slug"}))
@@ -27,4 +30,11 @@ public class Lecon {
 
     @Column(nullable = false)
     private Integer ordre = 0;
+
+    /** Filières où cette leçon apparaît. Vide = visible par toutes les filières. */
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "lecon_filiere",
+            joinColumns = @JoinColumn(name = "lecon_id"),
+            inverseJoinColumns = @JoinColumn(name = "filiere_id"))
+    private Set<Filiere> filieres = new HashSet<>();
 }

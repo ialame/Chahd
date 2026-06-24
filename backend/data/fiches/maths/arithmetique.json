@@ -1,0 +1,42 @@
+[
+  {
+    "question": "Que signifie $b \\mid a$ pour deux entiers relatifs ?",
+    "reponse": "$b$ divise $a$, c'est-à-dire qu'il existe un entier $k \\in \\mathbb{Z}$ tel que $a = b \\times k$. On dit que $a$ est un multiple de $b$."
+  },
+  {
+    "question": "Énoncer le théorème de la division euclidienne de $a$ par $b$ (avec $b \\neq 0$).",
+    "reponse": "Il existe un unique couple $(q, r) \\in \\mathbb{Z}^2$ tel que $a = bq + r$ avec $0 \\le r < |b|$. $q$ est le quotient et $r$ le reste."
+  },
+  {
+    "question": "Quand a-t-on $a \\equiv b \\pmod{n}$ ?",
+    "reponse": "Lorsque $n$ divise $a - b$, ce qui équivaut à dire que $a$ et $b$ ont le même reste dans la division euclidienne par $n$."
+  },
+  {
+    "question": "Si $a \\equiv b \\pmod{n}$ et $c \\equiv d \\pmod{n}$, que peut-on dire des sommes et produits ?",
+    "reponse": "On a la compatibilité : $a + c \\equiv b + d \\pmod{n}$ et $a \\times c \\equiv b \\times d \\pmod{n}$. Par récurrence, $a^k \\equiv b^k \\pmod{n}$."
+  },
+  {
+    "question": "Quel est le reste de $2^{100}$ modulo $7$ ?",
+    "reponse": "Comme $2^3 = 8 \\equiv 1 \\pmod{7}$ et $100 = 3 \\times 33 + 1$, on a $2^{100} \\equiv 2 \\pmod{7}$. Le reste est $2$."
+  },
+  {
+    "question": "Sur quelle égalité repose l'algorithme d'Euclide ?",
+    "reponse": "Sur $\\text{pgcd}(a, b) = \\text{pgcd}(b, r)$ où $r$ est le reste de la division de $a$ par $b$. Le dernier reste non nul est le PGCD."
+  },
+  {
+    "question": "Quelle relation lie le PGCD et le PPCM de deux entiers naturels non nuls $a$ et $b$ ?",
+    "reponse": "$\\text{pgcd}(a, b) \\times \\text{ppcm}(a, b) = a \\times b$."
+  },
+  {
+    "question": "Énoncer le théorème de Bézout.",
+    "reponse": "Deux entiers $a$ et $b$ sont premiers entre eux ($\\text{pgcd}(a,b) = 1$) si et seulement s'il existe des entiers $u, v$ tels que $au + bv = 1$."
+  },
+  {
+    "question": "Énoncer le théorème de Gauss.",
+    "reponse": "Si $a \\mid bc$ et si $a$ et $b$ sont premiers entre eux ($\\text{pgcd}(a, b) = 1$), alors $a \\mid c$."
+  },
+  {
+    "question": "Qu'affirme le théorème fondamental de l'arithmétique ?",
+    "reponse": "Tout entier $n \\ge 2$ se décompose de manière unique (à l'ordre près) en produit de facteurs premiers : $n = p_1^{\\alpha_1} \\times \\cdots \\times p_k^{\\alpha_k}$."
+  }
+]

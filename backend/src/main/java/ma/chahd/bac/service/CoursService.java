@@ -62,6 +62,16 @@ public class CoursService {
     }
 
     public List<LeconDto> listCours(String matiereSlug) {
+        return listCours(matiereSlug, null);
+    }
+
+    /** Une leçon sans tag de filière est visible par tous ; sinon seulement par sa filière. */
+    private boolean visiblePour(Lecon l, String filiereSlug) {
+        if (l.getFilieres() == null || l.getFilieres().isEmpty() || filiereSlug == null) return true;
+        return l.getFilieres().stream().anyMatch(f -> f.getSlug().equals(filiereSlug));
+    }
+
+    public List<LeconDto> listCours(String matiereSlug, String filiereSlug) {
         // QCM rattachés à chaque leçon (plusieurs possibles), dans l'ordre.
         java.util.Map<Long, List<QuizRefDto>> quizParLecon = new java.util.HashMap<>();
         for (Quiz q : quizRepository.findByLecon_Matiere_SlugOrderByOrdreAsc(matiereSlug)) {
@@ -71,6 +81,7 @@ public class CoursService {
         }
         Set<String> bacSlugs = bacChapitres(matiereSlug);
         return leconRepository.findByMatiereSlugOrderByOrdreAsc(matiereSlug).stream()
+                .filter(l -> visiblePour(l, filiereSlug))
                 .map(l -> {
                     List<QuizRefDto> quizzes = quizParLecon.getOrDefault(l.getId(), List.of());
                     return new LeconDto(l.getId(), l.getSlug(), l.getTitre(), l.getOrdre(),
