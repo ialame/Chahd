@@ -35,7 +35,7 @@ def build_preamble(src_text: str) -> str:
         # bibliothèques courantes (intersections/fillbetween/etc.) pour fiabiliser la compilation
         "\\usetikzlibrary{calc,intersections,patterns,arrows.meta,positioning,"
         "decorations.pathmorphing,decorations.markings,shapes.geometric,shapes.misc,angles,quotes,matrix,babel}\n"
-        "\\usepgfplotslibrary{fillbetween}\n"
+        "\\usepgfplotslibrary{fillbetween,groupplots}\n"
         + libs + "\n" + colors + "\n" + macros + "\n"
     )
 
