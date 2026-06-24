@@ -24,6 +24,30 @@ const MACROS: Record<string, string> = {
 
 const CONTENT = '<div class="text-gray-700 leading-relaxed font-sans text-xs select-text">'
 
+// Coloration syntaxique Python légère, style « minted » (Pygments default) — sans dépendance.
+const PY_KEYWORDS = new Set(['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield'])
+const PY_BUILTINS = new Set(['abs', 'all', 'any', 'bool', 'chr', 'dict', 'divmod', 'enumerate', 'eval', 'filter', 'float', 'format', 'frozenset', 'input', 'int', 'isinstance', 'len', 'list', 'map', 'max', 'min', 'next', 'open', 'ord', 'pow', 'print', 'range', 'repr', 'reversed', 'round', 'set', 'sorted', 'str', 'sum', 'tuple', 'type', 'zip', 'append', 'pop', 'insert', 'remove', 'index', 'count', 'sort', 'keys', 'values', 'items', 'split', 'join', 'strip', 'upper', 'lower', 'replace', 'find'])
+const pyEsc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+function highlightPython(src: string): string {
+  const re = /(#[^\n]*)|('''[\s\S]*?'''|"""[\s\S]*?"""|'(?:\\.|[^'\\\n])*'|"(?:\\.|[^"\\\n])*")|(\b\d+\.?\d*\b)|\b([A-Za-z_]\w*)\b/g
+  let out = '', last = 0, m: RegExpExecArray | null
+  while ((m = re.exec(src)) !== null) {
+    out += pyEsc(src.slice(last, m.index))
+    if (m[1] !== undefined) out += `<span style="color:#408080;font-style:italic">${pyEsc(m[1])}</span>`        // commentaire
+    else if (m[2] !== undefined) out += `<span style="color:#BA2121">${pyEsc(m[2])}</span>`                      // chaîne
+    else if (m[3] !== undefined) out += `<span style="color:#666666">${m[3]}</span>`                             // nombre
+    else {
+      const w = m[4]
+      if (PY_KEYWORDS.has(w)) out += `<span style="color:#008000;font-weight:600">${w}</span>`                   // mot-clé
+      else if (PY_BUILTINS.has(w)) out += `<span style="color:#0000FF">${w}</span>`                              // fonction/méthode
+      else out += w
+    }
+    last = re.lastIndex
+  }
+  out += pyEsc(src.slice(last))
+  return out
+}
+
 export function parseMarkdown(text: string, hardBreaks = false): string {
   if (!text) return ''
   try {
@@ -201,8 +225,10 @@ export function parseMarkdown(text: string, hardBreaks = false): string {
     // 11. Code (escape simple, pas de Prism)
     const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
     const codeBlocks: string[] = []
-    html = html.replace(/```([a-zA-Z]+)?\s*\n([\s\S]*?)\n```/g, (_m, _lang, code) => {
-      codeBlocks.push(`<pre class="my-3 p-4 bg-slate-900 text-slate-100 rounded-xl font-mono text-[11px] overflow-x-auto whitespace-pre select-text">${esc(code)}</pre>`)
+    html = html.replace(/```([a-zA-Z]+)?\s*\n([\s\S]*?)\n```/g, (_m, lang, code) => {
+      const isPy = !lang || /^py/i.test(lang)
+      const body = isPy ? highlightPython(code) : esc(code)
+      codeBlocks.push(`<pre class="my-3 px-4 py-3 bg-[#f8f8f8] border border-slate-200 text-slate-800 rounded-xl font-mono text-[11px] leading-[1.65] overflow-x-auto whitespace-pre select-text">${body}</pre>`)
       return `__CODEB_${codeBlocks.length - 1}__`
     })
     const inlineCodes: string[] = []
