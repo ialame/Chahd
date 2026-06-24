@@ -1,12 +1,12 @@
 [
-  {"question": "À quoi sert une structure conditionnelle ?", "reponse": "À faire **prendre une décision** au programme : exécuter un bloc d'instructions seulement si une **condition** est vraie."},
-  {"question": "Qu'est-ce qu'une condition en Python ?", "reponse": "Une expression qui vaut **`True`** ou **`False`** (un **booléen**), construite avec des opérateurs de comparaison ou logiques."},
-  {"question": "Cite les opérateurs de comparaison.", "reponse": "`==` (égal), `!=` (différent), `<`, `>`, `<=`, `>=`. Ils renvoient un **booléen**."},
-  {"question": "Quelle est la différence entre `=` et `==` ?", "reponse": "`=` est l'**affectation** (donner une valeur) ; `==` est le **test d'égalité** (comparer)."},
-  {"question": "Cite les trois opérateurs logiques et leur rôle.", "reponse": "`and` (vrai si **les deux** conditions sont vraies), `or` (vrai si **au moins une** l'est), `not` (**inverse** la condition)."},
-  {"question": "Comment s'écrit une instruction `if` simple ?", "reponse": "`if condition:` suivi du **bloc indenté**. Le bloc s'exécute uniquement si la condition est vraie."},
-  {"question": "Quel est le rôle de l'**indentation** ?", "reponse": "Elle **délimite le bloc** rattaché au `if` (par convention **4 espaces**). Une indentation incohérente provoque une `IndentationError`."},
-  {"question": "Que fait le bloc `else` ?", "reponse": "Il s'exécute **sinon**, c'est-à-dire quand la condition du `if` est **fausse**. Il n'a jamais de condition propre."},
-  {"question": "À quoi sert `elif` ?", "reponse": "À distinguer **plusieurs cas**. Python teste les conditions dans l'ordre et exécute le bloc de la **première vraie**, puis s'arrête."},
-  {"question": "Que sont des conditions imbriquées ?", "reponse": "Une instruction conditionnelle placée **à l'intérieur** du bloc d'une autre ; chaque niveau ajoute une **indentation** supplémentaire."}
+  {"question": "Qu'est-ce qu'une **condition** en Python ?", "reponse": "Une expression qui vaut **vrai** (`True`) ou **faux** (`False`) : c'est un **booléen**. On la construit le plus souvent avec un opérateur de comparaison, comme `5 > 3`."},
+  {"question": "Cite les **opérateurs de comparaison** et leur sens.", "reponse": "`==` (égalité), `!=` (différence), `<`, `>`, `<=`, `>=`. Ils comparent deux valeurs et renvoient un booléen. Ne pas confondre `=` (**affectation**) et `==` (**test d'égalité**)."},
+  {"question": "À quoi servent les **opérateurs logiques** `and`, `or`, `not` ?", "reponse": "À combiner des conditions. `and` (et) : vrai si **les deux** sont vraies. `or` (ou) : vrai si **au moins une** l'est. `not` (non) : **inverse** la condition, ex. `not (age >= 18)`."},
+  {"question": "Que vaut `age >= 0 and age < 18` pour `age = 17` ?", "reponse": "`True`. Les deux conditions sont vraies ($0 \\le 17$ et $17 < 18$), donc le `and` renvoie vrai : l'âge est bien compris entre 0 et 17."},
+  {"question": "Comment s'écrit l'instruction `if` et que fait-elle ?", "reponse": "On écrit la condition après `if`, suivie de deux-points `:`, puis le **bloc indenté** dessous. Si la condition est vraie, le bloc s'exécute ; **sinon** il est ignoré."},
+  {"question": "Quel est le rôle de l'**indentation** en Python ?", "reponse": "Elle **délimite le bloc** rattaché au `if` (par convention **4 espaces**). Les lignes au même niveau forment le même bloc. Une indentation incohérente provoque une `IndentationError`."},
+  {"question": "Quelle est la différence entre `else` et `elif` ?", "reponse": "`else` (sinon) s'exécute quand la condition du `if` est fausse et n'a **jamais** de condition (suivi direct de `:`). `elif` (sinon si) teste un **autre cas** : il est suivi d'une condition."},
+  {"question": "Dans une suite `if` / `elif` / `else`, dans quel ordre les conditions sont-elles testées ?", "reponse": "**Dans l'ordre**, de haut en bas. Python s'arrête à la **première condition vraie** et exécute son bloc. Le `else` final (facultatif) traite tous les cas restants."},
+  {"question": "Comment tester si un entier `n` est pair ?", "reponse": "Avec le reste de la division par 2 : `if n % 2 == 0:` est vrai si `n` est pair, et le bloc `else` traite le cas impair. Cela équivaut à $n \\equiv 0 \\pmod 2$."},
+  {"question": "Que sont des **conditions imbriquées** ?", "reponse": "Une instruction conditionnelle placée **à l'intérieur** du bloc d'une autre ; chaque niveau ajoute une indentation. Souvent un `and` les évite : `if age >= 18 and age >= 65:` au lieu de deux `if` imbriqués."}
 ]

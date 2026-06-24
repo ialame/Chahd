@@ -1,12 +1,42 @@
 [
-  {"question": "Quel mot-clé sert à définir une fonction ?", "reponse": "Le mot-clé `def`, suivi du nom, des **paramètres** entre parenthèses et de deux-points."},
-  {"question": "À quoi sert l'instruction `return` ?", "reponse": "Elle **renvoie** une valeur à l'appelant et **arrête** immédiatement l'exécution de la fonction."},
-  {"question": "Quelle est la différence entre une fonction et une procédure ?", "reponse": "Une **fonction** renvoie une valeur avec `return` ; une **procédure** n'a **pas de `return`** et réalise seulement une action."},
-  {"question": "Quelle différence entre `print` et `return` ?", "reponse": "`print` **affiche** une valeur à l'écran ; `return` **renvoie** une valeur utilisable dans le programme."},
-  {"question": "Quelle différence entre un paramètre et un argument ?", "reponse": "Le **paramètre** est le nom dans la définition (`def somme(a, b)`) ; l'**argument** est la valeur fournie à l'appel (`somme(2, 5)`)."},
-  {"question": "Comment appelle-t-on une fonction `carre` avec la valeur 5 ?", "reponse": "En écrivant `carre(5)` : le nom suivi des **arguments** entre parenthèses."},
-  {"question": "Qu'est-ce qu'une variable locale ?", "reponse": "Une variable créée **dans** une fonction (ou un paramètre) : elle n'existe que pendant l'exécution de la fonction et disparaît ensuite."},
-  {"question": "Qu'est-ce qu'une variable globale ?", "reponse": "Une variable définie **en dehors** de toute fonction ; une fonction peut la **lire**."},
-  {"question": "Écris une fonction `est_pair(n)` qui dit si `n` est pair.", "reponse": "`def est_pair(n):` puis `return n % 2 == 0`, qui renvoie un **booléen**."},
-  {"question": "Que renvoie en réalité une procédure en Python ?", "reponse": "La valeur spéciale `None`, car elle n'a pas de `return` explicite."}
+  {
+    "question": "Qu'est-ce qu'une **fonction** en Python et avec quel mot-clé la définit-on ?",
+    "reponse": "C'est un bloc d'instructions nommé que l'on peut **réutiliser**. On la définit avec le mot-clé `def`, suivi du nom, des paramètres entre parenthèses et de deux-points ; son **corps** est le bloc **indenté** qui suit."
+  },
+  {
+    "question": "Quelle est la différence entre un **paramètre** et un **argument** ?",
+    "reponse": "Le **paramètre** est le nom écrit dans la définition (`def somme(a, b)` : `a`, `b`). L'**argument** est la valeur fournie à l'appel (`somme(2, 5)` : `2`, `5`). Ils sont associés dans l'**ordre**, de gauche à droite."
+  },
+  {
+    "question": "À quoi sert l'instruction `return` ?",
+    "reponse": "Elle **renvoie** une valeur à l'endroit de l'appel. Dès que `return` s'exécute, la fonction **s'arrête** immédiatement. La valeur peut être stockée ou utilisée dans une expression : `y = carre(5)`."
+  },
+  {
+    "question": "Quelle est la différence entre `return` et `print` ?",
+    "reponse": "`print(...)` **affiche** une valeur à l'écran mais ne la **renvoie** pas : on ne peut pas la réutiliser. `return` **renvoie** la valeur pour qu'elle soit stockée ou calculée. Afficher et renvoyer sont deux choses différentes."
+  },
+  {
+    "question": "Qu'est-ce qu'une **procédure** et comment se distingue-t-elle d'une fonction ?",
+    "reponse": "Une **procédure** réalise une **action** (souvent un affichage) **sans `return`**, alors qu'une **fonction** calcule et **renvoie une valeur**. Exemple de procédure : `def affiche(nom): print(\"Bonjour\", nom)`."
+  },
+  {
+    "question": "En Python, que renvoie réellement une procédure (sans `return`) ?",
+    "reponse": "Elle renvoie la valeur spéciale `None`. Une procédure est donc en réalité une fonction qui renvoie `None` : `print(affiche(\"Sara\"))` afficherait `None` après le message."
+  },
+  {
+    "question": "Qu'est-ce qu'une **variable locale** ?",
+    "reponse": "Une variable créée **dans** une fonction : elle n'existe que pendant l'exécution de la fonction et **disparaît** ensuite. Les **paramètres** sont aussi des variables locales. Y accéder de l'extérieur provoque une **erreur**."
+  },
+  {
+    "question": "Qu'est-ce qu'une **variable globale** et une fonction peut-elle l'utiliser ?",
+    "reponse": "C'est une variable définie **en dehors** de toute fonction. Une fonction peut **lire** une globale (`TVA = 0.2` puis `return prix_ht * (1 + TVA)`), mais il vaut mieux lui **passer** les valeurs par ses **paramètres**."
+  },
+  {
+    "question": "Une fonction peut-elle contenir plusieurs `return` ?",
+    "reponse": "Oui, mais un **seul** s'exécute à chaque appel, car `return` arrête la fonction. Exemple : `def maximum(a, b): if a > b: return a else: return b` renvoie le plus grand des deux."
+  },
+  {
+    "question": "Pourquoi découper un programme en fonctions ?",
+    "reponse": "Pour **réutiliser** un même bloc sans le recopier, et pour **découper** un problème en morceaux simples, plus faciles à **écrire**, à **tester** et à **corriger**."
+  }
 ]

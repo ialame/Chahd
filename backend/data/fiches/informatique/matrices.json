@@ -8,5 +8,5 @@
   {"question": "Comment créer une matrice de 3 lignes et 4 colonnes remplie de 0 ?", "reponse": "Par compréhension imbriquée : `[[0 for j in range(4)] for i in range(3)]`."},
   {"question": "Pourquoi éviter `[[0] * 4] * 3` ?", "reponse": "Parce que toutes les lignes seraient la **même** liste : modifier une case en changerait **plusieurs**."},
   {"question": "Comment calculer la somme d'une colonne `j` ?", "reponse": "On parcourt les **lignes** : `for i in range(len(M)): s += M[i][j]`."},
-  {"question": "Qu'est-ce que la transposée d'une matrice ?", "reponse": "La matrice où lignes et colonnes sont **échangées** : l'élément `M[i][j]` devient `T[j][i]`."}
+  {"question": "Qu'est-ce que la transposée d'une matrice ?", "reponse": "La matrice où lignes et colonnes sont **échangées** : l'élément `M[i][j]` devient `T[j][i]`. Une matrice de `l` lignes et `c` colonnes donne une transposée de `c` lignes et `l` colonnes. Ex. `[[1, 2, 3], [4, 5, 6]]` donne `[[1, 4], [2, 5], [3, 6]]`."}
 ]

@@ -1,12 +1,12 @@
 [
-  {"question": "En quoi consiste la recherche séquentielle ?", "reponse": "À **parcourir** la liste élément par élément, du début, jusqu'à trouver la valeur cherchée. On renvoie son **indice**, ou `-1` si elle est absente."},
-  {"question": "Quelle condition la recherche dichotomique exige-t-elle sur la liste ?", "reponse": "La liste doit être **triée**."},
-  {"question": "Quel est le principe de la recherche dichotomique ?", "reponse": "**Diviser en deux** : comparer la valeur cherchée à l'élément du **milieu** pour éliminer la moitié de la liste à chaque étape."},
-  {"question": "Pourquoi la dichotomie est-elle plus rapide que la recherche séquentielle ?", "reponse": "Parce qu'elle **divise par deux** le nombre d'éléments à examiner à chaque étape, au lieu de tous les parcourir."},
-  {"question": "Comment calcule-t-on l'indice du milieu en dichotomie ?", "reponse": "Avec `milieu = (gauche + droite) // 2` (division **entière**)."},
-  {"question": "En quoi consiste le tri par sélection ?", "reponse": "À chercher le **plus petit** élément de la partie non triée et à l'**échanger** avec le premier élément de cette partie, à chaque étape."},
-  {"question": "Comment fonctionne le tri à bulles ?", "reponse": "Il compare des éléments **voisins** et les **échange** s'ils sont mal ordonnés ; le plus grand « remonte » vers la fin à chaque parcours."},
-  {"question": "Quel est le principe du tri par insertion ?", "reponse": "**Insérer** chaque élément à sa **bonne place** parmi les éléments déjà triés à sa gauche (comme un jeu de cartes)."},
-  {"question": "Comment échange-t-on deux éléments d'une liste en Python ?", "reponse": "Avec une affectation multiple : `liste[i], liste[j] = liste[j], liste[i]`."},
-  {"question": "Que renvoie une recherche (séquentielle ou dichotomique) quand la valeur est absente ?", "reponse": "Par convention, `-1`."}
+  {"question": "En quoi consiste la **recherche séquentielle** et quelle est sa complexité ?", "reponse": "À **parcourir** la liste élément par élément avec `for i in range(len(liste))` jusqu'à trouver la valeur. On renvoie son **indice**, ou `-1` si elle est absente. Complexité : $O(n)$ (dans le pire des cas, tous les éléments sont parcourus)."},
+  {"question": "Quel **prérequis** la recherche dichotomique exige-t-elle sur la liste ?", "reponse": "La liste doit être **triée**. Sans tri préalable, éliminer une moitié à chaque étape n'a pas de sens et l'algorithme est faux."},
+  {"question": "Quel est le **principe** de la recherche dichotomique ?", "reponse": "**Diviser en deux** : comparer la valeur cherchée à l'élément du **milieu**. Si elle est plus petite, on garde la moitié **gauche** (`droite = milieu - 1`) ; plus grande, la moitié **droite** (`gauche = milieu + 1`)."},
+  {"question": "Quelle est la **complexité** de la recherche dichotomique et pourquoi est-elle plus rapide que la séquentielle ?", "reponse": "$O(\\log n)$ : elle **divise par deux** le nombre d'éléments à chaque étape. Pour un million d'éléments, une vingtaine de comparaisons suffisent, contre un million pour la séquentielle en $O(n)$."},
+  {"question": "Comment calcule-t-on l'**indice du milieu** en dichotomie ?", "reponse": "Avec `milieu = (gauche + droite) // 2`, en utilisant la division **entière** `//`."},
+  {"question": "En quoi consiste le **tri par sélection** ?", "reponse": "À chaque étape, chercher le **plus petit** élément de la partie non triée et l'**échanger** avec le premier élément de cette partie. Complexité : $O(n^2)$ (deux boucles imbriquées)."},
+  {"question": "Comment fonctionne le **tri à bulles** ?", "reponse": "Il compare des éléments **voisins** (`liste[j]` et `liste[j+1]`) et les **échange** s'ils sont mal ordonnés ; le plus grand « remonte » vers la fin à chaque parcours. Complexité : $O(n^2)$."},
+  {"question": "Quel est le **principe** du tri par insertion et sa complexité ?", "reponse": "**Insérer** chaque élément à sa **bonne place** parmi ceux déjà triés à sa gauche, en **décalant** les plus grands (comme un jeu de cartes). Complexité : $O(n^2)$."},
+  {"question": "Comment **échange-t-on** deux éléments d'une liste en Python ?", "reponse": "Avec une affectation multiple : `liste[i], liste[j] = liste[j], liste[i]`. Comparaisons et échanges sont les opérations de base des trois tris."},
+  {"question": "Que **renvoie** une recherche (séquentielle ou dichotomique) quand la valeur est absente ?", "reponse": "Par convention, `-1`."}
 ]

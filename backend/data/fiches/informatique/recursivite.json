@@ -1,12 +1,12 @@
 [
-  {"question": "Qu'est-ce qu'une fonction récursive ?", "reponse": "Une fonction qui **s'appelle elle-même** pour résoudre un problème en le ramenant à une version plus petite."},
-  {"question": "Quelles sont les deux parties obligatoires d'une fonction récursive ?", "reponse": "Le **cas de base** (condition d'arrêt) et le **cas récursif** (l'appel à elle-même)."},
-  {"question": "À quoi sert le cas de base ?", "reponse": "C'est la **condition d'arrêt** : il donne un résultat **sans** nouvel appel récursif et permet à la fonction de se terminer."},
-  {"question": "Que se passe-t-il sans cas de base ?", "reponse": "La fonction s'appelle indéfiniment : c'est une **récursion infinie**, Python lève une `RecursionError`."},
-  {"question": "Écris la factorielle en récursif.", "reponse": "`def factorielle(n): return 1 if n == 0 else n * factorielle(n - 1)`. Cas de base : `0! = 1`."},
-  {"question": "Comment calculer récursivement la somme de 1 à n ?", "reponse": "`somme(n) = n + somme(n - 1)` avec le cas de base `somme(0) = 0`."},
-  {"question": "Quelle est la définition récursive de la puissance `x**n` ?", "reponse": "`x**n = x * x**(n-1)` avec le cas de base `x**0 = 1`."},
-  {"question": "Quelle particularité a la fonction récursive de Fibonacci ?", "reponse": "Elle a **deux cas de base** (`F(0)=0`, `F(1)=1`) et son cas récursif fait **deux appels** : `F(n) = F(n-1) + F(n-2)`."},
-  {"question": "Donne la formule récursive du PGCD (Euclide).", "reponse": "`pgcd(a, b) = pgcd(b, a % b)` avec le cas de base `pgcd(a, 0) = a`."},
-  {"question": "Compare les versions récursive et itérative.", "reponse": "La **récursive** est plus proche de la définition mathématique mais consomme la **pile** ; l'**itérative** (avec une boucle) est souvent plus rapide et économe en mémoire."}
+  {"question": "Qu'est-ce qu'une fonction **récursive** ?", "reponse": "Une fonction dont la définition **contient un appel à elle-même** : elle ramène un problème à une version plus petite du même problème, jusqu'à un cas simple résolu directement."},
+  {"question": "Quelles sont les **deux parties** obligatoires d'une fonction récursive ?", "reponse": "Le **cas de base** (condition d'arrêt qui renvoie un résultat sans nouvel appel) et le **cas récursif** (qui rappelle la fonction avec des données plus petites)."},
+  {"question": "À quoi sert le **cas de base** ?", "reponse": "C'est la **condition d'arrêt** : il donne un résultat **sans** appel récursif et permet à la fonction de se terminer. Exemple : `if n == 0: return 1`."},
+  {"question": "Qu'est-ce qui garantit la **terminaison** d'une fonction récursive ?", "reponse": "Deux conditions : il existe un **cas de base**, et chaque appel récursif **progresse** vers ce cas de base (par exemple `n` qui décroît avec `n - 1`)."},
+  {"question": "Que se passe-t-il sans cas de base atteint ?", "reponse": "La fonction s'appelle indéfiniment : c'est une **récursion infinie**. La **pile d'appels** sature et Python lève une `RecursionError`."},
+  {"question": "Écris la **factorielle** en récursif.", "reponse": "Définition : $n! = n \\times (n-1)!$ avec $0! = 1$. En Python : `if n == 0: return 1` puis `return n * factorielle(n - 1)`. Ainsi `factorielle(5)` vaut $120$."},
+  {"question": "Comment calculer récursivement la **somme** de $1$ à $n$ ?", "reponse": "La somme vaut $n$ plus la somme de $1$ à $n-1$. En Python : `if n == 0: return 0` puis `return n + somme(n - 1)`. Donc `somme(4)` vaut $10$."},
+  {"question": "Donne la formule récursive du **PGCD** (algorithme d'Euclide).", "reponse": "$\\text{pgcd}(a, b) = \\text{pgcd}(b, a \\bmod b)$ avec le cas de base $\\text{pgcd}(a, 0) = a$. En Python : `if b == 0: return a` puis `return pgcd(b, a % b)`."},
+  {"question": "Compare les versions **récursive** et **itérative**.", "reponse": "La **récursive** est plus proche de la définition mathématique mais consomme la **pile** d'appels (risque de `RecursionError`). L'**itérative** (avec une boucle) utilise une mémoire constante et est souvent plus **rapide**."},
+  {"question": "Pourquoi obtient-on parfois une **`RecursionError`** ?", "reponse": "Parce que le nombre d'appels imbriqués dépasse la limite de la **pile d'appels** : soit la récursion est infinie, soit la profondeur est trop grande. La version **itérative** évite ce débordement."}
 ]

@@ -8,5 +8,6 @@
   {"question": "Que renvoie le slicing `s[a:b]` ?", "reponse": "La **sous-chaîne** des caractères d'indice `a` **inclus** à `b` **exclu**. Ex. `\"informatique\"[0:4]` → `\"info\"`."},
   {"question": "Comment inverser une chaîne avec le slicing ?", "reponse": "Avec un pas négatif : `s[::-1]`. Ex. `\"abc\"[::-1]` → `\"cba\"`."},
   {"question": "Comment savoir si une lettre est présente et la compter ?", "reponse": "L'opérateur `in` teste la présence (`\"a\" in s`) ; la méthode `s.count(\"a\")` compte les occurrences."},
-  {"question": "Que font `s.upper()` et `s.lower()` ? Modifient-elles `s` ?", "reponse": "`upper()` met en **majuscules**, `lower()` en **minuscules**. Elles renvoient une **nouvelle** chaîne : `s` n'est pas modifiée (une chaîne est non modifiable)."}
+  {"question": "Une chaîne est-elle modifiable ? Que donne `s[0] = \"X\"` ?", "reponse": "Non, une chaîne est **non modifiable** (immuable) : `s[0] = \"X\"` provoque une **erreur**. Les méthodes comme `s.upper()` ou `s.lower()` renvoient une **nouvelle** chaîne sans changer `s`."},
+  {"question": "Comment vérifier qu'une chaîne `s` est un **palindrome** ?", "reponse": "Un palindrome se lit pareil dans les deux sens. On compare la chaîne à son inverse : `return s == s[::-1]`. Ex. `est_palindrome(\"radar\")` → `True`."}
 ]
