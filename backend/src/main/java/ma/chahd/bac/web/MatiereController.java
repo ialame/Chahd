@@ -38,11 +38,11 @@ public class MatiereController {
 
     @GetMapping("/{slug}")
     public MatiereDetailDto get(@PathVariable String slug) {
-        return contentService.getMatiere(slug);
+        return contentService.getMatiere(slug, filiereCourante());
     }
 
     @GetMapping("/{slug}/annales")
     public List<AnnaleDto> annales(@PathVariable String slug) {
-        return contentService.listAnnalesByMatiere(slug);
+        return contentService.listAnnalesByMatiere(slug, filiereCourante());
     }
 }

@@ -4,6 +4,9 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /** Une annale d'examen : sujet + corrigé d'une session passée. */
 @Entity
 @Table(name = "annale")
@@ -36,4 +39,11 @@ public class Annale {
     /** URL du corrigé (PDF). */
     @Column(length = 500)
     private String corrigeUrl;
+
+    /** Filières où cette annale apparaît. Vide = visible par toutes les filières. */
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "annale_filiere",
+            joinColumns = @JoinColumn(name = "annale_id"),
+            inverseJoinColumns = @JoinColumn(name = "filiere_id"))
+    private Set<Filiere> filieres = new HashSet<>();
 }

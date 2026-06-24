@@ -29,9 +29,20 @@ public class DtoMapper {
     }
 
     public MatiereDetailDto toMatiereDetailDto(Matiere m) {
+        return toMatiereDetailDto(m, null);
+    }
+
+    /** Une annale sans tag est visible par tous ; sinon seulement par sa filière. */
+    public static boolean annaleVisible(ma.chahd.bac.domain.Annale a, String filiereSlug) {
+        if (a.getFilieres() == null || a.getFilieres().isEmpty() || filiereSlug == null) return true;
+        return a.getFilieres().stream().anyMatch(f -> f.getSlug().equals(filiereSlug));
+    }
+
+    public MatiereDetailDto toMatiereDetailDto(Matiere m, String filiereSlug) {
         List<ChapitreSummaryDto> chapitres = m.getChapitres().stream()
                 .map(this::toChapitreSummaryDto).toList();
         List<AnnaleDto> annales = m.getAnnales().stream()
+                .filter(a -> annaleVisible(a, filiereSlug))
                 .map(this::toAnnaleDto).toList();
         return new MatiereDetailDto(m.getId(), m.getSlug(), m.getNom(), m.getCoefficient(),
                 m.getDescription(), m.getCouleur(), m.getIcone(), chapitres, annales);

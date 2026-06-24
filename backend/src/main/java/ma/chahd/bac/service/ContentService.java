@@ -44,8 +44,12 @@ public class ContentService {
     }
 
     public MatiereDetailDto getMatiere(String slug) {
+        return getMatiere(slug, null);
+    }
+
+    public MatiereDetailDto getMatiere(String slug, String filiereSlug) {
         return matiereRepository.findBySlug(slug)
-                .map(mapper::toMatiereDetailDto)
+                .map(m -> mapper.toMatiereDetailDto(m, filiereSlug))
                 .orElseThrow(() -> new NotFoundException("Matière introuvable : " + slug));
     }
 
@@ -62,8 +66,13 @@ public class ContentService {
     }
 
     public List<AnnaleDto> listAnnalesByMatiere(String matiereSlug) {
-        List<Annale> annales = annaleRepository.findByMatiereSlugOrderByAnneeDesc(matiereSlug);
-        return annales.stream().map(mapper::toAnnaleDto).toList();
+        return listAnnalesByMatiere(matiereSlug, null);
+    }
+
+    public List<AnnaleDto> listAnnalesByMatiere(String matiereSlug, String filiereSlug) {
+        return annaleRepository.findByMatiereSlugOrderByAnneeDesc(matiereSlug).stream()
+                .filter(a -> DtoMapper.annaleVisible(a, filiereSlug))
+                .map(mapper::toAnnaleDto).toList();
     }
 
     public AnnaleContenuDto getAnnaleContenu(Long id) {
