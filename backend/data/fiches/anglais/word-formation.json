@@ -1,0 +1,12 @@
+[
+  {"question": "What is the first thing to do in a 'word in the correct form' task?", "reponse": "Decide **which part of speech** the gap needs — a **noun, verb, adjective or adverb** — by reading the words around it. Then add the right suffix or prefix."},
+  {"question": "Name five suffixes that form nouns, with an example each.", "reponse": "**-tion** (education), **-ment** (development), **-ness** (kindness), **-ity** (ability), **-er/-or** (teacher, actor)."},
+  {"question": "Which suffixes form adjectives? Give examples.", "reponse": "**-ful** (useful), **-less** (useless), **-ive** (creative), **-al** (natural), **-ous** (dangerous), **-able** (reliable)."},
+  {"question": "How do we form verbs from other words?", "reponse": "With **-ise/-ize** (modern → **modernise**) and **-en** (wide → **widen**, strong → **strengthen**)."},
+  {"question": "How are most adverbs formed?", "reponse": "By adding **-ly** to an adjective (careful → **carefully**). Watch spelling: happy → **happily**, true → **truly**."},
+  {"question": "Which prefixes give a negative meaning?", "reponse": "**un-** (unfair), **in-/im-/ir-/il-** (incorrect, impossible, irregular, illegal), **dis-** (disagree), **mis-** (misunderstand)."},
+  {"question": "When do we use im-, ir- and il- instead of in-?", "reponse": "**im-** before m/p (**im**possible), **ir-** before r (**ir**regular), **il-** before l (**il**legal), and **in-** elsewhere (**in**correct)."},
+  {"question": "Give the word family of 'educate'.", "reponse": "**educate** (verb), **education** (noun), **educational** (adjective), **educator** (noun, person)."},
+  {"question": "'She made an important ___ (decide).' Which form?", "reponse": "A **noun** after *an important*: **decision**. (verb decide → noun decision → adjective decisive → adverb decisively)."},
+  {"question": "'The machine works ___ (efficient).' Which form?", "reponse": "An **adverb**, because it describes the verb *works*: **efficiently**."}
+]
