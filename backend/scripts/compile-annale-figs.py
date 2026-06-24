@@ -16,7 +16,7 @@ import tempfile
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUTDIR = os.path.join(BASE, "data", "annales-latex", "figures")
-TIKZ_RE = re.compile(r"\\begin\{tikzpicture\}.*?\\end\{tikzpicture\}", re.DOTALL)
+TIKZ_RE = re.compile(r"\\begin\{(tikzpicture|circuitikz)\}.*?\\end\{\1\}", re.DOTALL)
 
 
 def build_preamble(src_text: str) -> str:
@@ -31,10 +31,10 @@ def build_preamble(src_text: str) -> str:
         "\\usepackage[utf8]{inputenc}\n\\usepackage[T1]{fontenc}\n"
         "\\usepackage{amsmath,amssymb,mathtools,mathrsfs}\n"
         "\\usepackage{tikz}\n\\usepackage{pgfplots}\n\\pgfplotsset{compat=1.18}\n"
-        "\\usepackage{tkz-tab}\n"
+        "\\usepackage{tkz-tab}\n\\usepackage{circuitikz}\n"
         # bibliothèques courantes (intersections/fillbetween/etc.) pour fiabiliser la compilation
         "\\usetikzlibrary{calc,intersections,patterns,arrows.meta,positioning,"
-        "decorations.pathmorphing,decorations.markings,shapes.geometric,shapes.misc,angles,quotes}\n"
+        "decorations.pathmorphing,decorations.markings,shapes.geometric,shapes.misc,angles,quotes,matrix,babel}\n"
         "\\usepgfplotslibrary{fillbetween}\n"
         + libs + "\n" + colors + "\n" + macros + "\n"
     )
@@ -69,7 +69,7 @@ def main():
     with open(src, encoding="utf-8") as f:
         text = f.read()
     preamble = build_preamble(text)
-    figs = TIKZ_RE.findall(text)
+    figs = [m.group(0) for m in TIKZ_RE.finditer(text)]
     os.makedirs(OUTDIR, exist_ok=True)
     ok = 0
     for i, tikz in enumerate(figs, 1):
