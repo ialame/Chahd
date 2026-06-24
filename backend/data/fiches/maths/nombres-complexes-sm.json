@@ -1,0 +1,12 @@
+[
+{"question": "Quelle est la forme exponentielle d'un nombre complexe non nul de module $r$ et d'argument $\\theta$ ?", "reponse": "$z = r\\,e^{i\\theta}$, où $e^{i\\theta} = \\cos\\theta + i\\sin\\theta$."},
+{"question": "Comment se calculent le module et l'argument d'un produit $zz'$ ?", "reponse": "$|zz'| = |z|\\,|z'|$ et $\\arg(zz') \\equiv \\arg(z) + \\arg(z')\\ [2\\pi]$."},
+{"question": "Énoncez la formule de Moivre pour $\\theta$ réel et $n \\in \\mathbb{Z}$.", "reponse": "$(\\cos\\theta + i\\sin\\theta)^n = \\cos(n\\theta) + i\\sin(n\\theta)$."},
+{"question": "Donnez les deux formules d'Euler.", "reponse": "$\\cos\\theta = \\dfrac{e^{i\\theta} + e^{-i\\theta}}{2}$ et $\\sin\\theta = \\dfrac{e^{i\\theta} - e^{-i\\theta}}{2i}$."},
+{"question": "Quelles sont les racines $n$-ièmes de l'unité ?", "reponse": "Les $n$ nombres $z_k = e^{i\\frac{2k\\pi}{n}}$ pour $k \\in \\{0, 1, \\dots, n-1\\}$ ; leur somme est nulle si $n \\ge 2$."},
+{"question": "Combien de solutions a l'équation $z^n = a$ pour $a = \\rho\\,e^{i\\varphi}$ non nul, et lesquelles ?", "reponse": "Exactement $n$ solutions : $z_k = \\rho^{1/n}\\,e^{i\\frac{\\varphi + 2k\\pi}{n}}$, $k \\in \\{0, \\dots, n-1\\}$."},
+{"question": "Pour $az^2 + bz + c = 0$ à coefficients complexes, comment obtient-on les solutions ?", "reponse": "On pose $\\Delta = b^2 - 4ac$ et $\\delta$ une racine carrée complexe de $\\Delta$ ; alors $z = \\dfrac{-b \\pm \\delta}{2a}$."},
+{"question": "Comment lit-on la distance $AB$ et l'angle $(\\vec{u}, \\vec{AB})$ avec les affixes ?", "reponse": "$AB = |z_B - z_A|$ et $(\\vec{u}, \\vec{AB}) \\equiv \\arg(z_B - z_A)\\ [2\\pi]$."},
+{"question": "À quelle condition sur $\\dfrac{z_C - z_A}{z_B - z_A}$ les points $A$, $B$, $C$ sont-ils alignés ? Orthogonaux en $A$ ?", "reponse": "Alignés si le quotient est réel ; $(AB) \\perp (AC)$ si le quotient est imaginaire pur."},
+{"question": "Quelle transformation décrit l'écriture complexe $z' = az + b$ avec $a \\ne 1$, et quels sont son rapport et son angle ?", "reponse": "Une similitude directe de centre $\\omega = \\dfrac{b}{1-a}$, de rapport $|a|$ et d'angle $\\arg(a)$."}
+]
