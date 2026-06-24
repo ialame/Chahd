@@ -67,6 +67,14 @@ watch(estConnecte, chargerRevision)
               <i class="fa-solid fa-chart-simple" /> Tableau de bord
             </NuxtLink>
             <NuxtLink
+              to="/compte"
+              class="rounded px-3 py-1.5 font-medium text-[#6b5f57] hover:bg-brand-light hover:text-brand"
+              active-class="!bg-brand-light !text-brand"
+              :title="'Filière : ' + (user?.filiereNom || '') + ' — cliquer pour changer'"
+            >
+              <i class="fa-solid fa-graduation-cap" /> {{ user?.filiereNom || 'Ma filière' }}
+            </NuxtLink>
+            <NuxtLink
               v-if="estAdmin" to="/suivi"
               class="rounded px-3 py-1.5 font-medium text-[#6b5f57] hover:bg-brand-light hover:text-brand"
               active-class="!bg-brand-light !text-brand"
