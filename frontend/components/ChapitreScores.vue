@@ -13,7 +13,8 @@ const MATS: Record<string, { nom: string; col: string }> = {
   svt: { nom: 'SVT', col: '#16a34a' },
   anglais: { nom: 'Anglais', col: '#7c3aed' },
   philosophie: { nom: 'Philosophie', col: '#0891b2' },
-  francais: { nom: 'Français', col: '#ea580c' }
+  francais: { nom: 'Français', col: '#ea580c' },
+  informatique: { nom: 'Informatique', col: '#4f46e5' }
 }
 const couleur = (slug: string | null) => (slug && MATS[slug] ? MATS[slug].col : '#64748b')
 

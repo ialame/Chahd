@@ -12,7 +12,8 @@ const monos: Record<string, string> = {
   svt: 'SVT',
   anglais: 'EN',
   philosophie: 'ف',
-  francais: 'FR'
+  francais: 'FR',
+  informatique: 'IT'
 }
 const mono = computed(() => monos[props.matiere.slug] ?? '∑')
 </script>

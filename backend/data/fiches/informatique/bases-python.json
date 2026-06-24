@@ -1,0 +1,12 @@
+[
+  {"question": "Qu'est-ce qu'une variable ?", "reponse": "Un **nom** qui désigne une **valeur** stockée en mémoire. On l'affecte avec `=`."},
+  {"question": "Quel opérateur réalise l'affectation ?", "reponse": "L'opérateur `=` (ex. `x = 5`)."},
+  {"question": "Quelle est la différence entre `=` et `==` ?", "reponse": "`=` **affecte** une valeur à une variable ; `==` **teste l'égalité** et renvoie un booléen."},
+  {"question": "Cite les quatre types de base.", "reponse": "`int` (entier), `float` (réel), `str` (chaîne), `bool` (booléen)."},
+  {"question": "Que renvoie la fonction `input()` ?", "reponse": "Toujours une **chaîne de caractères** (`str`) ; il faut souvent la convertir avec `int()` ou `float()`."},
+  {"question": "Comment convertir la chaîne \"18\" en entier ?", "reponse": "Avec `int(\"18\")`, qui renvoie l'entier 18."},
+  {"question": "Quelle différence entre `/` et `//` ?", "reponse": "`/` est la division **réelle** (résultat `float`) ; `//` est la division **entière** (le quotient)."},
+  {"question": "Que calcule l'opérateur `%` ?", "reponse": "Le **reste** de la division entière (modulo). Ex. `7 % 2` vaut 1."},
+  {"question": "Comment écrit-on la puissance en Python ?", "reponse": "Avec `**`. Ex. `2 ** 3` vaut 8."},
+  {"question": "Cite les trois opérateurs logiques.", "reponse": "`and` (et), `or` (ou), `not` (non)."}
+]
