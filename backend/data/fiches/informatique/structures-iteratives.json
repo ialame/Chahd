@@ -1,0 +1,12 @@
+[
+  {"question": "À quoi sert une boucle (structure itérative) ?", "reponse": "À **répéter** un bloc d'instructions plusieurs fois sans le réécrire."},
+  {"question": "Quand utilise-t-on la boucle `for` plutôt que `while` ?", "reponse": "Quand le **nombre de répétitions est connu** à l'avance. Le `while` s'utilise quand il dépend d'une condition."},
+  {"question": "Que produit `range(5)` ?", "reponse": "La suite `0, 1, 2, 3, 4` : la borne 5 est **exclue**."},
+  {"question": "Que produit `range(2, 8)` ?", "reponse": "`2, 3, 4, 5, 6, 7` : de 2 jusqu'à 7, la borne 8 étant **exclue**."},
+  {"question": "À quoi sert le troisième argument de `range(a, b, pas)` ?", "reponse": "C'est le **pas** : la valeur ajoutée à chaque tour. Ex. `range(0, 10, 2)` donne 0, 2, 4, 6, 8."},
+  {"question": "Comment écrire une boucle `while` qui compte de 1 à 5 ?", "reponse": "On teste une **condition** et on modifie la variable : `n = 1` ; `while n <= 5:` ... `n = n + 1`. Sans modifier `n`, la boucle serait **infinie**."},
+  {"question": "À quelle valeur initialise-t-on un accumulateur de **somme** ? de **produit** ?", "reponse": "Une **somme** s'initialise à `0`, un **produit** à `1`. L'initialisation se fait **avant** la boucle."},
+  {"question": "Quelle est la différence entre `break` et `continue` ?", "reponse": "`break` **arrête** complètement la boucle ; `continue` **saute** le reste du tour courant et passe au tour suivant."},
+  {"question": "Comment calculer la **factorielle** de `n` avec une boucle ?", "reponse": "Un produit : `f = 1` puis `for i in range(1, n + 1): f = f * i`. À la fin `f` vaut `n!`."},
+  {"question": "Qu'est-ce qu'une **boucle infinie** ?", "reponse": "Une boucle dont la **condition ne devient jamais fausse**, donc qui ne s'arrête jamais. Il faut faire évoluer la condition à chaque tour."}
+]

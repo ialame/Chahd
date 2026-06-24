@@ -1,0 +1,12 @@
+[
+  {"question": "Comment crée-t-on une liste en Python ?", "reponse": "En plaçant les éléments entre **crochets** séparés par des virgules. Ex. `t = [3, 7, 1]`. La liste vide s'écrit `[]`."},
+  {"question": "À partir de quel indice commence une liste ?", "reponse": "À l'indice **0** : le premier élément est `t[0]`, le deuxième `t[1]`, etc."},
+  {"question": "Quels sont les indices valides d'une liste `t` ?", "reponse": "De **0** à **`len(t) - 1`**. Accéder à `t[len(t)]` provoque une **erreur**."},
+  {"question": "Comment accéder au troisième élément d'une liste `t` ?", "reponse": "Avec `t[2]`, car les indices commencent à 0."},
+  {"question": "Que renvoie `len(t)` ?", "reponse": "Le **nombre d'éléments** de la liste `t`."},
+  {"question": "Cite les deux façons de parcourir une liste.", "reponse": "Par indice : `for i in range(len(t))` (on accède avec `t[i]`). Par élément : `for x in t` (on lit directement chaque valeur)."},
+  {"question": "À quoi sert la méthode `append` ?", "reponse": "À **ajouter un élément à la fin** de la liste. Ex. `t.append(5)`."},
+  {"question": "Comment calculer la moyenne des éléments d'une liste `t` ?", "reponse": "On divise la somme par le nombre d'éléments : `sum(t) / len(t)`."},
+  {"question": "Comment tester si une valeur `v` est présente dans `t` ?", "reponse": "Avec l'opérateur `in` : `v in t` renvoie `True` ou `False`. Sinon on fait une **recherche séquentielle** avec une boucle."},
+  {"question": "Que renvoie la tranche `t[a:b]` (slicing) ?", "reponse": "Une **nouvelle liste** avec les éléments des indices `a` **inclus** à `b` **exclu**. Ex. `[10,20,30,40][1:3]` vaut `[20, 30]`."}
+]

@@ -1,0 +1,12 @@
+[
+  {"question": "Qu'est-ce qu'une fonction récursive ?", "reponse": "Une fonction qui **s'appelle elle-même** pour résoudre un problème en le ramenant à une version plus petite."},
+  {"question": "Quelles sont les deux parties obligatoires d'une fonction récursive ?", "reponse": "Le **cas de base** (condition d'arrêt) et le **cas récursif** (l'appel à elle-même)."},
+  {"question": "À quoi sert le cas de base ?", "reponse": "C'est la **condition d'arrêt** : il donne un résultat **sans** nouvel appel récursif et permet à la fonction de se terminer."},
+  {"question": "Que se passe-t-il sans cas de base ?", "reponse": "La fonction s'appelle indéfiniment : c'est une **récursion infinie**, Python lève une `RecursionError`."},
+  {"question": "Écris la factorielle en récursif.", "reponse": "`def factorielle(n): return 1 if n == 0 else n * factorielle(n - 1)`. Cas de base : `0! = 1`."},
+  {"question": "Comment calculer récursivement la somme de 1 à n ?", "reponse": "`somme(n) = n + somme(n - 1)` avec le cas de base `somme(0) = 0`."},
+  {"question": "Quelle est la définition récursive de la puissance `x**n` ?", "reponse": "`x**n = x * x**(n-1)` avec le cas de base `x**0 = 1`."},
+  {"question": "Quelle particularité a la fonction récursive de Fibonacci ?", "reponse": "Elle a **deux cas de base** (`F(0)=0`, `F(1)=1`) et son cas récursif fait **deux appels** : `F(n) = F(n-1) + F(n-2)`."},
+  {"question": "Donne la formule récursive du PGCD (Euclide).", "reponse": "`pgcd(a, b) = pgcd(b, a % b)` avec le cas de base `pgcd(a, 0) = a`."},
+  {"question": "Compare les versions récursive et itérative.", "reponse": "La **récursive** est plus proche de la définition mathématique mais consomme la **pile** ; l'**itérative** (avec une boucle) est souvent plus rapide et économe en mémoire."}
+]

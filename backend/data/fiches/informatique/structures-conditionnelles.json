@@ -1,0 +1,12 @@
+[
+  {"question": "À quoi sert une structure conditionnelle ?", "reponse": "À faire **prendre une décision** au programme : exécuter un bloc d'instructions seulement si une **condition** est vraie."},
+  {"question": "Qu'est-ce qu'une condition en Python ?", "reponse": "Une expression qui vaut **`True`** ou **`False`** (un **booléen**), construite avec des opérateurs de comparaison ou logiques."},
+  {"question": "Cite les opérateurs de comparaison.", "reponse": "`==` (égal), `!=` (différent), `<`, `>`, `<=`, `>=`. Ils renvoient un **booléen**."},
+  {"question": "Quelle est la différence entre `=` et `==` ?", "reponse": "`=` est l'**affectation** (donner une valeur) ; `==` est le **test d'égalité** (comparer)."},
+  {"question": "Cite les trois opérateurs logiques et leur rôle.", "reponse": "`and` (vrai si **les deux** conditions sont vraies), `or` (vrai si **au moins une** l'est), `not` (**inverse** la condition)."},
+  {"question": "Comment s'écrit une instruction `if` simple ?", "reponse": "`if condition:` suivi du **bloc indenté**. Le bloc s'exécute uniquement si la condition est vraie."},
+  {"question": "Quel est le rôle de l'**indentation** ?", "reponse": "Elle **délimite le bloc** rattaché au `if` (par convention **4 espaces**). Une indentation incohérente provoque une `IndentationError`."},
+  {"question": "Que fait le bloc `else` ?", "reponse": "Il s'exécute **sinon**, c'est-à-dire quand la condition du `if` est **fausse**. Il n'a jamais de condition propre."},
+  {"question": "À quoi sert `elif` ?", "reponse": "À distinguer **plusieurs cas**. Python teste les conditions dans l'ordre et exécute le bloc de la **première vraie**, puis s'arrête."},
+  {"question": "Que sont des conditions imbriquées ?", "reponse": "Une instruction conditionnelle placée **à l'intérieur** du bloc d'une autre ; chaque niveau ajoute une **indentation** supplémentaire."}
+]

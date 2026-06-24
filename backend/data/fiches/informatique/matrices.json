@@ -1,0 +1,12 @@
+[
+  {"question": "Comment représente-t-on une matrice en Python ?", "reponse": "Par une **liste de listes** : chaque liste intérieure est une **ligne**. Ex. `M = [[1, 2, 3], [4, 5, 6]]`."},
+  {"question": "Que désigne `M[i][j]` ?", "reponse": "L'élément situé à la **ligne `i`** et à la **colonne `j`**. Les indices commencent à **0**."},
+  {"question": "Que désigne `M[i]` seul ?", "reponse": "La **ligne entière** numéro `i`, qui est elle-même une **liste**."},
+  {"question": "Comment obtenir le nombre de lignes d'une matrice ?", "reponse": "Avec `len(M)`, la longueur de la liste extérieure."},
+  {"question": "Comment obtenir le nombre de colonnes ?", "reponse": "Avec `len(M[0])`, la longueur d'une ligne."},
+  {"question": "Comment parcourir tous les éléments d'une matrice ?", "reponse": "Par une **double boucle** : `for i in range(len(M))` puis `for j in range(len(M[0]))`, et on traite `M[i][j]`."},
+  {"question": "Comment créer une matrice de 3 lignes et 4 colonnes remplie de 0 ?", "reponse": "Par compréhension imbriquée : `[[0 for j in range(4)] for i in range(3)]`."},
+  {"question": "Pourquoi éviter `[[0] * 4] * 3` ?", "reponse": "Parce que toutes les lignes seraient la **même** liste : modifier une case en changerait **plusieurs**."},
+  {"question": "Comment calculer la somme d'une colonne `j` ?", "reponse": "On parcourt les **lignes** : `for i in range(len(M)): s += M[i][j]`."},
+  {"question": "Qu'est-ce que la transposée d'une matrice ?", "reponse": "La matrice où lignes et colonnes sont **échangées** : l'élément `M[i][j]` devient `T[j][i]`."}
+]
