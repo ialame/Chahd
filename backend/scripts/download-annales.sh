@@ -91,6 +91,34 @@ MAP="
 145841 svt-2025-normale-corrige
 145842 svt-2025-rattrapage-sujet
 145843 svt-2025-rattrapage-corrige
+94479 si-2019-normale-sujet
+110180 si-2019-normale-corrige
+110181 si-2019-rattrapage-sujet
+110182 si-2019-rattrapage-corrige
+110176 si-2020-normale-sujet
+110177 si-2020-normale-corrige
+110178 si-2020-rattrapage-sujet
+110179 si-2020-rattrapage-corrige
+127284 si-2021-normale-sujet
+136660 si-2021-normale-corrige
+136661 si-2021-rattrapage-sujet
+136662 si-2021-rattrapage-corrige
+136658 si-2022-normale-sujet
+136659 si-2022-normale-corrige
+136656 si-2022-rattrapage-sujet
+136657 si-2022-rattrapage-corrige
+142751 si-2023-normale-sujet
+142752 si-2023-normale-corrige
+142753 si-2023-rattrapage-sujet
+142754 si-2023-rattrapage-corrige
+145803 si-2024-normale-sujet
+145804 si-2024-normale-corrige
+145805 si-2024-rattrapage-sujet
+145806 si-2024-rattrapage-corrige
+145807 si-2025-normale-sujet
+145808 si-2025-normale-corrige
+145809 si-2025-rattrapage-sujet
+145810 si-2025-rattrapage-corrige
 "
 
 echo "$MAP" | while read -r id name; do
