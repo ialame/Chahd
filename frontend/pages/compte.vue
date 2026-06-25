@@ -2,10 +2,13 @@
 const { user, changerFiliere } = useAuth()
 
 const filieres = [
-  { slug: 'sciences-physiques', nom: 'Sciences Physiques', desc: 'Maths, PC, SVT + Philo, Français, Anglais' },
-  { slug: 'sciences-mathematiques-a', nom: 'Sciences Mathématiques A', desc: 'Maths, PC, SVT, Informatique + Philo, Français, Anglais' },
-  { slug: 'sciences-mathematiques-b', nom: 'Sciences Mathématiques B', desc: "Maths, PC, Sciences de l'Ingénieur, Informatique + Philo, Français, Anglais" },
+  { slug: '1bac-sciences-experimentales', nom: '1 Bac Sciences Expérimentales', desc: 'Examen régional : Français, Histoire-Géographie', niveau: '1ère année Bac' },
+  { slug: '1bac-sciences-mathematiques', nom: '1 Bac Sciences Mathématiques', desc: 'Examen régional : Français, Histoire-Géographie', niveau: '1ère année Bac' },
+  { slug: 'sciences-physiques', nom: 'Sciences Physiques', desc: 'Maths, PC, SVT + Philo, Français, Anglais', niveau: '2ème année Bac' },
+  { slug: 'sciences-mathematiques-a', nom: 'Sciences Mathématiques A', desc: 'Maths, PC, SVT, Informatique + Philo, Français, Anglais', niveau: '2ème année Bac' },
+  { slug: 'sciences-mathematiques-b', nom: 'Sciences Mathématiques B', desc: "Maths, PC, Sciences de l'Ingénieur, Informatique + Philo, Français, Anglais", niveau: '2ème année Bac' },
 ]
+const niveaux = ['1ère année Bac', '2ème année Bac']
 
 const enregistre = ref(false)
 const erreur = ref('')
@@ -36,19 +39,22 @@ async function choisir(slug: string) {
         <p class="text-sm text-[#6b5f57]">Tu ne vois que les matières de ta filière. Tu peux en changer à tout moment.</p>
       </div>
 
-      <div class="grid gap-3 sm:grid-cols-2">
-        <button
-          v-for="f in filieres" :key="f.slug" type="button"
-          class="rounded-xl border px-4 py-3 text-left transition"
-          :class="user?.filiere === f.slug ? 'border-brand bg-brand-light ring-1 ring-brand' : 'border-rule hover:bg-paper'"
-          @click="choisir(f.slug)"
-        >
-          <span class="flex items-center justify-between">
-            <span class="font-semibold text-ink">{{ f.nom }}</span>
-            <i v-if="user?.filiere === f.slug" class="fa-solid fa-circle-check text-brand" />
-          </span>
-          <span class="mt-1 block text-xs text-[#a8998a]">{{ f.desc }}</span>
-        </button>
+      <div v-for="niveau in niveaux" :key="niveau" class="space-y-2">
+        <p class="text-xs font-bold uppercase tracking-wide text-[#a8998a]">{{ niveau }}</p>
+        <div class="grid gap-3 sm:grid-cols-2">
+          <button
+            v-for="f in filieres.filter(x => x.niveau === niveau)" :key="f.slug" type="button"
+            class="rounded-xl border px-4 py-3 text-left transition"
+            :class="user?.filiere === f.slug ? 'border-brand bg-brand-light ring-1 ring-brand' : 'border-rule hover:bg-paper'"
+            @click="choisir(f.slug)"
+          >
+            <span class="flex items-center justify-between">
+              <span class="font-semibold text-ink">{{ f.nom }}</span>
+              <i v-if="user?.filiere === f.slug" class="fa-solid fa-circle-check text-brand" />
+            </span>
+            <span class="mt-1 block text-xs text-[#a8998a]">{{ f.desc }}</span>
+          </button>
+        </div>
       </div>
 
       <p v-if="enregistre" class="rounded-lg bg-emerald-50 px-3 py-2 text-sm text-emerald-700">
