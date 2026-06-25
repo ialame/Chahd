@@ -1,0 +1,116 @@
+### Exercice 1 : Place de COMMUNIQUER dans la chaîne d'information
+\begin{enonce}
+On rappelle que la chaîne d'information d'un système automatisé enchaîne trois fonctions.
+\begin{enumerate}
+    \item Citer, dans l'ordre, les trois fonctions de la chaîne d'information.
+    \item Préciser laquelle assure la **restitution** de l'information et où elle se situe.
+    \item Sur un thermostat numérique, indiquer pour chacun de ces éléments la fonction concernée : la sonde de température, le calcul de l'écart à la consigne, l'afficheur du chiffre mesuré.
+    \item La fonction COMMUNIQUER agit-elle sur la matière d'œuvre ? Justifier.
+\end{enumerate}
+\end{enonce}
+
+\textbf{Solution :}
+\begin{enumerate}
+    \item Dans l'ordre : **ACQUERIR** $\rightarrow$ **TRAITER** $\rightarrow$ **COMMUNIQUER**.
+    \item C'est **COMMUNIQUER** qui restitue l'information. Elle se situe **en fin de chaîne d'information**, juste après TRAITER.
+    \item La sonde relève la grandeur : **ACQUERIR**. Le calcul de l'écart à la consigne : **TRAITER**. L'afficheur qui montre la température : **COMMUNIQUER**.
+    \item Non. COMMUNIQUER ne fait que **diffuser l'information** (vers l'utilisateur ou un autre système) ; elle ne transforme pas la matière d'œuvre, qui relève de la chaîne d'énergie.
+\end{enumerate}
+
+### Exercice 2 : Choisir le bon organe de restitution
+\begin{enonce}
+Pour chacune des informations suivantes, choisir l'organe de restitution **visuelle** le plus adapté (voyant lumineux, afficheur 7 segments, afficheur LCD alphanumérique, écran graphique) et justifier brièvement.
+\begin{enumerate}
+    \item L'état « sous tension / hors tension » d'un appareil.
+    \item La vitesse instantanée affichée en km/h sur un tableau de bord simple.
+    \item Le message « Bourrage papier » sur une imprimante.
+    \item Le menu de réglage avec courbes d'une station météo.
+\end{enumerate}
+\end{enonce}
+
+\textbf{Solution :}
+\begin{enumerate}
+    \item Un **voyant lumineux** (LED) : l'information est binaire (tout ou rien), un voyant suffit.
+    \item Un **afficheur 7 segments** : il restitue une valeur numérique simple (quelques chiffres).
+    \item Un **afficheur LCD alphanumérique** : il faut restituer un court message textuel.
+    \item Un **écran graphique** : il faut restituer du texte, des courbes et des menus interactifs.
+\end{enumerate}
+Règle générale : le choix dépend de la **quantité d'information** à transmettre. On ne met pas un écran pour un simple état, et un voyant ne suffit pas pour un menu.
+
+### Exercice 3 : Afficheur 7 segments
+\begin{enonce}
+Un afficheur 7 segments comporte sept segments lumineux notés $a$ à $g$, disposés en forme de huit.
+
+<div class="flex justify-center my-5"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iOTIuNTEzcHQiIGhlaWdodD0iMTQ2LjA0MnB0IiB2aWV3Qm94PSIwIDAgOTIuNTEzIDE0Ni4wNDIiPgo8ZGVmcz4KPGc+CjxnIGlkPSJnbHlwaC0wLTAiPgo8cGF0aCBkPSJNIDMuNjg3NSAtMy43MzQzNzUgQyAzLjUxNTYyNSAtNC4xMDkzNzUgMy4yMTg3NSAtNC4zNzUgMi43ODEyNSAtNC4zNzUgQyAxLjYyNSAtNC4zNzUgMC4zOTA2MjUgLTIuOTIxODc1IDAuMzkwNjI1IC0xLjQ2ODc1IEMgMC4zOTA2MjUgLTAuNTQ2ODc1IDAuOTM3NSAwLjEwOTM3NSAxLjcxODc1IDAuMTA5Mzc1IEMgMS45MDYyNSAwLjEwOTM3NSAyLjQwNjI1IDAuMDYyNSAzIC0wLjY0MDYyNSBDIDMuMDc4MTI1IC0wLjIxODc1IDMuNDIxODc1IDAuMTA5Mzc1IDMuODkwNjI1IDAuMTA5Mzc1IEMgNC4yNSAwLjEwOTM3NSA0LjQ2ODc1IC0wLjEyNSA0LjYyNSAtMC40Mzc1IEMgNC43OTY4NzUgLTAuNzk2ODc1IDQuOTIxODc1IC0xLjM5MDYyNSA0LjkyMTg3NSAtMS40MjE4NzUgQyA0LjkyMTg3NSAtMS41MTU2MjUgNC44NDM3NSAtMS41MTU2MjUgNC44MTI1IC0xLjUxNTYyNSBDIDQuNzAzMTI1IC0xLjUxNTYyNSA0LjcwMzEyNSAtMS40Njg3NSA0LjY3MTg3NSAtMS4zMjgxMjUgQyA0LjUgLTAuNjg3NSA0LjMyODEyNSAtMC4xMDkzNzUgMy45MjE4NzUgLTAuMTA5Mzc1IEMgMy42NTYyNSAtMC4xMDkzNzUgMy42MjUgLTAuMzU5Mzc1IDMuNjI1IC0wLjU2MjUgQyAzLjYyNSAtMC43ODEyNSAzLjY0MDYyNSAtMC44NTkzNzUgMy43NSAtMS4yOTY4NzUgQyAzLjg1OTM3NSAtMS43MTg3NSAzLjg3NSAtMS44MTI1IDMuOTY4NzUgLTIuMTg3NSBMIDQuMzI4MTI1IC0zLjU3ODEyNSBDIDQuMzkwNjI1IC0zLjg0Mzc1IDQuMzkwNjI1IC0zLjg3NSA0LjM5MDYyNSAtMy45MDYyNSBDIDQuMzkwNjI1IC00LjA3ODEyNSA0LjI2NTYyNSAtNC4xNzE4NzUgNC4xMDkzNzUgLTQuMTcxODc1IEMgMy44NzUgLTQuMTcxODc1IDMuNzE4NzUgLTMuOTUzMTI1IDMuNjg3NSAtMy43MzQzNzUgWiBNIDMuMDQ2ODc1IC0xLjE3MTg3NSBDIDMgLTEgMyAtMC45ODQzNzUgMi44NDM3NSAtMC44MTI1IEMgMi40MDYyNSAtMC4yNjU2MjUgMiAtMC4xMDkzNzUgMS43MzQzNzUgLTAuMTA5Mzc1IEMgMS4yMzQzNzUgLTAuMTA5Mzc1IDEuMDkzNzUgLTAuNjU2MjUgMS4wOTM3NSAtMS4wMzEyNSBDIDEuMDkzNzUgLTEuNTMxMjUgMS40MjE4NzUgLTIuNzUgMS42NDA2MjUgLTMuMjAzMTI1IEMgMS45NTMxMjUgLTMuNzgxMjUgMi4zOTA2MjUgLTQuMTU2MjUgMi43OTY4NzUgLTQuMTU2MjUgQyAzLjQzNzUgLTQuMTU2MjUgMy41NzgxMjUgLTMuMzQzNzUgMy41NzgxMjUgLTMuMjgxMjUgQyAzLjU3ODEyNSAtMy4yMTg3NSAzLjU0Njg3NSAtMy4xNzE4NzUgMy41NDY4NzUgLTMuMTA5Mzc1IFogTSAzLjA0Njg3NSAtMS4xNzE4NzUgIi8+CjwvZz4KPGcgaWQ9ImdseXBoLTAtMSI+CjxwYXRoIGQ9Ik0gMi4zNTkzNzUgLTYuNzUgQyAyLjM1OTM3NSAtNi43NjU2MjUgMi4zNTkzNzUgLTYuODU5Mzc1IDIuMjM0Mzc1IC02Ljg1OTM3NSBDIDIgLTYuODU5Mzc1IDEuMjgxMjUgLTYuNzgxMjUgMS4wMzEyNSAtNi43NjU2MjUgQyAwLjk1MzEyNSAtNi43NSAwLjg0Mzc1IC02Ljc1IDAuODQzNzUgLTYuNTYyNSBDIDAuODQzNzUgLTYuNDUzMTI1IDAuOTM3NSAtNi40NTMxMjUgMS4wNzgxMjUgLTYuNDUzMTI1IEMgMS41NDY4NzUgLTYuNDUzMTI1IDEuNTc4MTI1IC02LjM3NSAxLjU3ODEyNSAtNi4yODEyNSBDIDEuNTc4MTI1IC02LjIxODc1IDEuNDg0Mzc1IC01Ljg3NSAxLjQzNzUgLTUuNjcxODc1IEwgMC42MjUgLTIuNDM3NSBDIDAuNSAtMS45NTMxMjUgMC40Njg3NSAtMS43OTY4NzUgMC40Njg3NSAtMS40Mzc1IEMgMC40Njg3NSAtMC41IDAuOTg0Mzc1IDAuMTA5Mzc1IDEuNzE4NzUgMC4xMDkzNzUgQyAyLjg5MDYyNSAwLjEwOTM3NSA0LjEwOTM3NSAtMS4zNTkzNzUgNC4xMDkzNzUgLTIuNzk2ODc1IEMgNC4xMDkzNzUgLTMuNjg3NSAzLjU3ODEyNSAtNC4zNzUgMi43OTY4NzUgLTQuMzc1IEMgMi4zMjgxMjUgLTQuMzc1IDEuOTIxODc1IC00LjA3ODEyNSAxLjYyNSAtMy43ODEyNSBaIE0gMS40Mzc1IC0zLjAxNTYyNSBDIDEuNSAtMy4yMzQzNzUgMS41IC0zLjI1IDEuNTc4MTI1IC0zLjM1OTM3NSBDIDIuMDYyNSAtNCAyLjUxNTYyNSAtNC4xNTYyNSAyLjc2NTYyNSAtNC4xNTYyNSBDIDMuMTI1IC00LjE1NjI1IDMuMzkwNjI1IC0zLjg1OTM3NSAzLjM5MDYyNSAtMy4yMTg3NSBDIDMuMzkwNjI1IC0yLjY0MDYyNSAzLjA2MjUgLTEuNSAyLjg5MDYyNSAtMS4xMjUgQyAyLjU2MjUgLTAuNDY4NzUgMi4xMDkzNzUgLTAuMTA5Mzc1IDEuNzE4NzUgLTAuMTA5Mzc1IEMgMS4zOTA2MjUgLTAuMTA5Mzc1IDEuMDYyNSAtMC4zNzUgMS4wNjI1IC0xLjEwOTM3NSBDIDEuMDYyNSAtMS4yOTY4NzUgMS4wNjI1IC0xLjQ4NDM3NSAxLjIxODc1IC0yLjEwOTM3NSBaIE0gMS40Mzc1IC0zLjAxNTYyNSAiLz4KPC9nPgo8ZyBpZD0iZ2x5cGgtMC0yIj4KPHBhdGggZD0iTSAzLjkyMTg3NSAtMy43NjU2MjUgQyAzLjc2NTYyNSAtMy43NjU2MjUgMy42MjUgLTMuNzY1NjI1IDMuNDg0Mzc1IC0zLjYyNSBDIDMuMzI4MTI1IC0zLjQ2ODc1IDMuMjk2ODc1IC0zLjI5Njg3NSAzLjI5Njg3NSAtMy4yMzQzNzUgQyAzLjI5Njg3NSAtMyAzLjQ4NDM3NSAtMi44OTA2MjUgMy42NzE4NzUgLTIuODkwNjI1IEMgMy45NTMxMjUgLTIuODkwNjI1IDQuMjE4NzUgLTMuMTI1IDQuMjE4NzUgLTMuNTE1NjI1IEMgNC4yMTg3NSAtNCAzLjc2NTYyNSAtNC4zNzUgMy4wNjI1IC00LjM3NSBDIDEuNzE4NzUgLTQuMzc1IDAuNDA2MjUgLTIuOTUzMTI1IDAuNDA2MjUgLTEuNTYyNSBDIDAuNDA2MjUgLTAuNjcxODc1IDAuOTg0Mzc1IDAuMTA5Mzc1IDIgMC4xMDkzNzUgQyAzLjQyMTg3NSAwLjEwOTM3NSA0LjI1IC0wLjkzNzUgNC4yNSAtMS4wNjI1IEMgNC4yNSAtMS4xMjUgNC4xODc1IC0xLjE4NzUgNC4xNDA2MjUgLTEuMTg3NSBDIDQuMDc4MTI1IC0xLjE4NzUgNC4wNjI1IC0xLjE3MTg3NSA0IC0xLjA5Mzc1IEMgMy4yMTg3NSAtMC4xMDkzNzUgMi4xNDA2MjUgLTAuMTA5Mzc1IDIuMDMxMjUgLTAuMTA5Mzc1IEMgMS40MDYyNSAtMC4xMDkzNzUgMS4xNDA2MjUgLTAuNTkzNzUgMS4xNDA2MjUgLTEuMTg3NSBDIDEuMTQwNjI1IC0xLjU5Mzc1IDEuMzI4MTI1IC0yLjU0Njg3NSAxLjY3MTg3NSAtMy4xNzE4NzUgQyAxLjk4NDM3NSAtMy43MzQzNzUgMi41MTU2MjUgLTQuMTU2MjUgMy4wNjI1IC00LjE1NjI1IEMgMy40MDYyNSAtNC4xNTYyNSAzLjc4MTI1IC00LjAzMTI1IDMuOTIxODc1IC0zLjc2NTYyNSBaIE0gMy45MjE4NzUgLTMuNzY1NjI1ICIvPgo8L2c+CjxnIGlkPSJnbHlwaC0wLTMiPgo8cGF0aCBkPSJNIDUuMTA5Mzc1IC02Ljc1IEMgNS4xMDkzNzUgLTYuNzY1NjI1IDUuMTA5Mzc1IC02Ljg1OTM3NSA0Ljk2ODc1IC02Ljg1OTM3NSBDIDQuODI4MTI1IC02Ljg1OTM3NSAzLjg5MDYyNSAtNi43ODEyNSAzLjcxODc1IC02Ljc1IEMgMy42NDA2MjUgLTYuNzUgMy41NzgxMjUgLTYuNzAzMTI1IDMuNTc4MTI1IC02LjU2MjUgQyAzLjU3ODEyNSAtNi40NTMxMjUgMy42NzE4NzUgLTYuNDUzMTI1IDMuODEyNSAtNi40NTMxMjUgQyA0LjI5Njg3NSAtNi40NTMxMjUgNC4zMTI1IC02LjM3NSA0LjMxMjUgLTYuMjgxMjUgTCA0LjI4MTI1IC02LjA3ODEyNSBMIDMuNjg3NSAtMy43MzQzNzUgQyAzLjUxNTYyNSAtNC4xMDkzNzUgMy4yMTg3NSAtNC4zNzUgMi43ODEyNSAtNC4zNzUgQyAxLjYyNSAtNC4zNzUgMC4zOTA2MjUgLTIuOTIxODc1IDAuMzkwNjI1IC0xLjQ2ODc1IEMgMC4zOTA2MjUgLTAuNTQ2ODc1IDAuOTM3NSAwLjEwOTM3NSAxLjcxODc1IDAuMTA5Mzc1IEMgMS45MDYyNSAwLjEwOTM3NSAyLjQwNjI1IDAuMDYyNSAzIC0wLjY0MDYyNSBDIDMuMDc4MTI1IC0wLjIxODc1IDMuNDIxODc1IDAuMTA5Mzc1IDMuODkwNjI1IDAuMTA5Mzc1IEMgNC4yNSAwLjEwOTM3NSA0LjQ2ODc1IC0wLjEyNSA0LjYyNSAtMC40Mzc1IEMgNC43OTY4NzUgLTAuNzk2ODc1IDQuOTIxODc1IC0xLjM5MDYyNSA0LjkyMTg3NSAtMS40MjE4NzUgQyA0LjkyMTg3NSAtMS41MTU2MjUgNC44NDM3NSAtMS41MTU2MjUgNC44MTI1IC0xLjUxNTYyNSBDIDQuNzAzMTI1IC0xLjUxNTYyNSA0LjcwMzEyNSAtMS40Njg3NSA0LjY3MTg3NSAtMS4zMjgxMjUgQyA0LjUgLTAuNjg3NSA0LjMyODEyNSAtMC4xMDkzNzUgMy45MjE4NzUgLTAuMTA5Mzc1IEMgMy42NTYyNSAtMC4xMDkzNzUgMy42MjUgLTAuMzU5Mzc1IDMuNjI1IC0wLjU2MjUgQyAzLjYyNSAtMC43OTY4NzUgMy42NDA2MjUgLTAuODc1IDMuNjcxODc1IC0xLjAzMTI1IFogTSAzLjA0Njg3NSAtMS4xNzE4NzUgQyAzIC0xIDMgLTAuOTg0Mzc1IDIuODQzNzUgLTAuODEyNSBDIDIuNDA2MjUgLTAuMjY1NjI1IDIgLTAuMTA5Mzc1IDEuNzM0Mzc1IC0wLjEwOTM3NSBDIDEuMjM0Mzc1IC0wLjEwOTM3NSAxLjA5Mzc1IC0wLjY1NjI1IDEuMDkzNzUgLTEuMDMxMjUgQyAxLjA5Mzc1IC0xLjUzMTI1IDEuNDIxODc1IC0yLjc1IDEuNjQwNjI1IC0zLjIwMzEyNSBDIDEuOTUzMTI1IC0zLjc4MTI1IDIuMzkwNjI1IC00LjE1NjI1IDIuNzk2ODc1IC00LjE1NjI1IEMgMy40Mzc1IC00LjE1NjI1IDMuNTc4MTI1IC0zLjM0Mzc1IDMuNTc4MTI1IC0zLjI4MTI1IEMgMy41NzgxMjUgLTMuMjE4NzUgMy41NDY4NzUgLTMuMTcxODc1IDMuNTQ2ODc1IC0zLjEwOTM3NSBaIE0gMy4wNDY4NzUgLTEuMTcxODc1ICIvPgo8L2c+CjxnIGlkPSJnbHlwaC0wLTQiPgo8cGF0aCBkPSJNIDEuODQzNzUgLTIuMjgxMjUgQyAyLjE0MDYyNSAtMi4yODEyNSAyLjg3NSAtMi4yOTY4NzUgMy4zNTkzNzUgLTIuNTE1NjI1IEMgNC4wNjI1IC0yLjgxMjUgNC4xMDkzNzUgLTMuMzkwNjI1IDQuMTA5Mzc1IC0zLjUzMTI1IEMgNC4xMDkzNzUgLTMuOTY4NzUgMy43MzQzNzUgLTQuMzc1IDMuMDQ2ODc1IC00LjM3NSBDIDEuOTUzMTI1IC00LjM3NSAwLjQ1MzEyNSAtMy40MDYyNSAwLjQ1MzEyNSAtMS42ODc1IEMgMC40NTMxMjUgLTAuNjcxODc1IDEuMDMxMjUgMC4xMDkzNzUgMiAwLjEwOTM3NSBDIDMuNDIxODc1IDAuMTA5Mzc1IDQuMjUgLTAuOTM3NSA0LjI1IC0xLjA2MjUgQyA0LjI1IC0xLjEyNSA0LjE4NzUgLTEuMTg3NSA0LjE0MDYyNSAtMS4xODc1IEMgNC4wNzgxMjUgLTEuMTg3NSA0LjA2MjUgLTEuMTcxODc1IDQgLTEuMDkzNzUgQyAzLjIxODc1IC0wLjEwOTM3NSAyLjE0MDYyNSAtMC4xMDkzNzUgMi4wMzEyNSAtMC4xMDkzNzUgQyAxLjI1IC0wLjEwOTM3NSAxLjE3MTg3NSAtMC45Mzc1IDEuMTcxODc1IC0xLjI1IEMgMS4xNzE4NzUgLTEuMzc1IDEuMTcxODc1IC0xLjY4NzUgMS4zMjgxMjUgLTIuMjgxMjUgWiBNIDEuMzkwNjI1IC0yLjUgQyAxLjc2NTYyNSAtNCAyLjc5Njg3NSAtNC4xNTYyNSAzLjA0Njg3NSAtNC4xNTYyNSBDIDMuNTE1NjI1IC00LjE1NjI1IDMuNzgxMjUgLTMuODc1IDMuNzgxMjUgLTMuNTMxMjUgQyAzLjc4MTI1IC0yLjUgMi4yMDMxMjUgLTIuNSAxLjc5Njg3NSAtMi41IFogTSAxLjM5MDYyNSAtMi41ICIvPgo8L2c+CjxnIGlkPSJnbHlwaC0wLTUiPgo8cGF0aCBkPSJNIDMuNjI1IC0zLjk1MzEyNSBMIDQuNDg0Mzc1IC0zLjk1MzEyNSBDIDQuNjcxODc1IC0zLjk1MzEyNSA0Ljc4MTI1IC0zLjk1MzEyNSA0Ljc4MTI1IC00LjE1NjI1IEMgNC43ODEyNSAtNC4yNjU2MjUgNC42NzE4NzUgLTQuMjY1NjI1IDQuNTE1NjI1IC00LjI2NTYyNSBMIDMuNjg3NSAtNC4yNjU2MjUgTCAzLjg5MDYyNSAtNS4zOTA2MjUgQyAzLjkzNzUgLTUuNTkzNzUgNC4wNzgxMjUgLTYuMjk2ODc1IDQuMTQwNjI1IC02LjQyMTg3NSBDIDQuMjE4NzUgLTYuNjA5Mzc1IDQuMzkwNjI1IC02Ljc1IDQuNTkzNzUgLTYuNzUgQyA0LjY0MDYyNSAtNi43NSA0Ljg5MDYyNSAtNi43NSA1LjA3ODEyNSAtNi41NzgxMjUgQyA0LjY1NjI1IC02LjUzMTI1IDQuNTQ2ODc1IC02LjE4NzUgNC41NDY4NzUgLTYuMDQ2ODc1IEMgNC41NDY4NzUgLTUuODEyNSA0LjczNDM3NSAtNS43MDMxMjUgNC45MjE4NzUgLTUuNzAzMTI1IEMgNS4xNzE4NzUgLTUuNzAzMTI1IDUuNDUzMTI1IC01LjkyMTg3NSA1LjQ1MzEyNSAtNi4yOTY4NzUgQyA1LjQ1MzEyNSAtNi43NSA1IC02Ljk2ODc1IDQuNTkzNzUgLTYuOTY4NzUgQyA0LjI2NTYyNSAtNi45Njg3NSAzLjY0MDYyNSAtNi43OTY4NzUgMy4zNDM3NSAtNS44MTI1IEMgMy4yODEyNSAtNS42MDkzNzUgMy4yNSAtNS41MTU2MjUgMy4wMTU2MjUgLTQuMjY1NjI1IEwgMi4zMjgxMjUgLTQuMjY1NjI1IEMgMi4xNDA2MjUgLTQuMjY1NjI1IDIuMDMxMjUgLTQuMjY1NjI1IDIuMDMxMjUgLTQuMDc4MTI1IEMgMi4wMzEyNSAtMy45NTMxMjUgMi4xMjUgLTMuOTUzMTI1IDIuMzEyNSAtMy45NTMxMjUgTCAyLjk2ODc1IC0zLjk1MzEyNSBMIDIuMjE4NzUgLTAuMDQ2ODc1IEMgMi4wNDY4NzUgMC45MDYyNSAxLjg3NSAxLjgxMjUgMS4zNTkzNzUgMS44MTI1IEMgMS4zMjgxMjUgMS44MTI1IDEuMDc4MTI1IDEuODEyNSAwLjg5MDYyNSAxLjYyNSBDIDEuMzQzNzUgMS42MDkzNzUgMS40Mzc1IDEuMjUgMS40Mzc1IDEuMDkzNzUgQyAxLjQzNzUgMC44NzUgMS4yNSAwLjc1IDEuMDYyNSAwLjc1IEMgMC44MTI1IDAuNzUgMC41MzEyNSAwLjk2ODc1IDAuNTMxMjUgMS4zNDM3NSBDIDAuNTMxMjUgMS43OTY4NzUgMC45NTMxMjUgMi4wMzEyNSAxLjM1OTM3NSAyLjAzMTI1IEMgMS45MDYyNSAyLjAzMTI1IDIuMjk2ODc1IDEuNDM3NSAyLjQ4NDM3NSAxLjA2MjUgQyAyLjc5Njg3NSAwLjQzNzUgMy4wMzEyNSAtMC43NSAzLjAzMTI1IC0wLjgyODEyNSBaIE0gMy42MjUgLTMuOTUzMTI1ICIvPgo8L2c+CjxnIGlkPSJnbHlwaC0wLTYiPgo8cGF0aCBkPSJNIDQuNjU2MjUgLTMuNzM0Mzc1IEMgNC42NzE4NzUgLTMuNzgxMjUgNC42ODc1IC0zLjg0Mzc1IDQuNjg3NSAtMy45MDYyNSBDIDQuNjg3NSAtNC4wNzgxMjUgNC41NjI1IC00LjE3MTg3NSA0LjQwNjI1IC00LjE3MTg3NSBDIDQuMjk2ODc1IC00LjE3MTg3NSA0LjAzMTI1IC00LjEwOTM3NSA0IC0zLjc1IEMgMy44MTI1IC00LjEwOTM3NSAzLjQ2ODc1IC00LjM3NSAzLjA3ODEyNSAtNC4zNzUgQyAxLjk1MzEyNSAtNC4zNzUgMC43MTg3NSAtMi45ODQzNzUgMC43MTg3NSAtMS41NjI1IEMgMC43MTg3NSAtMC41NzgxMjUgMS4zMjgxMjUgMCAyLjAzMTI1IDAgQyAyLjYyNSAwIDMuMDc4MTI1IC0wLjQ2ODc1IDMuMTg3NSAtMC41NzgxMjUgTCAzLjE4NzUgLTAuNTYyNSBDIDIuOTg0Mzc1IDAuMzEyNSAyLjg3NSAwLjcxODc1IDIuODc1IDAuNzM0Mzc1IEMgMi44MjgxMjUgMC44MjgxMjUgMi41IDEuODEyNSAxLjQzNzUgMS44MTI1IEMgMS4yNSAxLjgxMjUgMC45Mzc1IDEuNzk2ODc1IDAuNjU2MjUgMS43MTg3NSBDIDAuOTUzMTI1IDEuNjI1IDEuMDYyNSAxLjM1OTM3NSAxLjA2MjUgMS4yMDMxMjUgQyAxLjA2MjUgMS4wMzEyNSAwLjk1MzEyNSAwLjg0Mzc1IDAuNjg3NSAwLjg0Mzc1IEMgMC40Njg3NSAwLjg0Mzc1IDAuMTQwNjI1IDEuMDMxMjUgMC4xNDA2MjUgMS40MjE4NzUgQyAwLjE0MDYyNSAxLjgyODEyNSAwLjUxNTYyNSAyLjAzMTI1IDEuNDY4NzUgMi4wMzEyNSBDIDIuNzAzMTI1IDIuMDMxMjUgMy40MDYyNSAxLjI1IDMuNTYyNSAwLjY1NjI1IFogTSAzLjM3NSAtMS4yNjU2MjUgQyAzLjMxMjUgLTEuMDE1NjI1IDMuMDc4MTI1IC0wLjc2NTYyNSAyLjg3NSAtMC41NzgxMjUgQyAyLjY1NjI1IC0wLjM5MDYyNSAyLjM1OTM3NSAtMC4yMTg3NSAyLjA2MjUgLTAuMjE4NzUgQyAxLjU3ODEyNSAtMC4yMTg3NSAxLjQyMTg3NSAtMC43MzQzNzUgMS40MjE4NzUgLTEuMTI1IEMgMS40MjE4NzUgLTEuNjA5Mzc1IDEuNzE4NzUgLTIuNzY1NjI1IDEuOTg0Mzc1IC0zLjI4MTI1IEMgMi4yNSAtMy43NjU2MjUgMi42NzE4NzUgLTQuMTU2MjUgMy4wNzgxMjUgLTQuMTU2MjUgQyAzLjczNDM3NSAtNC4xNTYyNSAzLjg3NSAtMy4zNTkzNzUgMy44NzUgLTMuMjk2ODc1IEMgMy44NzUgLTMuMjUgMy44NTkzNzUgLTMuMTg3NSAzLjg0Mzc1IC0zLjE1NjI1IFogTSAzLjM3NSAtMS4yNjU2MjUgIi8+CjwvZz4KPC9nPgo8L2RlZnM+CjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMi4xOTE4IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0ibWl0ZXIiIHN0cm9rZT0icmdiKDEwMCUsIDUwJSwgMCUpIiBzdHJva2Utb3BhY2l0eT0iMSIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBkPSJNIDUuMTAzNjk3IDExMy4zODcxMDUgTCA1MS41OTAyNDQgMTEzLjM4NzEwNSAiIHRyYW5zZm9ybT0ibWF0cml4KDAuOTkzNDgzLCAwLCAwLCAtMC45OTM0ODMsIDE2LjYyNDg3NiwgMTI3LjU2MjIyMykiLz4KPGcgZmlsbD0icmdiKDAlLCAwJSwgMCUpIiBmaWxsLW9wYWNpdHk9IjEiPgo8dXNlIHhsaW5rOmhyZWY9IiNnbHlwaC0wLTAiIHg9IjQyLjE3MDMwNCIgeT0iMTAuNTI4OTMzIi8+CjwvZz4KPHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIyLjE5MTgiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJtaXRlciIgc3Ryb2tlPSJyZ2IoMTAwJSwgNTAlLCAwJSkiIHN0cm9rZS1vcGFjaXR5PSIxIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIGQ9Ik0gNTYuNjkzODE2IDEwOC4yODM1MzIgTCA1Ni42OTM4MTYgNjEuNzk2OTg1ICIgdHJhbnNmb3JtPSJtYXRyaXgoMC45OTM0ODMsIDAsIDAsIC0wLjk5MzQ4MywgMTYuNjI0ODc2LCAxMjcuNTYyMjIzKSIvPgo8ZyBmaWxsPSJyZ2IoMCUsIDAlLCAwJSkiIGZpbGwtb3BhY2l0eT0iMSI+Cjx1c2UgeGxpbms6aHJlZj0iI2dseXBoLTAtMSIgeD0iNzcuMzM0NjM1IiB5PSI0Ni41MTM4OCIvPgo8L2c+CjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMi4xOTE4IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0ibWl0ZXIiIHN0cm9rZT0icmdiKDEwMCUsIDUwJSwgMCUpIiBzdHJva2Utb3BhY2l0eT0iMSIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBkPSJNIDU2LjY5MzgxNiA1MS41ODk4NCBMIDU2LjY5MzgxNiA1LjEwMzI5NCAiIHRyYW5zZm9ybT0ibWF0cml4KDAuOTkzNDgzLCAwLCAwLCAtMC45OTM0ODMsIDE2LjYyNDg3NiwgMTI3LjU2MjIyMykiLz4KPGcgZmlsbD0icmdiKDAlLCAwJSwgMCUpIiBmaWxsLW9wYWNpdHk9IjEiPgo8dXNlIHhsaW5rOmhyZWY9IiNnbHlwaC0wLTIiIHg9Ijc3LjMzNDYzNSIgeT0iMTAxLjUzMTk3NSIvPgo8L2c+CjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMi4xOTE4IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0ibWl0ZXIiIHN0cm9rZT0icmdiKDEwMCUsIDUwJSwgMCUpIiBzdHJva2Utb3BhY2l0eT0iMSIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBkPSJNIDUuMTAzNjk3IC0wLjAwMDI3ODk3NSBMIDUxLjU5MDI0NCAtMC4wMDAyNzg5NzUgIiB0cmFuc2Zvcm09Im1hdHJpeCgwLjk5MzQ4MywgMCwgMCwgLTAuOTkzNDgzLCAxNi42MjQ4NzYsIDEyNy41NjIyMjMpIi8+CjxnIGZpbGw9InJnYigwJSwgMCUsIDAlKSIgZmlsbC1vcGFjaXR5PSIxIj4KPHVzZSB4bGluazpocmVmPSIjZ2x5cGgtMC0zIiB4PSI0Mi4yMTEwMzciIHk9IjEzOC44MjIzNTkiLz4KPC9nPgo8cGF0aCBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjIuMTkxOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49Im1pdGVyIiBzdHJva2U9InJnYigxMDAlLCA1MCUsIDAlKSIgc3Ryb2tlLW9wYWNpdHk9IjEiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgZD0iTSAwLjAwMDEyNDU2NyA1MS41ODk4NCBMIDAuMDAwMTI0NTY3IDUuMTAzMjk0ICIgdHJhbnNmb3JtPSJtYXRyaXgoMC45OTM0ODMsIDAsIDAsIC0wLjk5MzQ4MywgMTYuNjI0ODc2LCAxMjcuNTYyMjIzKSIvPgo8ZyBmaWxsPSJyZ2IoMCUsIDAlLCAwJSkiIGZpbGwtb3BhY2l0eT0iMSI+Cjx1c2UgeGxpbms6aHJlZj0iI2dseXBoLTAtNCIgeD0iNy42Mjk4ODEiIHk9IjEwMS41MzE5NzUiLz4KPC9nPgo8cGF0aCBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjIuMTkxOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49Im1pdGVyIiBzdHJva2U9InJnYigxMDAlLCA1MCUsIDAlKSIgc3Ryb2tlLW9wYWNpdHk9IjEiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgZD0iTSAwLjAwMDEyNDU2NyAxMDguMjgzNTMyIEwgMC4wMDAxMjQ1NjcgNjEuNzk2OTg1ICIgdHJhbnNmb3JtPSJtYXRyaXgoMC45OTM0ODMsIDAsIDAsIC0wLjk5MzQ4MywgMTYuNjI0ODc2LCAxMjcuNTYyMjIzKSIvPgo8ZyBmaWxsPSJyZ2IoMCUsIDAlLCAwJSkiIGZpbGwtb3BhY2l0eT0iMSI+Cjx1c2UgeGxpbms6aHJlZj0iI2dseXBoLTAtNSIgeD0iNi4zMjY0MzIiIHk9IjQ1LjU1MjE4OSIvPgo8L2c+CjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMi4xOTE4IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0ibWl0ZXIiIHN0cm9rZT0icmdiKDEwMCUsIDUwJSwgMCUpIiBzdHJva2Utb3BhY2l0eT0iMSIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBkPSJNIDUuMTAzNjk3IDU2LjY5MzQxMyBMIDUxLjU5MDI0NCA1Ni42OTM0MTMgIiB0cmFuc2Zvcm09Im1hdHJpeCgwLjk5MzQ4MywgMCwgMCwgLTAuOTkzNDgzLCAxNi42MjQ4NzYsIDEyNy41NjIyMjMpIi8+CjxnIGZpbGw9InJnYigwJSwgMCUsIDAlKSIgZmlsbC1vcGFjaXR5PSIxIj4KPHVzZSB4bGluazpocmVmPSIjZ2x5cGgtMC02IiB4PSI0OS4xNzMzNjYiIHk9IjY0LjkyODA4OCIvPgo8L2c+CjxwYXRoIGZpbGwtcnVsZT0ibm9uemVybyIgZmlsbD0icmdiKDEwMCUsIDUwJSwgMCUpIiBmaWxsLW9wYWNpdHk9IjEiIGQ9Ik0gODkgMTI3LjU2MjUgQyA4OSAxMjUuNjk1MzEyIDg3LjQ4ODI4MSAxMjQuMTgzNTk0IDg1LjYyMTA5NCAxMjQuMTgzNTk0IEMgODMuNzUzOTA2IDEyNC4xODM1OTQgODIuMjQyMTg4IDEyNS42OTUzMTIgODIuMjQyMTg4IDEyNy41NjI1IEMgODIuMjQyMTg4IDEyOS40Mjk2ODggODMuNzUzOTA2IDEzMC45NDE0MDYgODUuNjIxMDk0IDEzMC45NDE0MDYgQyA4Ny40ODgyODEgMTMwLjk0MTQwNiA4OSAxMjkuNDI5Njg4IDg5IDEyNy41NjI1IFogTSA4OSAxMjcuNTYyNSAiLz4KPC9zdmc+Cg==" class="max-w-full" alt="Figure" /></div>
+
+\begin{enumerate}
+    \item Quels segments faut-il allumer pour afficher le chiffre **7** ?
+    \item Quels segments faut-il allumer pour afficher le chiffre **8** ?
+    \item Pour afficher le chiffre **1**, on allume $b$ et $c$. Combien de chiffres de $0$ à $9$ utilisent **exactement** deux segments ? Lequel (ou lesquels) ?
+    \item Pourquoi un afficheur 7 segments ne peut-il pas restituer un mot quelconque ?
+\end{enumerate}
+\end{enonce}
+
+\textbf{Solution :}
+\begin{enumerate}
+    \item Pour le **7**, on allume uniquement les segments $a$, $b$ et $c$.
+    \item Pour le **8**, on allume les **sept** segments simultanément ($a$, $b$, $c$, $d$, $e$, $f$, $g$).
+    \item Un seul chiffre utilise exactement deux segments : le **1** ($b$ et $c$).
+    \item Parce que ses sept segments, disposés en huit, ne permettent de former que les **chiffres** $0$ à $9$ et quelques rares lettres. Pour un texte quelconque, il faut un afficheur **alphanumérique** (LCD) ou un écran.
+\end{enumerate}
+
+### Exercice 4 : Liaison série ou parallèle
+\begin{enonce}
+On transmet des mots de 8 bits entre deux circuits.
+\begin{enumerate}
+    \item En liaison **série**, combien de fils de données sont nécessaires pour transmettre un mot ? Comment les bits circulent-ils ?
+    \item En liaison **parallèle**, combien de fils de données faut-il pour un mot de 8 bits ? Comment les bits circulent-ils ?
+    \item Quel type de liaison privilégie-t-on pour une transmission sur **longue distance** ? Pourquoi ?
+    \item Les liaisons USB et $\mathrm{I}^2\mathrm{C}$ sont-elles série ou parallèle ?
+\end{enumerate}
+\end{enonce}
+
+\textbf{Solution :}
+\begin{enumerate}
+    \item En liaison **série**, un **seul** fil de données suffit : les bits sont transmis **les uns après les autres** (successivement).
+    \item En liaison **parallèle**, il faut **8 fils** de données (un fil par bit) : les 8 bits sont transmis **simultanément**.
+    \item On privilégie la liaison **série** : elle utilise peu de conducteurs, ce qui la rend économique et fiable sur de **longues distances** (la parallèle est rapide mais coûteuse en câblage et réservée aux courtes distances).
+    \item Ce sont des liaisons **série** : un seul fil de données transporte les bits successivement.
+\end{enumerate}
+
+### Exercice 5 : Réseaux et bus de terrain
+\begin{enonce}
+Dans une installation industrielle, de nombreux capteurs, actionneurs et automates doivent échanger des données.
+\begin{enumerate}
+    \item Définir ce qu'est un **réseau**.
+    \item Qu'appelle-t-on un **bus de terrain** ? Citer deux exemples.
+    \item Quel est le principal avantage d'un bus de terrain par rapport à un câblage point à point classique ?
+    \item Vers un autre système, l'information est-elle « rendue visible » ? Sous quelle forme circule-t-elle, et que garantit un **protocole** ?
+\end{enumerate}
+\end{enonce}
+
+\textbf{Solution :}
+\begin{enumerate}
+    \item Un **réseau** est un ensemble de systèmes reliés entre eux pour **échanger des données** (par exemple Ethernet, Wi-Fi).
+    \item Un **bus de terrain** est un réseau **industriel** spécialisé qui relie sur un même support les capteurs, actionneurs et automates d'une installation. Exemples : **CAN**, **Modbus** (ou Profibus).
+    \item Il **réduit fortement le câblage** (un seul support partagé au lieu de nombreuses liaisons) et **facilite le diagnostic** des pannes.
+    \item Non : l'information n'est pas rendue visible, elle est **codée sous forme numérique** et circule sur un support partagé. Le **protocole** est l'ensemble des règles qui garantissent que l'émetteur et le récepteur **se comprennent**.
+\end{enumerate}
+
+### Exercice 6 : Signal, support et interface de dialogue
+\begin{enonce}
+\begin{enumerate}
+    \item Qu'est-ce qu'un **signal** ? Donner deux grandeurs physiques pouvant servir de signal.
+    \item Qu'est-ce qu'un **support de transmission** ? Citer trois supports.
+    \item Définir une **interface de dialogue** (IHM).
+    \item Sur le bandeau d'un four à micro-ondes, identifier ce qui relève de la restitution **vers l'utilisateur** et ce qui relève de la **commande** par l'utilisateur.
+\end{enumerate}
+\end{enonce}
+
+\textbf{Solution :}
+\begin{enumerate}
+    \item Un **signal** est une grandeur physique qui **porte une information** et varie dans le temps. Exemples : une **tension**, un **courant**, une intensité lumineuse, une onde sonore ou électromagnétique.
+    \item Le **support de transmission** est le **milieu physique** qui achemine le signal. Exemples : câble en cuivre (paire torsadée), **fibre optique**, **espace libre** (liaison sans fil).
+    \item Une **interface de dialogue** (ou IHM) est l'ensemble des dispositifs permettant l'**échange d'informations entre le système et l'utilisateur** : organes de restitution (voyants, écrans, haut-parleurs) et organes de commande (boutons, clavier, écran tactile).
+    \item Restitution **vers l'utilisateur** : l'afficheur qui montre le temps restant et la puissance. **Commande** par l'utilisateur : les touches qui servent à entrer les consignes.
+\end{enumerate}
