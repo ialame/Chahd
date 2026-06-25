@@ -49,6 +49,9 @@ public class ContentService {
 
     public MatiereDetailDto getMatiere(String slug, String filiereSlug) {
         return matiereRepository.findBySlug(slug)
+                // une matière taguée n'est visible que par ses filières (non taguée = visible par tous)
+                .filter(m -> filiereSlug == null || m.getFilieres().isEmpty()
+                        || m.getFilieres().stream().anyMatch(f -> f.getSlug().equals(filiereSlug)))
                 .map(m -> mapper.toMatiereDetailDto(m, filiereSlug))
                 .orElseThrow(() -> new NotFoundException("Matière introuvable : " + slug));
     }
