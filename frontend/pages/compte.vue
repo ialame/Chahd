@@ -3,7 +3,8 @@ const { user, changerFiliere } = useAuth()
 
 const filieres = [
   { slug: 'sciences-physiques', nom: 'Sciences Physiques', desc: 'Maths, PC, SVT + Philo, Français, Anglais' },
-  { slug: 'sciences-mathematiques', nom: 'Sciences Mathématiques', desc: 'Maths, PC, Informatique + Philo, Français, Anglais' },
+  { slug: 'sciences-mathematiques-a', nom: 'Sciences Mathématiques A', desc: 'Maths, PC, SVT, Informatique + Philo, Français, Anglais' },
+  { slug: 'sciences-mathematiques-b', nom: 'Sciences Mathématiques B', desc: "Maths, PC, Sciences de l'Ingénieur, Informatique + Philo, Français, Anglais" },
 ]
 
 const enregistre = ref(false)

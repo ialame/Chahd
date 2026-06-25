@@ -12,7 +12,8 @@ const loading = ref(false)
 
 const filieres = [
   { slug: 'sciences-physiques', nom: 'Sciences Physiques', desc: 'Maths, PC, SVT…' },
-  { slug: 'sciences-mathematiques', nom: 'Sciences Mathématiques', desc: 'Maths, PC, Informatique…' },
+  { slug: 'sciences-mathematiques-a', nom: 'Sciences Mathématiques A', desc: 'Maths, PC, SVT, Informatique…' },
+  { slug: 'sciences-mathematiques-b', nom: 'Sciences Mathématiques B', desc: "Maths, PC, Sciences de l'Ingénieur, Informatique…" },
 ]
 
 async function soumettre() {
