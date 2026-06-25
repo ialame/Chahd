@@ -119,6 +119,27 @@ MAP="
 145808 si-2025-normale-corrige
 145809 si-2025-rattrapage-sujet
 145810 si-2025-rattrapage-corrige
+147254 francais-1bac-2024-fes-meknes-sujet
+147260 francais-1bac-2024-fes-meknes-corrige
+147266 francais-1bac-2024-beni-mellal-khenifra-sujet
+147272 francais-1bac-2024-beni-mellal-khenifra-corrige
+147278 francais-1bac-2024-rabat-sale-kenitra-sujet
+147284 francais-1bac-2024-rabat-sale-kenitra-corrige
+147290 francais-1bac-2024-draa-tafilalet-sujet
+147296 francais-1bac-2024-draa-tafilalet-corrige
+147302 francais-1bac-2024-casablanca-settat-sujet
+147308 francais-1bac-2024-casablanca-settat-corrige
+147314 francais-1bac-2024-marrakech-safi-sujet
+147320 francais-1bac-2024-marrakech-safi-corrige
+147326 francais-1bac-2024-guelmim-oued-noun-sujet
+147332 francais-1bac-2024-guelmim-oued-noun-corrige
+147338 francais-1bac-2024-tanger-tetouan-al-hoceima-sujet
+147344 francais-1bac-2024-tanger-tetouan-al-hoceima-corrige
+147350 francais-1bac-2024-laayoune-sakia-el-hamra-sujet
+147356 francais-1bac-2024-laayoune-sakia-el-hamra-corrige
+147362 francais-1bac-2024-dakhla-oued-ed-dahab-sujet
+147368 francais-1bac-2024-dakhla-oued-ed-dahab-corrige
+147374 francais-1bac-2024-souss-massa-sujet
 "
 
 echo "$MAP" | while read -r id name; do
