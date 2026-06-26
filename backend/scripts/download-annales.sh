@@ -140,6 +140,25 @@ MAP="
 147362 francais-1bac-2024-dakhla-oued-ed-dahab-sujet
 147368 francais-1bac-2024-dakhla-oued-ed-dahab-corrige
 147374 francais-1bac-2024-souss-massa-sujet
+146873 histoire-geo-1bac-2024-beni-mellal-khenifra-sujet
+146876 histoire-geo-1bac-2024-beni-mellal-khenifra-corrige
+146855 histoire-geo-1bac-2024-casablanca-settat-sujet
+146858 histoire-geo-1bac-2024-casablanca-settat-corrige
+146849 histoire-geo-1bac-2024-draa-tafilalet-sujet
+146852 histoire-geo-1bac-2024-draa-tafilalet-corrige
+146861 histoire-geo-1bac-2024-fes-meknes-sujet
+146864 histoire-geo-1bac-2024-fes-meknes-corrige
+146837 histoire-geo-1bac-2024-guelmim-oued-noun-sujet
+146840 histoire-geo-1bac-2024-guelmim-oued-noun-corrige
+146825 histoire-geo-1bac-2024-laayoune-sakia-el-hamra-sujet
+146828 histoire-geo-1bac-2024-laayoune-sakia-el-hamra-corrige
+146879 histoire-geo-1bac-2024-marrakech-safi-sujet
+146831 histoire-geo-1bac-2024-oriental-sujet
+146834 histoire-geo-1bac-2024-oriental-corrige
+146867 histoire-geo-1bac-2024-rabat-sale-kenitra-sujet
+146870 histoire-geo-1bac-2024-rabat-sale-kenitra-corrige
+146843 histoire-geo-1bac-2024-tanger-tetouan-al-hoceima-sujet
+146846 histoire-geo-1bac-2024-tanger-tetouan-al-hoceima-corrige
 "
 
 echo "$MAP" | while read -r id name; do
