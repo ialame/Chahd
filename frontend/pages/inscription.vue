@@ -11,13 +11,14 @@ const erreur = ref('')
 const loading = ref(false)
 
 const filieres = [
+  { slug: 'tronc-commun-sciences', nom: 'Tronc Commun Sciences', desc: 'Maths, PC, SVT', niveau: 'Tronc Commun' },
   { slug: '1bac-sciences-experimentales', nom: '1 Bac Sciences Expérimentales', desc: 'Régional : Français, Histoire-Géo', niveau: '1ère année Bac' },
   { slug: '1bac-sciences-mathematiques', nom: '1 Bac Sciences Mathématiques', desc: 'Régional : Français, Histoire-Géo', niveau: '1ère année Bac' },
   { slug: 'sciences-physiques', nom: 'Sciences Physiques', desc: 'Maths, PC, SVT…', niveau: '2ème année Bac' },
   { slug: 'sciences-mathematiques-a', nom: 'Sciences Mathématiques A', desc: 'Maths, PC, SVT, Informatique…', niveau: '2ème année Bac' },
   { slug: 'sciences-mathematiques-b', nom: 'Sciences Mathématiques B', desc: "Maths, PC, Sciences de l'Ingénieur, Informatique…", niveau: '2ème année Bac' },
 ]
-const niveaux = ['1ère année Bac', '2ème année Bac']
+const niveaux = ['Tronc Commun', '1ère année Bac', '2ème année Bac']
 
 async function soumettre() {
   erreur.value = ''
