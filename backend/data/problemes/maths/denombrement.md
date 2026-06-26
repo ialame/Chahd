@@ -27,7 +27,7 @@ Dans un jeu standard de 52 cartes (comprenant 4 couleurs de 13 cartes chacune), 
         - On choisit la valeur de la paire parmi les 13 valeurs possibles : $C_{13}^{1} = 13$ choix.
         - On choisit les 2 cartes de cette valeur parmi les 4 enseignes possibles : $C_{4}^{2} = 6$ choix.
         - On choisit les 3 autres valeurs distinctes parmi les 12 valeurs restantes : $C_{12}^{3} = 220$ choix.
-        - Pour chacune de ces 3 valeurs, on choisit une carte parmi les 4 enseignes possibles : $C_{4}^{1}^3 = 4^3 = 64$ choix.
+        - Pour chacune de ces 3 valeurs, on choisit une carte parmi les 4 enseignes possibles : $\left(C_{4}^{1}\right)^3 = 4^3 = 64$ choix.
         Par le principe multiplicatif, le nombre de mains est :
         \[
         N_{\text{paire}} = 13 \times 6 \times 220 \times 64 = 1\,098\,240
@@ -37,7 +37,7 @@ Dans un jeu standard de 52 cartes (comprenant 4 couleurs de 13 cartes chacune), 
         - On choisit la valeur du brelan parmi les 13 valeurs : $C_{13}^{1} = 13$ choix.
         - On choisit les 3 cartes de cette valeur parmi les 4 enseignes : $C_{4}^{3} = 4$ choix.
         - On choisit les 2 autres valeurs distinctes parmi les 12 restantes : $C_{12}^{2} = 66$ choix.
-        - Pour chacune de ces 2 valeurs, on choisit une carte parmi les 4 enseignes : $C_{4}^{1}^2 = 4^2 = 16$ choix.
+        - Pour chacune de ces 2 valeurs, on choisit une carte parmi les 4 enseignes : $\left(C_{4}^{1}\right)^2 = 4^2 = 16$ choix.
         Le nombre de mains est :
         \[
         N_{\text{brelan}} = 13 \times 4 \times 66 \times 16 = 54\,912
