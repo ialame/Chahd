@@ -71,11 +71,11 @@ Un club compte $12$ membres : $7$ femmes et $5$ hommes. On désire former un com
 \textbf{Solution :}
 \begin{enumerate}
     \item Un comité est un sous-ensemble de $4$ membres parmi $12$ (l'ordre ne compte pas) :
-    $$\binom{12}{4} = \frac{12 \times 11 \times 10 \times 9}{24} = 495.$$
+    $$C_{12}^{4} = \frac{12 \times 11 \times 10 \times 9}{24} = 495.$$
     \item On choisit $2$ femmes parmi $7$ et $2$ hommes parmi $5$ :
-    $$\binom{7}{2} \times \binom{5}{2} = 21 \times 10 = 210.$$
+    $$C_{7}^{2} \times C_{5}^{2} = 21 \times 10 = 210.$$
     \item On retranche les comités sans aucun homme (donc $4$ femmes parmi $7$) :
-    $$\binom{12}{4} - \binom{7}{4} = 495 - 35 = 460.$$
+    $$C_{12}^{4} - C_{7}^{4} = 495 - 35 = 460.$$
 \end{enumerate}
 
 ### Exercice 5 : Formule du binôme de Newton
@@ -83,31 +83,31 @@ Un club compte $12$ membres : $7$ femmes et $5$ hommes. On désire former un com
 \begin{enumerate}
     \item Développer $(x + 2)^4$ à l'aide de la formule du binôme.
     \item Déterminer le coefficient de $x^5$ dans le développement de $(2x - 1)^8$.
-    \item En déduire la valeur de $\displaystyle \sum_{p=0}^{8} \binom{8}{p}$.
+    \item En déduire la valeur de $\displaystyle \sum_{p=0}^{8} C_{8}^{p}$.
 \end{enumerate}
 \end{enonce}
 
 \textbf{Solution :}
 \begin{enumerate}
-    \item Avec $\binom{4}{0}=1,\ \binom{4}{1}=4,\ \binom{4}{2}=6,\ \binom{4}{3}=4,\ \binom{4}{4}=1$ :
+    \item Avec $C_{4}^{0}=1,\ C_{4}^{1}=4,\ C_{4}^{2}=6,\ C_{4}^{3}=4,\ C_{4}^{4}=1$ :
     $$(x+2)^4 = x^4 + 4 \cdot 2\, x^3 + 6 \cdot 4\, x^2 + 4 \cdot 8\, x + 16 = x^4 + 8x^3 + 24x^2 + 32x + 16.$$
-    \item Le terme général est $\binom{8}{k}(2x)^k(-1)^{8-k}$. Le terme en $x^5$ correspond à $k = 5$ :
-    $$\binom{8}{5}\, 2^5 (-1)^{3} = 56 \times 32 \times (-1) = -1792.$$
-    \item En prenant $a = b = 1$ dans $(a+b)^8$ : $\displaystyle \sum_{p=0}^{8} \binom{8}{p} = 2^8 = 256.$
+    \item Le terme général est $C_{8}^{k}(2x)^k(-1)^{8-k}$. Le terme en $x^5$ correspond à $k = 5$ :
+    $$C_{8}^{5}\, 2^5 (-1)^{3} = 56 \times 32 \times (-1) = -1792.$$
+    \item En prenant $a = b = 1$ dans $(a+b)^8$ : $\displaystyle \sum_{p=0}^{8} C_{8}^{p} = 2^8 = 256.$
 \end{enumerate}
 
 ### Exercice 6 : Équations avec coefficients binomiaux
 \begin{enonce}
 \begin{enumerate}
-    \item Résoudre dans $\mathbb{N}$ l'équation $\displaystyle \binom{n}{2} = 28$.
-    \item Déterminer tous les entiers $x$ tels que $\displaystyle \binom{12}{x} = \binom{12}{3}$.
-    \item Vérifier la relation de Pascal pour $\displaystyle \binom{7}{3}$.
+    \item Résoudre dans $\mathbb{N}$ l'équation $\displaystyle C_{n}^{2} = 28$.
+    \item Déterminer tous les entiers $x$ tels que $\displaystyle C_{12}^{x} = C_{12}^{3}$.
+    \item Vérifier la relation de Pascal pour $\displaystyle C_{7}^{3}$.
 \end{enumerate}
 \end{enonce}
 
 \textbf{Solution :}
 \begin{enumerate}
-    \item $\displaystyle \binom{n}{2} = \frac{n(n-1)}{2} = 28$ donne $n(n-1) = 56$. Comme $8 \times 7 = 56$, on obtient $n = 8$ (seule solution avec $n \ge 2$).
-    \item Par la symétrie $\binom{12}{x} = \binom{12}{12-x}$, l'égalité $\binom{12}{x} = \binom{12}{3}$ a lieu pour $x = 3$ ou $x = 12 - 3 = 9$.
-    \item Relation de Pascal : $\displaystyle \binom{7}{3} = \binom{6}{2} + \binom{6}{3} = 15 + 20 = 35$, ce qui coïncide bien avec $\dfrac{7!}{3!\,4!} = 35$.
+    \item $\displaystyle C_{n}^{2} = \frac{n(n-1)}{2} = 28$ donne $n(n-1) = 56$. Comme $8 \times 7 = 56$, on obtient $n = 8$ (seule solution avec $n \ge 2$).
+    \item Par la symétrie $C_{12}^{x} = C_{12}^{12-x}$, l'égalité $C_{12}^{x} = C_{12}^{3}$ a lieu pour $x = 3$ ou $x = 12 - 3 = 9$.
+    \item Relation de Pascal : $\displaystyle C_{7}^{3} = C_{6}^{2} + C_{6}^{3} = 15 + 20 = 35$, ce qui coïncide bien avec $\dfrac{7!}{3!\,4!} = 35$.
 \end{enumerate}

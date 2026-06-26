@@ -225,7 +225,7 @@ Pour déterminer $A^n$ :
 \end{enumerate}
 Si $A = I_p + N$ avec $N$ **nilpotente** (il existe $k$ tel que $N^k = O$), comme $I_p$ et $N$ commutent, la formule du binôme de Newton donne une somme **finie** :
 $$
-A^n = (I_p + N)^n = \sum_{j=0}^{k-1} \binom{n}{j} N^j.
+A^n = (I_p + N)^n = \sum_{j=0}^{k-1} C_{n}^{j} N^j.
 $$
 En particulier, si $N^2 = O$ : $A^n = I_p + nN$.
 \end{methode}
@@ -240,7 +240,7 @@ $$
 \begin{exemple}[Cas nilpotent, ordre 3]
 Soit $N = \begin{pmatrix} 0 & 1 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{pmatrix}$. Alors $N^2 = \begin{pmatrix} 0 & 0 & 1 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix}$ et $N^3 = O$. Pour $A = I_3 + N$ :
 $$
-A^n = I_3 + nN + \binom{n}{2}N^2 = \begin{pmatrix} 1 & n & \tfrac{n(n-1)}{2} \\ 0 & 1 & n \\ 0 & 0 & 1 \end{pmatrix}.
+A^n = I_3 + nN + C_{n}^{2}N^2 = \begin{pmatrix} 1 & n & \tfrac{n(n-1)}{2} \\ 0 & 1 & n \\ 0 & 0 & 1 \end{pmatrix}.
 $$
 \end{exemple}
 

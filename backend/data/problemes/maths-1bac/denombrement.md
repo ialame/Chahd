@@ -17,12 +17,12 @@ Une urne contient $9$ boules indiscernables au toucher : $4$ rouges, $3$ vertes 
 \begin{enumerate}
     \item Un tirage simultané de $3$ boules parmi $9$ est une combinaison.
     \begin{enumerate}
-        \item $\displaystyle \binom{9}{3} = \frac{9 \times 8 \times 7}{6} = 84.$
-        \item Trois rouges : $\binom{4}{3} = 4$ ; trois vertes : $\binom{3}{3} = 1$ ; trois bleues : impossible car $\binom{2}{3} = 0$. Au total $4 + 1 + 0 = 5$ tirages.
+        \item $\displaystyle C_{9}^{3} = \frac{9 \times 8 \times 7}{6} = 84.$
+        \item Trois rouges : $C_{4}^{3} = 4$ ; trois vertes : $C_{3}^{3} = 1$ ; trois bleues : impossible car $C_{2}^{3} = 0$. Au total $4 + 1 + 0 = 5$ tirages.
         \item On choisit $2$ rouges parmi $4$ et $1$ boule parmi les $5$ non rouges :
-        $$\binom{4}{2} \times \binom{5}{1} = 6 \times 5 = 30.$$
+        $$C_{4}^{2} \times C_{5}^{1} = 6 \times 5 = 30.$$
         \item On retranche les tirages sans aucune bleue (donc $3$ boules parmi les $7$ non bleues) :
-        $$\binom{9}{3} - \binom{7}{3} = 84 - 35 = 49.$$
+        $$C_{9}^{3} - C_{7}^{3} = 84 - 35 = 49.$$
     \end{enumerate}
     \item Tirage successif avec ordre. \textbf{Avec remise} (répétitions possibles) : ce sont des $3$-listes, soit $9^3 = 729$. \textbf{Sans remise} (boules distinctes) : ce sont des arrangements, soit $A_9^3 = 9 \times 8 \times 7 = 504$.
 \end{enumerate}
@@ -61,11 +61,11 @@ Un jeu de $32$ cartes comporte $4$ couleurs (cœur, carreau, trèfle, pique) et,
 \textbf{Solution :}
 Une main est une combinaison de $5$ cartes parmi $32$.
 \begin{enumerate}
-    \item $\displaystyle \binom{32}{5} = \frac{32 \times 31 \times 30 \times 29 \times 28}{120} = 201\,376.$
+    \item $\displaystyle C_{32}^{5} = \frac{32 \times 31 \times 30 \times 29 \times 28}{120} = 201\,376.$
     \item On choisit $2$ rois parmi $4$ et $3$ cartes parmi les $28$ qui ne sont pas des rois :
-    $$\binom{4}{2} \times \binom{28}{3} = 6 \times 3276 = 19\,656.$$
+    $$C_{4}^{2} \times C_{28}^{3} = 6 \times 3276 = 19\,656.$$
     \item Il y a $8$ cœurs ; une main de cœurs est une combinaison de $5$ parmi $8$ :
-    $$\binom{8}{5} = \binom{8}{3} = 56.$$
+    $$C_{8}^{5} = C_{8}^{3} = 56.$$
     \item On retranche les mains ne contenant aucun As (donc $5$ cartes parmi les $28$ non-As) :
-    $$\binom{32}{5} - \binom{28}{5} = 201\,376 - 98\,280 = 103\,096.$$
+    $$C_{32}^{5} - C_{28}^{5} = 201\,376 - 98\,280 = 103\,096.$$
 \end{enumerate}

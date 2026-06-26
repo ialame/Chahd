@@ -74,7 +74,7 @@ La variable aléatoire $X$ suit la **loi binomiale** de paramètres $n$ et $p$, 
 L'ensemble des valeurs prises par $X$ est $\llbracket 0, n \rrbracket$.
 Pour tout entier $k \in \llbracket 0, n \rrbracket$, la probabilité d'obtenir exactement $k$ succès est :
 \[
-P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}
+P(X = k) = C_{n}^{k} p^k (1-p)^{n-k}
 \]
 \end{theoreme}
 
@@ -92,7 +92,7 @@ Si $X \sim \mathcal{B}(n, p)$, alors :
 \begin{methode}[Calculer des probabilités avec la loi binomiale]
 Si une variable aléatoire $X$ suit la loi $\mathcal{B}(n, p)$ :
 \begin{itemize}
-    \item Pour calculer $P(X = k)$, on applique directement la formule : $\binom{n}{k} p^k (1-p)^{n-k}$.
+    \item Pour calculer $P(X = k)$, on applique directement la formule : $C_{n}^{k} p^k (1-p)^{n-k}$.
     \item Pour calculer la probabilité d'avoir **au moins un succès** ($P(X \ge 1)$), on passe par l'événement contraire :
     \[
     P(X \ge 1) = 1 - P(X = 0) = 1 - (1-p)^n
@@ -107,7 +107,7 @@ Un joueur lance un dé équilibré à 6 faces 5 fois de suite. On s'intéresse �
     \item Les lancers sont identiques et indépendants, donc la variable aléatoire $X$ comptant le nombre de « 6 » suit la loi binomiale $\mathcal{B}(5, 1/6)$.
     \item La probabilité d'obtenir exactement deux « 6 » est :
     \[
-    P(X = 2) = \binom{5}{2} \left(\frac{1}{6}\right)^2 \left(\frac{5}{6}\right)^3 = 10 \times \frac{1}{36} \times \frac{125}{216} = \frac{1250}{7776} \approx 0,161
+    P(X = 2) = C_{5}^{2} \left(\frac{1}{6}\right)^2 \left(\frac{5}{6}\right)^3 = 10 \times \frac{1}{36} \times \frac{125}{216} = \frac{1250}{7776} \approx 0,161
     \]
 \end{itemize}
 \end{exemple}

@@ -59,10 +59,10 @@ Lors d'une finale de course de 100 mètres, 8 athlètes participent. On suppose 
 ### Exercice 3 : Calculs de coefficients binomiaux et propriétés
 \begin{enonce}
 \begin{enumerate}
-    \item Calculer sans calculatrice $\binom{10}{3}$ et $\binom{12}{10}$.
+    \item Calculer sans calculatrice $C_{10}^{3}$ et $C_{12}^{10}$.
     \item Démontrer que pour tous entiers $n$ et $k$ tels que $1 \le k \le n$, on a la relation :
     \[
-    k \binom{n}{k} = n \binom{n-1}{k-1}
+    k C_{n}^{k} = n C_{n-1}^{k-1}
     \]
 \end{enumerate}
 \end{enonce}
@@ -71,24 +71,24 @@ Lors d'une finale de course de 100 mètres, 8 athlètes participent. On suppose 
 \begin{enumerate}
     \item En appliquant la définition des coefficients binomiaux :
     \[
-    \binom{10}{3} = \frac{10 \times 9 \times 8}{3 \times 2 \times 1} = \frac{720}{6} = 120
+    C_{10}^{3} = \frac{10 \times 9 \times 8}{3 \times 2 \times 1} = \frac{720}{6} = 120
     \]
-    Par la relation de symétrie, $\binom{12}{10} = \binom{12}{12-10} = \binom{12}{2}$ :
+    Par la relation de symétrie, $C_{12}^{10} = C_{12}^{12-10} = C_{12}^{2}$ :
     \[
-    \binom{12}{10} = \binom{12}{2} = \frac{12 \times 11}{2 \times 1} = 6 \times 11 = 66
+    C_{12}^{10} = C_{12}^{2} = \frac{12 \times 11}{2 \times 1} = 6 \times 11 = 66
     \]
     
     \item Exprimons le membre de gauche à l'aide des factorielles :
     \[
-    k \binom{n}{k} = k \times \frac{n!}{k!(n-k)!}
+    k C_{n}^{k} = k \times \frac{n!}{k!(n-k)!}
     \]
     Comme $k! = k \times (k-1)!$, on peut simplifier par $k$ (puisque $k \ge 1$) :
     \[
-    k \binom{n}{k} = \frac{n!}{(k-1)!(n-k)!}
+    k C_{n}^{k} = \frac{n!}{(k-1)!(n-k)!}
     \]
     Exprimons maintenant le membre de droite :
     \[
-    n \binom{n-1}{k-1} = n \times \frac{(n-1)!}{(k-1)!((n-1)-(k-1))!} = \frac{n \times (n-1)!}{(k-1)!(n-k)!} = \frac{n!}{(k-1)!(n-k)!}
+    n C_{n-1}^{k-1} = n \times \frac{(n-1)!}{(k-1)!((n-1)-(k-1))!} = \frac{n \times (n-1)!}{(k-1)!(n-k)!} = \frac{n!}{(k-1)!(n-k)!}
     \]
     On constate que les deux expressions sont identiques, ce qui prouve l'égalité.
 \end{enumerate}
@@ -107,17 +107,17 @@ Un club de sport compte 15 membres, composé de 9 hommes et 6 femmes. On souhait
 \begin{enumerate}
     \item L'ordre des membres n'ayant pas d'importance, un bureau de 4 personnes choisi parmi les 15 membres est une combinaison de 4 éléments parmi 15. Le nombre de bureaux est :
     \[
-    \binom{15}{4} = \frac{15 \times 14 \times 13 \times 12}{4 \times 3 \times 2 \times 1} = 1365
+    C_{15}^{4} = \frac{15 \times 14 \times 13 \times 12}{4 \times 3 \times 2 \times 1} = 1365
     \]
     
     \item Pour élire un bureau composé de 2 hommes et 2 femmes, on choisit simultanément 2 hommes parmi les 9 hommes et 2 femmes parmi les 6 femmes. Le nombre de façons est :
     \[
-    \binom{9}{2} \times \binom{6}{2} = \frac{9 \times 8}{2} \times \frac{6 \times 5}{2} = 36 \times 15 = 540
+    C_{9}^{2} \times C_{6}^{2} = \frac{9 \times 8}{2} \times \frac{6 \times 5}{2} = 36 \times 15 = 540
     \]
     
     \item Calculons par le complémentaire. Les bureaux ne contenant aucune femme sont composés uniquement d'hommes. Le nombre de tels bureaux est le choix de 4 hommes parmi les 9 disponibles :
     \[
-    \binom{9}{4} = \frac{9 \times 8 \times 7 \times 6}{4 \times 3 \times 2 \times 1} = 126
+    C_{9}^{4} = \frac{9 \times 8 \times 7 \times 6}{4 \times 3 \times 2 \times 1} = 126
     \]
     Le nombre de bureaux contenant au moins une femme est donc :
     \[
@@ -129,8 +129,8 @@ Un club de sport compte 15 membres, composé de 9 hommes et 6 femmes. On souhait
 \begin{enonce}
 Résoudre dans $\N$ les équations suivantes :
 \begin{enumerate}
-    \item $\binom{n}{2} = 45$ (avec $n \ge 2$)
-    \item $\binom{n}{1} + \binom{n}{2} = 2n$ (avec $n \ge 2$)
+    \item $C_{n}^{2} = 45$ (avec $n \ge 2$)
+    \item $C_{n}^{1} + C_{n}^{2} = 2n$ (avec $n \ge 2$)
 \end{enumerate}
 \end{enonce}
 
@@ -150,7 +150,7 @@ Résoudre dans $\N$ les équations suivantes :
     \]
     Comme $n \in \N$, la seule solution possible est $n=10$.
     
-    \item Pour $n \ge 2$, on a $\binom{n}{1} = n$ et $\binom{n}{2} = \frac{n(n-1)}{2}$. L'équation devient :
+    \item Pour $n \ge 2$, on a $C_{n}^{1} = n$ et $C_{n}^{2} = \frac{n(n-1)}{2}$. L'équation devient :
     \[
     n + \frac{n(n-1)}{2} = 2n \iff \frac{n(n-1)}{2} = n
     \]
@@ -175,17 +175,17 @@ On tire simultanément 5 cartes d'un jeu de 32 cartes (qui comprend 4 couleurs :
 \begin{enumerate}
     \item Un tirage simultané de 5 cartes correspond à une combinaison de 5 cartes parmi les 32 cartes du jeu. Le nombre de tirages est :
     \[
-    \binom{32}{5} = \frac{32 \times 31 \times 30 \times 29 \times 28}{5 \times 4 \times 3 \times 2 \times 1} = 201\,376
+    C_{32}^{5} = \frac{32 \times 31 \times 30 \times 29 \times 28}{5 \times 4 \times 3 \times 2 \times 1} = 201\,376
     \]
     
     \item Une main contenant uniquement des Cœurs est obtenue en choisissant 5 cartes parmi les 8 cartes de Cœur disponibles :
     \[
-    \binom{8}{5} = \binom{8}{3} = \frac{8 \times 7 \times 6}{3 \times 2 \times 1} = 56
+    C_{8}^{5} = C_{8}^{3} = \frac{8 \times 7 \times 6}{3 \times 2 \times 1} = 56
     \]
     
     \item Pour obtenir exactement 3 Piques et 2 Trèfles, on choisit simultanément 3 Piques parmi les 8 Piques possibles et 2 Trèfles parmi les 8 Trèfles possibles. Le nombre de mains est :
     \[
-    \binom{8}{3} \times \binom{8}{2} = 56 \times \frac{8 \times 7}{2} = 56 \times 28 = 1568
+    C_{8}^{3} \times C_{8}^{2} = 56 \times \frac{8 \times 7}{2} = 56 \times 28 = 1568
     \]
 \end{enumerate}
 
@@ -193,7 +193,7 @@ On tire simultanément 5 cartes d'un jeu de 32 cartes (qui comprend 4 couleurs :
 \begin{enonce}
 Démontrer par le calcul la formule de Pascal :
 \[
-\binom{n}{p} + \binom{n}{p+1} = \binom{n+1}{p+1}
+C_{n}^{p} + C_{n}^{p+1} = C_{n+1}^{p+1}
 \]
 pour tout $n \in \N$ et $p \in \N$ tel que $0 \le p \le n-1$.
 \end{enonce}
@@ -201,7 +201,7 @@ pour tout $n \in \N$ et $p \in \N$ tel que $0 \le p \le n-1$.
 \textbf{Solution :}
 Exprimons la somme du membre de gauche à l'aide des factorielles :
 \[
-\binom{n}{p} + \binom{n}{p+1} = \frac{n!}{p!(n-p)!} + \frac{n!}{(p+1)!(n-p-1)!}
+C_{n}^{p} + C_{n}^{p+1} = \frac{n!}{p!(n-p)!} + \frac{n!}{(p+1)!(n-p-1)!}
 \]
 Mettons ces deux fractions au même dénominateur. On remarque que :
 - $(p+1)! = (p+1) \times p!$
@@ -209,12 +209,12 @@ Mettons ces deux fractions au même dénominateur. On remarque que :
 Le dénominateur commun est donc $(p+1)!(n-p)!$. Multiplions la première fraction par $\frac{p+1}{p+1}$ et la deuxième par $\frac{n-p}{n-p}$ :
 \[
 \begin{aligned}
-\binom{n}{p} + \binom{n}{p+1} &= \frac{n!(p+1)}{(p+1)p!(n-p)!} + \frac{n!(n-p)}{(p+1)!(n-p)(n-p-1)!} \\
+C_{n}^{p} + C_{n}^{p+1} &= \frac{n!(p+1)}{(p+1)p!(n-p)!} + \frac{n!(n-p)}{(p+1)!(n-p)(n-p-1)!} \\
 &= \frac{n!(p+1)}{(p+1)!(n-p)!} + \frac{n!(n-p)}{(p+1)!(n-p)!} \\
 &= \frac{n!\big( (p+1) + (n-p) \big)}{(p+1)!(n-p)!} \\
 &= \frac{n!(n+1)}{(p+1)!(n-p)!} \\
 &= \frac{(n+1)!}{(p+1)!\big( (n+1) - (p+1) \big)!} \\
-&= \binom{n+1}{p+1}
+&= C_{n+1}^{p+1}
 \end{aligned}
 \]
 La formule est ainsi démontrée.
@@ -251,29 +251,29 @@ Un anagramme d'un mot est un mot formé des mêmes lettres (ayant un sens ou non
 \begin{enonce}
 Soit $E$ un ensemble fini à $n$ éléments.
 \begin{enumerate}
-    \item Justifier que le nombre de sous-ensembles de $E$ contenant exactement $k$ éléments ($0 \le k \le n$) est $\binom{n}{k}$.
+    \item Justifier que le nombre de sous-ensembles de $E$ contenant exactement $k$ éléments ($0 \le k \le n$) est $C_{n}^{k}$.
     \item En utilisant la formule du binôme de Newton, en déduire le nombre total de sous-ensembles de $E$, c'est-à-dire la valeur de la somme :
     \[
-    S = \sum_{k=0}^n \binom{n}{k}
+    S = \sum_{k=0}^n C_{n}^{k}
     \]
 \end{enumerate}
 \end{enonce}
 
 \textbf{Solution :}
 \begin{enumerate}
-    \item Choisir un sous-ensemble (ou partie) à $k$ éléments dans un ensemble à $n$ éléments revient à choisir $k$ éléments parmi $n$ sans ordre et sans répétition. C'est exactement le nombre de combinaisons de $k$ éléments parmi $n$, soit $\binom{n}{k}$.
+    \item Choisir un sous-ensemble (ou partie) à $k$ éléments dans un ensemble à $n$ éléments revient à choisir $k$ éléments parmi $n$ sans ordre et sans répétition. C'est exactement le nombre de combinaisons de $k$ éléments parmi $n$, soit $C_{n}^{k}$.
     
     \item Le nombre total de sous-ensembles de $E$ est la somme du nombre de sous-ensembles à 0 élément, à 1 élément, ..., à $n$ éléments :
     \[
-    S = \sum_{k=0}^n \binom{n}{k}
+    S = \sum_{k=0}^n C_{n}^{k}
     \]
     Rappelons la formule du binôme de Newton pour tous réels $a$ et $b$ :
     \[
-    (a+b)^n = \sum_{k=0}^n \binom{n}{k} a^k b^{n-k}
+    (a+b)^n = \sum_{k=0}^n C_{n}^{k} a^k b^{n-k}
     \]
     En appliquant cette formule avec $a = 1$ et $b = 1$, nous obtenons :
     \[
-    (1+1)^n = \sum_{k=0}^n \binom{n}{k} 1^k 1^{n-k} = \sum_{k=0}^n \binom{n}{k}
+    (1+1)^n = \sum_{k=0}^n C_{n}^{k} 1^k 1^{n-k} = \sum_{k=0}^n C_{n}^{k}
     \]
     D'où :
     \[
@@ -296,16 +296,16 @@ Une urne contient 12 boules indiscernables au toucher : 5 rouges, 4 vertes et 3 
 \begin{enumerate}
     \item Le tirage est simultané, l'ordre n'importe pas. Un tirage est une combinaison de 3 boules parmi les 12 boules de l'urne :
     \[
-    \binom{12}{3} = \frac{12 \times 11 \times 10}{3 \times 2 \times 1} = 2 \times 11 \times 10 = 220 \text{ tirages possibles}
+    C_{12}^{3} = \frac{12 \times 11 \times 10}{3 \times 2 \times 1} = 2 \times 11 \times 10 = 220 \text{ tirages possibles}
     \]
     
     \item Un tirage contenant une boule de chaque couleur correspond au choix d'une rouge parmi 5, une verte parmi 4 et une jaune parmi 3 :
     \[
-    \binom{5}{1} \times \binom{4}{1} \times \binom{3}{1} = 5 \times 4 \times 3 = 60 \text{ tirages}
+    C_{5}^{1} \times C_{4}^{1} \times C_{3}^{1} = 5 \times 4 \times 3 = 60 \text{ tirages}
     \]
     
     \item Ne contenir aucune boule rouge signifie que les 3 boules sont choisies parmi les boules vertes ou jaunes (soit $4 + 3 = 7$ boules non rouges) :
     \[
-    \binom{7}{3} = \frac{7 \times 6 \times 5}{3 \times 2 \times 1} = 35 \text{ tirages}
+    C_{7}^{3} = \frac{7 \times 6 \times 5}{3 \times 2 \times 1} = 35 \text{ tirages}
     \]
 \end{enumerate}

@@ -18,53 +18,53 @@ Dans un jeu standard de 52 cartes (comprenant 4 couleurs de 13 cartes chacune), 
 \begin{enumerate}
     \item Une main est une combinaison de 5 cartes parmi 52. Le nombre de mains possibles est :
     \[
-    \binom{52}{5} = \frac{52 \times 51 \times 30 \times 29 \times 28}{5 \times 4 \times 3 \times 2 \times 1} \text{ (après simplification)} = 2\,598\,960
+    C_{52}^{5} = \frac{52 \times 51 \times 30 \times 29 \times 28}{5 \times 4 \times 3 \times 2 \times 1} \text{ (après simplification)} = 2\,598\,960
     \]
     
     \item Déterminons le nombre de mains pour chaque configuration :
     \begin{enumerate}
         \item \textbf{Une paire} :
-        - On choisit la valeur de la paire parmi les 13 valeurs possibles : $\binom{13}{1} = 13$ choix.
-        - On choisit les 2 cartes de cette valeur parmi les 4 enseignes possibles : $\binom{4}{2} = 6$ choix.
-        - On choisit les 3 autres valeurs distinctes parmi les 12 valeurs restantes : $\binom{12}{3} = 220$ choix.
-        - Pour chacune de ces 3 valeurs, on choisit une carte parmi les 4 enseignes possibles : $\binom{4}{1}^3 = 4^3 = 64$ choix.
+        - On choisit la valeur de la paire parmi les 13 valeurs possibles : $C_{13}^{1} = 13$ choix.
+        - On choisit les 2 cartes de cette valeur parmi les 4 enseignes possibles : $C_{4}^{2} = 6$ choix.
+        - On choisit les 3 autres valeurs distinctes parmi les 12 valeurs restantes : $C_{12}^{3} = 220$ choix.
+        - Pour chacune de ces 3 valeurs, on choisit une carte parmi les 4 enseignes possibles : $C_{4}^{1}^3 = 4^3 = 64$ choix.
         Par le principe multiplicatif, le nombre de mains est :
         \[
         N_{\text{paire}} = 13 \times 6 \times 220 \times 64 = 1\,098\,240
         \]
         
         \item \textbf{Un brelan} :
-        - On choisit la valeur du brelan parmi les 13 valeurs : $\binom{13}{1} = 13$ choix.
-        - On choisit les 3 cartes de cette valeur parmi les 4 enseignes : $\binom{4}{3} = 4$ choix.
-        - On choisit les 2 autres valeurs distinctes parmi les 12 restantes : $\binom{12}{2} = 66$ choix.
-        - Pour chacune de ces 2 valeurs, on choisit une carte parmi les 4 enseignes : $\binom{4}{1}^2 = 4^2 = 16$ choix.
+        - On choisit la valeur du brelan parmi les 13 valeurs : $C_{13}^{1} = 13$ choix.
+        - On choisit les 3 cartes de cette valeur parmi les 4 enseignes : $C_{4}^{3} = 4$ choix.
+        - On choisit les 2 autres valeurs distinctes parmi les 12 restantes : $C_{12}^{2} = 66$ choix.
+        - Pour chacune de ces 2 valeurs, on choisit une carte parmi les 4 enseignes : $C_{4}^{1}^2 = 4^2 = 16$ choix.
         Le nombre de mains est :
         \[
         N_{\text{brelan}} = 13 \times 4 \times 66 \times 16 = 54\,912
         \]
         
         \item \textbf{Une couleur} :
-        - On choisit l'une des 4 couleurs (Cœur, Carreau, Pique, Trèfle) : $\binom{4}{1} = 4$ choix.
-        - On choisit les 5 cartes de cette couleur parmi les 13 cartes disponibles : $\binom{13}{5} = \frac{13 \times 12 \times 11 \times 10 \times 9}{5 \times 4 \times 3 \times 2 \times 1} = 1287$ choix.
+        - On choisit l'une des 4 couleurs (Cœur, Carreau, Pique, Trèfle) : $C_{4}^{1} = 4$ choix.
+        - On choisit les 5 cartes de cette couleur parmi les 13 cartes disponibles : $C_{13}^{5} = \frac{13 \times 12 \times 11 \times 10 \times 9}{5 \times 4 \times 3 \times 2 \times 1} = 1287$ choix.
         Le nombre de mains est :
         \[
         N_{\text{couleur}} = 4 \times 1287 = 5148
         \]
         
         \item \textbf{Un full} :
-        - On choisit la valeur du brelan parmi les 13 valeurs : $\binom{13}{1} = 13$ choix.
-        - On choisit 3 cartes de cette valeur parmi les 4 enseignes : $\binom{4}{3} = 4$ choix.
-        - On choisit la valeur de la paire parmi les 12 valeurs restantes : $\binom{12}{1} = 12$ choix.
-        - On choisit 2 cartes de cette valeur parmi les 4 enseignes : $\binom{4}{2} = 6$ choix.
+        - On choisit la valeur du brelan parmi les 13 valeurs : $C_{13}^{1} = 13$ choix.
+        - On choisit 3 cartes de cette valeur parmi les 4 enseignes : $C_{4}^{3} = 4$ choix.
+        - On choisit la valeur de la paire parmi les 12 valeurs restantes : $C_{12}^{1} = 12$ choix.
+        - On choisit 2 cartes de cette valeur parmi les 4 enseignes : $C_{4}^{2} = 6$ choix.
         Le nombre de mains est :
         \[
         N_{\text{full}} = 13 \times 4 \times 12 \times 6 = 3744
         \]
         
         \item \textbf{Un carré} :
-        - On choisit la valeur du carré parmi les 13 valeurs : $\binom{13}{1} = 13$ choix.
-        - On prend les 4 cartes de cette valeur : $\binom{4}{4} = 1$ choix.
-        - On choisit la 5-ème carte restante parmi les 48 cartes restantes de valeurs différentes : $\binom{48}{1} = 48$ choix.
+        - On choisit la valeur du carré parmi les 13 valeurs : $C_{13}^{1} = 13$ choix.
+        - On prend les 4 cartes de cette valeur : $C_{4}^{4} = 1$ choix.
+        - On choisit la 5-ème carte restante parmi les 48 cartes restantes de valeurs différentes : $C_{48}^{1} = 48$ choix.
         Le nombre de mains est :
         \[
         N_{\text{carré}} = 13 \times 1 \times 48 = 624
@@ -76,7 +76,7 @@ Dans un jeu standard de 52 cartes (comprenant 4 couleurs de 13 cartes chacune), 
 \begin{enonce}
 On considère un réseau quadrillé du plan. Un chemin minimal reliant le point $O(0,0)$ au point $M(a,b)$, où $a$ et $b$ sont des entiers naturels, est constitué d'une succession de pas unitaires : soit vers la droite (noté D, incrémentant l'abscisse de 1), soit vers le haut (noté H, incrémentant l'ordonnée de 1).
 \begin{enumerate}
-    \item Justifier qu'un tel chemin comporte exactement $a+b$ pas, dont $a$ pas vers la droite. En déduire que le nombre total de chemins possibles est $\binom{a+b}{a}$.
+    \item Justifier qu'un tel chemin comporte exactement $a+b$ pas, dont $a$ pas vers la droite. En déduire que le nombre total de chemins possibles est $C_{a+b}^{a}$.
     \item On pose $a=5$ et $b=4$. Calculer le nombre de chemins reliant $(0,0)$ à $(5,4)$.
     \item On impose de passer par le point d'étape $A(2,2)$. Combien de chemins reliant $(0,0)$ à $(5,4)$ passent par $A$ ?
     \item Combien de chemins ne passent pas par $A$ ?
@@ -89,22 +89,22 @@ On considère un réseau quadrillé du plan. Un chemin minimal reliant le point 
     \item Pour se rendre de $O(0,0)$ à $M(a,b)$ par des déplacements minimaux, on doit nécessairement effectuer exactement $a$ pas vers la droite (pour atteindre l'abscisse $a$) et $b$ pas vers le haut (pour atteindre l'ordonnée $b$).
     Le nombre total de pas est donc $a+b$. Un chemin est entièrement caractérisé par l'emplacement des $a$ pas vers la droite parmi les $a+b$ pas totaux. Le nombre de façons de choisir ces emplacements est donné par la combinaison :
     \[
-    \binom{a+b}{a}
+    C_{a+b}^{a}
     \]
-    (qui est égal par symétrie à $\binom{a+b}{b}$, c'est-à-dire le choix des pas vers le haut).
+    (qui est égal par symétrie à $C_{a+b}^{b}$, c'est-à-dire le choix des pas vers le haut).
     
     \item Pour $a=5$ et $b=4$, le nombre de chemins possibles est :
     \[
-    \binom{5+4}{5} = \binom{9}{5} = \frac{9 \times 8 \times 7 \times 6 \times 5}{5 \times 4 \times 3 \times 2 \times 1} = 126
+    C_{5+4}^{5} = C_{9}^{5} = \frac{9 \times 8 \times 7 \times 6 \times 5}{5 \times 4 \times 3 \times 2 \times 1} = 126
     \]
     
     \item Un chemin passant par $A(2,2)$ est composé :
-    - d'un chemin de $O(0,0)$ à $A(2,2)$ : ici $a_1=2$ et $b_1=2$, ce qui donne $\binom{2+2}{2} = \binom{4}{2} = 6$ chemins.
-    - d'un chemin de $A(2,2)$ à $M(5,4)$ : le déplacement requis est de $5-2=3$ pas vers la droite et $4-2=2$ pas vers le haut. Il y a donc $\binom{3+2}{3} = \binom{5}{3} = 10$ chemins.
+    - d'un chemin de $O(0,0)$ à $A(2,2)$ : ici $a_1=2$ et $b_1=2$, ce qui donne $C_{2+2}^{2} = C_{4}^{2} = 6$ chemins.
+    - d'un chemin de $A(2,2)$ à $M(5,4)$ : le déplacement requis est de $5-2=3$ pas vers la droite et $4-2=2$ pas vers le haut. Il y a donc $C_{3+2}^{3} = C_{5}^{3} = 10$ chemins.
     
     Par le principe multiplicatif, le nombre de chemins de $O$ à $M$ passant par $A$ est :
     \[
-    N_A = \binom{4}{2} \times \binom{5}{3} = 6 \times 10 = 60
+    N_A = C_{4}^{2} \times C_{5}^{3} = 6 \times 10 = 60
     \]
     
     \item Le nombre de chemins ne passant pas par $A$ est le complémentaire du nombre de chemins passant par $A$ :
@@ -119,13 +119,13 @@ On considère un réseau quadrillé du plan. Un chemin minimal reliant le point 
     \]
     - On a déjà $\text{Card}(\mathcal{C}_A) = 60$.
     - Calculons $\text{Card}(\mathcal{C}_B)$ :
-      * Chemin de $O(0,0)$ à $B(3,3)$ : $\binom{3+3}{3} = \binom{6}{3} = 20$.
-      * Chemin de $B(3,3)$ à $M(5,4)$ : déplacement de $5-3=2$ vers la droite et $4-3=1$ vers le haut, soit $\binom{2+1}{2} = \binom{3}{2} = 3$.
+      * Chemin de $O(0,0)$ à $B(3,3)$ : $C_{3+3}^{3} = C_{6}^{3} = 20$.
+      * Chemin de $B(3,3)$ à $M(5,4)$ : déplacement de $5-3=2$ vers la droite et $4-3=1$ vers le haut, soit $C_{2+1}^{2} = C_{3}^{2} = 3$.
       * D'où $\text{Card}(\mathcal{C}_B) = 20 \times 3 = 60$.
     - Calculons $\text{Card}(\mathcal{C}_A \cap \mathcal{C}_B)$, c'est-à-dire les chemins passant par $A$ ET par $B$. Comme $A(2,2)$ est situé avant $B(3,3)$ ($2 \le 3$ en abscisse et ordonnée), un tel chemin va de $O$ à $A$, puis de $A$ à $B$, puis de $B$ à $M$ :
-      * De $O(0,0)$ à $A(2,2)$ : $\binom{4}{2} = 6$ chemins.
-      * De $A(2,2)$ à $B(3,3)$ : déplacement de $3-2=1$ vers la droite et $3-2=1$ vers le haut, soit $\binom{1+1}{1} = \binom{2}{1} = 2$ chemins.
-      * De $B(3,3)$ à $M(5,4)$ : $\binom{3}{2} = 3$ chemins.
+      * De $O(0,0)$ à $A(2,2)$ : $C_{4}^{2} = 6$ chemins.
+      * De $A(2,2)$ à $B(3,3)$ : déplacement de $3-2=1$ vers la droite et $3-2=1$ vers le haut, soit $C_{1+1}^{1} = C_{2}^{1} = 2$ chemins.
+      * De $B(3,3)$ à $M(5,4)$ : $C_{3}^{2} = 3$ chemins.
       * Ainsi, $\text{Card}(\mathcal{C}_A \cap \mathcal{C}_B) = 6 \times 2 \times 3 = 36$.
       
     On en déduit :
@@ -139,11 +139,11 @@ On considère un réseau quadrillé du plan. Un chemin minimal reliant le point 
 \begin{enonce}
 Soit $n$ un entier naturel non nul. Le but de ce problème est d'étudier la somme :
 \[
-S_n = \sum_{k=1}^n k \binom{n}{k}
+S_n = \sum_{k=1}^n k C_{n}^{k}
 \]
 \begin{enumerate}
     \item Calculer $S_1$, $S_2$ et $S_3$. Conjecturer une formule simplifiée pour $S_n$.
-    \item \textbf{Méthode algébrique} : En utilisant la relation d'égalité de l'exercice 3 ($k \binom{n}{k} = n \binom{n-1}{k-1}$), démontrer la conjecture.
+    \item \textbf{Méthode algébrique} : En utilisant la relation d'égalité de l'exercice 3 ($k C_{n}^{k} = n C_{n-1}^{k-1}$), démontrer la conjecture.
     \item \textbf{Méthode combinatoire} : On considère un groupe de $n$ personnes. On souhaite former un comité de taille quelconque (contenant au moins une personne) et choisir un président au sein de ce comité.
     \begin{enumerate}
         \item En dénombrant selon la taille $k$ du comité choisi, montrer que le nombre total de choix possibles est égal à $S_n$.
@@ -156,9 +156,9 @@ S_n = \sum_{k=1}^n k \binom{n}{k}
 \textbf{Solution :}
 \begin{enumerate}
     \item Calculons les premières valeurs :
-    - Pour $n=1$ : $S_1 = 1 \binom{1}{1} = 1 \times 1 = 1$.
-    - Pour $n=2$ : $S_2 = 1 \binom{2}{1} + 2 \binom{2}{2} = 1 \times 2 + 2 \times 1 = 4$.
-    - Pour $n=3$ : $S_3 = 1 \binom{3}{1} + 2 \binom{3}{2} + 3 \binom{3}{3} = 1 \times 3 + 2 \times 3 + 3 \times 1 = 12$.
+    - Pour $n=1$ : $S_1 = 1 C_{1}^{1} = 1 \times 1 = 1$.
+    - Pour $n=2$ : $S_2 = 1 C_{2}^{1} + 2 C_{2}^{2} = 1 \times 2 + 2 \times 1 = 4$.
+    - Pour $n=3$ : $S_3 = 1 C_{3}^{1} + 2 C_{3}^{2} + 3 C_{3}^{3} = 1 \times 3 + 2 \times 3 + 3 \times 1 = 12$.
     
     On remarque que :
     - $S_1 = 1 = 1 \times 2^0$
@@ -170,15 +170,15 @@ S_n = \sum_{k=1}^n k \binom{n}{k}
     S_n = n 2^{n-1}
     \]
     
-    \item D'après la relation $k \binom{n}{k} = n \binom{n-1}{k-1}$, on a :
+    \item D'après la relation $k C_{n}^{k} = n C_{n-1}^{k-1}$, on a :
     \[
-    S_n = \sum_{k=1}^n k \binom{n}{k} = \sum_{k=1}^n n \binom{n-1}{k-1} = n \sum_{k=1}^n \binom{n-1}{k-1}
+    S_n = \sum_{k=1}^n k C_{n}^{k} = \sum_{k=1}^n n C_{n-1}^{k-1} = n \sum_{k=1}^n C_{n-1}^{k-1}
     \]
     Effectuons le changement d'indice $j = k-1$. Quand $k$ varie de $1$ à $n$, l'indice $j$ varie de $0$ à $n-1$ :
     \[
-    S_n = n \sum_{j=0}^{n-1} \binom{n-1}{j}
+    S_n = n \sum_{j=0}^{n-1} C_{n-1}^{j}
     \]
-    Or, d'après l'exercice 9, la somme des coefficients binomiaux d'ordre $n-1$ vaut $\sum_{j=0}^{n-1} \binom{n-1}{j} = 2^{n-1}$.
+    Or, d'après l'exercice 9, la somme des coefficients binomiaux d'ordre $n-1$ vaut $\sum_{j=0}^{n-1} C_{n-1}^{j} = 2^{n-1}$.
     On en déduit immédiatement :
     \[
     S_n = n 2^{n-1}
@@ -186,10 +186,10 @@ S_n = \sum_{k=1}^n k \binom{n}{k}
     
     \item Utilisons le raisonnement par double dénombrement :
     \begin{enumerate}
-        \item Pour former un comité avec un président, on peut d'abord choisir un comité de $k$ personnes parmi les $n$ ($\binom{n}{k}$ choix), puis désigner un président parmi les $k$ membres élus ($k$ choix). Le nombre de choix pour un comité de taille $k$ est $k\binom{n}{k}$.
+        \item Pour former un comité avec un président, on peut d'abord choisir un comité de $k$ personnes parmi les $n$ ($C_{n}^{k}$ choix), puis désigner un président parmi les $k$ membres élus ($k$ choix). Le nombre de choix pour un comité de taille $k$ est $kC_{n}^{k}$.
         Comme la taille $k$ du comité peut être n'importe quelle valeur de $1$ à $n$, le nombre total de choix possibles est :
         \[
-        \sum_{k=1}^n k \binom{n}{k} = S_n
+        \sum_{k=1}^n k C_{n}^{k} = S_n
         \]
         
         \item On peut procéder autrement :
@@ -228,7 +228,7 @@ On souhaite étudier la distribution de $n$ objets dans $k$ boîtes distinctes (
         
         \item Expliquer pourquoi dénombrer les répartitions possibles revient à choisir les positions des $n$ ronds parmi les $n+k-1$ emplacements possibles. En déduire que le nombre de répartitions est égal à :
         \[
-        \binom{n+k-1}{n}
+        C_{n+k-1}^{n}
         \]
         
         \item Calculer le nombre de façons de distribuer 10 bonbons identiques à 3 enfants.
@@ -262,13 +262,13 @@ On souhaite étudier la distribution de $n$ objets dans $k$ boîtes distinctes (
         \item Dégager une configuration unique de répartition revient à spécifier où se trouvent les $n$ symboles $\bullet$ parmi les $n+k-1$ emplacements de la suite (les emplacements non choisis contenant nécessairement des barres $\mid$).
         Le nombre de choix est donné par le nombre de combinaisons de $n$ éléments parmi $n+k-1$, soit :
         \[
-        \binom{n+k-1}{n}
+        C_{n+k-1}^{n}
         \]
-        Pour $n=4, k=3$, cela donne $\binom{4+3-1}{4} = \binom{6}{4} = \binom{6}{2} = 15$, ce qui corrobore le résultat de la question (a).
+        Pour $n=4, k=3$, cela donne $C_{4+3-1}^{4} = C_{6}^{4} = C_{6}^{2} = 15$, ce qui corrobore le résultat de la question (a).
         
         \item Distribuer 10 bonbons identiques ($n=10$) à 3 enfants ($k=3$, assimilés à 3 boîtes distinctes) correspond au nombre de répartitions :
         \[
-        \binom{10+3-1}{10} = \binom{12}{10} = \binom{12}{2} = \frac{12 \times 11}{2 \times 1} = 66
+        C_{10+3-1}^{10} = C_{12}^{10} = C_{12}^{2} = \frac{12 \times 11}{2 \times 1} = 66
         \]
         Il y a 66 répartitions possibles.
     \end{enumerate}
@@ -333,21 +333,21 @@ On s'intéresse au nombre de façons de distribuer les quatre chapeaux de telle 
     
     \item Calculons la réunion par le principe d'inclusion-exclusion :
     \begin{enumerate}
-        \item - Le nombre de termes dans la première somme est $\binom{4}{1} = 4$.
+        \item - Le nombre de termes dans la première somme est $C_{4}^{1} = 4$.
         - La deuxième somme porte sur les couples d'indices distincts $\{i, j\}$ tels que $1 \le i < j \le 4$. Le nombre de termes est le nombre de choix de 2 indices parmi 4, soit :
         \[
-        \binom{4}{2} = 6
+        C_{4}^{2} = 6
         \]
         - La troisième somme porte sur les triplets d'indices distincts $\{i, j, k\}$ tels que $1 \le i < j < k \le 4$. Le nombre de termes est :
         \[
-        \binom{4}{3} = 4
+        C_{4}^{3} = 4
         \]
         
         \item Évaluons chaque somme :
-        - $\sum_{i=1}^4 \text{Card}(A_i) = \binom{4}{1} \times 3! = 4 \times 6 = 24$.
-        - $\sum_{1 \le i < j \le 4} \text{Card}(A_i \cap A_j) = \binom{4}{2} \times 2! = 6 \times 2 = 12$.
-        - $\sum_{1 \le i < j < k \le 4} \text{Card}(A_i \cap A_j \cap A_k) = \binom{4}{3} \times 1! = 4 \times 1 = 4$.
-        - $\text{Card}(A_1 \cap A_2 \cap A_3 \cap A_4) = \binom{4}{4} \times 0! = 1 \times 1 = 1$.
+        - $\sum_{i=1}^4 \text{Card}(A_i) = C_{4}^{1} \times 3! = 4 \times 6 = 24$.
+        - $\sum_{1 \le i < j \le 4} \text{Card}(A_i \cap A_j) = C_{4}^{2} \times 2! = 6 \times 2 = 12$.
+        - $\sum_{1 \le i < j < k \le 4} \text{Card}(A_i \cap A_j \cap A_k) = C_{4}^{3} \times 1! = 4 \times 1 = 4$.
+        - $\text{Card}(A_1 \cap A_2 \cap A_3 \cap A_4) = C_{4}^{4} \times 0! = 1 \times 1 = 1$.
         
         En injectant ces valeurs dans la formule :
         \[

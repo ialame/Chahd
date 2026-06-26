@@ -169,7 +169,7 @@ Un joueur participe à un jeu dans un casino. Il lance un dé équilibré à 6 f
         \[
         \begin{aligned}
         P(Y \ge 4) &= P(Y = 4) + P(Y = 5) \\
-        &= \binom{5}{4} (0,5)^4 (0,5)^1 + \binom{5}{5} (0,5)^5 (0,5)^0 \\
+        &= C_{5}^{4} (0,5)^4 (0,5)^1 + C_{5}^{5} (0,5)^5 (0,5)^0 \\
         &= 5 \times (0,5)^5 + 1 \times (0,5)^5 \\
         &= 6 \times 0,03125 = 0,1875
         \end{aligned}
@@ -178,7 +178,7 @@ Un joueur participe à un jeu dans un casino. Il lance un dé équilibré à 6 f
         
         \item Si le joueur ne gagne aucune partie ($Y=0$), cela signifie qu'il a perdu à chacune des 5 parties (il a obtenu 5 fois l'issue $-5$ euros). La probabilité de cet événement est :
         \[
-        P(Y = 0) = \binom{5}{0} (0,5)^0 (0,5)^5 = 0,03125
+        P(Y = 0) = C_{5}^{0} (0,5)^0 (0,5)^5 = 0,03125
         \]
         Dans ce cas, le gain total sur les 5 parties est $5 \times (-5) = -25$ euros.
     \end{enumerate}

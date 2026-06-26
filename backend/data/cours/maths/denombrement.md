@@ -72,9 +72,9 @@ Contrairement aux arrangements, l'ordre n'importe pas dans une combinaison (comm
 
 \begin{definition}[Combinaison]
 Soit $E$ un ensemble à $n$ éléments. Une **combinaison de $p$ éléments de $E$** ($0 \le p \le n$) est un sous-ensemble de $E$ contenant $p$ éléments (sans ordre, sans répétition).
-Le nombre de combinaisons de $p$ éléments parmi $n$ est noté $\binom{n}{p}$ (lire « $p$ parmi $n$ ») et vaut :
+Le nombre de combinaisons de $p$ éléments parmi $n$ est noté $C_{n}^{p}$ (lire « $p$ parmi $n$ ») et vaut :
 \[
-\binom{n}{p} = \frac{A_n^p}{p!} = \frac{n!}{p!(n-p)!}
+C_{n}^{p} = \frac{A_n^p}{p!} = \frac{n!}{p!(n-p)!}
 \]
 \end{definition}
 
@@ -83,11 +83,11 @@ Le nombre de combinaisons de $p$ éléments parmi $n$ est noté $\binom{n}{p}$ (
 \begin{propriete}[Relations de symétrie et Pascal]
 Pour tous entiers $n$ et $p$ tels que $0 \le p \le n$ :
 \begin{itemize}
-    \item \textbf{Symétrie} : $\binom{n}{p} = \binom{n}{n-p}$
-    \item \textbf{Cas particuliers} : $\binom{n}{0} = 1$, $\binom{n}{1} = n$, $\binom{n}{n} = 1$
+    \item \textbf{Symétrie} : $C_{n}^{p} = C_{n}^{n-p}$
+    \item \textbf{Cas particuliers} : $C_{n}^{0} = 1$, $C_{n}^{1} = n$, $C_{n}^{n} = 1$
     \item \textbf{Formule de Pascal} (pour $0 \le p \le n-1$) :
     \[
-    \binom{n}{p} + \binom{n}{p+1} = \binom{n+1}{p+1}
+    C_{n}^{p} + C_{n}^{p+1} = C_{n+1}^{p+1}
     \]
 \end{itemize}
 \end{propriete}
@@ -107,7 +107,7 @@ Pour savoir quelle formule utiliser pour dénombrer les tirages ou configuration
 \begin{enumerate}
     \item **L'ordre compte-t-il ?**
     \begin{itemize}
-        \item **Non** : Il s'agit de **combinaisons** $\implies \binom{n}{p}$.
+        \item **Non** : Il s'agit de **combinaisons** $\implies C_{n}^{p}$.
         \item **Oui** : Passer à la question 2.
     \end{itemize}
     \item **Y a-t-il des répétitions ?**

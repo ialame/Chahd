@@ -93,13 +93,13 @@ Une urne contient 3 boules blanches et 7 boules noires indiscernables au toucher
     
     \item On cherche à calculer $P(X = 2)$ :
     \[
-    P(X = 2) = \binom{4}{2} p^2 (1-p)^{4-2} = 6 \times (0,3)^2 \times (0,7)^2 = 6 \times 0,09 \times 0,49 = 0,2646
+    P(X = 2) = C_{4}^{2} p^2 (1-p)^{4-2} = 6 \times (0,3)^2 \times (0,7)^2 = 6 \times 0,09 \times 0,49 = 0,2646
     \]
     La probabilité d'obtenir exactement 2 boules blanches est de 0,2646.
     
     \item On cherche à calculer $P(X \ge 1)$. Utilisons l'événement contraire, qui est $\{X = 0\}$ :
     \[
-    P(X \ge 1) = 1 - P(X = 0) = 1 - \binom{4}{0} (0,3)^0 (0,7)^4 = 1 - 1 \times 1 \times 0,2401 = 0,7599
+    P(X \ge 1) = 1 - P(X = 0) = 1 - C_{4}^{0} (0,3)^0 (0,7)^4 = 1 - 1 \times 1 \times 0,2401 = 0,7599
     \]
     La probabilité d'obtenir au moins une boule blanche est de 0,7599.
 \end{enumerate}

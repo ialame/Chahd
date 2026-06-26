@@ -108,14 +108,14 @@ Une combinaison modélise un tirage **simultané** de $p$ éléments.
 \end{definition}
 
 \begin{theoreme}[Nombre de combinaisons]
-Le nombre de combinaisons de $p$ éléments parmi $n$, noté $\binom{n}{p}$ (lire « $p$ parmi $n$ »), est :
-$$\binom{n}{p} = \frac{A_n^p}{p!} = \frac{n!}{p!\,(n-p)!}$$
+Le nombre de combinaisons de $p$ éléments parmi $n$, noté $C_{n}^{p}$ (lire « $p$ parmi $n$ »), est :
+$$C_{n}^{p} = \frac{A_n^p}{p!} = \frac{n!}{p!\,(n-p)!}$$
 On divise le nombre d'arrangements par $p!$ car chaque sous-ensemble de $p$ éléments peut être ordonné de $p!$ manières.
 \end{theoreme}
 
 \begin{exemple}
 Le nombre de mains de $5$ cartes que l'on peut former à partir d'un jeu de $32$ cartes est :
-$$\binom{32}{5} = \frac{32!}{5!\,27!} = \frac{32 \times 31 \times 30 \times 29 \times 28}{120} = 201\,376$$
+$$C_{32}^{5} = \frac{32!}{5!\,27!} = \frac{32 \times 31 \times 30 \times 29 \times 28}{120} = 201\,376$$
 \end{exemple}
 
 \begin{methode}[Avec ou sans ordre ?]
@@ -123,7 +123,7 @@ Pour choisir la bonne formule, on se demande si l'ordre du tirage compte :
 \begin{itemize}
     \item **Avec ordre et avec répétition** (avec remise) : $p$-listes, $n^p$.
     \item **Avec ordre et sans répétition** (sans remise, successif) : arrangements, $A_n^p$.
-    \item **Sans ordre et sans répétition** (simultané) : combinaisons, $\binom{n}{p}$.
+    \item **Sans ordre et sans répétition** (simultané) : combinaisons, $C_{n}^{p}$.
 \end{itemize}
 \end{methode}
 
@@ -132,40 +132,40 @@ Pour choisir la bonne formule, on se demande si l'ordre du tirage compte :
 \begin{propriete}[Valeurs particulières et symétrie]
 Pour tous entiers $n$ et $p$ avec $0 \le p \le n$ :
 \begin{itemize}
-    \item $\displaystyle \binom{n}{0} = \binom{n}{n} = 1$ et $\displaystyle \binom{n}{1} = \binom{n}{n-1} = n$.
-    \item **Symétrie** : $\displaystyle \binom{n}{p} = \binom{n}{n-p}$.
+    \item $\displaystyle C_{n}^{0} = C_{n}^{n} = 1$ et $\displaystyle C_{n}^{1} = C_{n}^{n-1} = n$.
+    \item **Symétrie** : $\displaystyle C_{n}^{p} = C_{n}^{n-p}$.
 \end{itemize}
 La symétrie traduit le fait que choisir $p$ éléments à garder revient à choisir les $n-p$ éléments à écarter.
 \end{propriete}
 
 \begin{theoreme}[Relation de Pascal]
 Pour tous entiers $n \ge 1$ et $1 \le p \le n$ :
-$$\binom{n-1}{p-1} + \binom{n-1}{p} = \binom{n}{p}$$
+$$C_{n-1}^{p-1} + C_{n-1}^{p} = C_{n}^{p}$$
 Cette relation permet de construire de proche en proche le **triangle de Pascal**, où chaque coefficient est la somme des deux situés au-dessus de lui.
 \end{theoreme}
 
 \begin{exemple}
-$\displaystyle \binom{5}{2} = \binom{4}{1} + \binom{4}{2} = 4 + 6 = 10$, ce qui correspond bien à $\dfrac{5!}{2!\,3!} = 10$.
+$\displaystyle C_{5}^{2} = C_{4}^{1} + C_{4}^{2} = 4 + 6 = 10$, ce qui correspond bien à $\dfrac{5!}{2!\,3!} = 10$.
 \end{exemple}
 
 ## Formule du binôme de Newton
 
 \begin{theoreme}[Binôme de Newton]
 Pour tous nombres réels (ou complexes) $a$ et $b$ et tout entier naturel $n$ :
-$$(a + b)^n = \sum_{p=0}^{n} \binom{n}{p}\, a^{p}\, b^{\,n-p} = \binom{n}{0} b^n + \binom{n}{1} a\, b^{n-1} + \cdots + \binom{n}{n} a^n$$
-Les coefficients $\binom{n}{p}$ sont appelés **coefficients binomiaux** et se lisent sur la $n$-ième ligne du triangle de Pascal.
+$$(a + b)^n = \sum_{p=0}^{n} C_{n}^{p}\, a^{p}\, b^{\,n-p} = C_{n}^{0} b^n + C_{n}^{1} a\, b^{n-1} + \cdots + C_{n}^{n} a^n$$
+Les coefficients $C_{n}^{p}$ sont appelés **coefficients binomiaux** et se lisent sur la $n$-ième ligne du triangle de Pascal.
 \end{theoreme}
 
 \begin{exemple}
 Pour $n = 3$ :
-$$(a+b)^3 = \binom{3}{0}b^3 + \binom{3}{1}ab^2 + \binom{3}{2}a^2 b + \binom{3}{3}a^3 = b^3 + 3ab^2 + 3a^2 b + a^3$$
+$$(a+b)^3 = C_{3}^{0}b^3 + C_{3}^{1}ab^2 + C_{3}^{2}a^2 b + C_{3}^{3}a^3 = b^3 + 3ab^2 + 3a^2 b + a^3$$
 \end{exemple}
 
 \begin{propriete}[Conséquences remarquables]
 En spécialisant le binôme de Newton :
 \begin{itemize}
-    \item Avec $a = b = 1$ : $\displaystyle \sum_{p=0}^{n} \binom{n}{p} = 2^n$, qui est aussi le nombre total de parties d'un ensemble à $n$ éléments.
-    \item Avec $a = -1$ et $b = 1$ : $\displaystyle \sum_{p=0}^{n} (-1)^p \binom{n}{p} = 0$ (pour $n \ge 1$).
+    \item Avec $a = b = 1$ : $\displaystyle \sum_{p=0}^{n} C_{n}^{p} = 2^n$, qui est aussi le nombre total de parties d'un ensemble à $n$ éléments.
+    \item Avec $a = -1$ et $b = 1$ : $\displaystyle \sum_{p=0}^{n} (-1)^p C_{n}^{p} = 0$ (pour $n \ge 1$).
 \end{itemize}
 \end{propriete}
 
