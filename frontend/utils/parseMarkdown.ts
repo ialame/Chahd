@@ -8,7 +8,7 @@ import katex from 'katex'
 
 const MACROS: Record<string, string> = {
   '\\R': '\\mathbb{R}', '\\C': '\\mathbb{C}', '\\N': '\\mathbb{N}',
-  '\\Z': '\\mathbb{Z}', '\\Q': '\\mathbb{Q}', '\\K': '\\mathbb{K}',
+  '\\Z': '\\mathbb{Z}', '\\Q': '\\mathbb{Q}', '\\K': '\\mathbb{K}', '\\D': '\\mathbb{D}',
   '\\Cnum': '\\mathbb{C}', '\\Eesp': '\\mathbb{E}', '\\Pprob': '\\mathbb{P}',
   '\\de': '\\mathrm{d}', '\\dd': '\\mathrm{d}', '\\iud': '\\mathrm{i}',
   '\\ud': '\\,\\mathrm{d}', '\\e': '\\mathrm{e}',
