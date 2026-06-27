@@ -17,6 +17,8 @@ const filieres = [
   { slug: 'sciences-physiques', nom: 'Sciences Physiques', desc: 'Maths, PC, SVT…', niveau: '2ème année Bac' },
   { slug: 'sciences-mathematiques-a', nom: 'Sciences Mathématiques A', desc: 'Maths, PC, SVT, Informatique…', niveau: '2ème année Bac' },
   { slug: 'sciences-mathematiques-b', nom: 'Sciences Mathématiques B', desc: "Maths, PC, Sciences de l'Ingénieur, Informatique…", niveau: '2ème année Bac' },
+  { slug: 'sciences-technologies-electriques', nom: 'Sciences et Technologies Électriques', desc: "Sciences de l'Ingénieur (génie électrique)…", niveau: '2ème année Bac' },
+  { slug: 'sciences-technologies-mecaniques', nom: 'Sciences et Technologies Mécaniques', desc: "Sciences de l'Ingénieur (génie mécanique)…", niveau: '2ème année Bac' },
 ]
 const niveaux = ['Tronc Commun', '1ère année Bac', '2ème année Bac']
 
