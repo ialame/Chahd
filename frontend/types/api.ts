@@ -171,3 +171,28 @@ export interface QuizResultDto {
   noteSur20: number
   details: QuestionResultDto[]
 }
+
+// ----- AXIOM (tuteur IA) -----
+
+export interface AxiomMessage {
+  role: 'user' | 'assistant'
+  content: string
+}
+
+export interface AxiomProfilDto {
+  prenom: string
+  niveau: string
+  matiere: string | null
+  matiereNom: string
+  sessions: number
+  score: number
+  pointsForts: string[]
+  pointsFaibles: string[]
+}
+
+export interface AxiomChatResponse {
+  reply: string
+  isExercice: boolean
+  isReussite: boolean
+  profil: AxiomProfilDto
+}

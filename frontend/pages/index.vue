@@ -68,6 +68,10 @@ const matieresVitrine = [
         <MatiereCard v-for="m in matieres" :key="m.id" :matiere="m" />
       </div>
     </section>
+
+    <section>
+      <AxiomSection />
+    </section>
   </div>
 
   <!-- ============ Visiteur non connecté : page d'accueil publique ============ -->

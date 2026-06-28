@@ -38,6 +38,13 @@ app:
     password: ${ADMIN_PASSWORD:}
     nom: ${ADMIN_NOM:Admin}
 
+# Tuteur IA AXIOM (proxy vers l'API Anthropic). La clé reste côté serveur uniquement.
+# Sans ANTHROPIC_API_KEY, /api/axiom/chat renvoie 503 (le reste de l'app fonctionne).
+anthropic:
+  api-key: ${ANTHROPIC_API_KEY:}
+  model: ${ANTHROPIC_MODEL:claude-sonnet-4-6}
+  max-tokens: ${ANTHROPIC_MAX_TOKENS:1000}
+
 logging:
   level:
     ma.chahd: INFO
