@@ -12,6 +12,8 @@ export const useVoix = () => {
 
   let reco: any = null
   let arretManuel = false
+  let silenceTimer: any = null
+  const SILENCE_MS = 3000 // arrêt + envoi auto après ce délai sans parole
 
   if (import.meta.client) {
     const SR = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition
@@ -20,25 +22,56 @@ export const useVoix = () => {
   }
 
   // --- Dictée (speech → texte) ---
-  function demarrerDictee(lang: string, onTexte: (texte: string, final: boolean) => void) {
+  // onTexte : appelé en continu avec le texte courant. onFin : appelé une fois que
+  // l'élève s'est tu pendant SILENCE_MS (pour envoyer automatiquement).
+  function demarrerDictee(
+    lang: string,
+    onTexte: (texte: string, final: boolean) => void,
+    onFin?: (texte: string) => void
+  ) {
     if (!import.meta.client) return
     const SR = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition
     if (!SR) return
     arreterDictee()
+
+    // Texte accumulé à travers les relances (continu coupe parfois après un silence).
+    let finalAccum = ''
+    let sessionFinal = ''
+    let dernierTexte = ''
+
+    const armerSilence = () => {
+      if (silenceTimer) clearTimeout(silenceTimer)
+      silenceTimer = setTimeout(() => {
+        if (!dernierTexte.trim()) return // rien dit → on continue d'écouter
+        arretManuel = true
+        try { reco?.stop() } catch { /* ignore */ }
+        enEcoute.value = false
+        onFin?.(dernierTexte.trim())
+      }, SILENCE_MS)
+    }
+
     reco = new SR()
     reco.lang = lang
     reco.interimResults = true
     reco.continuous = true // capte toute la phrase, pas seulement le premier mot
     reco.onresult = (e: any) => {
-      let txt = ''
-      for (let i = 0; i < e.results.length; i++) txt += e.results[i][0].transcript
-      onTexte(txt, e.results[e.results.length - 1].isFinal)
+      let interim = ''
+      let fin = ''
+      for (let i = 0; i < e.results.length; i++) {
+        const r = e.results[i]
+        if (r.isFinal) fin += r[0].transcript
+        else interim += r[0].transcript
+      }
+      sessionFinal = fin
+      dernierTexte = (finalAccum + fin + interim).replace(/\s+/g, ' ').trim()
+      onTexte(dernierTexte, false)
+      armerSilence() // chaque parole repousse l'arrêt automatique
     }
-    // En continu, certains navigateurs coupent après un silence : on relance tant
-    // que l'élève n'a pas appuyé sur stop.
     reco.onend = () => {
+      finalAccum = (finalAccum + ' ' + sessionFinal).replace(/\s+/g, ' ').trim() + ' '
+      sessionFinal = ''
       if (arretManuel) { enEcoute.value = false; return }
-      try { reco.start() } catch { enEcoute.value = false }
+      try { reco.start() } catch { enEcoute.value = false } // relance après coupure silence
     }
     reco.onerror = (e: any) => {
       if (e?.error === 'no-speech' && !arretManuel) return // ignore les silences
@@ -51,6 +84,7 @@ export const useVoix = () => {
 
   function arreterDictee() {
     arretManuel = true
+    if (silenceTimer) { clearTimeout(silenceTimer); silenceTimer = null }
     try { reco?.stop() } catch { /* ignore */ }
     enEcoute.value = false
   }

@@ -17,9 +17,11 @@ function basculerMicro() {
     arreterDictee()
     return
   }
-  demarrerDictee(langVoix.value, (t) => {
-    input.value = t
-  })
+  demarrerDictee(
+    langVoix.value,
+    (t) => { input.value = t },
+    () => { envoyer() } // ~3 s de silence → arrêt + envoi automatique
+  )
 }
 
 onBeforeUnmount(arreterDictee)
