@@ -3,6 +3,7 @@ import type { AxiomMessage, AxiomProfilDto, AxiomChatResponse } from '~/types/ap
 
 export const useAxiom = () => {
   const { get, post } = useApi()
+  const { contexte } = useContexteEtude()
 
   // État partagé (survit aux changements d'onglet Cours/Progression).
   const profil = useState<AxiomProfilDto | null>('axiom_profil', () => null)
@@ -26,8 +27,19 @@ export const useAxiom = () => {
     messages.value.push({ role: 'user', content: texte })
     loading.value = true
     try {
+      const c = contexte.value
       const r = await post<AxiomChatResponse>('/axiom/chat', {
-        matiere: profil.value?.matiere ?? null,
+        matiere: c.matiere ?? profil.value?.matiere ?? null,
+        contexte: c.type
+          ? {
+              matiere: c.matiere,
+              matiereNom: c.matiereNom,
+              chapitre: c.chapitre,
+              type: c.type,
+              titre: c.titre,
+              extrait: c.extrait,
+            }
+          : null,
         messages: messages.value.slice(-20), // 20 derniers max (coût + fenêtre de contexte)
       })
       messages.value.push({ role: 'assistant', content: r.reply })

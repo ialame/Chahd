@@ -10,6 +10,7 @@ import ma.chahd.bac.repository.MatiereRepository;
 import ma.chahd.bac.repository.UtilisateurRepository;
 import ma.chahd.bac.web.dto.AxiomChatRequest;
 import ma.chahd.bac.web.dto.AxiomChatResponse;
+import ma.chahd.bac.web.dto.AxiomContexte;
 import ma.chahd.bac.web.dto.AxiomMessage;
 import ma.chahd.bac.web.dto.AxiomProfilDto;
 import org.springframework.beans.factory.annotation.Value;
@@ -94,7 +95,7 @@ public class AxiomService {
         long nbUser = msgs.stream().filter(m -> "user".equals(m.role())).count();
         if (nbUser <= 1) p.setSessions(p.getSessions() + 1);
 
-        String system = systemPrompt(p, u, matiereNom(p.getMatiere()), niveau(u));
+        String system = systemPrompt(p, u, matiereNom(p.getMatiere()), niveau(u)) + contexteBloc(req.contexte());
         String reply = appelClaude(system, msgs);
 
         boolean isExercice = reply.contains("📝"); // 📝
@@ -193,6 +194,34 @@ public class AxiomService {
                 p.getSessions(), p.getScore(),
                 forts.isEmpty() ? "à découvrir" : String.join(", ", forts),
                 faibles.isEmpty() ? "à découvrir" : String.join(", ", faibles));
+    }
+
+    /** Bloc de contexte ajouté au system prompt : ce que l'élève regarde en ce moment. */
+    private String contexteBloc(AxiomContexte c) {
+        if (c == null || c.type() == null || c.type().isBlank()) return "";
+        String typeLabel = switch (c.type()) {
+            case "cours" -> "le cours";
+            case "exercices" -> "des exercices résolus";
+            case "problemes" -> "des problèmes résolus";
+            case "fiches" -> "des fiches de révision";
+            case "bac" -> "des exercices du bac";
+            case "annale" -> "une annale d'examen";
+            case "qcm" -> "un QCM";
+            default -> "du contenu";
+        };
+        StringBuilder sb = new StringBuilder();
+        sb.append("\n\nCONTEXTE ACTUEL (ce que l'élève consulte en ce moment dans Chahd) :\n");
+        sb.append("- Il regarde ").append(typeLabel);
+        if (c.titre() != null && !c.titre().isBlank()) sb.append(" : « ").append(c.titre()).append(" »");
+        sb.append(".\n");
+        if (c.extrait() != null && !c.extrait().isBlank()) {
+            String ex = c.extrait();
+            if (ex.length() > 6000) ex = ex.substring(0, 6000) + "…";
+            sb.append("- Contenu actuellement affiché à l'élève :\n\"\"\"\n").append(ex).append("\n\"\"\"\n");
+        }
+        sb.append("Aide l'élève PAR RAPPORT À CE contenu précis. S'il bloque sur un exercice, ")
+          .append("commence par un indice ou une question, ne donne pas la solution complète d'emblée.");
+        return sb.toString();
     }
 
     private String niveau(Utilisateur u) {

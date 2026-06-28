@@ -7,6 +7,7 @@ import java.util.List;
  * par le client : il est la source de vérité côté serveur (anti-triche).
  *
  * @param matiere  slug de la matière travaillée (optionnel ; conserve la valeur stockée sinon)
+ * @param contexte ce que l'élève regarde (optionnel) — pour un coup de pouce ciblé
  * @param messages historique de conversation (les 20 derniers max, gérés côté client)
  */
-public record AxiomChatRequest(String matiere, List<AxiomMessage> messages) {}
+public record AxiomChatRequest(String matiere, AxiomContexte contexte, List<AxiomMessage> messages) {}

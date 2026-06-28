@@ -134,6 +134,47 @@ const sessionLabel = (s: string) => (s === 'RATTRAPAGE' ? 'Rattrapage' : 'Normal
 const itemClass = (on: boolean) =>
   'w-full flex items-center gap-2 px-3 py-1.5 rounded-lg text-start text-[13px] transition ' +
   (on ? 'bg-brand-light text-brand font-semibold' : 'text-[#6b5f57] hover:bg-paper')
+
+// --- Contexte d'étude transmis à AXIOM (3e colonne) ---
+const { set: setContexte, reset: resetContexte } = useContexteEtude()
+const typeContexte: Record<string, string> = { quiz: 'qcm', pdf: 'annale', 'corrige-pdf': 'annale' }
+
+// Texte brut de l'élément ouvert, pour qu'AXIOM "voie" le contenu réellement affiché.
+const extraitCourant = computed(() => {
+  const s = selection.value
+  if (!s) return ''
+  if (s.kind === 'fiches') return fiches.value.map(f => `Q : ${f.question}\nR : ${f.reponse}`).join('\n\n')
+  if (s.kind === 'annale') return [annale.value?.sujet, annale.value?.corrige].filter(Boolean).join('\n\n')
+  if (s.kind === 'bac') return bacExos.value.map(e => `${e.titre}\n${e.enonce}`).join('\n\n')
+  if (s.kind === 'quiz' || s.kind === 'pdf' || s.kind === 'corrige-pdf') return ''
+  return cache[cleSel(s)] || ''
+})
+
+function chapitreContexte(s: Sel): string | null {
+  if ('lecon' in s) return s.lecon.titre
+  if (s.kind === 'quiz') return s.chapitre ?? null
+  if (s.kind === 'annale' || s.kind === 'pdf' || s.kind === 'corrige-pdf') return s.annale.titre
+  return null
+}
+
+watch([selection, loading, () => matiere.value?.nom], () => {
+  const s = selection.value
+  const base = { matiere: slug, matiereNom: matiere.value?.nom ?? slug }
+  if (!s) {
+    setContexte({ ...base, chapitre: null, type: null, titre: null, extrait: null })
+    return
+  }
+  if (loading.value) return // attendre la fin du chargement pour disposer du contenu
+  setContexte({
+    ...base,
+    chapitre: chapitreContexte(s),
+    type: typeContexte[s.kind] ?? s.kind,
+    titre: titreSelection.value,
+    extrait: extraitCourant.value.slice(0, 6000),
+  })
+}, { immediate: true })
+
+onBeforeUnmount(() => resetContexte())
 </script>
 
 <template>
@@ -157,7 +198,7 @@ const itemClass = (on: boolean) =>
     <!-- 2 colonnes (RTL pour l'arabe : explorateur à droite) -->
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 items-start" :dir="isRtl ? 'rtl' : 'ltr'">
       <!-- Colonne 1 : explorateur -->
-      <aside class="lg:col-span-4 lg:sticky lg:top-20">
+      <aside class="lg:col-span-3 lg:sticky lg:top-20">
         <div class="rounded-xl bg-white ring-1 ring-rule overflow-hidden max-h-[80vh] overflow-y-auto">
           <!-- Groupe Chapitres -->
           <button
@@ -258,7 +299,7 @@ const itemClass = (on: boolean) =>
       </aside>
 
       <!-- Colonne 2 : contenu -->
-      <section class="lg:col-span-8 min-w-0">
+      <section class="lg:col-span-6 min-w-0">
         <!-- Vide -->
         <div v-if="!selection" class="card flex flex-col items-center justify-center text-center min-h-[60vh] text-[#a8998a]">
           <i class="fa-solid fa-hand-pointer text-3xl text-[#a8998a] mb-3" />
@@ -348,6 +389,11 @@ const itemClass = (on: boolean) =>
           <div v-else dir="auto" class="leading-relaxed text-[#6b5f57]" v-html="renduTexte" />
         </article>
       </section>
+
+      <!-- Colonne 3 : tuteur AXIOM (contextuel) -->
+      <aside class="lg:col-span-3 lg:sticky lg:top-20" dir="ltr">
+        <AxiomAssistant />
+      </aside>
     </div>
   </div>
 </template>
