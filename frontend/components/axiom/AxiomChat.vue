@@ -7,8 +7,11 @@ const emit = defineEmits<{ send: [content: string] }>()
 const input = ref('')
 const scroller = ref<HTMLElement | null>(null)
 
-// Dictée vocale (si supportée par le navigateur).
-const { reconnaissanceSupportee, enEcoute, demarrerDictee, arreterDictee } = useVoix()
+// Voix (si supportée par le navigateur) : dictée ponctuelle + mode mains libres.
+const {
+  reconnaissanceSupportee, enEcoute, mainsLibres, ecouteQuestion,
+  demarrerDictee, arreterDictee, demarrerMainsLibres, arreterMainsLibres,
+} = useVoix()
 const { contexte } = useContexteEtude()
 const langVoix = computed(() => (contexte.value.matiere === 'philosophie' ? 'ar-SA' : 'fr-FR'))
 
@@ -24,7 +27,21 @@ function basculerMicro() {
   )
 }
 
-onBeforeUnmount(arreterDictee)
+// Mode mains libres : l'élève dit « Axiom » puis sa question ; après ~3 s de silence,
+// la question s'écrit dans le champ et part automatiquement.
+function basculerMainsLibres() {
+  if (mainsLibres.value) {
+    arreterMainsLibres()
+    return
+  }
+  demarrerMainsLibres(
+    langVoix.value,
+    (t) => { input.value = t },
+    (q) => { input.value = q; envoyer() }
+  )
+}
+
+onBeforeUnmount(() => { arreterDictee(); arreterMainsLibres() })
 
 function envoyer() {
   const t = input.value.trim()
@@ -63,6 +80,18 @@ watch(
       </p>
     </div>
 
+    <p
+      v-if="mainsLibres"
+      class="mt-2 flex items-center gap-2 text-xs font-medium"
+      :class="ecouteQuestion ? 'text-brand' : 'text-[#a8998a]'"
+    >
+      <span
+        class="inline-block h-2 w-2 rounded-full"
+        :class="ecouteQuestion ? 'bg-brand animate-pulse' : 'bg-[#a8998a]'"
+      />
+      {{ ecouteQuestion ? 'À l’écoute de ta question…' : 'Dis « Axiom » pour me parler' }}
+    </p>
+
     <div class="mt-3 flex items-end gap-2">
       <button
         v-if="reconnaissanceSupportee"
@@ -75,6 +104,18 @@ watch(
         @click="basculerMicro"
       >
         <i :class="['fa-solid', enEcoute ? 'fa-stop' : 'fa-microphone']" />
+      </button>
+      <button
+        v-if="reconnaissanceSupportee"
+        type="button"
+        class="shrink-0 flex h-9 w-9 items-center justify-center rounded border transition"
+        :class="mainsLibres
+          ? 'border-brand bg-brand-light text-brand'
+          : 'border-rule text-[#6b5f57] hover:border-brand/50 hover:text-brand'"
+        :title="mainsLibres ? 'Désactiver le mode mains libres' : 'Mode mains libres : dis « Axiom »'"
+        @click="basculerMainsLibres"
+      >
+        <i class="fa-solid fa-tower-broadcast" />
       </button>
       <textarea
         v-model="input"
