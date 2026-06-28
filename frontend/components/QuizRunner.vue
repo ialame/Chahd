@@ -120,49 +120,60 @@ function setCard(el: Element | null, qid: number) {
   else cardEls.delete(qid)
 }
 
-function texteQuestion(q: { id: number; enonce: string; choix: { id: number; texte: string }[] }) {
-  const props_ = q.choix.map((c) => `- ${c.texte}`).join('\n')
+function blocQuestion(q: { id: number; enonce: string; choix: { id: number; texte: string }[] }, idx: number) {
+  const propositions = q.choix.map((c) => `   - ${c.texte}`).join('\n')
   const sel = selections[q.id]
   const selTxt = sel && sel.size
     ? q.choix.filter((c) => sel.has(c.id)).map((c) => c.texte).join(' ; ')
-    : '(aucune réponse cochée pour le moment)'
-  let t = `Énoncé : ${q.enonce}\nPropositions :\n${props_}\nRéponse(s) cochée(s) par l'élève : ${selTxt}`
+    : '(non répondu)'
+  let t = `Question ${idx} : ${q.enonce}\n  Propositions :\n${propositions}\n  Réponse de l'élève : ${selTxt}`
   const d = detailPour(q.id)
-  if (d) t += `\nCorrection affichée : ${d.correcte ? "l'élève a bon" : "l'élève s'est trompé"}`
+  if (d) t += `\n  Résultat : ${d.correcte ? 'correct' : 'incorrect'}`
   return t
 }
 
+// On donne à AXIOM TOUT le QCM (questions numérotées + réponses de l'élève) pour qu'il
+// puisse répondre « explique la question N », et on signale laquelle est à l'écran.
 function publierContexte() {
   const qz = quiz.value
   if (!qz || !qz.questions.length) return
-  const q = qz.questions.find((x) => x.id === currentQuestionId.value) ?? qz.questions[0]
-  const idx = qz.questions.indexOf(q) + 1
+  const idxCur = currentQuestionId.value
+    ? qz.questions.findIndex((q) => q.id === currentQuestionId.value) + 1
+    : 1
+  const corps = qz.questions.map((q, i) => blocQuestion(q, i + 1)).join('\n\n')
+  const entete = `QCM « ${qz.titre} » — ${qz.questions.length} questions.\n`
+    + `L'élève regarde actuellement la Question ${idxCur} (s'il dit « cette question », il s'agit de celle-ci).\n\n`
   setContexteEtude({
     type: 'qcm',
-    titre: `${qz.titre} — Question ${idx}`,
-    extrait: texteQuestion(q),
+    titre: qz.titre,
+    extrait: entete + corps,
     ...(props.matiereSlug ? { matiere: props.matiereSlug } : {}),
     ...(props.chapitre ? { chapitre: props.chapitre } : {}),
   })
 }
 
+// Question « courante » = la plus haute dans une bande de lecture (~30–45 % du haut),
+// pour coller à ce que l'élève regarde réellement (pas de décalage d'un cran).
+const visibles = new Set<number>()
 function setupObserver() {
   if (!import.meta.client) return
   observer?.disconnect()
   observer = new IntersectionObserver(
     (entries) => {
-      let best: { id: number; ratio: number } | null = null
       for (const e of entries) {
-        if (!e.isIntersecting) continue
         const qid = Number((e.target as HTMLElement).dataset.qid)
-        if (!best || e.intersectionRatio > best.ratio) best = { id: qid, ratio: e.intersectionRatio }
+        if (e.isIntersecting) visibles.add(qid)
+        else visibles.delete(qid)
       }
-      if (best && best.id !== currentQuestionId.value) {
-        currentQuestionId.value = best.id
+      const qz = quiz.value
+      if (!qz) return
+      const haut = qz.questions.find((q) => visibles.has(q.id))
+      if (haut && haut.id !== currentQuestionId.value) {
+        currentQuestionId.value = haut.id
         publierContexte()
       }
     },
-    { threshold: [0.2, 0.5, 0.8] }
+    { rootMargin: '-30% 0px -55% 0px', threshold: 0 }
   )
   for (const el of cardEls.values()) observer.observe(el)
 }
