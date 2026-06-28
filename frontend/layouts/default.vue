@@ -9,10 +9,15 @@ const links = [
 const { user, estConnecte, estAdmin, deconnexion } = useAuth()
 const { get } = useApi()
 const router = useRouter()
+const route = useRoute()
 function seDeconnecter() {
   deconnexion()
   router.push('/')
 }
+
+// Largeur du conteneur : pleine largeur pour les pages qui déclarent `wide` (ex. page
+// matière à 3 colonnes), confortable (max-w-5xl) partout ailleurs.
+const conteneur = computed(() => (route.meta.wide ? 'max-w-none' : 'max-w-5xl'))
 
 // Nombre de fiches à réviser aujourd'hui (badge de navigation).
 const revisionDue = ref(0)
@@ -30,7 +35,7 @@ watch(estConnecte, chargerRevision)
 <template>
   <div class="min-h-screen flex flex-col">
     <header class="sticky top-0 z-10 border-b-2 border-brand bg-paper/95 backdrop-blur">
-      <div class="mx-auto flex max-w-5xl items-center justify-between px-4 py-3">
+      <div class="mx-auto flex items-center justify-between px-4 py-3" :class="conteneur">
         <NuxtLink to="/" class="font-serif text-2xl font-semibold text-brand">
           Chahd
         </NuxtLink>
@@ -110,12 +115,12 @@ watch(estConnecte, chargerRevision)
       </div>
     </header>
 
-    <main class="mx-auto w-full max-w-5xl flex-1 px-4 py-8">
+    <main class="mx-auto w-full flex-1 px-4 py-8" :class="conteneur">
       <slot />
     </main>
 
     <footer class="border-t border-rule bg-white">
-      <div class="mx-auto max-w-5xl px-4 py-6 text-center text-sm text-[#a8998a]">
+      <div class="mx-auto px-4 py-6 text-center text-sm text-[#a8998a]" :class="conteneur">
         Chahd — réviser et réussir le rattrapage du Bac scientifique
       </div>
     </footer>

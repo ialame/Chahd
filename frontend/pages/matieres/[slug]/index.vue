@@ -2,6 +2,7 @@
 import type { MatiereDetailDto, LeconDto, AnnaleContenuDto, FlashcardDto, ExoBacDto } from '~/types/api'
 import { parseMarkdown } from '~/utils/parseMarkdown'
 
+definePageMeta({ wide: true }) // page à 3 colonnes → pleine largeur d'écran
 const route = useRoute()
 const slug = route.params.slug as string
 // Matières au contenu arabe : page en RTL (explorateur à droite)
@@ -198,7 +199,7 @@ onBeforeUnmount(() => resetContexte())
     <!-- 2 colonnes (RTL pour l'arabe : explorateur à droite) -->
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 items-start" :dir="isRtl ? 'rtl' : 'ltr'">
       <!-- Colonne 1 : explorateur -->
-      <aside class="lg:col-span-3 lg:sticky lg:top-20">
+      <aside class="lg:col-span-2 lg:sticky lg:top-20">
         <div class="rounded-xl bg-white ring-1 ring-rule overflow-hidden max-h-[80vh] overflow-y-auto">
           <!-- Groupe Chapitres -->
           <button
@@ -299,7 +300,7 @@ onBeforeUnmount(() => resetContexte())
       </aside>
 
       <!-- Colonne 2 : contenu -->
-      <section class="lg:col-span-6 min-w-0">
+      <section class="lg:col-span-7 min-w-0">
         <!-- Vide -->
         <div v-if="!selection" class="card flex flex-col items-center justify-center text-center min-h-[60vh] text-[#a8998a]">
           <i class="fa-solid fa-hand-pointer text-3xl text-[#a8998a] mb-3" />
