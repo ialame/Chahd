@@ -11,6 +11,7 @@ export const useVoix = () => {
   const lectureCle = useState<string | null>('voix_lecture_cle', () => null)
 
   let reco: any = null
+  let arretManuel = false
 
   if (import.meta.client) {
     const SR = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition
@@ -27,19 +28,29 @@ export const useVoix = () => {
     reco = new SR()
     reco.lang = lang
     reco.interimResults = true
-    reco.continuous = false
+    reco.continuous = true // capte toute la phrase, pas seulement le premier mot
     reco.onresult = (e: any) => {
       let txt = ''
       for (let i = 0; i < e.results.length; i++) txt += e.results[i][0].transcript
       onTexte(txt, e.results[e.results.length - 1].isFinal)
     }
-    reco.onend = () => { enEcoute.value = false }
-    reco.onerror = () => { enEcoute.value = false }
+    // En continu, certains navigateurs coupent après un silence : on relance tant
+    // que l'élève n'a pas appuyé sur stop.
+    reco.onend = () => {
+      if (arretManuel) { enEcoute.value = false; return }
+      try { reco.start() } catch { enEcoute.value = false }
+    }
+    reco.onerror = (e: any) => {
+      if (e?.error === 'no-speech' && !arretManuel) return // ignore les silences
+      enEcoute.value = false
+    }
+    arretManuel = false
     enEcoute.value = true
     try { reco.start() } catch { enEcoute.value = false }
   }
 
   function arreterDictee() {
+    arretManuel = true
     try { reco?.stop() } catch { /* ignore */ }
     enEcoute.value = false
   }
