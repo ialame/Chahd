@@ -7,6 +7,7 @@ const props = defineProps<{ quizId: number; matiereSlug?: string; chapitre?: str
 const { get, post } = useApi()
 const { enregistrerQuiz } = useProgression()
 const { track } = useActivite()
+const { set: setContexteEtude } = useContexteEtude()
 
 const selections = reactive<Record<number, Set<number>>>({})
 const result = ref<QuizResultDto | null>(null)
@@ -35,6 +36,9 @@ function toggle(questionId: number, choixId: number) {
   const set = selections[questionId] ?? (selections[questionId] = new Set())
   if (set.has(choixId)) set.delete(choixId)
   else set.add(choixId)
+  // La question cochée devient la « question courante » pour AXIOM.
+  currentQuestionId.value = questionId
+  publierContexte()
 }
 
 const isSelected = (questionId: number, choixId: number) =>
@@ -86,6 +90,7 @@ async function soumettre() {
     result.value = res
     enregistrerQuiz(res, { titre: quiz.value.titre, matiereSlug: props.matiereSlug ?? '' })
     track({ type: 'quiz', matiere: props.matiereSlug, chapitre: props.chapitre, item: 'quiz', label: quiz.value.titre, note: res.noteSur20 })
+    publierContexte() // inclut désormais l'état corrigé dans le contexte AXIOM
   } finally {
     submitting.value = false
   }
@@ -102,6 +107,75 @@ const noteColor = computed(() => {
   if (n >= 10) return 'text-amber-600'
   return 'text-red-600'
 })
+
+// --- Contexte « question courante » pour AXIOM ---
+// AXIOM suit la question que l'élève regarde (défilement) ou vient de cocher,
+// avec l'énoncé, les propositions et la réponse actuelle de l'élève.
+const currentQuestionId = ref<number | null>(null)
+const cardEls = new Map<number, Element>()
+let observer: IntersectionObserver | null = null
+
+function setCard(el: Element | null, qid: number) {
+  if (el) cardEls.set(qid, el)
+  else cardEls.delete(qid)
+}
+
+function texteQuestion(q: { id: number; enonce: string; choix: { id: number; texte: string }[] }) {
+  const props_ = q.choix.map((c) => `- ${c.texte}`).join('\n')
+  const sel = selections[q.id]
+  const selTxt = sel && sel.size
+    ? q.choix.filter((c) => sel.has(c.id)).map((c) => c.texte).join(' ; ')
+    : '(aucune réponse cochée pour le moment)'
+  let t = `Énoncé : ${q.enonce}\nPropositions :\n${props_}\nRéponse(s) cochée(s) par l'élève : ${selTxt}`
+  const d = detailPour(q.id)
+  if (d) t += `\nCorrection affichée : ${d.correcte ? "l'élève a bon" : "l'élève s'est trompé"}`
+  return t
+}
+
+function publierContexte() {
+  const qz = quiz.value
+  if (!qz || !qz.questions.length) return
+  const q = qz.questions.find((x) => x.id === currentQuestionId.value) ?? qz.questions[0]
+  const idx = qz.questions.indexOf(q) + 1
+  setContexteEtude({
+    type: 'qcm',
+    titre: `${qz.titre} — Question ${idx}`,
+    extrait: texteQuestion(q),
+    ...(props.matiereSlug ? { matiere: props.matiereSlug } : {}),
+    ...(props.chapitre ? { chapitre: props.chapitre } : {}),
+  })
+}
+
+function setupObserver() {
+  if (!import.meta.client) return
+  observer?.disconnect()
+  observer = new IntersectionObserver(
+    (entries) => {
+      let best: { id: number; ratio: number } | null = null
+      for (const e of entries) {
+        if (!e.isIntersecting) continue
+        const qid = Number((e.target as HTMLElement).dataset.qid)
+        if (!best || e.intersectionRatio > best.ratio) best = { id: qid, ratio: e.intersectionRatio }
+      }
+      if (best && best.id !== currentQuestionId.value) {
+        currentQuestionId.value = best.id
+        publierContexte()
+      }
+    },
+    { threshold: [0.2, 0.5, 0.8] }
+  )
+  for (const el of cardEls.values()) observer.observe(el)
+}
+
+watch(quiz, async () => {
+  if (!quiz.value?.questions.length) return
+  currentQuestionId.value = quiz.value.questions[0].id
+  await nextTick()
+  setupObserver()
+  publierContexte()
+})
+
+onBeforeUnmount(() => observer?.disconnect())
 </script>
 
 <template>
@@ -125,7 +199,13 @@ const noteColor = computed(() => {
 
     <!-- Questions -->
     <div class="space-y-4">
-      <div v-for="(q, idx) in quiz.questions" :key="q.id" class="rounded-xl border border-rule p-4">
+      <div
+        v-for="(q, idx) in quiz.questions"
+        :key="q.id"
+        :ref="(el) => setCard(el as Element | null, q.id)"
+        :data-qid="q.id"
+        class="rounded-xl border border-rule p-4"
+      >
         <div class="mb-3 flex items-start gap-2">
           <span class="mt-0.5 flex h-6 w-6 flex-none items-center justify-center rounded-full bg-brand-light text-xs font-bold text-brand">
             {{ idx + 1 }}
